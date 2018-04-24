@@ -8,5 +8,15 @@ namespace FodboldFeber.Model
 {
     class Orders
     {
+        public int OrderID { get; set; }
+        public int ProductID { get; set; }
+        public string DeliveryAddress { get; set; }
+        public int AmountOfProductsOrdered { get; set; }
+        public int DelivertTime { get; set; }
+        public DateTime DateOfOrder { get; set; }
+        public int TotalOrderPrice { get; set; }
+        public object PaymentMethod { get; set; } //Best datatype here?
+        public int TotalShippingPrice { get; set; }
+
     }
 }
