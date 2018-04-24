@@ -62,7 +62,13 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Controller\CustomerController.cs" />
+    <Compile Include="Model\DataAccess.cs" />
+    <Compile Include="Model\Users.cs" />
+    <Compile Include="Model\Orders.cs" />
+    <Compile Include="Model\Products.cs" />
     <Compile Include="Model\Program.cs" />
+    <Compile Include="Model\ShoppingCart.cs" />
     <Compile Include="View\Frontpage.xaml.cs">
       <DependentUpon>Frontpage.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -94,8 +100,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Controller\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
