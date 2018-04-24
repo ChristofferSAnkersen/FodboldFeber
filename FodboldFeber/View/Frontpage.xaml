@@ -15,9 +15,9 @@
         <Button x:Name="Customers" Content="Kunder" HorizontalAlignment="Left" Margin="634,10,0,0" VerticalAlignment="Top" Width="75" Foreground="Red" Background="White" BorderThickness="0" FontWeight="Bold"/>
         <Button x:Name="Login" Content="Login" HorizontalAlignment="Left" Margin="709,10,0,0" VerticalAlignment="Top" Width="75" Foreground="Red" Background="White" BorderThickness="0" FontWeight="Bold"/>
         <Label Content="Fodboldfeber" HorizontalAlignment="Left" Margin="276,58,0,0" VerticalAlignment="Top" FontSize="40" Foreground="Red"/>
-        <Frame Content="Placeholder" HorizontalAlignment="Left" Height="100" Margin="81,344,0,-23" VerticalAlignment="Top" Width="100" BorderThickness="5" BorderBrush="Black"/>
-        <Frame Content="Placeholder" HorizontalAlignment="Left" Height="100" Margin="559,344,0,-23" VerticalAlignment="Top" Width="100" BorderBrush="Black" BorderThickness="5"/>
-        <Image HorizontalAlignment="Left" Height="100" Margin="351,169,0,0" VerticalAlignment="Top" Width="100" Source="https://imgur.com/qAh5oWj"/>
+        <Frame Content="Placeholder" HorizontalAlignment="Left" Height="100" Margin="123,344,0,-23" VerticalAlignment="Top" Width="100" BorderThickness="5" BorderBrush="Black"/>
+        <Frame Content="Placeholder" HorizontalAlignment="Left" Height="100" Margin="556,344,0,-23" VerticalAlignment="Top" Width="100" BorderBrush="Black" BorderThickness="5"/>
+        <Image HorizontalAlignment="Left" Height="100" Margin="351,169,0,0" VerticalAlignment="Top" Width="100" Source="https://i.imgur.com/qAh5oWj.png" Stretch="Fill"/>
 
     </Grid>
 </Window>
