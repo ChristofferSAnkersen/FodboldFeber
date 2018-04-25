@@ -12,8 +12,8 @@
         <Button x:Name="News_Copy" Content="Nyheder" HorizontalAlignment="Left" Margin="148,10,0,0" VerticalAlignment="Top" Width="75" Foreground="Red" Background="White" BorderThickness="0" FontWeight="Bold" Click="News_Click"/>
         <Button x:Name="Shop" Content="Shop" HorizontalAlignment="Left" Margin="263,10,0,0" VerticalAlignment="Top" Width="75" Foreground="Red" Background="White" BorderThickness="0" FontWeight="Bold" Click="Shop_Click"/>
         <Button x:Name="Contact" Content="Kontakt" HorizontalAlignment="Left" Margin="467,10,0,0" VerticalAlignment="Top" Width="75" Foreground="Red" Background="White" BorderThickness="0" FontWeight="Bold" Click="Contact_Click"/>
-        <Button x:Name="About" Content="Om os" HorizontalAlignment="Left" Margin="547,10,0,0" VerticalAlignment="Top" Width="75" Foreground="Red" Background="White" BorderThickness="0" FontWeight="Bold"/>
-        <Button x:Name="Customers" Content="Kunder" HorizontalAlignment="Left" Margin="634,10,0,0" VerticalAlignment="Top" Width="75" Foreground="Red" Background="White" BorderThickness="0" FontWeight="Bold"/>
+        <Button x:Name="About" Content="Om os" HorizontalAlignment="Left" Margin="547,10,0,0" VerticalAlignment="Top" Width="75" Foreground="Red" Background="White" BorderThickness="0" FontWeight="Bold" Click="About_Click"/>
+        <Button x:Name="Customers" Content="Kunder" HorizontalAlignment="Left" Margin="634,10,0,0" VerticalAlignment="Top" Width="75" Foreground="Red" Background="White" BorderThickness="0" FontWeight="Bold" Click="Customers_Click"/>
         <Button x:Name="Login" Content="Login" HorizontalAlignment="Left" Margin="709,10,0,0" VerticalAlignment="Top" Width="75" Foreground="Red" Background="White" BorderThickness="0" FontWeight="Bold"/>
 
     </Grid>

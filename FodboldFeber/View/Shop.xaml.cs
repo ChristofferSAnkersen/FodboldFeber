@@ -44,5 +44,19 @@ namespace FodboldFeber.View
             contact.Show();
             this.Close();
         }
+
+        private void About_Click(object sender, RoutedEventArgs e)
+        {
+            About about = new About();
+            about.Show();
+            this.Close();
+        }
+
+        private void Customers_Click(object sender, RoutedEventArgs e)
+        {
+            Customers customers = new Customers();
+            customers.Show();
+            this.Close();
+        }
     }
 }

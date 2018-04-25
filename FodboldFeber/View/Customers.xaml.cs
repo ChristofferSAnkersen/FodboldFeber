@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace FodboldFeber.View
 {
     /// <summary>
-    /// Interaction logic for News.xaml
+    /// Interaction logic for Customers.xaml
     /// </summary>
-    public partial class News : Window
+    public partial class Customers : Window
     {
-        public News()
+        public Customers()
         {
             InitializeComponent();
         }
@@ -44,7 +44,8 @@ namespace FodboldFeber.View
             shop.Show();
             this.Close();
         }
-        private void Contact_Click(object sender, RoutedEventArgs e)
+
+        private void Contact_Copy_Click(object sender, RoutedEventArgs e)
         {
             Contact contact = new Contact();
             contact.Show();
@@ -58,7 +59,7 @@ namespace FodboldFeber.View
             this.Close();
         }
 
-        private void Customers_Click(object sender, RoutedEventArgs e)
+        private void Customers_Copy_Click(object sender, RoutedEventArgs e)
         {
             Customers customers = new Customers();
             customers.Show();

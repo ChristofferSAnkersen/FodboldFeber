@@ -24,6 +24,8 @@ namespace FodboldFeber.View
             InitializeComponent();
         }
 
+
+        //Naviger mellem de forskellige vinduer
         private void Frontpage_Click(object sender, RoutedEventArgs e)
         {
             MainWindow startpage = new MainWindow();
@@ -42,6 +44,20 @@ namespace FodboldFeber.View
         {
             Shop shop = new Shop();
             shop.Show();
+            this.Close();
+        }
+
+        private void About_Click(object sender, RoutedEventArgs e)
+        {
+            About about = new About();
+            about.Show();
+            this.Close();
+        }
+
+        private void Customers_Click(object sender, RoutedEventArgs e)
+        {
+            Customers customers = new Customers();
+            customers.Show();
             this.Close();
         }
     }
