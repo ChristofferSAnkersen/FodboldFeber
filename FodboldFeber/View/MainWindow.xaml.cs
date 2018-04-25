@@ -39,8 +39,6 @@ namespace FodboldFeber
             StartPage.Content = new Contact();
         }
 
-
-
         private void Customers_Click(object sender, RoutedEventArgs e)
         {
             StartPage.Content = new Customers();
@@ -49,6 +47,11 @@ namespace FodboldFeber
         private void Frontpage_Click(object sender, RoutedEventArgs e)
         {
             StartPage.Content = new Frontpage();
+        }
+
+        private void Login_Click(object sender, RoutedEventArgs e)
+        {
+            StartPage.Content = new Login();
         }
 
         private void News_Click(object sender, RoutedEventArgs e)
@@ -62,6 +65,5 @@ namespace FodboldFeber
             this.Close();
         }
 
-   
     }
 }

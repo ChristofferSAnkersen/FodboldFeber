@@ -80,14 +80,29 @@
     <Compile Include="View\About.xaml.cs">
       <DependentUpon>About.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\ChooseType.xaml.cs">
+      <DependentUpon>ChooseType.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Contact.xaml.cs">
       <DependentUpon>Contact.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\CreateClubCustomer.xaml.cs">
+      <DependentUpon>CreateClubCustomer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\CreateCompanyCustomer.xaml.cs">
+      <DependentUpon>CreateCompanyCustomer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\CreatePrivateCustomer.xaml.cs">
+      <DependentUpon>CreatePrivateCustomer.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Customers.xaml.cs">
       <DependentUpon>Customers.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Frontpage.xaml.cs">
       <DependentUpon>Frontpage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Login.xaml.cs">
+      <DependentUpon>Login.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\News.xaml.cs">
       <DependentUpon>News.xaml</DependentUpon>
@@ -99,7 +114,23 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\ChooseType.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Contact.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\CreateClubCustomer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\CreateCompanyCustomer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\CreatePrivateCustomer.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -108,6 +139,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Frontpage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Login.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
