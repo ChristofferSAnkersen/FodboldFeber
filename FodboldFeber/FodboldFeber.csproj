@@ -86,6 +86,9 @@
     <Compile Include="View\Customers.xaml.cs">
       <DependentUpon>Customers.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Frontpage.xaml.cs">
+      <DependentUpon>Frontpage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\News.xaml.cs">
       <DependentUpon>News.xaml</DependentUpon>
     </Compile>
@@ -101,6 +104,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Customers.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Frontpage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
