@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
 
 namespace FodboldFeber.Model
 {
@@ -23,7 +22,7 @@ namespace FodboldFeber.Model
                 }
                 catch(SqlException e)
                 {
-                    Console.WriteLine("Det virker ikke :(");
+                    Console.WriteLine(e + "Det virker ikke :(");
                 }
             }
         }
