@@ -100,6 +100,7 @@
     </Compile>
     <Compile Include="Controller\CustomerController.cs" />
     <Compile Include="Model\DataAccess.cs" />
+    <Compile Include="Model\Login.cs" />
     <Compile Include="Model\Users.cs" />
     <Compile Include="Model\Orders.cs" />
     <Compile Include="Model\Products.cs" />
