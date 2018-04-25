@@ -22,5 +22,17 @@ namespace FodboldFeber.Model
         public string CompanyAddress { get; set; }
         public int CVR { get; set; }
         public int UserType { get; set; }
+        public void AddUser()
+        {
+
+        }
+        public void DeleteUser()
+        {
+
+        }
+        public void UpdateUser()
+        {
+
+        }
     }  
 }

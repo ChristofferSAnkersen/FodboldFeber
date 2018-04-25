@@ -20,5 +20,9 @@ namespace FodboldFeber.Model
         {
 
         }
+        public void AddProductToCart()
+        {
+
+        }
     }
 }
