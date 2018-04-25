@@ -10,24 +10,27 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
-using FodboldFeber;
-using FodboldFeber.View;
 
-namespace FodboldFeber
+namespace FodboldFeber.View
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for About.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class About : Window
     {
-        //private news news;
-        public MainWindow()
+        public About()
         {
             InitializeComponent();
         }
-        
+
+        private void Frontpage_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow frontpage = new MainWindow();
+            frontpage.Show();
+            this.Close();
+        }
+
         private void News_Click(object sender, RoutedEventArgs e)
         {
             News news = new News();
@@ -42,17 +45,10 @@ namespace FodboldFeber
             this.Close();
         }
 
-        private void Contact_Click(object sender, RoutedEventArgs e)
+        private void Contact_Copy_Click(object sender, RoutedEventArgs e)
         {
             Contact contact = new Contact();
             contact.Show();
-            this.Close();
-        }
-
-        private void About_Click(object sender, RoutedEventArgs e)
-        {
-            About about = new About();
-            about.Show();
             this.Close();
         }
 
