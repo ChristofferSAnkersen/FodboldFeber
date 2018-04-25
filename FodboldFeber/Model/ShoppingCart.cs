@@ -24,5 +24,9 @@ namespace FodboldFeber.Model
         {
 
         }
+        public void RemoveProductFromCart()
+        {
+
+        }
     }
 }
