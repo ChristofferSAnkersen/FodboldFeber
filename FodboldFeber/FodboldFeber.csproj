@@ -54,7 +54,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="View\Frontpage.xaml">
+    <Page Include="View\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -69,8 +69,8 @@
     <Compile Include="Model\Products.cs" />
     <Compile Include="Model\Program.cs" />
     <Compile Include="Model\ShoppingCart.cs" />
-    <Compile Include="View\Frontpage.xaml.cs">
-      <DependentUpon>Frontpage.xaml</DependentUpon>
+    <Compile Include="View\MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
