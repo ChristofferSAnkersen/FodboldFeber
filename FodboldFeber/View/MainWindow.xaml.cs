@@ -26,15 +26,35 @@ namespace FodboldFeber
         public MainWindow()
         {
             InitializeComponent();
-        }
-        
-        private void News_Click(object sender, RoutedEventArgs e)
-        {
-            News news = new News();
-            news.Show();
-            this.Close();
+            StartPage.Content = new Frontpage();
         }
 
+        private void About_Click(object sender, RoutedEventArgs e)
+        {
+            StartPage.Content = new About();
+        }
+
+        private void Contact_Click(object sender, RoutedEventArgs e)
+        {
+            StartPage.Content = new Contact();
+        }
+
+
+
+        private void Customers_Click(object sender, RoutedEventArgs e)
+        {
+            StartPage.Content = new Customers();
+        }
+
+        private void Frontpage_Click(object sender, RoutedEventArgs e)
+        {
+            StartPage.Content = new Frontpage();
+        }
+
+        private void News_Click(object sender, RoutedEventArgs e)
+        {
+            StartPage.Content = new News();
+        }
         private void Shop_Click(object sender, RoutedEventArgs e)
         {
             Shop shop = new Shop();
@@ -42,25 +62,6 @@ namespace FodboldFeber
             this.Close();
         }
 
-        private void Contact_Click(object sender, RoutedEventArgs e)
-        {
-            Contact contact = new Contact();
-            contact.Show();
-            this.Close();
-        }
-
-        private void About_Click(object sender, RoutedEventArgs e)
-        {
-            About about = new About();
-            about.Show();
-            this.Close();
-        }
-
-        private void Customers_Click(object sender, RoutedEventArgs e)
-        {
-            Customers customers = new Customers();
-            customers.Show();
-            this.Close();
-        }
+   
     }
 }

@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace FodboldFeber.View
 {
     /// <summary>
-    /// Interaction logic for Customers.xaml
+    /// Interaction logic for Frontpage.xaml
     /// </summary>
-    public partial class Customers : Page
+    public partial class Frontpage : Page
     {
-        public Customers()
+        public Frontpage()
         {
             InitializeComponent();
         }
