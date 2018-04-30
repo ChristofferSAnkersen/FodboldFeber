@@ -5,11 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
+using FodboldFeber.Model;
 
 namespace FodboldFeber.Model
 {
     public class DataAccess
     {
+        Products products = new Products();
         private static string connectionString = "Server=EALSQL1.eal.local; Database=DB2017_A27; User Id= USER_A27; Password=SesamLukOp_27;";
         public void Access()
         {
@@ -17,8 +19,15 @@ namespace FodboldFeber.Model
             {
                 try
                 {
+                    SqlCommand cmd1 = new SqlCommand(products.Query,con);
+                    SqlDataReader myReader;
                     con.Open();
-                    SqlCommand cmd1 = new SqlCommand();
+                    myReader = cmd1.ExecuteReader();
+                    while (myReader.Read())
+                    {
+                    }
+                    con.Close();
+
                 }
                 catch(SqlException e)
                 {
