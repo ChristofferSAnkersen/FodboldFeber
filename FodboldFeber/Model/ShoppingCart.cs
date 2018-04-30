@@ -10,8 +10,9 @@ namespace FodboldFeber.Model
     {
         public int ProductID { get; set; }
         public int AmountOfProductsOrdered { get; set; }
-        public int ProductPrice { get; set; }
+        public double ProductPrice { get; set; }
         public int AmountInStock { get; set; }
+
         public void EmptyCart()
         {
 
