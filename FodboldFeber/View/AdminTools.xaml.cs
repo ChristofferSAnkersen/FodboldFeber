@@ -48,5 +48,10 @@ namespace FodboldFeber.View
             shopcontroller.Product.Category = Category.Text;
           
         }
+
+        private void Opret_Vare_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

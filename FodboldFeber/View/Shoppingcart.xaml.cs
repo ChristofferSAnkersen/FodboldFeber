@@ -17,9 +17,9 @@ namespace FodboldFeber
     /// <summary>
     /// Interaction logic for Shoppingcary.xaml
     /// </summary>
-    public partial class Shoppingcary : Window
+    public partial class Shoppingcart : Window
     {
-        public Shoppingcary()
+        public Shoppingcart()
         {
             InitializeComponent();
         }
