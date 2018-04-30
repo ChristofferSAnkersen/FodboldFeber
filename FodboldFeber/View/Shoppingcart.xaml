@@ -22,8 +22,8 @@
         <Label Content="ProductName" HorizontalAlignment="Left" Margin="558,89,0,0" VerticalAlignment="Top"/>
         <Label Content="Price" HorizontalAlignment="Left" Margin="695,89,0,0" VerticalAlignment="Top"/>
         <Label Content="________________________________________________________________________________--" HorizontalAlignment="Left" Margin="566,200,0,0" VerticalAlignment="Top" Width="170"  Foreground="Black" Background="Black" Height="1"/>
-        <Image HorizontalAlignment="Left" Height="162" Margin="64,89,0,0" VerticalAlignment="Top" Width="259" Source="https://i.imgur.com/NOEJndf.png"/>
-        <Image HorizontalAlignment="Left" Height="79" Margin="64,262,0,0" VerticalAlignment="Top" Width="72" Source="https://i.imgur.com/NOEJndf.png"/>
-        <Image HorizontalAlignment="Left" Height="162" Margin="328,89,0,0" VerticalAlignment="Top" Width="225" Source="https://i.imgur.com/NOEJndf.png"/>
+        <Image Name="ImageTshirt2" HorizontalAlignment="Left" Height="79" Margin="64,262,0,0" VerticalAlignment="Top" Width="72" Source="https://i.imgur.com/NOEJndf.png"/>
+        <Image Name="ImageTshirt1" HorizontalAlignment="Left" Height="188" Margin="60,89,0,0" VerticalAlignment="Top" Width="121" Source="https://odense-esport.dk/wp-content/uploads/2018/04/hattetroeje-510x907.png"/>
+        <Image Name="ImageTshirt3" HorizontalAlignment="Left" Height="162" Margin="247,89,0,0" VerticalAlignment="Top" Width="225" Source="https://odense-esport.dk/wp-content/uploads/2018/04/shirt1.png"/>
     </Grid>
 </Window>
