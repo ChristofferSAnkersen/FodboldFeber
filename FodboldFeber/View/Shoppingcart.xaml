@@ -9,7 +9,6 @@
     <Grid>
         <Rectangle Fill="White" HorizontalAlignment="Left" Height="162" Margin="558,89,0,0" Stroke="Black" VerticalAlignment="Top" Width="186"/>
         <Rectangle Fill="White" HorizontalAlignment="Left" Height="83" Margin="60,258,0,0" Stroke="Black" VerticalAlignment="Top" Width="684"/>
-        <Image HorizontalAlignment="Left" Height="92" Margin="64,262,0,0" VerticalAlignment="Top" Width="91" Source="C:\lilpump.PNG"/>
         <Label Content="ProductName" HorizontalAlignment="Left" Margin="178,258,0,0" VerticalAlignment="Top"/>
         <Label Content="ProductDescription" HorizontalAlignment="Left" Margin="178,284,0,0" VerticalAlignment="Top"/>
         <Label Content="InStock" HorizontalAlignment="Left" Margin="178,315,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.605,0.577"/>
@@ -23,7 +22,8 @@
         <Label Content="ProductName" HorizontalAlignment="Left" Margin="558,89,0,0" VerticalAlignment="Top"/>
         <Label Content="Price" HorizontalAlignment="Left" Margin="695,89,0,0" VerticalAlignment="Top"/>
         <Label Content="________________________________________________________________________________--" HorizontalAlignment="Left" Margin="566,200,0,0" VerticalAlignment="Top" Width="170"  Foreground="Black" Background="Black" Height="1"/>
-        <Image HorizontalAlignment="Left" Height="162" Margin="64,89,0,0" VerticalAlignment="Top" Width="259" Source="C:\lilpump.PNG"/>
-        <Image HorizontalAlignment="Left" Height="162" Margin="328,89,0,0" VerticalAlignment="Top" Width="225" Source="C:\lilpump.PNG"/>
+        <Image HorizontalAlignment="Left" Height="162" Margin="64,89,0,0" VerticalAlignment="Top" Width="259" Source="https://i.imgur.com/NOEJndf.png"/>
+        <Image HorizontalAlignment="Left" Height="79" Margin="64,262,0,0" VerticalAlignment="Top" Width="72" Source="https://i.imgur.com/NOEJndf.png"/>
+        <Image HorizontalAlignment="Left" Height="162" Margin="328,89,0,0" VerticalAlignment="Top" Width="225" Source="https://i.imgur.com/NOEJndf.png"/>
     </Grid>
 </Window>
