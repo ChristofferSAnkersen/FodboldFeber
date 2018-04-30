@@ -7,7 +7,8 @@
         mc:Ignorable="d"
         Title="Shoppingcart" Height="600" Width="800">
     <Grid>
-        <Rectangle Fill="White" HorizontalAlignment="Left" Height="162" Margin="558,89,0,0" Stroke="Black" VerticalAlignment="Top" Width="186"/>
+        <Rectangle Fill="White" HorizontalAlignment="Left" Height="162" Margin="60,89,0,0" Stroke="Black" VerticalAlignment="Top" Width="218"/>
+        <Rectangle Fill="White" HorizontalAlignment="Left" Height="162" Margin="513,89,0,0" Stroke="Black" VerticalAlignment="Top" Width="231"/>
         <Rectangle Fill="White" HorizontalAlignment="Left" Height="83" Margin="60,258,0,0" Stroke="Black" VerticalAlignment="Top" Width="684"/>
         <Label Content="ProductName" HorizontalAlignment="Left" Margin="178,258,0,0" VerticalAlignment="Top"/>
         <Label Content="ProductDescription" HorizontalAlignment="Left" Margin="178,284,0,0" VerticalAlignment="Top"/>
@@ -16,14 +17,16 @@
         <Label Content="ProductQuanity" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="602,267,0,0"/>
         <Button Content="Tilbage til Shoppen" HorizontalAlignment="Left" Margin="60,510,0,0" VerticalAlignment="Top" Width="121" Background="White"/>
         <Button Content="Til betaling" HorizontalAlignment="Left" Margin="215,510,0,0" VerticalAlignment="Top" Width="121                 " Background="White"/>
-        <Label Content="ProductName" HorizontalAlignment="Left" Margin="558,116,0,0" VerticalAlignment="Top"/>
-        <Label Content="TotalPrice" HorizontalAlignment="Left" Margin="680,206,0,0" VerticalAlignment="Top" Width="80"/>
+        <Label Content="ProductName" HorizontalAlignment="Left" Margin="520,116,0,0" VerticalAlignment="Top"/>
+        <Label Content="TotalPrice" HorizontalAlignment="Left" Margin="656,206,0,0" VerticalAlignment="Top" Width="80"/>
         <Label Content="Price" HorizontalAlignment="Left" Margin="695,115,0,0" VerticalAlignment="Top"/>
-        <Label Content="ProductName" HorizontalAlignment="Left" Margin="558,89,0,0" VerticalAlignment="Top"/>
+        <Label Content="ProductName" HorizontalAlignment="Left" Margin="520,89,0,0" VerticalAlignment="Top"/>
         <Label Content="Price" HorizontalAlignment="Left" Margin="695,89,0,0" VerticalAlignment="Top"/>
-        <Label Content="________________________________________________________________________________--" HorizontalAlignment="Left" Margin="566,200,0,0" VerticalAlignment="Top" Width="170"  Foreground="Black" Background="Black" Height="1"/>
-        <Image Name="ImageTshirt2" HorizontalAlignment="Left" Height="79" Margin="64,262,0,0" VerticalAlignment="Top" Width="72" Source="https://i.imgur.com/NOEJndf.png"/>
-        <Image Name="ImageTshirt1" HorizontalAlignment="Left" Height="188" Margin="60,89,0,0" VerticalAlignment="Top" Width="121" Source="https://odense-esport.dk/wp-content/uploads/2018/04/hattetroeje-510x907.png"/>
-        <Image Name="ImageTshirt3" HorizontalAlignment="Left" Height="162" Margin="247,89,0,0" VerticalAlignment="Top" Width="225" Source="https://odense-esport.dk/wp-content/uploads/2018/04/shirt1.png"/>
+        <Label Content="________________________________________________________________________________--" HorizontalAlignment="Left" Margin="520,200,0,0" VerticalAlignment="Top" Width="216"  Foreground="Black" Background="Black" Height="1"/>
+        <Image x:Name="ImageTshirt2" HorizontalAlignment="Left" Height="79" Margin="64,262,0,0" VerticalAlignment="Top" Width="72" Source="https://i.imgur.com/NOEJndf.png"/>
+        <Image x:Name="ImageTshirt1" HorizontalAlignment="Left" Height="188" Margin="106,89,0,0" VerticalAlignment="Top" Width="230" Source="https://odense-esport.dk/wp-content/uploads/2018/04/hattetroeje-510x907.png"/>
+        <Rectangle Fill="White" HorizontalAlignment="Left" Height="162" Margin="283,89,0,0" Stroke="Black" VerticalAlignment="Top" Width="225"/>
+        <Image x:Name="ImageTshirt3" HorizontalAlignment="Left" Height="162" Margin="283,89,0,0" VerticalAlignment="Top" Width="225" Source="https://odense-esport.dk/wp-content/uploads/2018/04/shirt1.png"/>
+        <Label Content="Pris" HorizontalAlignment="Left" Margin="520,206,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Window>
