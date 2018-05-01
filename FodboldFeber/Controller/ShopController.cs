@@ -10,18 +10,15 @@ namespace FodboldFeber.Controller
 {
     public class ShopController
     {
-        private static Products _result;
-        public static Products Product { get; set; }
-        
-    
 
-        //måske skal listofproducts slettes
-        public List<Products> ListOfProducts { get; set; }
+        AdminTools adminTools;
 
         public void AddProduct()
         {
+            Products p = new Products();
             //Adding the values to the property "Product" of the ShopController class
-            Product = Products.Product;
+            p.Product = adminTools.Query;
+            p.AddProduct();
            
         }
     }
