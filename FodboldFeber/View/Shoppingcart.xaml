@@ -7,26 +7,41 @@
         mc:Ignorable="d"
         Title="Shoppingcart" Height="600" Width="800">
     <Grid>
-        <Rectangle Fill="White" HorizontalAlignment="Left" Height="162" Margin="60,89,0,0" Stroke="Black" VerticalAlignment="Top" Width="218"/>
-        <Rectangle Fill="White" HorizontalAlignment="Left" Height="162" Margin="513,89,0,0" Stroke="Black" VerticalAlignment="Top" Width="231"/>
-        <Rectangle Fill="White" HorizontalAlignment="Left" Height="83" Margin="60,258,0,0" Stroke="Black" VerticalAlignment="Top" Width="684"/>
-        <Label Content="ProductName" HorizontalAlignment="Left" Margin="178,258,0,0" VerticalAlignment="Top"/>
-        <Label Content="ProductDescription" HorizontalAlignment="Left" Margin="178,284,0,0" VerticalAlignment="Top"/>
-        <Label Content="InStock" HorizontalAlignment="Left" Margin="178,315,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.605,0.577"/>
-        <Label Content="ProductPrice" HorizontalAlignment="Left" Margin="416,266,0,0" VerticalAlignment="Top"/>
-        <Label Content="ProductQuanity" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="602,267,0,0"/>
-        <Button Content="Tilbage til Shoppen" HorizontalAlignment="Left" Margin="60,510,0,0" VerticalAlignment="Top" Width="121" Background="White"/>
-        <Button Content="Til betaling" HorizontalAlignment="Left" Margin="215,510,0,0" VerticalAlignment="Top" Width="121                 " Background="White"/>
-        <Label Content="ProductName" HorizontalAlignment="Left" Margin="520,116,0,0" VerticalAlignment="Top"/>
-        <Label Content="TotalPrice" HorizontalAlignment="Left" Margin="656,206,0,0" VerticalAlignment="Top" Width="80"/>
-        <Label Content="Price" HorizontalAlignment="Left" Margin="695,115,0,0" VerticalAlignment="Top"/>
-        <Label Content="ProductName" HorizontalAlignment="Left" Margin="520,89,0,0" VerticalAlignment="Top"/>
-        <Label Content="Price" HorizontalAlignment="Left" Margin="695,89,0,0" VerticalAlignment="Top"/>
-        <Label Content="________________________________________________________________________________--" HorizontalAlignment="Left" Margin="520,200,0,0" VerticalAlignment="Top" Width="216"  Foreground="Black" Background="Black" Height="1"/>
-        <Image x:Name="ImageTshirt2" HorizontalAlignment="Left" Height="79" Margin="64,262,0,0" VerticalAlignment="Top" Width="72" Source="https://i.imgur.com/NOEJndf.png"/>
-        <Image x:Name="ImageTshirt1" HorizontalAlignment="Left" Height="188" Margin="106,89,0,0" VerticalAlignment="Top" Width="230" Source="https://odense-esport.dk/wp-content/uploads/2018/04/hattetroeje-510x907.png"/>
-        <Rectangle Fill="White" HorizontalAlignment="Left" Height="162" Margin="283,89,0,0" Stroke="Black" VerticalAlignment="Top" Width="225"/>
-        <Image x:Name="ImageTshirt3" HorizontalAlignment="Left" Height="162" Margin="283,89,0,0" VerticalAlignment="Top" Width="225" Source="https://odense-esport.dk/wp-content/uploads/2018/04/shirt1.png"/>
-        <Label Content="Pris" HorizontalAlignment="Left" Margin="520,206,0,0" VerticalAlignment="Top"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="367*"/>
+            <ColumnDefinition Width="425*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="464*"/>
+            <RowDefinition Height="105*"/>
+        </Grid.RowDefinitions>
+        <Rectangle x:Name="TopLeftRectangle" Fill="White" HorizontalAlignment="Left" Height="162" Margin="60,89,0,0" Stroke="Black" VerticalAlignment="Top" Width="218"/>
+        <Rectangle x:Name="OrderRectangle" Fill="White" HorizontalAlignment="Left" Height="162" Margin="146,89,0,0" Stroke="Black" VerticalAlignment="Top" Width="231" Grid.Column="1"/>
+        <Image x:Name="AdLeft" HorizontalAlignment="Left" Height="136" Margin="97,96,0,0" VerticalAlignment="Top" Width="135" Source="https://odense-esport.dk/wp-content/uploads/2017/08/LS1_8266.jpg"/>
+        <Button x:Name="BackToShoplbl" Content="Tilbage til Shoppen" HorizontalAlignment="Left" Margin="146,64,0,0" VerticalAlignment="Top" Width="110" Background="White" Grid.Column="1"/>
+        <Button x:Name="ToPaylbl" Content="Til betaling" HorizontalAlignment="Left" Margin="266,64,0,0" VerticalAlignment="Top" Width="110" Background="White" Grid.Column="1"/>
+        <Label x:Name="FinalOrderItem2lbl" Content="Odense Esport tr..&#xD;&#xA;" HorizontalAlignment="Left" Margin="154,116,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+        <Label x:Name="TotalPriceInNumberlbl" Content="1244,00 kr." HorizontalAlignment="Left" Margin="289,206,0,0" VerticalAlignment="Top" Width="80" Grid.Column="1"/>
+        <Label x:Name="FinalOrderItemPrice2lbl" Content="375 kr." HorizontalAlignment="Left" Margin="328,115,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+        <Label x:Name="FinalOrderItem1lbl" Content="Bundle med champ... og rygsæk...&#xD;&#xA;" HorizontalAlignment="Left" Margin="153,89,0,0" VerticalAlignment="Top" Grid.Column="1" Width="118"/>
+        <Label x:Name="FinalOrderItemPrice1lbl" Content="750 kr." HorizontalAlignment="Left" Margin="328,89,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+        <Label Content="________________________________________________________________________________--" HorizontalAlignment="Left" Margin="153,200,0,0" VerticalAlignment="Top" Width="216"  Foreground="Black" Background="Black" Height="1" Grid.Column="1"/>
+        <Rectangle x:Name="RightRectangle" Fill="White" HorizontalAlignment="Left" Height="162" Margin="283,89,0,0" Stroke="Black" VerticalAlignment="Top" Width="225" Grid.ColumnSpan="2"/>
+        <Image x:Name="AdRight" HorizontalAlignment="Left" Height="152" Margin="283,89,0,0" VerticalAlignment="Top" Width="207" Source="https://odense-esport.dk/wp-content/uploads/2018/04/shirt1.png" Grid.ColumnSpan="2"/>
+        <Label x:Name="TotalPricelbl" Content="Totalpris:" HorizontalAlignment="Left" Margin="153,206,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+        <ScrollViewer x:Name="SVItemOverview" CanContentScroll="True" RenderTransformOrigin="0.508,0.642" Margin="60,256,48,55" Grid.ColumnSpan="2" Grid.RowSpan="2">
+            <StackPanel Height="184" Width="684" Margin="0,0,0,0">
+
+                <Image x:Name="Img1" HorizontalAlignment="Left" Height="67" Margin="0,0,0,0" VerticalAlignment="Top" Width="80" Source="https://odense-esport.dk/wp-content/uploads/2018/04/bundle-510x631.jpg" RenderTransformOrigin="-0.52,-0.049"/>
+                <TextBlock x:Name="TextForItem1" TextWrapping="Wrap" FontSize="15" Margin="80,-70,0,0"><Run FontSize="16" Text="Bundle med Champ rygsæk &amp; Pro Gamer Jersey"/><Run Text="&#x9;&#x9;750,00 kr."/><LineBreak/><Run FontSize="11" Text="Kanontilbud på Champ rygsæk &amp; Pro Gamer Jersey."/><Run FontSize="11" Text=" &#x9;&#x9;&#x9;På lager."/><LineBreak/><Run FontSize="12" Text="Navn på trøje kan til købes!"/></TextBlock>
+                <Image x:Name="Img2" HorizontalAlignment="Left" Height="80" Margin="0,0,0,0" VerticalAlignment="Top" Width="80" Source="https://odense-esport.dk/wp-content/uploads/2018/04/shirt1.png" RenderTransformOrigin="-0.52,-0.049"/>
+                <TextBlock x:Name="TextForItem2" TextWrapping="Wrap" FontSize="15" Margin="80,-80,0,0"><Run Text="Odense Esport Trøje"/><Run Text="&#x9;&#x9;&#x9;&#x9;&#x9;375,00 kr."/><LineBreak/><Run Text="&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;På lager."/><LineBreak/><Run/></TextBlock>
+                <Image x:Name="Img3" HorizontalAlignment="Left" Height="80" Margin="0,0,0,0" VerticalAlignment="Top" Width="80" Source="https://odense-esport.dk/wp-content/uploads/2017/08/LS1_8272.jpg" RenderTransformOrigin="-0.52,-0.049"/>
+                <TextBlock x:Name="TextForItem3" TextWrapping="Wrap" FontSize="15" Margin="80,-80,0,0"><Run Text="Cap"/><Run Text="&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;119,00 kr."/><LineBreak/><Run FontSize="11" Text="One size gamer cap fra Odense Esport."/><LineBreak/><Run/><LineBreak/><Run/></TextBlock>
+            </StackPanel>
+        </ScrollViewer>
+        <Label x:Name="TextAd" Content="Du kan stadig nå at købe andre af vores produkter!" HorizontalAlignment="Left" Margin="60,40,0,0" VerticalAlignment="Top" Width="448" FontSize="18" Grid.ColumnSpan="2"/>
+        <Label x:Name="FinalOrderItem3lbl" Content="Cap&#xD;&#xA;" Grid.Column="1" HorizontalAlignment="Left" Margin="154,140,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="FinalOrderItemPrice3lbl" Content="119kr." Grid.Column="1" HorizontalAlignment="Left" Margin="328,140,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Window>
