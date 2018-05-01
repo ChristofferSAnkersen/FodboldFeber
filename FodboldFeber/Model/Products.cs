@@ -13,12 +13,12 @@ namespace FodboldFeber.Model
         public static Products Product { get; set; }
         //Måske skal listofproducts slettes
         public List<Products> ListOfProducts { get; set; }
-        public string Query = "";
-        public void AddProduct()
-        {
-            Product = new Products { ProductID = 1, ProductName = "DækTilSideSpejl", Category = "Merchandise", ProductDescription="en test", ProductPrice = 20, AmountInStock = 20, ShippingPrice = 20 };
-            Query = "insert into Products(ProductID, ProductName, Category, ProductDescription, ProductPrice, AmountInStock, AmountInRoute, ShippingPrice) values('"+ProductID+"','"+ProductName+"','"+Category+"','"+ProductDescription+"','"+ProductPrice+"','"+AmountInStock+"','"+AmountInRoute+"','"+ShippingPrice+"');";  
-        }
+        //public string Query = "";
+        //public void AddProduct()
+        //{
+        //    Product = new Products { ProductID = 1, ProductName = "DækTilSideSpejl", Category = "Merchandise", ProductDescription="en test", ProductPrice = 20, AmountInStock = 20, ShippingPrice = 20 };
+        //    Query = "insert into Products(ProductID, ProductName, Category, ProductDescription, ProductPrice, AmountInStock, AmountInRoute, ShippingPrice) values('"+ProductID+"','"+ProductName+"','"+Category+"','"+ProductDescription+"','"+ProductPrice+"','"+AmountInStock+"','"+AmountInRoute+"','"+ShippingPrice+"');";  
+        //}
         public void UpdateProduct()
         {
 

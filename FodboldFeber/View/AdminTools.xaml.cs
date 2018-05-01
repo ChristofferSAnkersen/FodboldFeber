@@ -13,6 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using FodboldFeber.Controller;
+using System.Data.SqlClient;
+using System.ComponentModel;
 
 namespace FodboldFeber.View
 {
@@ -21,14 +23,7 @@ namespace FodboldFeber.View
     /// </summary>
     public partial class AdminTools : Page
     {
-        ShopController shopController = new ShopController();
 
-        //1st step of converting textbox strings from the UI to integer values
-        private int amountInStock;
-        public int price;
-        public int shippingPrice;
-   
-        
         public AdminTools()
         {
             InitializeComponent();
@@ -36,24 +31,28 @@ namespace FodboldFeber.View
 
         private void CreateProduct_Click(object sender, RoutedEventArgs e)
         {
+            try
+            {
+             string connectionString = "Server=EALSQL1.eal.local; Database=DB2017_A27; User Id= USER_A27; Password=SesamLukOp_27;";
+             string Query = "insert into Products(ProductName, Category, ProductDescription, ProductPrice, AmountInStock, ShippingPrice) values('" +this.ProductName.Text+ "','" +this.Category.Text+ "','" +this.ProductDescription.Text+ "','" +this.ProductPrice.Text+ "','" +this.AmountInStock.Text+ "','" +this.ShippingPrice.Text+ "');";
+                SqlConnection con = new SqlConnection(connectionString);
+                SqlCommand cmd1 = new SqlCommand(Query, con);
+                SqlDataReader myReader;
+                con.Open();
+                myReader = cmd1.ExecuteReader();
+                MessageBox.Show("Varen er nu tilføjet");
+                while (myReader.Read())
+                {
+                }
+                con.Close();
 
-        //2nd step of converting textbox strings from the UI to interger values
-            amountInStock = int.Parse(AmountInStock.Text);
-            price = int.Parse(ProductPrice.Text);
-            shippingPrice = int.Parse(ShippingPrice.Text);
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine(ex + "Det virker ikke :(");
+            }
 
-
-            //Assigning values from the textboxes in the UI to the Product in shopcontroller
-            ShopController.Product.ProductName = ProductName.Text;
-            ShopController.Product.ProductDescription = ProductDescription.Text;
-            ShopController.Product.AmountInStock = amountInStock;
-            ShopController.Product.ProductPrice = price;
-            ShopController.Product.ShippingPrice = shippingPrice;
-            ShopController.Product.Category = Category.Text;
-            shopController.AddProduct();
-
-            MessageBox.Show("Varen er tilføjet");
-          
         }
+    
     }
 }
