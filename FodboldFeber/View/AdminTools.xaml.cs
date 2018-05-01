@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -32,27 +33,30 @@ namespace FodboldFeber.View
 
         private void CreateProduct_Click(object sender, RoutedEventArgs e)
         {
-            ShopController shopcontroller = new ShopController();
+            try
+            {
+                string connectionString = "Server=EALSQL1.eal.local; Database=DB2017_A27; User Id= USER_A27; Password=SesamLukOp_27;";
+                string Query = "insert into Products(ProductName, Category, ProductDescription, ProductPrice, AmountInStock, ShippingPrice) values('" + this.ProductName.Text + "','" + this.Category.Text + "','" + this.ProductDescription.Text + "','" + this.ProductPrice.Text + "','" + this.AmountInStock.Text + "','" + this.ShippingPrice.Text + "');";
+                SqlConnection con = new SqlConnection(connectionString);
+                SqlCommand cmd1 = new SqlCommand(Query, con);
+                SqlDataReader myReader;
+                con.Open();
+                myReader = cmd1.ExecuteReader();
+                MessageBox.Show("Varen er nu tilføjet");
+                while (myReader.Read())
+                {
+                }
+                con.Close();
 
-            //2nd step of converting textbox strings from the UI to interger values
-            _amountInStock = int.Parse(AmountInStock.Text);
-            _price = int.Parse(ProductPrice.Text);
-            _shippingPrice = int.Parse(ShippingPrice.Text);
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine(ex + "Det virker ikke :(");
+            }
 
-            //Assigning values from the textboxes in the UI to the Product in shopcontroller
-            shopcontroller.Product.ProductName = ProductName.Text;
-            shopcontroller.Product.ProductDescription = ProductDescription.Text;
-            shopcontroller.Product.AmountInStock = _amountInStock;
-            shopcontroller.Product.ProductPrice = _price;
-            shopcontroller.Product.ShippingPrice = _shippingPrice;
-            shopcontroller.Product.Category = Category.Text;
-          
         }
 
-        private void Opret_Vare_Click(object sender, RoutedEventArgs e)
-        {
 
-        }
         private void ProductName_GotFocus(object sender, RoutedEventArgs e)
         {
             TextBox textbox = (TextBox)sender;
