@@ -21,10 +21,14 @@ namespace FodboldFeber.View
     /// </summary>
     public partial class AdminTools : Page
     {
+        ShopController shopController = new ShopController();
+
         //1st step of converting textbox strings from the UI to integer values
-        private int _amountInStock;
-        private int _price;
-        private int _shippingPrice;
+        private int amountInStock;
+        public int price;
+        public int shippingPrice;
+   
+        
         public AdminTools()
         {
             InitializeComponent();
@@ -32,26 +36,24 @@ namespace FodboldFeber.View
 
         private void CreateProduct_Click(object sender, RoutedEventArgs e)
         {
-            ShopController shopcontroller = new ShopController();
 
-            //2nd step of converting textbox strings from the UI to interger values
-            _amountInStock = int.Parse(AmountInStock.Text);
-            _price = int.Parse(ProductPrice.Text);
-            _shippingPrice = int.Parse(ShippingPrice.Text);
+        //2nd step of converting textbox strings from the UI to interger values
+            amountInStock = int.Parse(AmountInStock.Text);
+            price = int.Parse(ProductPrice.Text);
+            shippingPrice = int.Parse(ShippingPrice.Text);
+
 
             //Assigning values from the textboxes in the UI to the Product in shopcontroller
-            shopcontroller.Product.ProductName = ProductName.Text;
-            shopcontroller.Product.ProductDescription = ProductDescription.Text;
-            shopcontroller.Product.AmountInStock = _amountInStock;
-            shopcontroller.Product.ProductPrice = _price;
-            shopcontroller.Product.ShippingPrice = _shippingPrice;
-            shopcontroller.Product.Category = Category.Text;
+            ShopController.Product.ProductName = ProductName.Text;
+            ShopController.Product.ProductDescription = ProductDescription.Text;
+            ShopController.Product.AmountInStock = amountInStock;
+            ShopController.Product.ProductPrice = price;
+            ShopController.Product.ShippingPrice = shippingPrice;
+            ShopController.Product.Category = Category.Text;
+            shopController.AddProduct();
+
+            MessageBox.Show("Varen er tilføjet");
           
-        }
-
-        private void Opret_Vare_Click(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }
