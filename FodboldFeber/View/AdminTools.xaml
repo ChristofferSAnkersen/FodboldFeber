@@ -18,13 +18,13 @@
             <ComboBoxItem Content="Large"/>
             <ComboBoxItem Content="X-Large"/>
         </ComboBox>
-        <TextBox x:Name="ProductID" HorizontalAlignment="Left" Height="23" Margin="59,140,0,0" TextWrapping="Wrap" Text="ProduktID" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="ProductName" GotFocus="ProductName_GotFocus" HorizontalAlignment="Left" Height="23" Margin="59,89,0,0" TextWrapping="Wrap" Text="Produkt navn" VerticalAlignment="Top" Width="120" Background="#FFF4F3F3"/>
-        <TextBox x:Name="ProductDescription" GotFocus="ProductName_GotFocus" HorizontalAlignment="Left" Height="179" Margin="422,89,0,0" TextWrapping="Wrap" Text="Produkt beskrivelse" VerticalAlignment="Top" Width="229" RenderTransformOrigin="0.406,0.396"/>
-        <TextBox x:Name="ProductPrice" GotFocus="ProductName_GotFocus" HorizontalAlignment="Left" Height="23" Margin="237,140,0,0" TextWrapping="Wrap" Text="Pris" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="AmountInStock" GotFocus="ProductName_GotFocus" HorizontalAlignment="Left" Height="23" Margin="59,245,0,0" TextWrapping="Wrap" Text="Antal på lager" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="ShippingPrice" GotFocus="ProductName_GotFocus" HorizontalAlignment="Left" Height="23" Margin="237,245,0,0" TextWrapping="Wrap" Text="Fragt pris" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="DiscountPrice" GotFocus="ProductName_GotFocus" HorizontalAlignment="Left" Height="23" Margin="237,89,0,0" TextWrapping="Wrap" Text="Tilbuds pris" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="ProductID" GotFocus="ProductName_GotFocus" LostFocus="ProductName_LostFocus" HorizontalAlignment="Left" Height="23" Margin="59,140,0,0" TextWrapping="Wrap" Text="ProduktID" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="ProductName" GotFocus="ProductName_GotFocus" LostFocus="ProductName_LostFocus" HorizontalAlignment="Left" Height="23" Margin="59,89,0,0" TextWrapping="Wrap" Text="Produkt navn" VerticalAlignment="Top" Width="120" Background="#FFF4F3F3"/>
+        <TextBox x:Name="ProductDescription" GotFocus="ProductName_GotFocus" LostFocus="ProductName_LostFocus" HorizontalAlignment="Left" Height="179" Margin="422,89,0,0" TextWrapping="Wrap" Text="Produkt beskrivelse" VerticalAlignment="Top" Width="229" RenderTransformOrigin="0.406,0.396"/>
+        <TextBox x:Name="ProductPrice" GotFocus="ProductName_GotFocus" LostFocus="ProductName_LostFocus" HorizontalAlignment="Left" Height="23" Margin="237,140,0,0" TextWrapping="Wrap" Text="Pris" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="AmountInStock" GotFocus="ProductName_GotFocus" LostFocus="ProductName_LostFocus" HorizontalAlignment="Left" Height="23" Margin="59,245,0,0" TextWrapping="Wrap" Text="Antal på lager" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="ShippingPrice" GotFocus="ProductName_GotFocus" LostFocus="ProductName_LostFocus" HorizontalAlignment="Left" Height="23" Margin="237,245,0,0" TextWrapping="Wrap" Text="Fragt pris" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="DiscountPrice" GotFocus="ProductName_GotFocus" LostFocus="ProductName_LostFocus" HorizontalAlignment="Left" Height="23" Margin="237,89,0,0" TextWrapping="Wrap" Text="Tilbuds pris" VerticalAlignment="Top" Width="120"/>
         <ComboBox x:Name="Category" Text="Vælg Kategori" HorizontalAlignment="Left" Margin="59,189,0,0" VerticalAlignment="Top" Width="120">
             <ComboBoxItem Content="Merchandise"/>
             <ComboBoxItem Content="Trøjer"/>

@@ -56,22 +56,70 @@ namespace FodboldFeber.View
         private void ProductName_GotFocus(object sender, RoutedEventArgs e)
         {
             TextBox textbox = (TextBox)sender;
-            textbox.Text = string.Empty;
+            if (textbox.Name == "ProductID" && textbox.Text == "" || textbox.Text == "ProduktID")
+            {
+                textbox.Text = string.Empty;
+            }
+            if (textbox.Name == "ProductName" && textbox.Text == "" || textbox.Text == "Produkt navn")
+            {
+                textbox.Text = string.Empty;
+            }
+            if (textbox.Name == "ProductDescription" && textbox.Text == "" || textbox.Text == "Produkt beskrivelse")
+            {
+                textbox.Text = string.Empty;
+            }
+            if (textbox.Name == "ProductPrice" && textbox.Text == "" || textbox.Text == "Pris")
+            {
+                textbox.Text = string.Empty;
+            }
+            if (textbox.Name == "AmountInStock" && textbox.Text == "" || textbox.Text == "Antal på lager")
+            {
+                textbox.Text = string.Empty;
+            }
+            if (textbox.Name == "ShippingPrice" && textbox.Text == "" || textbox.Text == "Fragt pris")
+            {
+                textbox.Text = string.Empty;
+            }
+            if (textbox.Name == "DiscountPrice" && textbox.Text == "" || textbox.Text == "Tilbuds pris")
+            {
+                textbox.Text = string.Empty;
+            }
             textbox.GotFocus -= ProductName_GotFocus;
+
+
         }
         private void ProductName_LostFocus(object sender, RoutedEventArgs e)
         {
-            TextBox tb = (TextBox)sender;
-            if (tb.Name == "ProductName")
+            TextBox textBox = (TextBox)sender;
+            if (textBox.Name == "ProductID" && textBox.Text == "")
             {
-                tb.Text = "Produkt navn";
+                textBox.Text = "ProduktID";
             }
-            else if (tb.Name == "ProductDescription")
+            else if (textBox.Name == "ProductName" && textBox.Text == "")
             {
-                tb.Text = "Produkt beskrivelse";
+                textBox.Text = "Produkt navn";
             }
-
-            tb.GotFocus += ProductName_GotFocus;
+            else if (textBox.Name == "ProductDescription" && textBox.Text == "")
+            {
+                textBox.Text = "Produkt beskrivelse";
+            }
+            else if (textBox.Name == "ProductPrice" && textBox.Text == "")
+            {
+                textBox.Text = "Pris";
+            }
+            else if (textBox.Name == "AmountInStock" && textBox.Text == "")
+            {
+                textBox.Text = "Antal på lager";
+            }
+            else if (textBox.Name == "ShippingPrice" && textBox.Text == "")
+            {
+                textBox.Text = "Fragt pris";
+            }
+            else if (textBox.Name == "DiscountPrice" && textBox.Text == "")
+            {
+                textBox.Text = "Tilbuds pris";
+            }
+            textBox.GotFocus += ProductName_GotFocus;
         }
     }
 }
