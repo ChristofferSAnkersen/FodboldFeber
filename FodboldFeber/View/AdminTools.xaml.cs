@@ -13,6 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using FodboldFeber.Controller;
+using System.Data.SqlClient;
+using System.ComponentModel;
 
 namespace FodboldFeber.View
 {
@@ -21,37 +23,103 @@ namespace FodboldFeber.View
     /// </summary>
     public partial class AdminTools : Page
     {
-        //1st step of converting textbox strings from the UI to integer values
-        private int _amountInStock;
-        private int _price;
-        private int _shippingPrice;
+        ShopController shopController = new ShopController();
         public AdminTools()
         {
             InitializeComponent();
         }
-
+        public string Query = "";
         private void CreateProduct_Click(object sender, RoutedEventArgs e)
         {
-            ShopController shopcontroller = new ShopController();
+            try
+            {
+             string connectionString = "Server=EALSQL1.eal.local; Database=DB2017_A27; User Id= USER_A27; Password=SesamLukOp_27;";
+             Query = "insert into Products(ProductID, ProductName, Category, ProductDescription, ProductPrice, AmountInStock, ShippingPrice, Size, DiscountPrice) values('" +this.ProductID.Text+ "','" +this.ProductName.Text+ "','" +this.Category.Text+ "','" +this.ProductDescription.Text+ "','" +this.ProductPrice.Text+ "','" +this.AmountInStock.Text+ "','" +this.ShippingPrice.Text+ "','" +this.Size.Text+ "','" +this.DiscountPrice.Text+ "');";
+                SqlConnection con = new SqlConnection(connectionString);
+                SqlCommand cmd1 = new SqlCommand(Query, con);
+                SqlDataReader myReader;
+                con.Open();
+                myReader = cmd1.ExecuteReader();
+                shopController.AddProduct();
+                MessageBox.Show("Varen er nu tilføjet");
+                while (myReader.Read())
+                {
+                }
+                con.Close();
 
-            //2nd step of converting textbox strings from the UI to interger values
-            _amountInStock = int.Parse(AmountInStock.Text);
-            _price = int.Parse(ProductPrice.Text);
-            _shippingPrice = int.Parse(ShippingPrice.Text);
-
-            //Assigning values from the textboxes in the UI to the Product in shopcontroller
-            shopcontroller.Product.ProductName = ProductName.Text;
-            shopcontroller.Product.ProductDescription = ProductDescription.Text;
-            shopcontroller.Product.AmountInStock = _amountInStock;
-            shopcontroller.Product.ProductPrice = _price;
-            shopcontroller.Product.ShippingPrice = _shippingPrice;
-            shopcontroller.Product.Category = Category.Text;
-          
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex + "Det virker ikke :(");
+            }
         }
-
-        private void Opret_Vare_Click(object sender, RoutedEventArgs e)
+        private void ProductName_GotFocus(object sender, RoutedEventArgs e)
         {
+            TextBox textbox = (TextBox)sender;
+            if (textbox.Name == "ProductID" && textbox.Text == "" || textbox.Text == "ProduktID")
+            {
+                textbox.Text = string.Empty;
+            }
+            if (textbox.Name == "ProductName" && textbox.Text == "" || textbox.Text == "Produkt navn")
+            {
+                textbox.Text = string.Empty;
+            }
+            if (textbox.Name == "ProductDescription" && textbox.Text == "" || textbox.Text == "Produkt beskrivelse")
+            {
+                textbox.Text = string.Empty;
+            }
+            if (textbox.Name == "ProductPrice" && textbox.Text == "" || textbox.Text == "Pris")
+            {
+                textbox.Text = string.Empty;
+            }
+            if (textbox.Name == "AmountInStock" && textbox.Text == "" || textbox.Text == "Antal på lager")
+            {
+                textbox.Text = string.Empty;
+            }
+            if (textbox.Name == "ShippingPrice" && textbox.Text == "" || textbox.Text == "Fragt pris")
+            {
+                textbox.Text = string.Empty;
+            }
+            if (textbox.Name == "DiscountPrice" && textbox.Text == "" || textbox.Text == "Tilbuds pris")
+            {
+                textbox.Text = string.Empty;
+            }
+            textbox.GotFocus -= ProductName_GotFocus;
 
+
+        }
+        private void ProductName_LostFocus(object sender, RoutedEventArgs e)
+        {
+            TextBox textBox = (TextBox)sender;
+            if (textBox.Name == "ProductID" && textBox.Text == "")
+            {
+                textBox.Text = "ProduktID";
+            }
+            else if (textBox.Name == "ProductName" && textBox.Text == "")
+            {
+                textBox.Text = "Produkt navn";
+            }
+            else if (textBox.Name == "ProductDescription" && textBox.Text == "")
+            {
+                textBox.Text = "Produkt beskrivelse";
+            }
+            else if (textBox.Name == "ProductPrice" && textBox.Text == "")
+            {
+                textBox.Text = "Pris";
+            }
+            else if (textBox.Name == "AmountInStock" && textBox.Text == "")
+            {
+                textBox.Text = "Antal på lager";
+            }
+            else if (textBox.Name == "ShippingPrice" && textBox.Text == "")
+            {
+                textBox.Text = "Fragt pris";
+            }
+            else if (textBox.Name == "DiscountPrice" && textBox.Text == "")
+            {
+                textBox.Text = "Tilbuds pris";
+            }
+            textBox.GotFocus += ProductName_GotFocus;
         }
     }
 }

@@ -8,18 +8,17 @@ using FodboldFeber.View;
 
 namespace FodboldFeber.Controller
 {
-    class ShopController
+    public class ShopController
     {
-        private Products _products;
-        public Products Product { get; set; }
-        //måske skal listofproducts slettes
-        public List<Products> ListOfProducts { get; set; }
+
+        AdminTools adminTools;
 
         public void AddProduct()
         {
-            Products products = new Products();
+            Products p = new Products();
             //Adding the values to the property "Product" of the ShopController class
-            Product = products.Product;
+            p.Product = adminTools.Query;
+            p.AddProduct();
            
         }
     }
