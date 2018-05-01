@@ -10,7 +10,7 @@ namespace FodboldFeber.Controller
 {
     class ShopController
     {
-        private Products _products;
+        //private Products _products;
         public Products Product { get; set; }
         //måske skal listofproducts slettes
         public List<Products> ListOfProducts { get; set; }

@@ -53,5 +53,12 @@ namespace FodboldFeber.View
         {
 
         }
+        private void ProductName_GotFocus(object sender, RoutedEventArgs e)
+        {
+            TextBox textbox = (TextBox)sender;
+            string originalText = textbox.Text;
+            textbox.Text = string.Empty;
+            textbox.GotFocus -= ProductName_GotFocus;
+        }
     }
 }

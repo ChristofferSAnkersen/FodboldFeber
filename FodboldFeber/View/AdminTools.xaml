@@ -11,11 +11,11 @@
 
     <Grid>
         <Button x:Name="CreateProduct" Content="Gem" HorizontalAlignment="Left" Margin="523,125,0,0" VerticalAlignment="Top" Width="75" Click="Opret_Vare_Click"/>
-        <TextBox x:Name="ProductName" HorizontalAlignment="Left" Height="23" Margin="43,89,0,0" TextWrapping="Wrap" Text="Produkt navn" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="ProductDescription" HorizontalAlignment="Left" Height="23" Margin="197,89,0,0" TextWrapping="Wrap" Text="Produkt beskrivelse" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="ProductPrice" HorizontalAlignment="Left" Height="23" Margin="197,140,0,0" TextWrapping="Wrap" Text="Pris" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="AmountInStock" HorizontalAlignment="Left" Height="23" Margin="360,89,0,0" TextWrapping="Wrap" Text="Antal på lager" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="ShippingPrice" HorizontalAlignment="Left" Height="23" Margin="360,140,0,0" TextWrapping="Wrap" Text="Fragt pris" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="ProductName" GotFocus="ProductName_GotFocus" HorizontalAlignment="Left" Height="23" Margin="43,89,0,0" TextWrapping="Wrap" Text="Produkt navn" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="ProductDescription" GotFocus="ProductName_GotFocus" HorizontalAlignment="Left" Height="23" Margin="197,89,0,0" TextWrapping="Wrap" Text="Produkt beskrivelse" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="ProductPrice" GotFocus="ProductName_GotFocus" HorizontalAlignment="Left" Height="23" Margin="197,140,0,0" TextWrapping="Wrap" Text="Pris" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="AmountInStock" GotFocus="ProductName_GotFocus" HorizontalAlignment="Left" Height="23" Margin="360,89,0,0" TextWrapping="Wrap" Text="Antal på lager" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="ShippingPrice" GotFocus="ProductName_GotFocus" HorizontalAlignment="Left" Height="23" Margin="360,140,0,0" TextWrapping="Wrap" Text="Fragt pris" VerticalAlignment="Top" Width="120"/>
         <ComboBox x:Name="Category" HorizontalAlignment="Left" Margin="43,141,0,0" VerticalAlignment="Top" Width="120">
             <ComboBoxItem Content="Merchandise"/>
             <ComboBoxItem Content="Trøjer"/>
