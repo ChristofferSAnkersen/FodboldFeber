@@ -14,13 +14,13 @@
             
         </GroupBox>
         <TextBox x:Name="ProductID" HorizontalAlignment="Left" Height="23" Margin="59,140,0,0" TextWrapping="Wrap" Text="ProduktID" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="ProductName" HorizontalAlignment="Left" Height="23" Margin="59,89,0,0" TextWrapping="Wrap" Text="Produkt navn" VerticalAlignment="Top" Width="120" Background="#FFF4F3F3"/>
-        <TextBox x:Name="ProductDescription" HorizontalAlignment="Left" Height="23" Margin="274,89,0,0" TextWrapping="Wrap" Text="Produkt beskrivelse" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="ProductPrice" HorizontalAlignment="Left" Height="23" Margin="274,140,0,0" TextWrapping="Wrap" Text="Pris" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="AmountInStock" HorizontalAlignment="Left" Height="23" Margin="456,89,0,0" TextWrapping="Wrap" Text="Antal på lager" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="ShippingPrice" HorizontalAlignment="Left" Height="23" Margin="456,140,0,0" TextWrapping="Wrap" Text="Fragt pris" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="Size" HorizontalAlignment="Left" Height="23" Margin="274,188,0,0" TextWrapping="Wrap" Text="Størrelse" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="DiscountPrice" HorizontalAlignment="Left" Height="23" Margin="456,188,0,0" TextWrapping="Wrap" Text="Tilbuds pris" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="ProductName" GotFocus="ProductName_GotFocus" HorizontalAlignment="Left" Height="23" Margin="59,89,0,0" TextWrapping="Wrap" Text="Produkt navn" VerticalAlignment="Top" Width="120" Background="#FFF4F3F3"/>
+        <TextBox x:Name="ProductDescription" GotFocus="ProductName_GotFocus" HorizontalAlignment="Left" Height="23" Margin="274,89,0,0" TextWrapping="Wrap" Text="Produkt beskrivelse" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="ProductPrice" GotFocus="ProductName_GotFocus" HorizontalAlignment="Left" Height="23" Margin="274,140,0,0" TextWrapping="Wrap" Text="Pris" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="AmountInStock" GotFocus="ProductName_GotFocus" HorizontalAlignment="Left" Height="23" Margin="456,89,0,0" TextWrapping="Wrap" Text="Antal på lager" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="ShippingPrice" GotFocus="ProductName_GotFocus" HorizontalAlignment="Left" Height="23" Margin="456,140,0,0" TextWrapping="Wrap" Text="Fragt pris" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="Size" GotFocus="ProductName_GotFocus" HorizontalAlignment="Left" Height="23" Margin="274,188,0,0" TextWrapping="Wrap" Text="Størrelse" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="DiscountPrice" GotFocus="ProductName_GotFocus" HorizontalAlignment="Left" Height="23" Margin="456,188,0,0" TextWrapping="Wrap" Text="Tilbuds pris" VerticalAlignment="Top" Width="120"/>
         <ComboBox x:Name="Category" Text="Vælg Kategori" HorizontalAlignment="Left" Margin="59,189,0,0" VerticalAlignment="Top" Width="120">
             <ComboBoxItem Content="Merchandise"/>
             <ComboBoxItem Content="Trøjer"/>
