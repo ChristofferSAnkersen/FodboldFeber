@@ -19,7 +19,7 @@ namespace FodboldFeber.Model
             //{
             //    try
             //    {
-            //        SqlCommand cmd1 = new SqlCommand(products.Query,con);
+            //        SqlCommand cmd1 = new SqlCommand(products.Query, con);
             //        SqlDataReader myReader;
             //        con.Open();
             //        myReader = cmd1.ExecuteReader();
@@ -29,7 +29,7 @@ namespace FodboldFeber.Model
             //        con.Close();
 
             //    }
-            //    catch(SqlException e)
+            //    catch (SqlException e)
             //    {
             //        Console.WriteLine(e + "Det virker ikke :(");
             //    }
