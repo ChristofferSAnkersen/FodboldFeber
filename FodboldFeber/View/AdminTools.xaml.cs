@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,6 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using FodboldFeber.Controller;
+using System.Data.SqlClient;
+using System.ComponentModel;
 
 namespace FodboldFeber.View
 {
@@ -22,10 +23,7 @@ namespace FodboldFeber.View
     /// </summary>
     public partial class AdminTools : Page
     {
-        //1st step of converting textbox strings from the UI to integer values
-        private int _amountInStock;
-        private int _price;
-        private int _shippingPrice;
+
         public AdminTools()
         {
             InitializeComponent();
@@ -35,8 +33,8 @@ namespace FodboldFeber.View
         {
             try
             {
-                string connectionString = "Server=EALSQL1.eal.local; Database=DB2017_A27; User Id= USER_A27; Password=SesamLukOp_27;";
-                string Query = "insert into Products(ProductName, Category, ProductDescription, ProductPrice, AmountInStock, ShippingPrice) values('" + this.ProductName.Text + "','" + this.Category.Text + "','" + this.ProductDescription.Text + "','" + this.ProductPrice.Text + "','" + this.AmountInStock.Text + "','" + this.ShippingPrice.Text + "');";
+             string connectionString = "Server=EALSQL1.eal.local; Database=DB2017_A27; User Id= USER_A27; Password=SesamLukOp_27;";
+             string Query = "insert into Products(ProductID, ProductName, Category, ProductDescription, ProductPrice, AmountInStock, ShippingPrice, Size, DiscountPrice, BulkPrice) values('" +this.ProductID.Text+ "','" +this.ProductName.Text+ "','" +this.Category.Text+ "','" +this.ProductDescription.Text+ "','" +this.ProductPrice.Text+ "','" +this.AmountInStock.Text+ "','" +this.ShippingPrice.Text+ "','" +this.Size.Text+ "','" +this.DiscountPrice.Text+"');";
                 SqlConnection con = new SqlConnection(connectionString);
                 SqlCommand cmd1 = new SqlCommand(Query, con);
                 SqlDataReader myReader;
@@ -55,14 +53,6 @@ namespace FodboldFeber.View
             }
 
         }
-
-
-        private void ProductName_GotFocus(object sender, RoutedEventArgs e)
-        {
-            TextBox textbox = (TextBox)sender;
-            string originalText = textbox.Text;
-            textbox.Text = string.Empty;
-            textbox.GotFocus -= ProductName_GotFocus;
-        }
+    
     }
 }
