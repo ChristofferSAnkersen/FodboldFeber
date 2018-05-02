@@ -5,38 +5,40 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:FodboldFeber.View"
       Background="White"
-      mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
-      Title="AdminTools">
-  <ScrollViewer>
-    <Grid>
-        <GroupBox Header="" HorizontalAlignment="Left" Height="220" Margin="31,65,0,0" VerticalAlignment="Top" Width="644" Background="#FFB4B4B4">
-        </GroupBox>
-        <ComboBox x:Name="Size" HorizontalAlignment="Left" Margin="237,189,0,0" VerticalAlignment="Top" Width="120">
-            <ComboBoxItem Content="Small"/>
-            <ComboBoxItem Content="Medium"/>
-            <ComboBoxItem Content="Large"/>
-            <ComboBoxItem Content="X-Large"/>
-        </ComboBox>
-        <TextBox x:Name="ProductID" GotFocus="ProductName_GotFocus" LostFocus="ProductName_LostFocus" HorizontalAlignment="Left" Height="23" Margin="59,140,0,0" TextWrapping="Wrap" Text="ProduktID" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="ProductName" GotFocus="ProductName_GotFocus" LostFocus="ProductName_LostFocus" HorizontalAlignment="Left" Height="23" Margin="59,89,0,0" TextWrapping="Wrap" Text="Produkt navn" VerticalAlignment="Top" Width="120" Background="#FFF4F3F3"/>
-        <TextBox x:Name="ProductDescription" GotFocus="ProductName_GotFocus" LostFocus="ProductName_LostFocus" HorizontalAlignment="Left" Height="179" Margin="422,89,0,0" TextWrapping="Wrap" Text="Produkt beskrivelse" VerticalAlignment="Top" Width="229" RenderTransformOrigin="0.406,0.396"/>
-        <TextBox x:Name="ProductPrice" GotFocus="ProductName_GotFocus" LostFocus="ProductName_LostFocus" HorizontalAlignment="Left" Height="23" Margin="237,140,0,0" TextWrapping="Wrap" Text="Pris" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="AmountInStock" GotFocus="ProductName_GotFocus" LostFocus="ProductName_LostFocus" HorizontalAlignment="Left" Height="23" Margin="59,245,0,0" TextWrapping="Wrap" Text="Antal på lager" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="ShippingPrice" GotFocus="ProductName_GotFocus" LostFocus="ProductName_LostFocus" HorizontalAlignment="Left" Height="23" Margin="237,245,0,0" TextWrapping="Wrap" Text="Fragt pris" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="DiscountPrice" GotFocus="ProductName_GotFocus" LostFocus="ProductName_LostFocus" HorizontalAlignment="Left" Height="23" Margin="237,89,0,0" TextWrapping="Wrap" Text="Tilbuds pris" VerticalAlignment="Top" Width="120"/>
-        <ComboBox x:Name="Category" Text="Vælg Kategori" HorizontalAlignment="Left" Margin="59,189,0,0" VerticalAlignment="Top" Width="120">
-            <ComboBoxItem Content="Merchandise"/>
-            <ComboBoxItem Content="Trøjer"/>
-        </ComboBox>
-            <Label Content="Opret vare" HorizontalAlignment="Left" Margin="167,10,0,0" VerticalAlignment="Top" FontSize="30"/>
-        <Button x:Name="CreateProduct" Content="Gem" HorizontalAlignment="Left" Margin="693,149,0,0" VerticalAlignment="Top" Width="75" Click="CreateProduct_Click"/>
-        <GroupBox Header="" HorizontalAlignment="Left" Height="100" Margin="31,290,0,0" VerticalAlignment="Top" Width="464">
-            <GroupBox.Background>
-                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ActiveBorderColorKey}}"/>
-            </GroupBox.Background>
-        </GroupBox>
-        <Button Content="Opdater" HorizontalAlignment="Left" Margin="576,328,0,0" VerticalAlignment="Top" Width="75"/>
-    </Grid>
-  </ScrollViewer>
+      mc:Ignorable="d" d:DesignWidth="800"
+      Title="AdminTools" Height="535.83">
+    <ScrollViewer>
+        <Grid>
+            <GroupBox Header="" HorizontalAlignment="Left" Height="220" Margin="31,65,0,0" VerticalAlignment="Top" Width="644" Background="#FFB4B4B4">
+            </GroupBox>
+            <ComboBox x:Name="Size" HorizontalAlignment="Left" Margin="237,189,0,0" VerticalAlignment="Top" Width="120">
+                <ComboBoxItem Content="Small"/>
+                <ComboBoxItem Content="Medium"/>
+                <ComboBoxItem Content="Large"/>
+                <ComboBoxItem Content="X-Large"/>
+            </ComboBox>
+            <TextBox x:Name="ProductID" GotFocus="ProductName_GotFocus" LostFocus="ProductName_LostFocus" HorizontalAlignment="Left" Height="23" Margin="59,140,0,0" TextWrapping="Wrap" Text="ProduktID" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="ProductName" GotFocus="ProductName_GotFocus" LostFocus="ProductName_LostFocus" HorizontalAlignment="Left" Height="23" Margin="59,89,0,0" TextWrapping="Wrap" Text="Produkt navn" VerticalAlignment="Top" Width="120" Background="#FFF4F3F3"/>
+            <TextBox x:Name="ProductDescription" GotFocus="ProductName_GotFocus" LostFocus="ProductName_LostFocus" HorizontalAlignment="Left" Height="179" Margin="422,89,0,0" TextWrapping="Wrap" Text="Produkt beskrivelse" VerticalAlignment="Top" Width="229" RenderTransformOrigin="0.406,0.396"/>
+            <TextBox x:Name="ProductPrice" GotFocus="ProductName_GotFocus" LostFocus="ProductName_LostFocus" HorizontalAlignment="Left" Height="23" Margin="237,140,0,0" TextWrapping="Wrap" Text="Pris" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="AmountInStock" GotFocus="ProductName_GotFocus" LostFocus="ProductName_LostFocus" HorizontalAlignment="Left" Height="23" Margin="59,245,0,0" TextWrapping="Wrap" Text="Antal på lager" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="ShippingPrice" GotFocus="ProductName_GotFocus" LostFocus="ProductName_LostFocus" HorizontalAlignment="Left" Height="23" Margin="237,245,0,0" TextWrapping="Wrap" Text="Fragt pris" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="DiscountPrice" GotFocus="ProductName_GotFocus" LostFocus="ProductName_LostFocus" HorizontalAlignment="Left" Height="23" Margin="237,89,0,0" TextWrapping="Wrap" Text="Tilbuds pris" VerticalAlignment="Top" Width="120"/>
+            <ComboBox x:Name="Category" Text="Vælg Kategori" HorizontalAlignment="Left" Margin="59,189,0,0" VerticalAlignment="Top" Width="120">
+                <ComboBoxItem Content="Merchandise"/>
+                <ComboBoxItem Content="Trøjer"/>
+            </ComboBox>
+            <Label Content="Opret vare" HorizontalAlignment="Left" Margin="237,10,0,0" VerticalAlignment="Top" FontSize="30"/>
+            <Button x:Name="CreateProduct" Content="Gem" HorizontalAlignment="Left" Margin="693,149,0,0" VerticalAlignment="Top" Width="75" Click="CreateProduct_Click"/>
+            <GroupBox Header="" HorizontalAlignment="Left" Height="153" Margin="31,357,0,0" VerticalAlignment="Top" Width="644">
+                <GroupBox.Background>
+                    <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ActiveBorderColorKey}}"/>
+                
+                </GroupBox.Background>
+            </GroupBox>
+            <Button Content="Slet" HorizontalAlignment="Left" Margin="693,440,0,0" VerticalAlignment="Top" Width="75"/>
+            <Label Content="Slet vare" HorizontalAlignment="Left" Margin="264,307,0,0" VerticalAlignment="Top" FontSize="30"/>
+            <ComboBox x:Name="ChooseToDelete" HorizontalAlignment="Left" Margin="422,330,0,0" VerticalAlignment="Top" Width="120"/>
+        </Grid>
+    </ScrollViewer>
 </Page>

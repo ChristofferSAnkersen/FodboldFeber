@@ -5,20 +5,46 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.ComponentModel;
+using System.Linq;
+
 
 namespace FodboldFeber.Model
 {
-    public class Products : INotifyPropertyChanged
+   
+    public class Products
     {
-        
-        public string Product { get; set; }
-       
-        
-        public List<string> ListOfProducts;
+        //List of products, should have the same data as the table "Products" in the database
+        public List<Products> ListOfProducts = new List<Products>();
         
         public void AddProduct()
         {
-            ListOfProducts.Add(Product);
+            try
+            {
+                string connectionString = "Server=EALSQL1.eal.local; Database=DB2017_A27; User Id= USER_A27; Password=SesamLukOp_27;";
+                SqlConnection con = new SqlConnection(connectionString);
+                con.Open();
+                SqlCommand sqlCommand = new SqlCommand("SELECT * FROM Products", con);
+                SqlDataReader reader = sqlCommand.ExecuteReader();
+                while (reader.Read())
+                {
+                    Products p = new Products();
+                    p.ProductID = (int)reader["ProductID"];
+                    p.ProductName = (string)reader["ProductName"];
+                    p.Category = (string)reader["Category"];
+                    p.ProductDescription = (string)reader["ProductDescription"];
+                    p.ProductPrice = (double)reader["ProductPrice"];
+                    p.AmountInStock = (int)reader["AmountInStock"];
+                    p.ShippingPrice = (double)reader["ShippingPrice"];
+                    p.Size = (string)reader["Size"];
+                    p.DiscountPrice = (double)reader["DiscountPrice"];
+                    ListOfProducts.Add(p);
+                }
+                
+            }
+            catch(SqlException e)
+            {
+                Console.WriteLine(e+"Could not add items to the list");
+            }
         }
         public void UpdateProduct()
         {
@@ -49,8 +75,9 @@ namespace FodboldFeber.Model
         public string ProductDescription { get; set; }
         public double ProductPrice { get; set; }
         public int AmountInStock { get; set; }
-        public int AmountInRoute { get; set; }
         public double ShippingPrice { get; set; }
+        public string Size { get; set; }
+        public double DiscountPrice { get; set; }
 
         public event PropertyChangedEventHandler PropertyChanged;
 

@@ -27,15 +27,43 @@ namespace FodboldFeber.View
         public AdminTools()
         {
             InitializeComponent();
+            ListInCombobox();
+        }
+        //Connection to the sql database
+        string connectionString = "Server=EALSQL1.eal.local; Database=DB2017_A27; User Id= USER_A27; Password=SesamLukOp_27;";
+
+        //Function that should make it possible for the combobox to be filled with already existing items in the database for the user to choose from when deciding what item(s) to delete
+        public void ListInCombobox()
+        {
+            try
+            {
+                SqlConnection con = new SqlConnection(connectionString);
+                con.Open();
+                string DeleteQuery = "SELECT * from Products";
+                SqlCommand listCommands = new SqlCommand(DeleteQuery, con);
+                SqlDataReader reader = listCommands.ExecuteReader();
+              
+                while(reader.Read())
+                {
+                    //Chooses the row that should be the determing factor(displayed in the combobox) it is GetString(1) because 1st collumn in the table is 0, 2nd is 1
+                    string ProductNames = reader.GetString(1);
+                    ChooseToDelete.Items.Add(ProductNames);
+                }
+                con.Close();
+            }
+            catch(SqlException e)
+            {
+                Console.WriteLine(e + "Listen kunne ikke blive udfyldt");
+            }
         }
         public string Query = "";
+
         private void CreateProduct_Click(object sender, RoutedEventArgs e)
         {
             try
             {
-                //Connection to the sql database
-             string connectionString = "Server=EALSQL1.eal.local; Database=DB2017_A27; User Id= USER_A27; Password=SesamLukOp_27;";
                 //Assigns the textbox values to the "Query" variable.
+
                 Query = "insert into Products(ProductID, ProductName, Category, ProductDescription, ProductPrice, AmountInStock, ShippingPrice, Size, DiscountPrice) values('" +this.ProductID.Text+ "','" +this.ProductName.Text+ "','" +this.Category.Text+ "','" +this.ProductDescription.Text+ "','" +this.ProductPrice.Text+ "','" +this.AmountInStock.Text+ "','" +this.ShippingPrice.Text+ "','" +this.Size.Text+ "','" +this.DiscountPrice.Text+ "');";
                 SqlConnection con = new SqlConnection(connectionString);
                 //Adds the user input for products to the table "Products" in the database
