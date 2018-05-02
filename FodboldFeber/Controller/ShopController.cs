@@ -16,10 +16,8 @@ namespace FodboldFeber.Controller
         public void AddProduct()
         {
             Products p = new Products();
-            //Adding the values to the property "Product" of the Products class
-            p.Product = adminTools.Query;
             p.AddProduct();
-           
+
         }
     }
 }
