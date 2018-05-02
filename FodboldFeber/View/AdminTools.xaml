@@ -8,7 +8,7 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="AdminTools">
-
+  <ScrollViewer>
     <Grid>
         <GroupBox Header="" HorizontalAlignment="Left" Height="220" Margin="31,65,0,0" VerticalAlignment="Top" Width="644" Background="#FFB4B4B4">
         </GroupBox>
@@ -38,4 +38,5 @@
         </GroupBox>
         <Button Content="Opdater" HorizontalAlignment="Left" Margin="576,328,0,0" VerticalAlignment="Top" Width="75"/>
     </Grid>
+  </ScrollViewer>
 </Page>

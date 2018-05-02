@@ -12,14 +12,15 @@ namespace FodboldFeber.Model
     {
         
         public string Product { get; set; }
-        //Måske skal listofproducts slettes
+       
+        
         public List<string> ListOfProducts;
-        //public string Query = "";
+        
         public void AddProduct()
         {
             ListOfProducts.Add(Product);
         }
-public void UpdateProduct()
+        public void UpdateProduct()
         {
 
         }
