@@ -70,6 +70,11 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Controller\ShopController.cs" />
+    <Compile Include="InstantSearch\ProductsResultItem.cs" />
+    <Compile Include="InstantSearch\ErrorResultItem.cs" />
+    <Compile Include="InstantSearch\HelpResultItem.cs" />
+    <Compile Include="InstantSearch\ResultItem.cs" />
+    <Compile Include="Model\SearchFunction.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -222,5 +227,6 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
