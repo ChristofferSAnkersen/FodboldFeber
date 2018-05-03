@@ -32,7 +32,7 @@ namespace FodboldFeber.View
         //Connection to the sql database
         string connectionString = "Server=EALSQL1.eal.local; Database=DB2017_A27; User Id= USER_A27; Password=SesamLukOp_27;";
 
-        //Function that should make it possible for the combobox to be filled with already existing items in the database for the user to choose from when deciding what item(s) to delete
+        //Function that makes it possible for the combobox to be filled with already existing items in the database for the user to choose from when deciding what item(s) to delete
         public void ListInCombobox()
         {
             try
@@ -77,6 +77,10 @@ namespace FodboldFeber.View
                 while (myReader.Read())
                 {
                 }
+                //Clears the ChooseToDelete combobox 
+                ChooseToDelete.Items.Clear();
+                //Populates the ChooseToDelete combobox again, including the just added item
+                ListInCombobox();
                 con.Close();
 
             }
@@ -152,6 +156,80 @@ namespace FodboldFeber.View
                 textBox.Text = "Tilbuds pris";
             }
             textBox.GotFocus += ProductName_GotFocus;
+        }
+
+
+        //Event that determines the content of the textboxes in the update/delete are of "AdminTools"
+        private void ChooseToDelete_DropDownClosed(object sender, EventArgs e)
+        {
+            {
+                try
+                {
+                    SqlConnection con = new SqlConnection(connectionString);
+                    con.Open();
+                    string DeleteQuery = "SELECT * from Products where ProductName='" + ChooseToDelete.Text + "' ";
+                    SqlCommand listCommands = new SqlCommand(DeleteQuery, con);
+                    SqlDataReader reader = listCommands.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        //Must assign all column data from the database to variables, so that we can assign the variables to the textboxes, so that the textboxes can display the information of the chosen product
+                        string ProductID = reader.GetInt32(0).ToString();
+                        string ProductName = reader.GetString(1);
+                        string Category = reader.GetString(2);
+                        string ProductDescription = reader.GetString(3);
+                        string ProductPrice = reader.GetDouble(4).ToString();
+                        string AmountInStock = reader.GetInt32(5).ToString();
+                        string ShippingPrice = reader.GetDouble(6).ToString();
+                        string Size = reader.GetString(7);
+                        string DiscountPrice = reader.GetDouble(8).ToString();
+
+                        txb_ProductID.Text = ProductID;
+                        txb_ProductName.Text = ProductName;
+                        txb_Category.Text = Category;
+                        txb_ProductDescription.Text = ProductDescription;
+                        txb_Price.Text = ProductPrice;
+                        txb_AmountInStock.Text = AmountInStock;
+                        txb_ShippingPrice.Text = ShippingPrice;
+                        txb_Size.Text = Size;
+                        txb_DiscountPrice.Text = DiscountPrice;
+                    }
+                    con.Close();
+                }
+                catch (SqlException ex)
+                {
+                    Console.WriteLine(ex + "Listen kunne ikke blive udfyldt");
+                }
+            }
+        }
+
+        //Deletes the values for the a item, determined by the named chosen in the "ChooseToDelete" combobox
+        private void DeleteButton_Click(object sender, RoutedEventArgs e)
+        {
+            SqlConnection con = new SqlConnection(connectionString);
+
+            try
+            {
+                
+                con.Open();
+                string Query = "delete from Products where ProductName = '" + this.ChooseToDelete.Text + "'";
+
+                
+                SqlCommand cmd1 = new SqlCommand(Query, con);
+                SqlDataReader myReader;
+                myReader = cmd1.ExecuteReader();
+                MessageBox.Show("Varen er nu slettet");
+                //Clears the ChooseToDelete combobox 
+                ChooseToDelete.Items.Clear();
+                //Populets the ChooseToDelete combobox again, including the just added item
+                ListInCombobox();
+                con.Close();
+
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex + "Det virker ikke :(");
+            }
         }
     }
 }

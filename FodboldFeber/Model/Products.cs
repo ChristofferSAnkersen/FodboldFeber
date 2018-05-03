@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.ComponentModel;
-using System.Linq;
 
 
 namespace FodboldFeber.Model
@@ -14,8 +13,17 @@ namespace FodboldFeber.Model
     public class Products
     {
         //List of products, should have the same data as the table "Products" in the database
-        public List<Products> ListOfProducts = new List<Products>();
         
+        public List<Products> ListOfProducts = new List<Products>();
+        public string Category { get; set; }
+        public string ProductDescription { get; set; }
+        public double ProductPrice { get; set; }
+        public int AmountInStock { get; set; }
+        public double ShippingPrice { get; set; }
+        public string Size { get; set; }
+        public double DiscountPrice { get; set; }
+
+        //Der mangler funktionalitet med listen, blandt andet bliver den ikke brugt lige pt, og der bliver ikke slettet i listen når der bliver slettet i databasen
         public void AddProduct()
         {
             try
@@ -70,14 +78,6 @@ namespace FodboldFeber.Model
 
             }
         }
-
-        public string Category { get; set; }
-        public string ProductDescription { get; set; }
-        public double ProductPrice { get; set; }
-        public int AmountInStock { get; set; }
-        public double ShippingPrice { get; set; }
-        public string Size { get; set; }
-        public double DiscountPrice { get; set; }
 
         public event PropertyChangedEventHandler PropertyChanged;
 

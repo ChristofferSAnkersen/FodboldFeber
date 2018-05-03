@@ -11,7 +11,7 @@ namespace FodboldFeber.Controller
     public class ShopController
     {
 
-        AdminTools adminTools;
+        //AdminTools adminTools;
 
         public void AddProduct()
         {
