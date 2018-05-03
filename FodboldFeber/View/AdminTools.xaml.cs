@@ -32,7 +32,7 @@ namespace FodboldFeber.View
         //Connection to the sql database
         string connectionString = "Server=EALSQL1.eal.local; Database=DB2017_A27; User Id= USER_A27; Password=SesamLukOp_27;";
 
-        //Function that makes it possible for the combobox to be filled with already existing items in the database for the user to choose from when deciding what item(s) to delete
+        //Function that makes it possible for the combobox to be filled with already existing items in the database for the user to choose from when deciding what item(s) to delete or update
         public void ListInCombobox()
         {
             try
@@ -45,7 +45,7 @@ namespace FodboldFeber.View
               
                 while(reader.Read())
                 {
-                    //Chooses the row that should be the determing factor(displayed in the combobox) it is GetString(1) because 1st collumn in the table is 0, 2nd is 1
+                    //Chooses the row that should be the determing factor(displayed in the combobox) it is GetString(1) because 1st collumn in the table is 0, 2nd is 1...
                     string ProductNames = reader.GetString(1);
                     ChooseItem.Items.Add(ProductNames);
                 }
@@ -63,7 +63,6 @@ namespace FodboldFeber.View
             try
             {
                 //Assigns the textbox values to the "Query" variable.
-
                 Query = "insert into Products(ProductID, ProductName, Category, ProductDescription, ProductPrice, AmountInStock, ShippingPrice, Size, DiscountPrice) values('" +this.ProductID.Text+ "','" +this.ProductName.Text+ "','" +this.Category.Text+ "','" +this.ProductDescription.Text+ "','" +this.ProductPrice.Text+ "','" +this.AmountInStock.Text+ "','" +this.ShippingPrice.Text+ "','" +this.Size.Text+ "','" +this.DiscountPrice.Text+ "');";
                 SqlConnection con = new SqlConnection(connectionString);
                 //Adds the user input for products to the table "Products" in the database
@@ -211,11 +210,8 @@ namespace FodboldFeber.View
 
             try
             {
-                
                 con.Open();
                 string Query = "delete from Products where ProductName = '" + this.ChooseItem.Text + "'";
-
-                
                 SqlCommand cmd1 = new SqlCommand(Query, con);
                 SqlDataReader myReader;
                 myReader = cmd1.ExecuteReader();
@@ -239,7 +235,6 @@ namespace FodboldFeber.View
             try
             {
                 //Assigns the updated textbox values for the item choosen by the user in the "ChooseItem" combobox, and adds them to the "Query" variable.
-
                 Query = "Update Products set ProductID='" +this.txb_ProductID.Text+ "', ProductName='"+this.txb_ProductName.Text+"', Category='"+this.cmb_Category.Text+"', ProductDescription='"+this.txb_ProductDescription.Text+"', ProductPrice='"+this.txb_Price.Text+"', AmountInStock='"+this.txb_AmountInStock.Text+"', ShippingPrice='"+this.txb_ShippingPrice.Text+"', Size='"+this.cmb_Size.Text+"', DiscountPrice='"+this.txb_DiscountPrice.Text+"' where ProductName='"+this.ChooseItem.Text+"' " ;
                 SqlConnection con = new SqlConnection(connectionString);
                 // The newly updated information about the item is updated in the database too
