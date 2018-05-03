@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FodboldFeber.View;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,6 +25,12 @@ namespace FodboldFeber
             InitializeComponent();
         }
 
-
+        public void BackToShoplbl_Click(object sender, RoutedEventArgs e)
+        {
+                Shop shop = new Shop();
+                shop.Show();
+                this.Close();
+            
+        }
     }
 }
