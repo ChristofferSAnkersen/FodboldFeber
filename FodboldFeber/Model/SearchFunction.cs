@@ -12,11 +12,11 @@ namespace FodboldFeber.Model
 {
     public class SearchFunction
     {
-
+        //The lists where items are added. The most important is _allProductResultItems. Help results only show a certain string
         List<ProductsResultItem> _allProductResultItems;
         List<HelpResultItem> _allHelpResultItems;
 
-        string _searchText;
+        string _searchText; //The input in the textbox. loops through products added to _allProductResultItems
         public string SearchText
         {
             get
@@ -43,7 +43,7 @@ namespace FodboldFeber.Model
                 }
             }
         }
-        public ObservableCollection<ResultItem> SearchResults { get; set; }
+        public ObservableCollection<ResultItem> SearchResults { get; set; } //The products that match the input is added here
 
         ResultItem _selectedResult;
         public ResultItem SelectedResult
@@ -55,10 +55,10 @@ namespace FodboldFeber.Model
             set
             {
                 _selectedResult = value;
-                // Handle selection here
+                // Handle selection here - What to do when item is selected
             }
         }
-        public SearchFunction()
+        public SearchFunction() //SQL connection which adds all products to _allProductsResultItems. Take 2 parameters of products.
         {
             SearchResults = new ObservableCollection<ResultItem>();
 
