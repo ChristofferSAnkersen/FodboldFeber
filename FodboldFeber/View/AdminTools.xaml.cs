@@ -32,7 +32,7 @@ namespace FodboldFeber.View
         //Connection to the sql database
         string connectionString = "Server=EALSQL1.eal.local; Database=DB2017_A27; User Id= USER_A27; Password=SesamLukOp_27;";
 
-        //Function that should make it possible for the combobox to be filled with already existing items in the database for the user to choose from when deciding what item(s) to delete
+        //Function that makes it possible for the combobox to be filled with already existing items in the database for the user to choose from when deciding what item(s) to delete
         public void ListInCombobox()
         {
             try
@@ -79,7 +79,7 @@ namespace FodboldFeber.View
                 }
                 //Clears the ChooseToDelete combobox 
                 ChooseToDelete.Items.Clear();
-                //Populets the ChooseToDelete combobox again, including the just added item
+                //Populates the ChooseToDelete combobox again, including the just added item
                 ListInCombobox();
                 con.Close();
 
@@ -173,7 +173,7 @@ namespace FodboldFeber.View
 
                     while (reader.Read())
                     {
-                        //Must assign all column data from the database to variables, so that we can assign the variables to the textboxes that can show them
+                        //Must assign all column data from the database to variables, so that we can assign the variables to the textboxes, so that the textboxes can display the information of the chosen product
                         string ProductID = reader.GetInt32(0).ToString();
                         string ProductName = reader.GetString(1);
                         string Category = reader.GetString(2);
