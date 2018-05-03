@@ -47,7 +47,7 @@ namespace FodboldFeber.View
                 {
                     //Chooses the row that should be the determing factor(displayed in the combobox) it is GetString(1) because 1st collumn in the table is 0, 2nd is 1
                     string ProductNames = reader.GetString(1);
-                    ChooseToDelete.Items.Add(ProductNames);
+                    ChooseItem.Items.Add(ProductNames);
                 }
                 con.Close();
             }
@@ -77,9 +77,9 @@ namespace FodboldFeber.View
                 while (myReader.Read())
                 {
                 }
-                //Clears the ChooseToDelete combobox 
-                ChooseToDelete.Items.Clear();
-                //Populates the ChooseToDelete combobox again, including the just added item
+                //Clears the ChooseItem combobox 
+                ChooseItem.Items.Clear();
+                //Populates the ChooseItem combobox again, including the just added item
                 ListInCombobox();
                 con.Close();
 
@@ -89,6 +89,7 @@ namespace FodboldFeber.View
                 MessageBox.Show(ex + "Varen kunne ikke blive tilføjet");
             }
         }
+
         private void ProductName_GotFocus(object sender, RoutedEventArgs e)
         {
             TextBox textbox = (TextBox)sender;
@@ -159,15 +160,15 @@ namespace FodboldFeber.View
         }
 
 
-        //Event that determines the content of the textboxes in the update/delete are of "AdminTools"
-        private void ChooseToDelete_DropDownClosed(object sender, EventArgs e)
+        //Event that determines the content of the textboxes in the update/delete area of "AdminTools"
+        private void ChooseItem_DropDownClosed(object sender, EventArgs e)
         {
             {
                 try
                 {
                     SqlConnection con = new SqlConnection(connectionString);
                     con.Open();
-                    string DeleteQuery = "SELECT * from Products where ProductName='" + ChooseToDelete.Text + "' ";
+                    string DeleteQuery = "SELECT * from Products where ProductName='" + ChooseItem.Text + "' ";
                     SqlCommand listCommands = new SqlCommand(DeleteQuery, con);
                     SqlDataReader reader = listCommands.ExecuteReader();
 
@@ -203,7 +204,7 @@ namespace FodboldFeber.View
             }
         }
 
-        //Deletes the values for the a item, determined by the named chosen in the "ChooseToDelete" combobox
+        //Deletes the values for the a item, determined by the named chosen in the "ChooseItem" combobox
         private void DeleteButton_Click(object sender, RoutedEventArgs e)
         {
             SqlConnection con = new SqlConnection(connectionString);
@@ -212,16 +213,16 @@ namespace FodboldFeber.View
             {
                 
                 con.Open();
-                string Query = "delete from Products where ProductName = '" + this.ChooseToDelete.Text + "'";
+                string Query = "delete from Products where ProductName = '" + this.ChooseItem.Text + "'";
 
                 
                 SqlCommand cmd1 = new SqlCommand(Query, con);
                 SqlDataReader myReader;
                 myReader = cmd1.ExecuteReader();
                 MessageBox.Show("Varen er nu slettet");
-                //Clears the ChooseToDelete combobox 
-                ChooseToDelete.Items.Clear();
-                //Populets the ChooseToDelete combobox again, including the just added item
+                //Clears the ChooseItem combobox 
+                ChooseItem.Items.Clear();
+                //Populets the ChooseItem combobox again, including the just added item
                 ListInCombobox();
                 con.Close();
 
@@ -232,28 +233,29 @@ namespace FodboldFeber.View
             }
         }
 
+        //Updates the values for the chosen item in "ChooseItem", to the values the user has specified
         private void UpdateButton_Click(object sender, RoutedEventArgs e)
         {
             try
             {
-                //Assigns the textbox values to the "Query" variable.
+                //Assigns the updated textbox values for the item choosen by the user in the "ChooseItem" combobox, and adds them to the "Query" variable.
 
-                Query = "Update Products set ProductID='" +this.txb_ProductID.Text+ "', ProductName='"+this.txb_ProductName.Text+"', Category='"+this.cmb_Category.Text+"', ProductDescription='"+this.txb_ProductDescription.Text+"', ProductPrice='"+this.txb_Price.Text+"', AmountInStock='"+this.txb_AmountInStock.Text+"', ShippingPrice='"+this.txb_ShippingPrice.Text+"', Size='"+this.cmb_Size.Text+"', DiscountPrice='"+this.txb_DiscountPrice.Text+"' where ProductName='"+this.ChooseToDelete.Text+"' " ;
+                Query = "Update Products set ProductID='" +this.txb_ProductID.Text+ "', ProductName='"+this.txb_ProductName.Text+"', Category='"+this.cmb_Category.Text+"', ProductDescription='"+this.txb_ProductDescription.Text+"', ProductPrice='"+this.txb_Price.Text+"', AmountInStock='"+this.txb_AmountInStock.Text+"', ShippingPrice='"+this.txb_ShippingPrice.Text+"', Size='"+this.cmb_Size.Text+"', DiscountPrice='"+this.txb_DiscountPrice.Text+"' where ProductName='"+this.ChooseItem.Text+"' " ;
                 SqlConnection con = new SqlConnection(connectionString);
-                //Adds the user input for products to the table "Products" in the database
+                // The newly updated information about the item is updated in the database too
                 SqlCommand cmd1 = new SqlCommand(Query, con);
                 SqlDataReader myReader;
                 con.Open();
                 myReader = cmd1.ExecuteReader();
-                //Should add the created product to a list - done in the Products class
+                //Adds the updated information to the chosen item to a list - done in the Products class
                 shopController.AddProduct();
-                MessageBox.Show("Varen er nu tilføjet");
+                MessageBox.Show("Varens oplysninger er nu opdateret");
                 while (myReader.Read())
                 {
                 }
-                //Clears the ChooseToDelete combobox 
-                ChooseToDelete.Items.Clear();
-                //Populates the ChooseToDelete combobox again, including the just added item
+                //Clears the ChooseItem combobox 
+                ChooseItem.Items.Clear();
+                //Populates the ChooseItem combobox again, including the just updated item
                 ListInCombobox();
                 con.Close();
 
