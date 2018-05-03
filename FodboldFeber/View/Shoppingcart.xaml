@@ -19,7 +19,7 @@
         <Rectangle x:Name="TopLeftRectangle" Fill="White" HorizontalAlignment="Left" Height="162" Margin="60,89,0,0" Stroke="Black" VerticalAlignment="Top" Width="218"/>
         <Rectangle x:Name="OrderRectangle" Fill="White" HorizontalAlignment="Left" Height="162" Margin="146,89,0,0" Stroke="Black" VerticalAlignment="Top" Width="231" Grid.Column="1"/>
         <Image x:Name="AdLeft" HorizontalAlignment="Left" Height="136" Margin="97,96,0,0" VerticalAlignment="Top" Width="135" Source="https://odense-esport.dk/wp-content/uploads/2017/08/LS1_8266.jpg"/>
-        <Button x:Name="BackToShoplbl" Content="Tilbage til Shoppen" HorizontalAlignment="Left" Margin="146,64,0,0" VerticalAlignment="Top" Width="110" Background="White" Grid.Column="1"/>
+        <Button x:Name="BackToShoplbl" Content="Tilbage til Shoppen" HorizontalAlignment="Left" Margin="146,64,0,0" VerticalAlignment="Top" Width="110" Background="White" Grid.Column="1" Click="BackToShoplbl_Click"/>
         <Button x:Name="ToPaylbl" Content="Til betaling" HorizontalAlignment="Left" Margin="266,64,0,0" VerticalAlignment="Top" Width="110" Background="White" Grid.Column="1"/>
         <Label x:Name="FinalOrderItem2lbl" Content="Odense Esport tr..&#xD;&#xA;" HorizontalAlignment="Left" Margin="154,116,0,0" VerticalAlignment="Top" Grid.Column="1"/>
         <Label x:Name="TotalPriceInNumberlbl" Content="1244,00 kr." HorizontalAlignment="Left" Margin="289,206,0,0" VerticalAlignment="Top" Width="80" Grid.Column="1"/>
