@@ -6,9 +6,9 @@
       xmlns:local="clr-namespace:FodboldFeber.View"
       Background="White"
       mc:Ignorable="d" d:DesignWidth="800"
-      Title="AdminTools" Height="600.43">
-    <ScrollViewer Margin="0,0,0,0.6">
-        <Grid Height="600">
+      Title="AdminTools" Height="450.43">
+    <ScrollViewer Margin="0,0,0,0.2" >
+        <Grid Height="610">
             <GroupBox Header="" HorizontalAlignment="Left" Height="220" Margin="31,65,0,0" VerticalAlignment="Top" Width="644" Background="#FFB4B4B4">
             </GroupBox>
             <ComboBox x:Name="Size" HorizontalAlignment="Left" Margin="237,189,0,0" VerticalAlignment="Top" Width="120">
@@ -34,20 +34,28 @@
                 <GroupBox.Background>
                     <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ActiveBorderColorKey}}"/>
                 </GroupBox.Background>
+                <ComboBox x:Name="cmb_Category" HorizontalAlignment="Left" Margin="23,100,0,0" VerticalAlignment="Top" Width="120">
+                    <ComboBoxItem Content="Merchandise"/>
+                    <ComboBoxItem Content="Trøjer"/>
+                </ComboBox>
             </GroupBox>
             <Button x:Name="DeleteButton" Content="Slet" HorizontalAlignment="Left" Margin="693,440,0,0" VerticalAlignment="Top" Width="75" Click="DeleteButton_Click"/>
-            <Label Content="Slet vare" HorizontalAlignment="Left" Margin="264,307,0,0" VerticalAlignment="Top" FontSize="30"/>
-            <ComboBox x:Name="ChooseToDelete" HorizontalAlignment="Left" Margin="422,330,0,0" VerticalAlignment="Top" Width="120" DropDownClosed="ChooseToDelete_DropDownClosed"/>
+            <Label Content="Slet eller opdater" HorizontalAlignment="Left" Margin="185,307,0,0" VerticalAlignment="Top" FontSize="30"/>
+            <ComboBox x:Name="ChooseToDelete" HorizontalAlignment="Left" Margin="474,330,0,0" VerticalAlignment="Top" Width="120" DropDownClosed="ChooseToDelete_DropDownClosed"/>
             <TextBox x:Name="txb_ProductName" HorizontalAlignment="Left" Height="23" Margin="59,426,0,0" TextWrapping="Wrap" Text="ProduktNavn" VerticalAlignment="Top" Width="120"/>
             <TextBox x:Name="txb_ProductID" HorizontalAlignment="Left" Height="23" Margin="59,385,0,0" TextWrapping="Wrap" Text="ProduktID" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.566,-0.674"/>
-            <TextBox x:Name="txb_Category" HorizontalAlignment="Left" Height="23" Margin="59,471,0,0" TextWrapping="Wrap" Text="Kategori" VerticalAlignment="Top" Width="120"/>
             <TextBox x:Name="txb_AmountInStock" HorizontalAlignment="Left" Height="23" Margin="59,522,0,0" TextWrapping="Wrap" Text="Antal på lager" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.566,-0.674"/>
             <TextBox x:Name="txb_DiscountPrice" HorizontalAlignment="Left" Height="23" Margin="237,385,0,0" TextWrapping="Wrap" Text="Tilbuds pris" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.566,-0.674"/>
             <TextBox x:Name="txb_Price" HorizontalAlignment="Left" Height="23" Margin="237,426,0,0" TextWrapping="Wrap" Text="Pris" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.566,-0.674"/>
-            <TextBox x:Name="txb_Size" HorizontalAlignment="Left" Height="23" Margin="237,471,0,0" TextWrapping="Wrap" Text="Størrelse" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.566,-0.674"/>
             <TextBox x:Name="txb_ShippingPrice" HorizontalAlignment="Left" Height="23" Margin="237,522,0,0" TextWrapping="Wrap" Text="Fragt Pris" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.566,-0.674"/>
             <TextBox x:Name="txb_ProductDescription" HorizontalAlignment="Left" Height="205" Margin="422,385,0,0" TextWrapping="Wrap" Text="Produkt beskrivelse" VerticalAlignment="Top" Width="229" RenderTransformOrigin="0.566,-0.674"/>
-            <Button x:Name="UpdateButton" Content="Opdater" HorizontalAlignment="Left" Margin="693,493,0,0" VerticalAlignment="Top" Width="75"/>
+            <Button x:Name="UpdateButton" Content="Opdater" HorizontalAlignment="Left" Margin="693,493,0,0" VerticalAlignment="Top" Width="75" Click="UpdateButton_Click"/>
+            <ComboBox x:Name="cmb_Size" HorizontalAlignment="Left" Margin="237,475,0,0" VerticalAlignment="Top" Width="120">
+                <ComboBoxItem Content="Small"/>
+                <ComboBoxItem Content="Medium"/>
+                <ComboBoxItem Content="Large"/>
+                <ComboBoxItem Content="X-Large"/>
+            </ComboBox>
 
         </Grid>
     </ScrollViewer>

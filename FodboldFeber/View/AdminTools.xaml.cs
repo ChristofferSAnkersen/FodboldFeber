@@ -86,7 +86,7 @@ namespace FodboldFeber.View
             }
             catch (SqlException ex)
             {
-                MessageBox.Show(ex + "Det virker ikke :(");
+                MessageBox.Show(ex + "Varen kunne ikke blive tilføjet");
             }
         }
         private void ProductName_GotFocus(object sender, RoutedEventArgs e)
@@ -186,12 +186,12 @@ namespace FodboldFeber.View
 
                         txb_ProductID.Text = ProductID;
                         txb_ProductName.Text = ProductName;
-                        txb_Category.Text = Category;
+                        cmb_Category.Text = Category;
                         txb_ProductDescription.Text = ProductDescription;
                         txb_Price.Text = ProductPrice;
                         txb_AmountInStock.Text = AmountInStock;
                         txb_ShippingPrice.Text = ShippingPrice;
-                        txb_Size.Text = Size;
+                        cmb_Size.Text = Size;
                         txb_DiscountPrice.Text = DiscountPrice;
                     }
                     con.Close();
@@ -228,7 +228,39 @@ namespace FodboldFeber.View
             }
             catch (SqlException ex)
             {
-                MessageBox.Show(ex + "Det virker ikke :(");
+                MessageBox.Show(ex + "Varen kunne ikke blive slettet");
+            }
+        }
+
+        private void UpdateButton_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                //Assigns the textbox values to the "Query" variable.
+
+                Query = "Update Products set ProductID='" +this.txb_ProductID.Text+ "', ProductName='"+this.txb_ProductName.Text+"', Category='"+this.cmb_Category.Text+"', ProductDescription='"+this.txb_ProductDescription.Text+"', ProductPrice='"+this.txb_Price.Text+"', AmountInStock='"+this.txb_AmountInStock.Text+"', ShippingPrice='"+this.txb_ShippingPrice.Text+"', Size='"+this.cmb_Size.Text+"', DiscountPrice='"+this.txb_DiscountPrice.Text+"' where ProductName='"+this.ChooseToDelete.Text+"' " ;
+                SqlConnection con = new SqlConnection(connectionString);
+                //Adds the user input for products to the table "Products" in the database
+                SqlCommand cmd1 = new SqlCommand(Query, con);
+                SqlDataReader myReader;
+                con.Open();
+                myReader = cmd1.ExecuteReader();
+                //Should add the created product to a list - done in the Products class
+                shopController.AddProduct();
+                MessageBox.Show("Varen er nu tilføjet");
+                while (myReader.Read())
+                {
+                }
+                //Clears the ChooseToDelete combobox 
+                ChooseToDelete.Items.Clear();
+                //Populates the ChooseToDelete combobox again, including the just added item
+                ListInCombobox();
+                con.Close();
+
+            }
+            catch(SqlException exe)
+            {
+                MessageBox.Show(exe + "Varen kunne ikke opdateres");
             }
         }
     }
