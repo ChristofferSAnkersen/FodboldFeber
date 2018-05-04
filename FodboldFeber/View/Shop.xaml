@@ -6,46 +6,58 @@
         xmlns:model="clr-namespace:FodboldFeber.Model"
         xmlns:instantsearch="clr-namespace:FodboldFeber.InstantSearch"
         Title="Shop" Height="600" Width="800">
-    
+    <!-- Comments coming here -->
     <Window.DataContext>
         <model:SearchFunction />
     </Window.DataContext>
-    <StackPanel Margin="10">
-        <TextBox x:Name="searchBox" Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" Width="300">
-        </TextBox>
-        <Popup PlacementTarget="{Binding ElementName=searchBox}" Placement="Bottom" IsOpen="{Binding ElementName=searchBox, Path=IsFocused, Mode=OneWay}">
-            <Popup.Resources>
-                <CollectionViewSource x:Key="GroupedSearchResults" Source="{Binding SearchResults}">
-                    <CollectionViewSource.GroupDescriptions>
-                        <PropertyGroupDescription PropertyName="Group" />
-                    </CollectionViewSource.GroupDescriptions>
-                </CollectionViewSource>
-            </Popup.Resources>
-            <ListView ItemsSource="{Binding Source={StaticResource GroupedSearchResults}}" SelectedItem="{Binding SelectedResult}" Width="300">
-                <ListView.Resources>
-                    <DataTemplate x:Key="GroupingHeader">
-                        <TextBlock Text="{Binding Path=Name}" Background="AliceBlue" FontWeight="SemiBold" FontSize="14" />
-                    </DataTemplate>
-                    <DataTemplate DataType="{x:Type instantsearch:ProductsResultItem}">
-                        <StackPanel>
-                            <TextBlock Text="{Binding ProductName}" FontWeight="SemiBold" />
-                            <TextBlock Text="{Binding ProductDescription}" />
-                        </StackPanel>
-                    </DataTemplate>
-                    <DataTemplate DataType="{x:Type instantsearch:HelpResultItem}">
-                        <StackPanel>
-                            <TextBlock Text="{Binding Title}" FontWeight="SemiBold" />
-                            <TextBlock Text="{Binding Description}" />
-                        </StackPanel>
-                    </DataTemplate>
-                    <DataTemplate DataType="{x:Type instantsearch:ErrorResultItem}">
-                        <TextBlock Text="{Binding ErrorMessage}" />
-                    </DataTemplate>
-                </ListView.Resources>
-                <ListBox.GroupStyle>
-                    <GroupStyle HeaderTemplate="{StaticResource ResourceKey=GroupingHeader}" HidesIfEmpty="False" />
-                </ListBox.GroupStyle>
-            </ListView>
-        </Popup>
-    </StackPanel>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition 
+                Height="auto">
+            </RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition 
+                Width="auto">
+            </ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <StackPanel Margin="10">
+            <Popup PlacementTarget="{Binding ElementName=searchBox}" Placement="Bottom" IsOpen="{Binding ElementName=searchBox, Path=IsFocused, Mode=OneWay}">
+                <Popup.Resources>
+                    <CollectionViewSource x:Key="GroupedSearchResults" Source="{Binding SearchResults}">
+                        <CollectionViewSource.GroupDescriptions>
+                            <PropertyGroupDescription PropertyName="Group" />
+                        </CollectionViewSource.GroupDescriptions>
+                    </CollectionViewSource>
+                </Popup.Resources>
+                <ListView ItemsSource="{Binding Source={StaticResource GroupedSearchResults}}" SelectedItem="{Binding SelectedResult}" Width="250">
+                    <ListView.Resources>
+                        <DataTemplate x:Key="GroupingHeader">
+                            <TextBlock Text="{Binding Path=Name}" Background="AliceBlue" FontWeight="SemiBold" FontSize="14" />
+                        </DataTemplate>
+                        <DataTemplate DataType="{x:Type instantsearch:ProductsResultItem}">
+                            <StackPanel>
+                                <TextBlock Text="{Binding ProductName}" FontWeight="SemiBold" />
+                                <TextBlock Text="{Binding ProductDescription}" />
+                            </StackPanel>
+                        </DataTemplate>
+                        <DataTemplate DataType="{x:Type instantsearch:HelpResultItem}">
+                            <StackPanel>
+                                <TextBlock Text="{Binding Title}" FontWeight="SemiBold" />
+                                <TextBlock Text="{Binding Description}" />
+                            </StackPanel>
+                        </DataTemplate>
+                        <DataTemplate DataType="{x:Type instantsearch:ErrorResultItem}">
+                            <TextBlock Text="{Binding ErrorMessage}" />
+                        </DataTemplate>
+                    </ListView.Resources>
+                    <ListBox.GroupStyle>
+                        <GroupStyle HeaderTemplate="{StaticResource ResourceKey=GroupingHeader}" HidesIfEmpty="False" />
+                    </ListBox.GroupStyle>
+                </ListView>
+            </Popup>
+        </StackPanel>
+        <TextBox x:Name="searchBox" Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" Margin="517,0,-612,49" Width="250" Height="20" VerticalAlignment="Bottom"/>
+        <Label x:Name="_shopLabel" Content="Shop" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="356,38,-326,-34" FontSize="48"/>
+    </Grid>
 </Window>

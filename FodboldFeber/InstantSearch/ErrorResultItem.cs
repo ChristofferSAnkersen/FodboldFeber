@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 namespace FodboldFeber.InstantSearch
 {
     public class ErrorResultItem : ResultItem
+        //This basically just shows an error, as so far an error occurs. 
+        //Shouldnt happen, if everything else works :)
     {
         public string ErrorMessage { get; set; }
 

@@ -79,7 +79,7 @@ namespace FodboldFeber.View
       
         }
 
-        private void ProductName_GotFocus(object sender, RoutedEventArgs e)
+        private void TextBox_GotFocus(object sender, RoutedEventArgs e)
         {
             TextBox textbox = (TextBox)sender;
             if (textbox.Name == "ProductID" && textbox.Text == "" || textbox.Text == "ProduktID")
@@ -110,43 +110,43 @@ namespace FodboldFeber.View
             {
                 textbox.Text = string.Empty;
             }
-            textbox.GotFocus -= ProductName_GotFocus;
+            textbox.GotFocus -= TextBox_GotFocus;
 
 
-        }
-        private void ProductName_LostFocus(object sender, RoutedEventArgs e)
+        } //Determines what happens when textboxes are focused
+        private void TextBox_LostFocus(object sender, RoutedEventArgs e)
         {
-            TextBox textBox = (TextBox)sender;
-            if (textBox.Name == "ProductID" && textBox.Text == "")
+            TextBox textbox = (TextBox)sender;
+            if (textbox.Name == "ProductID" && textbox.Text == "" || textbox.Name == "txb_ProductID" && textbox.Text == "")
             {
-                textBox.Text = "ProduktID";
+                textbox.Text = "ProduktID";
             }
-            else if (textBox.Name == "ProductName" && textBox.Text == "")
+            else if (textbox.Name == "ProductName" && textbox.Text == "" || textbox.Name == "txb_ProductName" && textbox.Text == "")
             {
-                textBox.Text = "Produkt navn";
+                textbox.Text = "Produkt navn";
             }
-            else if (textBox.Name == "ProductDescription" && textBox.Text == "")
+            else if (textbox.Name == "ProductDescription" && textbox.Text == "" || textbox.Name == "txb_ProductDescription" && textbox.Text == "")
             {
-                textBox.Text = "Produkt beskrivelse";
+                textbox.Text = "Produkt beskrivelse";
             }
-            else if (textBox.Name == "ProductPrice" && textBox.Text == "")
+            else if (textbox.Name == "ProductPrice" && textbox.Text == "" || textbox.Name == "txb_Price" && textbox.Text == "")
             {
-                textBox.Text = "Pris";
+                textbox.Text = "Pris";
             }
-            else if (textBox.Name == "AmountInStock" && textBox.Text == "")
+            else if (textbox.Name == "AmountInStock" && textbox.Text == "" || textbox.Name == "txb_AmountInStock" && textbox.Text == "")
             {
-                textBox.Text = "Antal på lager";
+                textbox.Text = "Antal på lager";
             }
-            else if (textBox.Name == "ShippingPrice" && textBox.Text == "")
+            else if (textbox.Name == "ShippingPrice" && textbox.Text == "" || textbox.Name == "txb_ShippingPrice" && textbox.Text == "")
             {
-                textBox.Text = "Fragt pris";
+                textbox.Text = "Fragt pris";
             }
-            else if (textBox.Name == "DiscountPrice" && textBox.Text == "")
+            else if (textbox.Name == "DiscountPrice" && textbox.Text == "" || textbox.Name == "txb_DiscountPrice" && textbox.Text == "")
             {
-                textBox.Text = "Tilbuds pris";
+                textbox.Text = "Tilbuds pris";
             }
-            textBox.GotFocus += ProductName_GotFocus;
-        }
+            textbox.GotFocus += TextBox_GotFocus;
+        } //Determines what happens when textboxes loses focus
 
 
         //Event that determines the content of the textboxes in the update/delete area of "AdminTools"
