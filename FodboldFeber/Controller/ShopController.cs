@@ -8,16 +8,33 @@ using FodboldFeber.View;
 
 namespace FodboldFeber.Controller
 {
-    public class ShopController
+    public class ShopController : Products
     {
 
-        //AdminTools adminTools;
+       
 
-        public void AddProduct()
+        public ShopController()
         {
-            Products p = new Products();
-            p.AddProduct();
+            //Default values for the properties, with the goal of displaying the needed message 
+            //in the textboxes, instructing the user of what they should type in the boxes
 
+            string VælgID = "Vælg produkt ID";
+
+            ProductName = "Vælg Produktnavn";
+            ProductID = 0;
+            Category = "Vælg Kategori";
+            ProductDescription = "Vælg beskrivelse";
+            Price = 0;
+            AmountInStock = 0;
+            ShippingPrice = 0;
+            Size = "Angiv størrelse";
+            DiscountPrice = 0;
+            ProductImage = "Vælg billede";
+
+        }
+        public void AddProductControl()
+        {
+            AddProduct();
         }
     }
 }
