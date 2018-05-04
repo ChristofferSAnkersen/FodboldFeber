@@ -71,12 +71,12 @@ namespace FodboldFeber.View
             //Should add the created product to a list - done in the Products class
             shopController.AddProductControl();
             MessageBox.Show("Varen er nu tilføjet");
-            
-                //Clears the ChooseItem combobox 
-                //ChooseItem.Items.Clear();
-                //Populates the ChooseItem combobox again, including the just added item
-                //ListInCombobox();
-      
+
+            //Clears the ChooseItem combobox
+                ChooseItem.Items.Clear();
+            //Populates the ChooseItem combobox again, including the just added item
+                ListInCombobox();
+
         }
 
         private void TextBox_GotFocus(object sender, RoutedEventArgs e)
