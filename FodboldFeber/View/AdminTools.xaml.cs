@@ -127,31 +127,31 @@ namespace FodboldFeber.View
         private void TextBox_LostFocus(object sender, RoutedEventArgs e)
         {
             TextBox textbox = (TextBox)sender;
-            if (textbox.Name == "ProductID" || textbox.Name == "txb_ProductID" && textbox.Text == "")
+            if (textbox.Name == "ProductID" && textbox.Text == "" || textbox.Name == "txb_ProductID" && textbox.Text == "")
             {
                 textbox.Text = "ProduktID";
             }
-            else if (textbox.Name == "ProductName" || textbox.Name == "txb_ProductName" && textbox.Text == "")
+            else if (textbox.Name == "ProductName" && textbox.Text == "" || textbox.Name == "txb_ProductName" && textbox.Text == "")
             {
                 textbox.Text = "Produkt navn";
             }
-            else if (textbox.Name == "ProductDescription" || textbox.Name == "txb_ProductDescription" && textbox.Text == "")
+            else if (textbox.Name == "ProductDescription" && textbox.Text == "" || textbox.Name == "txb_ProductDescription" && textbox.Text == "")
             {
                 textbox.Text = "Produkt beskrivelse";
             }
-            else if (textbox.Name == "ProductPrice" || textbox.Name == "txb_Price" && textbox.Text == "")
+            else if (textbox.Name == "ProductPrice" && textbox.Text == "" || textbox.Name == "txb_Price" && textbox.Text == "")
             {
                 textbox.Text = "Pris";
             }
-            else if (textbox.Name == "AmountInStock" || textbox.Name == "txb_AmountInStock" && textbox.Text == "")
+            else if (textbox.Name == "AmountInStock" && textbox.Text == "" || textbox.Name == "txb_AmountInStock" && textbox.Text == "")
             {
                 textbox.Text = "Antal på lager";
             }
-            else if (textbox.Name == "ShippingPrice" || textbox.Name == "txb_ShippingPrice" && textbox.Text == "")
+            else if (textbox.Name == "ShippingPrice" && textbox.Text == "" || textbox.Name == "txb_ShippingPrice" && textbox.Text == "")
             {
                 textbox.Text = "Fragt pris";
             }
-            else if (textbox.Name == "DiscountPrice" || textbox.Name == "txb_DiscountPrice" && textbox.Text == "")
+            else if (textbox.Name == "DiscountPrice" && textbox.Text == "" || textbox.Name == "txb_DiscountPrice" && textbox.Text == "")
             {
                 textbox.Text = "Tilbuds pris";
             }
