@@ -29,11 +29,11 @@ namespace FodboldFeber.View
             InitializeComponent();
             shopController = new ShopController();
             this.DataContext = shopController;
-            ProductID.Text = "Vælg produktID";
-            ProductPrice.Text = "Angiv pris";
-            AmountInStock.Text = "Angiv antal på lager";
-            ShippingPrice.Text = "Angiv fragtpris";
-            DiscountPrice.Text = "Angiv tilbudspris";
+            ProductID.Text = "Angiv ProduktID";
+            ProductPrice.Text = "Angiv Pris";
+            AmountInStock.Text = "Angiv Antal På Lager";
+            ShippingPrice.Text = "Angiv Fragtpris";
+            DiscountPrice.Text = "Angiv Tilbudspris";
             //ListInCombobox();
         }
         //Connection to the sql database
@@ -82,31 +82,31 @@ namespace FodboldFeber.View
         private void TextBox_GotFocus(object sender, RoutedEventArgs e)
         {
             TextBox textbox = (TextBox)sender;
-            if (textbox.Name == "ProductID" && textbox.Text == "" || textbox.Text == "ProduktID")
+            if (textbox.Name == "ProductID" && textbox.Text == "" || textbox.Text == "ProduktID" || textbox.Text == "Angiv ProduktID")
             {
                 textbox.Text = string.Empty;
             }
-            if (textbox.Name == "ProductName" && textbox.Text == "" || textbox.Text == "Produkt navn")
+            if (textbox.Name == "ProductName" && textbox.Text == "" || textbox.Text == "Produktnavn" || textbox.Text == "Angiv Produktnavn")
             {
                 textbox.Text = string.Empty;
             }
-            if (textbox.Name == "ProductDescription" && textbox.Text == "" || textbox.Text == "Produkt beskrivelse")
+            if (textbox.Name == "ProductDescription" && textbox.Text == "" || textbox.Text == "Produkt Beskrivelse" || textbox.Text == "Angiv Beskrivelse")
             {
                 textbox.Text = string.Empty;
             }
-            if (textbox.Name == "ProductPrice" && textbox.Text == "" || textbox.Text == "Pris")
+            if (textbox.Name == "ProductPrice" && textbox.Text == "" || textbox.Text == "Pris" || textbox.Text == "Angiv Pris")
             {
                 textbox.Text = string.Empty;
             }
-            if (textbox.Name == "AmountInStock" && textbox.Text == "" || textbox.Text == "Antal på lager")
+            if (textbox.Name == "AmountInStock" && textbox.Text == "" || textbox.Text == "Antal På Lager" || textbox.Text == "Angiv Antal På Lager")
             {
                 textbox.Text = string.Empty;
             }
-            if (textbox.Name == "ShippingPrice" && textbox.Text == "" || textbox.Text == "Fragt pris")
+            if (textbox.Name == "ShippingPrice" && textbox.Text == "" || textbox.Text == "Fragtpris" || textbox.Text == "Angiv Fragtpris")
             {
                 textbox.Text = string.Empty;
             }
-            if (textbox.Name == "DiscountPrice" && textbox.Text == "" || textbox.Text == "Tilbuds pris")
+            if (textbox.Name == "DiscountPrice" && textbox.Text == "" || textbox.Text == "Tilbudspris" || textbox.Text == "Angiv Tilbudspris")
             {
                 textbox.Text = string.Empty;
             }
@@ -117,37 +117,69 @@ namespace FodboldFeber.View
         private void TextBox_LostFocus(object sender, RoutedEventArgs e)
         {
             TextBox textbox = (TextBox)sender;
-            if (textbox.Name == "ProductID" && textbox.Text == "" || textbox.Name == "txb_ProductID" && textbox.Text == "")
+            if (textbox.Name == "ProductID" && textbox.Text == "")
             {
-                textbox.Text = "ProduktID";
+                textbox.Text = "Angiv ProduktID";
             }
-            else if (textbox.Name == "ProductName" && textbox.Text == "" || textbox.Name == "txb_ProductName" && textbox.Text == "")
+            else if (textbox.Name == "ProductName" && textbox.Text == "")
             {
-                textbox.Text = "Produkt navn";
+                textbox.Text = "Angiv Produktnavn";
             }
-            else if (textbox.Name == "ProductDescription" && textbox.Text == "" || textbox.Name == "txb_ProductDescription" && textbox.Text == "")
+            else if (textbox.Name == "ProductDescription" && textbox.Text == "")
             {
-                textbox.Text = "Produkt beskrivelse";
+                textbox.Text = "Angiv Beskrivelse";
             }
-            else if (textbox.Name == "ProductPrice" && textbox.Text == "" || textbox.Name == "txb_Price" && textbox.Text == "")
+            else if (textbox.Name == "ProductPrice" && textbox.Text == "")
             {
-                textbox.Text = "Pris";
+                textbox.Text = "Angiv Pris";
             }
-            else if (textbox.Name == "AmountInStock" && textbox.Text == "" || textbox.Name == "txb_AmountInStock" && textbox.Text == "")
+            else if (textbox.Name == "AmountInStock" && textbox.Text == "")
             {
-                textbox.Text = "Antal på lager";
+                textbox.Text = "Angiv Antal På Lager";
             }
-            else if (textbox.Name == "ShippingPrice" && textbox.Text == "" || textbox.Name == "txb_ShippingPrice" && textbox.Text == "")
+            else if (textbox.Name == "ShippingPrice" && textbox.Text == "")
             {
-                textbox.Text = "Fragt pris";
+                textbox.Text = "Angiv Fragtpris";
             }
-            else if (textbox.Name == "DiscountPrice" && textbox.Text == "" || textbox.Name == "txb_DiscountPrice" && textbox.Text == "")
+            else if (textbox.Name == "DiscountPrice" && textbox.Text == "")
             {
-                textbox.Text = "Tilbuds pris";
+                textbox.Text = "Angiv Tilbudspris";
             }
             textbox.GotFocus += TextBox_GotFocus;
         } //Determines what happens when textboxes loses focus
-
+        private void TextBox2_LostFocus(object sender, RoutedEventArgs e)
+        {
+            TextBox textbox = (TextBox)sender;
+            if (textbox.Name == "txb_ProductID" && textbox.Text == "")
+            {
+                textbox.Text = "ProduktID";
+            }
+            else if (textbox.Name == "txb_ProductName" && textbox.Text == "")
+            {
+                textbox.Text = "Produktnavn";
+            }
+            else if (textbox.Name == "txb_ProductDescription" && textbox.Text == "")
+            {
+                textbox.Text = "Produkt Beskrivelse";
+            }
+            else if (textbox.Name == "txb_Price" && textbox.Text == "")
+            {
+                textbox.Text = "Pris";
+            }
+            else if (textbox.Name == "txb_AmountInStock" && textbox.Text == "")
+            {
+                textbox.Text = "Antal På Lager";
+            }
+            else if (textbox.Name == "txb_ShippingPrice" && textbox.Text == "")
+            {
+                textbox.Text = "Fragtpris";
+            }
+            else if (textbox.Name == "txb_DiscountPrice" && textbox.Text == "")
+            {
+                textbox.Text = "Tilbudspris";
+            }
+            textbox.GotFocus += TextBox_GotFocus;
+        } //Determines what happens when textboxes loses focus
 
         //Event that determines the content of the textboxes in the update/delete area of "AdminTools"
         private void ChooseItem_DropDownClosed(object sender, EventArgs e)

@@ -130,7 +130,7 @@ namespace FodboldFeber.Model
                 if (value != _shippingPrice)
                 {
                     _shippingPrice = value;
-                    OnPropertyChanged("ShippingPRice");
+                    OnPropertyChanged("ShippingPrice");
                 }
             }
         }

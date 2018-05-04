@@ -20,10 +20,10 @@ namespace FodboldFeber.Controller
 
             string VælgID = "Vælg produkt ID";
 
-            ProductName = "Vælg Produktnavn";
+            ProductName = "Angiv Produktnavn";
             ProductID = 0;
             Category = "Vælg Kategori";
-            ProductDescription = "Vælg beskrivelse";
+            ProductDescription = "Angiv Beskrivelse";
             Price = 0;
             AmountInStock = 0;
             ShippingPrice = 0;
