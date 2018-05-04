@@ -14,7 +14,8 @@ namespace FodboldFeber.Controller
 
         public ShopController()
         {
-
+            //Default values for the properties, with the goal of displaying the needed message 
+            //in the textboxes, instructing the user of what they should type in the boxes
             ProductName = "Vælg Produktnavn";
             ProductID ="Vælg ProduktID";
             Category = "Vælg Kategori";
@@ -30,7 +31,6 @@ namespace FodboldFeber.Controller
         public void AddProductControl()
         {
             AddProduct();
-
         }
         
     }

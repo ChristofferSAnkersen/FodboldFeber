@@ -15,6 +15,7 @@ namespace FodboldFeber.Model
        
         public ObservableCollection<Products> products { get; set; }
       
+        //Local variables used in the matching properties just below
         private string _productName ="JegSkalÆndreMigNu!!!";
         private string _productID = "JegSkalÆndreMigNu!!!";
         private string _category = "JegSkalÆndreMigNu!!!";
@@ -189,8 +190,9 @@ namespace FodboldFeber.Model
             {
                 try
                 {
-                   
+                   //Fills the query variable with the information of the properties
                     query = "insert into Products(ProductID, ProductName, Category, ProductDescription, ProductPrice, AmountInStock, ShippingPrice, Size, DiscountPrice, ProductImage) values('" +this.ProductID+ "','" +this.ProductName+ "','"+this.Category+ "','"+this.ProductDescription+ "','"+this.Price+ "','"+this.AmountInStock+ "','"+this.ShippingPrice+ "','"+this.Size+ "','"+this.DiscountPrice+ "','"+this.ProductImage+"');";
+                    //Inserts the data of query into the "Products" table in the database
                     SqlCommand cmd1 = new SqlCommand(query, con);
                     SqlDataReader myReader;
                     con.Open();
