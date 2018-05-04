@@ -5,60 +5,227 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.ComponentModel;
+using System.Collections.ObjectModel;
+using FodboldFeber.Controller;
 
 namespace FodboldFeber.Model
 {
     public class Products : INotifyPropertyChanged
     {
-        public static Products Product { get; set; }
-        //Måske skal listofproducts slettes
-        public List<Products> ListOfProducts { get; set; }
-        //public string Query = "";
-        //public void AddProduct()
-        //{
-        //    Product = new Products { ProductID = 1, ProductName = "DækTilSideSpejl", Category = "Merchandise", ProductDescription="en test", ProductPrice = 20, AmountInStock = 20, ShippingPrice = 20 };
-        //    Query = "insert into Products(ProductID, ProductName, Category, ProductDescription, ProductPrice, AmountInStock, AmountInRoute, ShippingPrice) values('"+ProductID+"','"+ProductName+"','"+Category+"','"+ProductDescription+"','"+ProductPrice+"','"+AmountInStock+"','"+AmountInRoute+"','"+ShippingPrice+"');";  
-        //}
+       
+        public ObservableCollection<Products> products { get; set; }
+      
+        private string _productName ="JegSkalÆndreMigNu!!!";
+        private string _productID = "JegSkalÆndreMigNu!!!";
+        private string _category = "JegSkalÆndreMigNu!!!";
+        private string _productDescription = "JegSkalÆndreMigNu!!!";
+        private string _price = "JegSkalÆndreMigNu!!!";
+        private string _amountInStock = "JegSkalÆndreMigNu!!!";
+        private string _shippingPrice = "JegSkalÆndreMigNu!!!";
+        private string _size = "JegSkalÆndreMigNu!!!";
+        private string _discountPrice = "JegSkalÆndreMigNu!!!";
+        private string _productImage = "JegSkalÆndreMigNu!!!";
+
+        //Properties for the product
+        public string ProductName
+        {
+            get
+            {
+                return this._productName;
+            }
+            set
+            {
+                if(value!= this._productName)
+                {
+                    _productName = value;
+                    OnPropertyChanged("ProductName");
+                }
+                   
+            }
+        }
+        public string ProductID
+        {
+            get
+            {
+                return this._productID;
+            }
+            set
+            {
+                if(value !=this._productID)
+                {
+                    _productID = value;
+                    OnPropertyChanged("ProduktID");
+                }
+              
+            }
+        }
+        public string Category
+        {
+            get
+            {
+                return this._category;
+            }
+            set
+            {
+                if(value!=this._category)
+                {
+                    _category = value;
+                    OnPropertyChanged("Category");
+                }
+            }
+        }
+        public string ProductDescription
+        {
+            get
+            {
+                return this._productDescription;
+            }
+            set
+            {
+                if (value != this._productDescription)
+                {
+                    _productDescription = value;
+                    OnPropertyChanged("ProductDescription");
+                }
+            }
+        }
+        public string Price
+        {
+            get
+            {
+                return _price;
+            }
+            set
+            {
+                if(value != _price)
+                {
+                    _price = value;
+                    OnPropertyChanged("Price");
+                }
+            }
+        }
+        public string AmountInStock
+        {
+            get
+            {
+                return _amountInStock;
+            }
+            set
+            {
+                if(value != _amountInStock)
+                {
+                    _amountInStock = value;
+                    OnPropertyChanged("AmountInStock");
+                }
+            }
+        }
+        public string ShippingPrice
+        {
+            get
+            {
+                return _shippingPrice;
+            }
+            set
+            {
+                if(value != _shippingPrice)
+                {
+                    _shippingPrice = value;
+                    OnPropertyChanged("ShippingPRice");
+                }
+            }
+        }
+        public string Size
+        {
+            get
+            {
+                return _size;
+            }
+            set
+            {
+                if(value != _size)
+                {
+                    _size = value;
+                    OnPropertyChanged("Size");
+                }
+            }
+        }
+        public string DiscountPrice
+        {
+            get
+            {
+                return _discountPrice;
+            }
+            set
+            {
+                if(value != _discountPrice)
+                {
+                    _discountPrice = value;
+                    OnPropertyChanged("DiscountPrice");
+                }
+            }
+        }
+        public string ProductImage
+        {
+            get
+            {
+                return _productImage;
+            }
+            set
+            {
+                if(value != _productImage)
+                {
+                    _productImage = value;
+                    OnPropertyChanged("ProductImage");
+                }
+            }
+        }
+        
+        
+        string query = "";
+        private static string connectionString = "Server=EALSQL1.eal.local; Database=DB2017_A27; User Id= USER_A27; Password=SesamLukOp_27;";
+        public void AddProduct()
+        {
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                try
+                {
+                   
+                    query = "insert into Products(ProductID, ProductName, Category, ProductDescription, ProductPrice, AmountInStock, ShippingPrice, Size, DiscountPrice, ProductImage) values('" +this.ProductID+ "','" +this.ProductName+ "','"+this.Category+ "','"+this.ProductDescription+ "','"+this.Price+ "','"+this.AmountInStock+ "','"+this.ShippingPrice+ "','"+this.Size+ "','"+this.DiscountPrice+ "','"+this.ProductImage+"');";
+                    SqlCommand cmd1 = new SqlCommand(query, con);
+                    SqlDataReader myReader;
+                    con.Open();
+                    myReader = cmd1.ExecuteReader();
+                    while (myReader.Read())
+                    {
+                    }
+                    con.Close();
+
+                }
+                catch (SqlException e)
+                {
+                    Console.WriteLine(e + "Det virker ikke :(");
+                }
+            }
+        }
+
         public void UpdateProduct()
         {
-
+            
         }
         public void DeleteProduct()
         {
 
         }
-        public int ProductID { get; set; }
-        private string _productName = "";
-        public string ProductName
-        {
-            get
-            {
-                return _productName;
-            }
-            set
-            {
-                if (_productName.Equals(value) == false)
-                    _productName = value;
-                OnPropertyChanged("ProductName");
-
-            }
-        }
-
-        public string Category { get; set; }
-        public string ProductDescription { get; set; }
-        public double ProductPrice { get; set; }
-        public int AmountInStock { get; set; }
-        public int AmountInRoute { get; set; }
-        public double ShippingPrice { get; set; }
-
+  
+      
         public event PropertyChangedEventHandler PropertyChanged;
 
         private void OnPropertyChanged(string propertyName)
         {
-            PropertyChangedEventHandler handler = PropertyChanged;
-            if (handler != null)
+           
+            if (PropertyChanged != null)
             {
-                handler(this, new PropertyChangedEventArgs(propertyName));
+                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
             }
         }
     }

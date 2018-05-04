@@ -4,29 +4,32 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:FodboldFeber.View"
+      xmlns:VM="clr-namespace:FodboldFeber.Controller"
       Background="White"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="AdminTools">
-
+    <Page.DataContext>
+        <VM:ShopController x:Name="VMShopController"></VM:ShopController>
+    </Page.DataContext>
     <Grid>
         <GroupBox Header="" HorizontalAlignment="Left" Height="175" Margin="31,65,0,0" VerticalAlignment="Top" Width="644" Background="#FFB4B4B4">
             
         </GroupBox>
-        <TextBox x:Name="ProductID" HorizontalAlignment="Left" Height="23" Margin="59,140,0,0" TextWrapping="Wrap" Text="ProduktID" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="ProductName" HorizontalAlignment="Left" Height="23" Margin="59,89,0,0" TextWrapping="Wrap" Text="Produkt navn" VerticalAlignment="Top" Width="120" Background="#FFF4F3F3"/>
-        <TextBox x:Name="ProductDescription" HorizontalAlignment="Left" Height="23" Margin="274,89,0,0" TextWrapping="Wrap" Text="Produkt beskrivelse" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="ProductPrice" HorizontalAlignment="Left" Height="23" Margin="274,140,0,0" TextWrapping="Wrap" Text="Pris" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="AmountInStock" HorizontalAlignment="Left" Height="23" Margin="456,89,0,0" TextWrapping="Wrap" Text="Antal på lager" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="ShippingPrice" HorizontalAlignment="Left" Height="23" Margin="456,140,0,0" TextWrapping="Wrap" Text="Fragt pris" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="Size" HorizontalAlignment="Left" Height="23" Margin="274,188,0,0" TextWrapping="Wrap" Text="Størrelse" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="DiscountPrice" HorizontalAlignment="Left" Height="23" Margin="456,188,0,0" TextWrapping="Wrap" Text="Tilbuds pris" VerticalAlignment="Top" Width="120"/>
-        <ComboBox x:Name="Category" Text="Vælg Kategori" HorizontalAlignment="Left" Margin="59,189,0,0" VerticalAlignment="Top" Width="120">
+        <TextBox x:Name="ProductID" HorizontalAlignment="Left" Height="23" Margin="59,140,0,0" TextWrapping="Wrap" Text="{Binding Path = ProductID, Mode=TwoWay}" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="ProductName" HorizontalAlignment="Left" Height="23" Margin="59,89,0,0" TextWrapping="Wrap" Text="{Binding Path= ProductName, Mode=TwoWay}" VerticalAlignment="Top" Width="120" Background="#FFF4F3F3"/>
+        <TextBox x:Name="ProductDescription" HorizontalAlignment="Left" Height="23" Margin="274,89,0,0" TextWrapping="Wrap" Text="{Binding Path= ProductDescription, Mode=TwoWay}" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="ProductPrice" HorizontalAlignment="Left" Height="23" Margin="274,140,0,0" TextWrapping="Wrap" Text="{Binding Path=Price, Mode=TwoWay}" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="AmountInStock" HorizontalAlignment="Left" Height="23" Margin="456,89,0,0" TextWrapping="Wrap" Text="{Binding Path=AmountInStock, Mode=TwoWay}" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="ShippingPrice" HorizontalAlignment="Left" Height="23" Margin="456,140,0,0" TextWrapping="Wrap" Text="{Binding Path=ShippingPrice, Mode=TwoWay}" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="Size" HorizontalAlignment="Left" Height="23" Margin="274,188,0,0" TextWrapping="Wrap" Text="{Binding Path= Size, Mode=TwoWay}" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="DiscountPrice" HorizontalAlignment="Left" Height="23" Margin="456,188,0,0" TextWrapping="Wrap" Text="{Binding Path= DiscountPrice, Mode=TwoWay}" VerticalAlignment="Top" Width="120"/>
+        <ComboBox x:Name="Category" Text="{Binding Path= Category, Mode=TwoWay}" HorizontalAlignment="Left" Margin="59,189,0,0" VerticalAlignment="Top" Width="120">
             <ComboBoxItem Content="Merchandise"/>
             <ComboBoxItem Content="Trøjer"/>
         </ComboBox>
         <Label Content="Opret vare" HorizontalAlignment="Left" Margin="167,10,0,0" VerticalAlignment="Top" FontSize="30"/>
-        <Button x:Name="CreateProduct" Content="Gem" HorizontalAlignment="Left" Margin="693,149,0,0" VerticalAlignment="Top" Width="75" Click="CreateProduct_Click"/>
+        <Button x:Name="CreateProduct" Content="Gem" Command="{Binding AddProductControl}" HorizontalAlignment="Left" Margin="693,149,0,0" VerticalAlignment="Top" Width="75" Click="CreateProduct_Click"/>
         <GroupBox Header="" HorizontalAlignment="Left" Height="100" Margin="31,290,0,0" VerticalAlignment="Top" Width="464">
             <GroupBox.Background>
                 <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ActiveBorderColorKey}}"/>

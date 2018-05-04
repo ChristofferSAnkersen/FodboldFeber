@@ -11,30 +11,31 @@ namespace FodboldFeber.Model
 {
     public class DataAccess
     {
-        //Products products = new Products();
+        //string query = "";
         //private static string connectionString = "Server=EALSQL1.eal.local; Database=DB2017_A27; User Id= USER_A27; Password=SesamLukOp_27;";
-        public void Access()
-        {
-            //using (SqlConnection con = new SqlConnection(connectionString))
-            //{
-            //    try
-            //    {
-            //        SqlCommand cmd1 = new SqlCommand(products.Query, con);
-            //        SqlDataReader myReader;
-            //        con.Open();
-            //        myReader = cmd1.ExecuteReader();
-            //        while (myReader.Read())
-            //        {
-            //        }
-            //        con.Close();
+        //public void Access()
+        //{
+        //    using (SqlConnection con = new SqlConnection(connectionString))
+        //    {
+        //        try
+        //        {
 
-            //    }
-            //    catch (SqlException e)
-            //    {
-            //        Console.WriteLine(e + "Det virker ikke :(");
-            //    }
-            //}
-        }
+        //            SqlCommand cmd1 = new SqlCommand(query,con);
+        //            SqlDataReader myReader;
+        //            con.Open();
+        //            myReader = cmd1.ExecuteReader();
+        //            while (myReader.Read())
+        //            {
+        //            }
+        //            con.Close();
+
+        //        }
+        //        catch (SqlException e)
+        //        {
+        //            Console.WriteLine(e + "Det virker ikke :(");
+        //        }
+        //    }
+        //}
     }
 
 

@@ -15,6 +15,8 @@ using System.Windows.Shapes;
 using FodboldFeber.Controller;
 using System.Data.SqlClient;
 using System.ComponentModel;
+using FodboldFeber.Controller;
+
 
 namespace FodboldFeber.View
 {
@@ -23,36 +25,20 @@ namespace FodboldFeber.View
     /// </summary>
     public partial class AdminTools : Page
     {
-
+        private ShopController shopController;
         public AdminTools()
         {
             InitializeComponent();
+            shopController = new ShopController();
+            this.DataContext = shopController;
         }
 
         private void CreateProduct_Click(object sender, RoutedEventArgs e)
         {
-            try
-            {
-             string connectionString = "Server=EALSQL1.eal.local; Database=DB2017_A27; User Id= USER_A27; Password=SesamLukOp_27;";
-             string Query = "insert into Products(ProductID, ProductName, Category, ProductDescription, ProductPrice, AmountInStock, ShippingPrice, Size, DiscountPrice, BulkPrice) values('" +this.ProductID.Text+ "','" +this.ProductName.Text+ "','" +this.Category.Text+ "','" +this.ProductDescription.Text+ "','" +this.ProductPrice.Text+ "','" +this.AmountInStock.Text+ "','" +this.ShippingPrice.Text+ "','" +this.Size.Text+ "','" +this.DiscountPrice.Text+"');";
-                SqlConnection con = new SqlConnection(connectionString);
-                SqlCommand cmd1 = new SqlCommand(Query, con);
-                SqlDataReader myReader;
-                con.Open();
-                myReader = cmd1.ExecuteReader();
-                MessageBox.Show("Varen er nu tilføjet");
-                while (myReader.Read())
-                {
-                }
-                con.Close();
-
-            }
-            catch (SqlException ex)
-            {
-                Console.WriteLine(ex + "Det virker ikke :(");
-            }
-
+           
+            shopController.AddProductControl();
+            MessageBox.Show("Varen blev tilføjet");
+  
         }
-    
     }
 }

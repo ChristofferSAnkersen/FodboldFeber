@@ -8,6 +8,7 @@ namespace FodboldFeber.Model
 {
     class ShoppingCart
     {
+        public string ProductName { get; set; }
         public int ProductID { get; set; }
         public int AmountOfProductsOrdered { get; set; }
         public double ProductPrice { get; set; }
