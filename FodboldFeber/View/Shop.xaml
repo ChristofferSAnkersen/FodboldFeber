@@ -124,5 +124,8 @@
         <CheckBox Content="Tilbehør" HorizontalAlignment="Left" Margin="45,225,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Light"/>
         <Label Content="Kategori" HorizontalAlignment="Left" Margin="79,125,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.737,0.211" FontFamily="Segoe UI Light"/>
         <Button Content="Opdatér" HorizontalAlignment="Left" Margin="55,492,0,-166.667" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+        <DataGrid x:Name="ShopDataGrid" AutoGenerateColumns="True" HorizontalAlignment="Left" Height="100" Margin="191,384,0,-136.8" VerticalAlignment="Top" Width="535"/>
+
+
     </Grid>
 </Window>

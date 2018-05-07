@@ -12,6 +12,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.ComponentModel;
+using System.Data;
 
 namespace FodboldFeber.View
 {
@@ -23,6 +25,7 @@ namespace FodboldFeber.View
         public Shop()
         {
             InitializeComponent();
+            FillDataGrid();
         }
 
         string connectionString = "Server=EALSQL1.eal.local; Database=DB2017_A27; User Id= USER_A27; Password=SesamLukOp_27;";
@@ -52,6 +55,30 @@ namespace FodboldFeber.View
                 Console.WriteLine(ex + "Fejl");
             }
 
+        }
+
+        private void FillDataGrid()
+        {
+            try
+            {
+                SqlConnection con = new SqlConnection(connectionString);
+                con.Open();
+                string query = "SELECT ProductImage, ProductName, ProductPrice from Products ";
+                SqlCommand createcommands = new SqlCommand(query, con);
+                createcommands.ExecuteNonQuery();
+
+                SqlDataAdapter adapter = new SqlDataAdapter(createcommands);
+                DataTable dt = new DataTable("Products");
+                adapter.Fill(dt);
+                ShopDataGrid.ItemsSource = dt.DefaultView;
+                adapter.Update(dt);
+
+                con.Close();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e + "Could not load shop page");
+            }
         }
     }
 }
