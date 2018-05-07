@@ -57,7 +57,72 @@
                 </ListView>
             </Popup>
         </StackPanel>
-        <TextBox x:Name="searchBox" Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" Margin="517,0,-612,49" Width="250" Height="20" VerticalAlignment="Bottom"/>
+        <TextBox x:Name="searchBox" Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" Margin="522,0,0,264.667" Width="250" Height="20" VerticalAlignment="Bottom"/>
         <Label x:Name="_shopLabel" Content="Shop" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="356,38,-326,-34" FontSize="48"/>
+        <StackPanel Margin="10,10,8.667,-38">
+            <Popup PlacementTarget="{Binding ElementName=searchBox}" Placement="Bottom" IsOpen="{Binding IsFocused, ElementName=searchBox, Mode=OneWay}">
+                <Popup.Resources>
+                    <CollectionViewSource x:Key="GroupedSearchResults" Source="{Binding SearchResults}">
+                        <CollectionViewSource.GroupDescriptions>
+                            <PropertyGroupDescription PropertyName="Group" />
+                        </CollectionViewSource.GroupDescriptions>
+                    </CollectionViewSource>
+                </Popup.Resources>
+                <ListView SelectedItem="{Binding SelectedResult}" Width="250">
+                    <ListView.Resources>
+                        <DataTemplate x:Key="GroupingHeader">
+                            <TextBlock Text="{Binding Name}" Background="AliceBlue" FontWeight="SemiBold" FontSize="14" />
+                        </DataTemplate>
+                        <DataTemplate DataType="{x:Type instantsearch:ProductsResultItem}">
+                            <StackPanel>
+                                <TextBlock Text="{Binding ProductName}" FontWeight="SemiBold" />
+                                <TextBlock Text="{Binding ProductDescription}" />
+                            </StackPanel>
+                        </DataTemplate>
+                        <DataTemplate DataType="{x:Type instantsearch:HelpResultItem}">
+                            <StackPanel>
+                                <TextBlock Text="{Binding Title}" FontWeight="SemiBold" />
+                                <TextBlock Text="{Binding Description}" />
+                            </StackPanel>
+                        </DataTemplate>
+                        <DataTemplate DataType="{x:Type instantsearch:ErrorResultItem}">
+                            <TextBlock Text="{Binding ErrorMessage}" />
+                        </DataTemplate>
+                    </ListView.Resources>
+                    <ListView.ItemsSource>
+                        <Binding Source="{StaticResource GroupedSearchResults}"/>
+                    </ListView.ItemsSource>
+                    <ListView.GroupStyle>
+                        <GroupStyle HeaderTemplate="{StaticResource ResourceKey=GroupingHeader}" HidesIfEmpty="False" />
+                    </ListView.GroupStyle>
+                </ListView>
+            </Popup>
+        </StackPanel>
+        <Label x:Name="lbl_klaphat" Content="Klaphat" HorizontalAlignment="Left" Margin="219,279,0,0" VerticalAlignment="Top" Width="150" FontFamily="Segoe UI Light"/>
+        <Label Content="750,00 kr" HorizontalAlignment="Left" Margin="219,295,0,0" VerticalAlignment="Top"/>
+        <Label Content="Casual Gamer Jersey" HorizontalAlignment="Left" Margin="423,279,0,0" VerticalAlignment="Top" Width="150" FontFamily="Segoe UI Light"/>
+        <Label Content="450,00 kr" HorizontalAlignment="Left" Margin="423,295,0,0" VerticalAlignment="Top"/>
+        <Label Content="Bundle" HorizontalAlignment="Left" Margin="621,279,0,0" VerticalAlignment="Top" Width="150" FontFamily="Segoe UI Light"/>
+        <Label Content="650,00 kr" HorizontalAlignment="Left" Margin="621,295,0,0" VerticalAlignment="Top"/>
+        <Image Source="https://odense-esport.dk/wp-content/uploads/2018/04/bundle-768x951.jpg" HorizontalAlignment="Left" Height="150" Margin="621,124,0,0" VerticalAlignment="Top" Width="150" Stretch="UniformToFill" />
+        <Image Source="https://odense-esport.dk/wp-content/uploads/2017/08/LS1_8265.jpg" HorizontalAlignment="Left" Height="150" Margin="423,124,0,0" VerticalAlignment="Top" Width="150"/>
+        <Image x:Name="img_product1" Source="https://odense-esport.dk/wp-content/uploads/2018/04/oes-lang.jpeg" HorizontalAlignment="Left" Height="150" Margin="219,124,0,0" VerticalAlignment="Top" Width="150" Stretch="UniformToFill">
+            <Image.OpacityMask>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="#FFC63030" Offset="1"/>
+                    <GradientStop Color="#FF441010" Offset="0.346"/>
+                    <GradientStop Color="#FF641717" Offset="0.52"/>
+                    <GradientStop Color="#FEEA6868" Offset="0.706"/>
+                </LinearGradientBrush>
+            </Image.OpacityMask>
+        </Image>
+        <Rectangle Fill="WhiteSmoke" HorizontalAlignment="Left" Height="132" Margin="25,124,0,0" Stroke="#FFD6D6D6" VerticalAlignment="Top" Width="161"/>
+        <CheckBox Content="Caps" HorizontalAlignment="Left" Margin="45,161,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Light"/>
+        <CheckBox Content="Trøjer" HorizontalAlignment="Left" Margin="45,183,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Light"/>
+        <CheckBox Content="Halstørkæder" HorizontalAlignment="Left" Margin="45,204,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Light"/>
+        <CheckBox Content="Tilbehør" HorizontalAlignment="Left" Margin="45,225,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Light"/>
+        <Label Content="Kategori" HorizontalAlignment="Left" Margin="79,125,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.737,0.211" FontFamily="Segoe UI Light"/>
+        <Button Content="Opdatér" HorizontalAlignment="Left" Margin="55,492,0,-166.667" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
     </Grid>
 </Window>
