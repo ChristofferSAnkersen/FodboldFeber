@@ -18,7 +18,7 @@ namespace FodboldFeber.Controller
             //Default values for the properties, with the goal of displaying the needed message 
             //in the textboxes, instructing the user of what they should type in the boxes
 
-            string VælgID = "Vælg produkt ID";
+            ChooseItem = "Vælg produkt";
 
             ProductName = "Angiv Produktnavn";
             ProductID = 0;
@@ -31,12 +31,22 @@ namespace FodboldFeber.Controller
             DiscountPrice = 0;
             ProductImage = "Vælg billede";
 
+            
         }
         public void AddProductControl()
         {
             AddProduct();
         }
+        public void DeleteProductControl()
+        {
+            DeleteProduct();
+        }
+        public void UpdateProductControl()
+        {
+            UpdateProduct();
+        }
     }
+ 
 }
 
 
