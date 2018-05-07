@@ -12,7 +12,8 @@ namespace FodboldFeber.Model
    
     public class Products
     {
-        //List of products, should have the same data as the table "Products" in the database
+        //List of products, we might need it later.
+        //List<Products> p = new List<Products>();
 
         //Local variables used in the matching properties just below
         private string _productName = "JegSkalÆndreMigNu!!!";
@@ -25,6 +26,25 @@ namespace FodboldFeber.Model
         private string _size = "JegSkalÆndreMigNu!!!";
         private double _discountPrice;
         private string _productImage = "JegSkalÆndreMigNu!!!";
+
+        private string _chooseItem = "JegSkalÆndreMigNu!!!";
+
+        //Property with the purpose of handling the string value displayed in the "ChooseItem" combobox, located in "AdminTools"
+        public string ChooseItem
+        {
+            get
+            {
+                return _chooseItem;
+            }
+            set
+            {
+                if (value!= this._chooseItem)
+                {
+                    _chooseItem = value;
+                    OnPropertyChanged("ChooseItem");
+                }
+            }
+        }
 
         //Properties for the product
         public string ProductName
@@ -183,7 +203,7 @@ namespace FodboldFeber.Model
         string query = "";
         private static string connectionString = "Server=EALSQL1.eal.local; Database=DB2017_A27; User Id= USER_A27; Password=SesamLukOp_27;";
 
-        //Der mangler funktionalitet med listen, blandt andet bliver den ikke brugt lige pt, og der bliver ikke slettet i listen når der bliver slettet i databasen
+        //Actual logic for Adding a product. Is called by ShopController by a btn click event in "Admin Tools"
         public void AddProduct()
         {
             using (SqlConnection con = new SqlConnection(connectionString))
@@ -224,15 +244,54 @@ namespace FodboldFeber.Model
                 }
             }
         }
-        public void UpdateProduct()
-        {
 
-        }
+        //Actual logic for deleting a product. Is called by ShopController by a btn click event in "AdminTools"
         public void DeleteProduct()
         {
+            SqlConnection con = new SqlConnection(connectionString);
 
+            try
+            {
+                con.Open();
+                string Query = "delete from Products where ProductName = '" + this.ChooseItem+ "'";
+                SqlCommand cmd1 = new SqlCommand(Query, con);
+                SqlDataReader myReader;
+                myReader = cmd1.ExecuteReader();
+            
+                con.Close();
+
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine(ex + "Varen kunne ikke blive slettet");
+            }
         }
+        //Actual logic for updating a product. Is called by ShopController by a btn click event in "AdminTools"
+        public void UpdateProduct()
+        {
+            try
+            {
+                //Assigns the updated textbox values for the item choosen by the user in the "ChooseItem" combobox, and adds them to the "Query" variable.
+                query = "Update Products set ProductID='" + this.ProductID+ "', ProductName='" + this.ProductName+ "', Category='" + this.Category+ "', ProductDescription='" + this.ProductDescription+ "', ProductPrice='" + this.Price+ "', AmountInStock='" + this.AmountInStock+ "', ShippingPrice='" + this.ShippingPrice+ "', Size='" + this.Size+ "', DiscountPrice='" + this.DiscountPrice+ "' where ProductName='" + this.ChooseItem+ "' ";
+                SqlConnection con = new SqlConnection(connectionString);
+                // The newly updated information about the item is updated in the database too
+                SqlCommand cmd1 = new SqlCommand(query, con);
+                SqlDataReader myReader;
+                con.Open();
+                myReader = cmd1.ExecuteReader();
+             
+                while (myReader.Read())
+                {
+                }
+            
+                con.Close();
 
+            }
+            catch (SqlException exe)
+            {
+                Console.WriteLine(exe + "Varen kunne ikke opdateres");
+            }
+        }
         public event PropertyChangedEventHandler PropertyChanged;
 
         private void OnPropertyChanged(string propertyName)
