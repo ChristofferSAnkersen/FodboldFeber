@@ -70,7 +70,7 @@ namespace FodboldFeber.Model
             _allProductResultItems = new List<ProductsResultItem>();
             while (reader.Read())
             {
-                _allProductResultItems.Add(new ProductsResultItem("Produkter",
+                    _allProductResultItems.Add(new ProductsResultItem("Produkter",
                     (string)reader["ProductName"],
                     (string)reader["ProductDescription"]));
             }
