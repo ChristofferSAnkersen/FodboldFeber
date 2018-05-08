@@ -10,52 +10,102 @@
     <Window.DataContext>
         <model:SearchFunction />
     </Window.DataContext>
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition 
-                Height="auto">
-            </RowDefinition>
-        </Grid.RowDefinitions>
+    
+    <Grid Margin="143,181,56.333,18.667">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition 
-                Width="auto">
-            </ColumnDefinition>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
-        <StackPanel Margin="10">
-            <Popup PlacementTarget="{Binding ElementName=searchBox}" Placement="Bottom" IsOpen="{Binding ElementName=searchBox, Path=IsFocused, Mode=OneWay}">
-                <Popup.Resources>
-                    <CollectionViewSource x:Key="GroupedSearchResults" Source="{Binding SearchResults}">
-                        <CollectionViewSource.GroupDescriptions>
-                            <PropertyGroupDescription PropertyName="Group" />
-                        </CollectionViewSource.GroupDescriptions>
-                    </CollectionViewSource>
-                </Popup.Resources>
-                <ListView ItemsSource="{Binding Source={StaticResource GroupedSearchResults}}" SelectedItem="{Binding SelectedResult}" Width="250">
-                    <ListView.Resources>
-                        <DataTemplate x:Key="GroupingHeader">
-                            <TextBlock Text="{Binding Path=Name}" Background="AliceBlue" FontWeight="SemiBold" FontSize="14" />
-                        </DataTemplate>
-                        <DataTemplate DataType="{x:Type instantsearch:ProductsResultItem}">
-                            <StackPanel>
-                                <TextBlock Text="{Binding ProductName}" FontWeight="SemiBold" />
-                                <TextBlock Text="{Binding ProductDescription}" />
-                            </StackPanel>
-                        </DataTemplate>
-                        <DataTemplate DataType="{x:Type instantsearch:HelpResultItem}">
-                            <StackPanel>
-                                <TextBlock Text="{Binding Title}" FontWeight="SemiBold" />
-                                <TextBlock Text="{Binding Description}" />
-                            </StackPanel>
-                        </DataTemplate>
-                        <DataTemplate DataType="{x:Type instantsearch:ErrorResultItem}">
-                            <TextBlock Text="{Binding ErrorMessage}" />
-                        </DataTemplate>
-                    </ListView.Resources>
-                    <ListBox.GroupStyle>
-                        <GroupStyle HeaderTemplate="{StaticResource ResourceKey=GroupingHeader}" HidesIfEmpty="False" />
-                    </ListBox.GroupStyle>
-                </ListView>
-            </Popup>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Button Grid.Column="0" Grid.Row="0" x:Name="img_product1" Background="{x:Null}">
+            <StackPanel>
+                <Image Source="https://www.decathlon.co.uk/media/836/8364270/big_f77c6334b6fe4594ba55490a4bb26faa.jpg" Height="92" Width="92" />
+                <TextBlock FontFamily="Segoe UI Light"><Run Text="Manchester United"/></TextBlock>
+                <TextBlock FontFamily="Segoe UI Light"><Run Text="750 Kr."/></TextBlock>
+            </StackPanel>
+        </Button>
+
+        <Button Grid.Column="2" Grid.Row="0" x:Name="img_product2" Background="{x:Null}">
+            <StackPanel>
+                <Image Source="https://thumblr.uniid.it/product/160822/9f9675e2e0a6.jpg" Height="92" Width="92" />
+                <TextBlock FontFamily="Segoe UI Light"><Run Text="Manchester City"/></TextBlock>
+                <TextBlock FontFamily="Segoe UI Light"><Run Text="750 Kr."/></TextBlock>
+            </StackPanel>
+        </Button>
+
+        <Button Grid.Column="1" Grid.Row="1" x:Name="img_product3" Background="{x:Null}">
+            <StackPanel>
+                <Image Source="https://fodboldfessor.dk/wp-content/uploads/2014/08/brondby-hjemmebanetroje-300x300.jpg" Height="92" Width="92" />
+                <TextBlock FontFamily="Segoe UI Light"><Run Text="Brøndbysvin"/></TextBlock>
+                <TextBlock FontFamily="Segoe UI Light"><Run Text="750 Kr."/></TextBlock>
+            </StackPanel>
+        </Button>
+
+        <Button Grid.Column="0" Grid.Row="1" x:Name="img_product4" Background="{x:Null}">
+            <StackPanel>
+                <Image Source="https://www.decathlon.co.uk/media/836/8364270/big_f77c6334b6fe4594ba55490a4bb26faa.jpg" Height="92" Width="92" />
+                <TextBlock FontFamily="Segoe UI Light"><Run Text="Manchester United"/></TextBlock>
+                <TextBlock FontFamily="Segoe UI Light"><Run Text="750 Kr."/></TextBlock>
+            </StackPanel>
+        </Button>
+
+        <Button Grid.Column="2" Grid.Row="1" x:Name="img_product5" Background="{x:Null}">
+            <StackPanel>
+                <Image Source="https://thumblr.uniid.it/product/160822/9f9675e2e0a6.jpg" Height="92" Width="92" />
+                <TextBlock FontFamily="Segoe UI Light"><Run Text="Manchester City"/></TextBlock>
+                <TextBlock FontFamily="Segoe UI Light"><Run Text="750 Kr."/></TextBlock>
+            </StackPanel>
+        </Button>
+
+        <Button Grid.Column="1" Grid.Row="0" x:Name="img_product6" Background="White">
+            <StackPanel>
+                <Image Source="https://fodboldfessor.dk/wp-content/uploads/2014/08/brondby-hjemmebanetroje-300x300.jpg" Height="92" Width="92" />
+                <TextBlock FontFamily="Segoe UI Light"><Run Text="Brøndbysvin"/></TextBlock>
+                <TextBlock FontFamily="Segoe UI Light"><Run Text="750 Kr."/></TextBlock>
+            </StackPanel>
+        </Button>
+        
+        <!--<Popup PlacementTarget="{Binding ElementName=searchBox}" Placement="Bottom" IsOpen="{Binding ElementName=searchBox, Path=IsFocused, Mode=OneWay}">
+            <Popup.Resources>
+                <CollectionViewSource x:Key="GroupedSearchResults" Source="{Binding SearchResults}">
+                    <CollectionViewSource.GroupDescriptions>
+                        <PropertyGroupDescription PropertyName="Group" />
+                    </CollectionViewSource.GroupDescriptions>
+                </CollectionViewSource>
+            </Popup.Resources>
+            <ListView ItemsSource="{Binding Source={StaticResource GroupedSearchResults}}" SelectedItem="{Binding SelectedResult}" Width="250">
+                <ListView.Resources>
+                    <DataTemplate x:Key="GroupingHeader">
+                        <TextBlock Text="{Binding Path=Name}" Background="AliceBlue" FontWeight="SemiBold" FontSize="14" />
+                    </DataTemplate>
+                    <DataTemplate DataType="{x:Type instantsearch:ProductsResultItem}">
+                        <StackPanel>
+                            <TextBlock Text="{Binding ProductName}" FontWeight="SemiBold" />
+                            <TextBlock Text="{Binding ProductDescription}" />
+                        </StackPanel>
+                    </DataTemplate>
+                    <DataTemplate DataType="{x:Type instantsearch:HelpResultItem}">
+                        <StackPanel>
+                            <TextBlock Text="{Binding Title}" FontWeight="SemiBold" />
+                            <TextBlock Text="{Binding Description}" />
+                        </StackPanel>
+                    </DataTemplate>
+                    <DataTemplate DataType="{x:Type instantsearch:ErrorResultItem}">
+                        <TextBlock Text="{Binding ErrorMessage}" />
+                    </DataTemplate>
+                </ListView.Resources>
+                <ListBox.GroupStyle>
+                    <GroupStyle HeaderTemplate="{StaticResource ResourceKey=GroupingHeader}" HidesIfEmpty="False" />
+                </ListBox.GroupStyle>
+            </ListView>
+        </Popup>
         </StackPanel>
         <TextBox x:Name="searchBox" Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" Margin="522,0,0,264.667" Width="250" Height="20" VerticalAlignment="Bottom"/>
         <Label x:Name="_shopLabel" Content="Shop" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="356,38,-326,-34" FontSize="48"/>
@@ -97,32 +147,6 @@
                     </ListView.GroupStyle>
                 </ListView>
             </Popup>
-        </StackPanel>
-        <Label x:Name="lbl_klaphat" Content="Klaphat" HorizontalAlignment="Left" Margin="219,279,0,0" VerticalAlignment="Top" Width="150" FontFamily="Segoe UI Light"/>
-        <Label Content="750,00 kr" HorizontalAlignment="Left" Margin="219,295,0,0" VerticalAlignment="Top"/>
-        <Label Content="Casual Gamer Jersey" HorizontalAlignment="Left" Margin="423,279,0,0" VerticalAlignment="Top" Width="150" FontFamily="Segoe UI Light"/>
-        <Label Content="450,00 kr" HorizontalAlignment="Left" Margin="423,295,0,0" VerticalAlignment="Top"/>
-        <Label Content="Bundle" HorizontalAlignment="Left" Margin="621,279,0,0" VerticalAlignment="Top" Width="150" FontFamily="Segoe UI Light"/>
-        <Label Content="650,00 kr" HorizontalAlignment="Left" Margin="621,295,0,0" VerticalAlignment="Top"/>
-        <Image Source="https://odense-esport.dk/wp-content/uploads/2018/04/bundle-768x951.jpg" HorizontalAlignment="Left" Height="150" Margin="621,124,0,0" VerticalAlignment="Top" Width="150" Stretch="UniformToFill" />
-        <Image Source="https://odense-esport.dk/wp-content/uploads/2017/08/LS1_8265.jpg" HorizontalAlignment="Left" Height="150" Margin="423,124,0,0" VerticalAlignment="Top" Width="150"/>
-        <Image x:Name="img_product1" Source="https://odense-esport.dk/wp-content/uploads/2018/04/oes-lang.jpeg" HorizontalAlignment="Left" Height="150" Margin="219,124,0,0" VerticalAlignment="Top" Width="150" Stretch="UniformToFill">
-            <Image.OpacityMask>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="Black" Offset="0"/>
-                    <GradientStop Color="#FFC63030" Offset="1"/>
-                    <GradientStop Color="#FF441010" Offset="0.346"/>
-                    <GradientStop Color="#FF641717" Offset="0.52"/>
-                    <GradientStop Color="#FEEA6868" Offset="0.706"/>
-                </LinearGradientBrush>
-            </Image.OpacityMask>
-        </Image>
-        <Rectangle Fill="WhiteSmoke" HorizontalAlignment="Left" Height="132" Margin="25,124,0,0" Stroke="#FFD6D6D6" VerticalAlignment="Top" Width="161"/>
-        <CheckBox Content="Caps" HorizontalAlignment="Left" Margin="45,161,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Light"/>
-        <CheckBox Content="Trøjer" HorizontalAlignment="Left" Margin="45,183,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Light"/>
-        <CheckBox Content="Halstørkæder" HorizontalAlignment="Left" Margin="45,204,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Light"/>
-        <CheckBox Content="Tilbehør" HorizontalAlignment="Left" Margin="45,225,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Light"/>
-        <Label Content="Kategori" HorizontalAlignment="Left" Margin="79,125,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.737,0.211" FontFamily="Segoe UI Light"/>
-        <Button Content="Opdatér" HorizontalAlignment="Left" Margin="55,492,0,-166.667" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+        </StackPanel>-->
     </Grid>
 </Window>
