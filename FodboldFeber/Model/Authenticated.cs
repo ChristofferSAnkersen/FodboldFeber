@@ -6,11 +6,9 @@ using System.Threading.Tasks;
 
 namespace FodboldFeber.Model
 {
-    class Program
+    class Authenticated
     {
-        public static void Main1(string[] args)
-        {
 
-        }
+        public bool IsAuthenticated { get; set; }
     }
 }

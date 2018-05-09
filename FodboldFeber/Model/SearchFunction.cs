@@ -75,8 +75,10 @@ namespace FodboldFeber.Model
                     (string)reader["ProductDescription"]));
             }
 
-            _allHelpResultItems = new List<HelpResultItem>();
-            _allHelpResultItems.Add(new HelpResultItem("Ingen Resultater", "Prøv at søge anderledes", "Eller kontakt support"));
+            _allHelpResultItems = new List<HelpResultItem>
+            {
+                new HelpResultItem("Ingen Resultater", "Prøv at søge anderledes", "Eller kontakt support")
+            };
             SearchText = "";
         }
     }

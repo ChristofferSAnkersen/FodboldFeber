@@ -1,4 +1,4 @@
-﻿<Page x:Class="FodboldFeber.View.Login"
+﻿<Window x:Class="FodboldFeber.View.Login"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -15,10 +15,10 @@
         <Label Content="Fodboldfeber" HorizontalAlignment="Left" Margin="276,58,0,0" VerticalAlignment="Top" FontSize="40" Foreground="Red"/>
         <TextBox x:Name="txtbox_username" HorizontalAlignment="Left" Height="31" Margin="276,203,0,0" TextWrapping="Wrap" Text="Brugernavn" VerticalAlignment="Top" Width="249" FontFamily="Segoe UI Light"/>
         <TextBox x:Name="txtbox_password" HorizontalAlignment="Left" Height="29" Margin="276,247,0,0" TextWrapping="Wrap" Text="Adgangskode" VerticalAlignment="Top" Width="249" FontFamily="Segoe UI Light"/>
-        <Button x:Name="btn_logIn" Content="Log ind" HorizontalAlignment="Left" Margin="276,289,0,0" VerticalAlignment="Top" Width="249" Height="28" FontFamily="Segoe UI Light"/>
+        <Button x:Name="btn_logIn" Content="Log ind" HorizontalAlignment="Left" Margin="276,289,0,0" VerticalAlignment="Top" Width="249" Height="28" FontFamily="Segoe UI Light" Click="btn_logIn_Click"/>
         <Label x:Name="lbl_login" Content="Log ind" HorizontalAlignment="Left" Margin="361,158,0,0" VerticalAlignment="Top" FontSize="18" FontFamily="Segoe UI Light"/>
-        <Button Content="Opret" HorizontalAlignment="Left" Margin="276,335,0,0" VerticalAlignment="Top" Width="105" FontFamily="Segoe UI Light"/>
+        <Button Content="Opret" HorizontalAlignment="Left" Margin="276,335,0,0" VerticalAlignment="Top" Width="105" FontFamily="Segoe UI Light" Click="Button_Click"/>
         <Button Content="Glemt kode?" HorizontalAlignment="Left" Margin="420,335,0,0" VerticalAlignment="Top" Width="105" FontFamily="Segoe UI Light"/>
 
     </Grid>
-</Page>
+</Window>
