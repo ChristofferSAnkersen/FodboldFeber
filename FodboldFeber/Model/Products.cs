@@ -12,10 +12,6 @@ namespace FodboldFeber.Model
    
     public class Products
     {
-        //List of products, we might need it later.
-        //List<Products> p = new List<Products>();
-
-        //Local variables used in the matching properties just below
         private string _productName = "JegSkalÆndreMigNu!!!";
         private int _productID;
         private string _category = "JegSkalÆndreMigNu!!!";
@@ -203,7 +199,7 @@ namespace FodboldFeber.Model
         string query = "";
         private static string connectionString = "Server=EALSQL1.eal.local; Database=DB2017_A27; User Id= USER_A27; Password=SesamLukOp_27;";
 
-        //Actual logic for Adding a product. Is called by ShopController by a btn click event in "Admin Tools"
+        //Actual logic for Adding a product. Is called by "ShopController" by a btn click event in "AdminTools"
         public void AddProduct()
         {
             using (SqlConnection con = new SqlConnection(connectionString))
@@ -217,25 +213,7 @@ namespace FodboldFeber.Model
                     SqlCommand cmd1 = new SqlCommand(query, con);
                   
                     SqlDataReader myReader = cmd1.ExecuteReader();
-                    
-
-                    while (myReader.Read())
-                    {
-
-                        //at the moment the list is not used
-
-                        //Products p = new Products();
-                        //p.ProductID = myReader["ProductID"];
-                        //p.ProductName = (string)myReader["ProductName"];
-                        //p.Category = (string)myReader["Category"];
-                        //p.ProductDescription = (string)myReader["ProductDescription"];
-                        //p.ProductPrice = (double)MyReader["ProductPrice"];
-                        //p.AmountInStock = (int)MyReader["AmountInStock"];
-                        //p.ShippingPrice = (double)MyReader["ShippingPrice"];
-                        //p.Size = (string)MyReader["Size"];
-                        //p.DiscountPrice = (double)MyReader["DiscountPrice"];
-                        //ListOfProducts.Add(p);
-                    }
+   
                     con.Close();
                 }
                 catch (SqlException e)
@@ -296,11 +274,7 @@ namespace FodboldFeber.Model
 
         private void OnPropertyChanged(string propertyName)
         {
-            PropertyChangedEventHandler handler = PropertyChanged;
-            if (handler != null)
-            {
-                handler(this, new PropertyChangedEventArgs(propertyName));
-            }
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

@@ -70,10 +70,11 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Controller\ShopController.cs" />
-    <Compile Include="InstantSearch\ProductsResultItem.cs" />
-    <Compile Include="InstantSearch\ErrorResultItem.cs" />
-    <Compile Include="InstantSearch\HelpResultItem.cs" />
-    <Compile Include="InstantSearch\ResultItem.cs" />
+    <Compile Include="Model\InstantSearch\ProductsResultItem.cs" />
+    <Compile Include="Model\InstantSearch\ErrorResultItem.cs" />
+    <Compile Include="Model\InstantSearch\HelpResultItem.cs" />
+    <Compile Include="Model\InstantSearch\ResultItem.cs" />
+    <Compile Include="Model\Authenticated.cs" />
     <Compile Include="Model\SearchFunction.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -180,7 +181,6 @@
     <Compile Include="Model\Users.cs" />
     <Compile Include="Model\Orders.cs" />
     <Compile Include="Model\Products.cs" />
-    <Compile Include="Model\Program.cs" />
     <Compile Include="Model\ShoppingCart.cs" />
     <Compile Include="View\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
