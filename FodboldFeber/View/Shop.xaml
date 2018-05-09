@@ -10,8 +10,16 @@
     <Window.DataContext>
         <model:SearchFunction />
     </Window.DataContext>
+
+    <ListBox>
+        <WrapPanel>
+            <ListBoxItem>ListBox Item #1</ListBoxItem>
+        <ListBoxItem>ListBox Item #2</ListBoxItem>
+        <ListBoxItem>ListBox Item #3</ListBoxItem>
+        </WrapPanel>
+    </ListBox>
     
-    <Grid Margin="143,181,56.333,18.667">
+    <!--<Grid Margin="11,9,188.333,190.667">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
@@ -26,9 +34,9 @@
 
         <Button Grid.Column="0" Grid.Row="0" x:Name="img_product1" Background="{x:Null}">
             <StackPanel>
-                <Image Source="https://www.decathlon.co.uk/media/836/8364270/big_f77c6334b6fe4594ba55490a4bb26faa.jpg" Height="92" Width="92" />
-                <TextBlock FontFamily="Segoe UI Light"><Run Text="Manchester United"/></TextBlock>
-                <TextBlock FontFamily="Segoe UI Light"><Run Text="750 Kr."/></TextBlock>
+                <Image Source="{Binding Path=ProductImage}" Height="92" Width="92" />
+                <TextBlock FontFamily="Segoe UI Light"><Run Text="{Binding Path=ProductName}"/></TextBlock>
+                <TextBlock FontFamily="Segoe UI Light"><Run Text="{Binding Path=ProductPrice}"/></TextBlock>
             </StackPanel>
         </Button>
 
@@ -43,7 +51,7 @@
         <Button Grid.Column="1" Grid.Row="1" x:Name="img_product3" Background="{x:Null}">
             <StackPanel>
                 <Image Source="https://fodboldfessor.dk/wp-content/uploads/2014/08/brondby-hjemmebanetroje-300x300.jpg" Height="92" Width="92" />
-                <TextBlock FontFamily="Segoe UI Light"><Run Text="Brøndbysvin"/></TextBlock>
+                <TextBlock FontFamily="Segoe UI Light"><Run Text="Brøndby"/></TextBlock>
                 <TextBlock FontFamily="Segoe UI Light"><Run Text="750 Kr."/></TextBlock>
             </StackPanel>
         </Button>
@@ -67,10 +75,10 @@
         <Button Grid.Column="1" Grid.Row="0" x:Name="img_product6" Background="White">
             <StackPanel>
                 <Image Source="https://fodboldfessor.dk/wp-content/uploads/2014/08/brondby-hjemmebanetroje-300x300.jpg" Height="92" Width="92" />
-                <TextBlock FontFamily="Segoe UI Light"><Run Text="Brøndbysvin"/></TextBlock>
+                <TextBlock FontFamily="Segoe UI Light"><Run Text="Brøndby"/></TextBlock>
                 <TextBlock FontFamily="Segoe UI Light"><Run Text="750 Kr."/></TextBlock>
             </StackPanel>
-        </Button>
+        </Button>-->
         
         <!--<Popup PlacementTarget="{Binding ElementName=searchBox}" Placement="Bottom" IsOpen="{Binding ElementName=searchBox, Path=IsFocused, Mode=OneWay}">
             <Popup.Resources>
@@ -148,5 +156,5 @@
                 </ListView>
             </Popup>
         </StackPanel>-->
-    </Grid>
+    <!--</Grid>-->
 </Window>

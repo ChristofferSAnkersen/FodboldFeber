@@ -272,7 +272,7 @@ namespace FodboldFeber.Model
             try
             {
                 //Assigns the updated textbox values for the item choosen by the user in the "ChooseItem" combobox, and adds them to the "Query" variable.
-                query = "Update Products set ProductID='" + this.ProductID+ "', ProductName='" + this.ProductName+ "', Category='" + this.Category+ "', ProductDescription='" + this.ProductDescription+ "', ProductPrice='" + this.Price+ "', AmountInStock='" + this.AmountInStock+ "', ShippingPrice='" + this.ShippingPrice+ "', Size='" + this.Size+ "', DiscountPrice='" + this.DiscountPrice+ "' where ProductName='" + this.ChooseItem+ "' ";
+                query = "Update Products set ProductID='" + this.ProductID+ "', ProductName='" + this.ProductName+ "', Category='" + this.Category+ "', ProductDescription='" + this.ProductDescription+ "', ProductPrice='" + this.Price+ "', AmountInStock='" + this.AmountInStock+ "', ShippingPrice='" + this.ShippingPrice+ "', Size='" + this.Size+ "', DiscountPrice='" + this.DiscountPrice+ "', ProductImage='" + this.ProductImage+ "' where ProductName='" + this.ChooseItem+ "' ";
                 SqlConnection con = new SqlConnection(connectionString);
                 // The newly updated information about the item is updated in the database too
                 SqlCommand cmd1 = new SqlCommand(query, con);
