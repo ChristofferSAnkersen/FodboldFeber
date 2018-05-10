@@ -9,7 +9,7 @@ namespace FodboldFeber.Controller
 {
     class CustomerController : Authenticated
     {
-        bool IsAuthenticated; 
+        //bool IsAuthenticated; 
 
 
     }

@@ -69,6 +69,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Controller\LoginController.cs" />
     <Compile Include="Controller\ShopController.cs" />
     <Compile Include="Model\InstantSearch\ProductsResultItem.cs" />
     <Compile Include="Model\InstantSearch\ErrorResultItem.cs" />
