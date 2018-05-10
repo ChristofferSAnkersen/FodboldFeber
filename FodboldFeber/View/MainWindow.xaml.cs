@@ -51,9 +51,8 @@ namespace FodboldFeber
 
         private void Login_Click(object sender, RoutedEventArgs e)
         {
-            Login login = new Login();
-            login.Show();
-            this.Close();
+            StartPage.Content = new Login();
+          
         }
 
         private void News_Click(object sender, RoutedEventArgs e)

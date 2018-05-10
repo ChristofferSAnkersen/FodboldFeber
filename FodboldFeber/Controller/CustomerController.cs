@@ -1,4 +1,4 @@
-﻿ /* using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,20 +7,12 @@ using FodboldFeber.Model;
 
 namespace FodboldFeber.Controller
 {
-    class CustomerController : Login
+    class CustomerController : Authenticated
     {
-        public CustomerController()
-        {
-            Username = " Her er dit brugernavn";
-            Password = "Her er dit Kodeord";
+        bool IsAuthenticated; 
 
 
-        }
-        public void InitLogin()
-        {
-            InitializeLogin();
-          
-        }
     }
+        
+        
 }
-*/

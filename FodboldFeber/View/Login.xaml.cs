@@ -25,7 +25,7 @@ namespace FodboldFeber.View
     /// <summary>
     /// Interaction logic for Login.xaml
     /// </summary>
-    public partial class Login : Window
+    public partial class Login : Page
     {
        // CustomerController cController;
         public Login()
@@ -51,11 +51,9 @@ namespace FodboldFeber.View
                         int count = Convert.ToInt32(sqlCmd.ExecuteScalar());
                         if (count == 1)
                         {
-                        Shop shop = new Shop();
-                        shop.Show();
-                        this.Close();
-
-                    }
+                            MainWindow mw = new MainWindow();
+                            bool IsAuthenticated = true;
+                        }
                     }
                     catch (SqlException ee)
                     {
@@ -72,7 +70,7 @@ namespace FodboldFeber.View
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             ChooseType page = new ChooseType();
-            this.Content = page;
+            NavigationService.Navigate(page);
         }
     }
 }
