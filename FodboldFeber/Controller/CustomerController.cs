@@ -9,6 +9,16 @@ namespace FodboldFeber.Controller
 {
     class CustomerController : Users
     {
+        public CustomerController()
+        {
+            UserName = "Angiv dit fuldenavn";
+            Name = "Angiv brugernavn";
+            Address = "Angiv adresse";
+            Password = "Angiv kodeord";
+            PhoneNumber = 0;
+            Email = "Angiv email";
+         
+        }
         public  void AddProductControl()
         {
             AddPrivateUser();

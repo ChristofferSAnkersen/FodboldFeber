@@ -16,7 +16,7 @@ namespace FodboldFeber.Model
         private string _name = "ChangeMe";
         private string _address = "ChangeMe";
         private string _password = "ChangeMe";
-        private string _phonenumber= "ChangeMe";
+        private int _phonenumber;
         private string _email = "ChangeMe";
         public string ClubAddress { get; set; }
         public string ClubName { get; set; }
@@ -75,7 +75,7 @@ namespace FodboldFeber.Model
 
             }
         }
-        public string PhoneNumber
+        public int PhoneNumber
         {
             get
             {

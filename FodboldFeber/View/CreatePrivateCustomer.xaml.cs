@@ -26,6 +26,7 @@ namespace FodboldFeber.View
         {
             InitializeComponent();
             customerController = new CustomerController();
+            this.DataContext = customerController;
             txtbox_name.Text = "Angiv dit fuldnavn";
             txtbox_username.Text = "Angiv Brugernavn";
             txtbox_password.Text = "Angiv Kodeord";
