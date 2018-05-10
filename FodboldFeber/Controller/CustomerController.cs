@@ -7,10 +7,12 @@ using FodboldFeber.Model;
 
 namespace FodboldFeber.Controller
 {
-    class CustomerController : Authenticated
+    class CustomerController : Users
     {
-        bool IsAuthenticated; 
-
+        public  void AddProductControl()
+        {
+            AddPrivateUser();
+        }
 
     }
         

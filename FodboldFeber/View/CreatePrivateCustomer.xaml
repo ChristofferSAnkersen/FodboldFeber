@@ -11,26 +11,20 @@
 
     <Grid>
         <Rectangle Fill="#FFF9F9F9" HorizontalAlignment="Left" Height="377" Margin="229,89,0,0" Stroke="Black" VerticalAlignment="Top" Width="308"/>
-        <TextBox x:Name="txtbox_firstName" HorizontalAlignment="Left" Height="23" Margin="263,163,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="112"/>
-        <TextBox x:Name ="txtbox_lastName" HorizontalAlignment="Left" Height="23" Margin="393,163,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="112"/>
-        <Label Content="Fornavn(e)" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="257,137,0,0" FontFamily="Segoe UI Light"/>
-        <TextBox x:Name="txtbox_email" HorizontalAlignment="Left" Height="23" Margin="263,217,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="112"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="263,272,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="112"/>
+        <TextBox x:Name="txtbox_name" HorizontalAlignment="Left" Height="23" Margin="263,163,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="242" TextChanged="txtbox_firstName_TextChanged"/>
+        <Label Content="Fulde navn" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="257,137,0,0" FontFamily="Segoe UI Light"/>
+        <TextBox x:Name="txtbox_email" HorizontalAlignment="Left" Height="23" Margin="263,217,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="112" TextChanged="txtbox_email_TextChanged"/>
+        <TextBox x:Name="txtbox_username" HorizontalAlignment="Left" Height="23" Margin="263,272,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="112"/>
         <Label Content="Email" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="257,191,0,0" FontFamily="Segoe UI Light"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="393,272,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="112"/>
+        <TextBox x:Name="txtbox_password"  HorizontalAlignment="Left" Height="23" Margin="393,272,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="112" TextChanged="TextBox_TextChanged"/>
         <Label Content="Brugernavn" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="257,247,0,0" FontFamily="Segoe UI Light"/>
         <Label Content="Adgangskode" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="388,247,0,0" FontFamily="Segoe UI Light"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="263,326,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="242"/>
+        <TextBox x:Name ="txtbox_address" HorizontalAlignment="Left" Height="23" Margin="263,326,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="242" TextChanged="TextBox_TextChanged_1"/>
         <Label Content="Adresse" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="257,300,0,0" FontFamily="Segoe UI Light"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="263,379,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="112"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="393,379,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="112"/>
-        <Label Content="By" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="257,354,0,0" FontFamily="Segoe UI Light"/>
-        <Label Content="Postnummer" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="388,354,0,0" FontFamily="Segoe UI Light"/>
         <TextBox x:Name ="txtbox_phoneNumber" HorizontalAlignment="Left" Height="23" Margin="394,217,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="112"/>
         <Label Content="Telefon" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="388,191,0,0" FontFamily="Segoe UI Light"/>
-        <Button Content="Færdig" HorizontalAlignment="Left" Margin="263,421,0,0" VerticalAlignment="Top" Width="243" Height="27" FontFamily="Segoe UI Light"/>
+        <Button Content="Færdig" HorizontalAlignment="Left" Margin="263,421,0,0" VerticalAlignment="Top" Width="243" Height="27" FontFamily="Segoe UI Light" Click="CreateUser_Click"/>
         <Label Content="Opret profil" HorizontalAlignment="Left" Margin="328,100,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Segoe UI Light"/>
-        <Label Content="Efternavn" HorizontalAlignment="Left" Margin="388,137,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Light"/>
 
     </Grid>
 </Page>
