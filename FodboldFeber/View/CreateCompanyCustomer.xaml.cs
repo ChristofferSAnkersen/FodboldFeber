@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using FodboldFeber.Controller;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
@@ -20,9 +21,36 @@ namespace FodboldFeber.View
     /// </summary>
     public partial class CreateCompanyCustomer : Page
     {
+        private CustomerController customerController;
         public CreateCompanyCustomer()
-        {
+        {   
             InitializeComponent();
+            customerController = new CustomerController();
+            this.DataContext = customerController;
+            txtbox_name.Text = "Angiv dit fuldnavn";
+            txtbox_username.Text = "Angiv Brugernavn";
+            txtbox_password.Text = "Angiv Kodeord";
+            txtbox_phonenumber.Text = "Angiv Telefonnummer";
+            txtbox_email.Text = "Angiv Email";
+            txtbox_companyaddress.Text = "Angiv Adresse";
+            txtbox_companyname.Text = "Angv Klubnavn";
+            txtbox_companyposition.Text = "Angiv din position in klubben";
+            //txtbox_city.Text = "Angiv By";
+            //txtbox_postnummer.Text = "Angiv postnummer";
+            txtbox_cvr.Text = "Angiv CVR";
+
+
+
+        }
+
+      
+            
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            customerController.AddCompanyUserControl();
+            MessageBox.Show("Du er nu oprettet, Tak for at vise interesse for fodboldfeber :)");
+
         }
     }
 }
