@@ -5,29 +5,29 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using FodboldFeber.Model;
+using FodboldFeber.View;
 
 namespace FodboldFeber.Controller
 {
     class LoginController
     {
-        Login login = new Login();
-
-        public string Username = "";
-        public string Password = "";
+        Model.Login login = new Model.Login();
+        Authenticated auth = new Authenticated();
 
         public LoginController()
         {
-            login.Username = "Brugernavn";
-            login.Password = "Kodeord";
-
-
+            LoginParameters = new Model.Login { Username = "", Password = "" };
         }
+        public Model.Login LoginParameters { get; set; }
 
         public void InitializeLoginController()
         {
             login.InitializeLogin();
-        }
-
-        
+            if (auth.IsAuthenticated == true)
+            {
+                Shop shop = new Shop();
+                shop.Show();
+            }
+        }    
     }
 }

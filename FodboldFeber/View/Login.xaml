@@ -1,9 +1,10 @@
-﻿<Page x:Class="FodboldFeber.View.Login"
+﻿<Page
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:FodboldFeber.View"
+      xmlns:Controller="clr-namespace:FodboldFeber.Controller" x:Class="FodboldFeber.View.Login"
       mc:Ignorable="d" 
       Background="White"
       d:DesignHeight="600" d:DesignWidth="800"
@@ -13,8 +14,16 @@
         <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="267" Margin="250,148,0,0" Stroke="Black" VerticalAlignment="Top" Width="304"/>
 
         <Label Content="Fodboldfeber" HorizontalAlignment="Left" Margin="276,58,0,0" VerticalAlignment="Top" FontSize="40" Foreground="Red"/>
-        <TextBox x:Name="txtbox_username" HorizontalAlignment="Left" Height="31" Margin="276,203,0,0" TextWrapping="Wrap" Text="{ Binding Path= Username, Mode=OneWayToSource}" VerticalAlignment="Top" Width="249" FontFamily="Segoe UI Light"/>
-        <TextBox x:Name="txtbox_password" HorizontalAlignment="Left" Height="29" Margin="276,247,0,0" TextWrapping="Wrap" Text="{ Binding Path= Password, Mode=OneWayToSource}" VerticalAlignment="Top" Width="249" FontFamily="Segoe UI Light"/>
+        <TextBox x:Name="txtbox_username" HorizontalAlignment="Left" Height="31" Margin="276,203,0,0" TextWrapping="Wrap" Text="{Binding Path=LoginParameters.Username, Mode=OneWayToSource}" VerticalAlignment="Top" Width="249" FontFamily="Segoe UI Light">
+            <TextBox.DataContext>
+                <Controller:LoginController/>
+            </TextBox.DataContext>
+        </TextBox>
+        <TextBox x:Name="txtbox_password" HorizontalAlignment="Left" Height="29" Margin="276,247,0,0" TextWrapping="Wrap" Text="{Binding Path=LoginParameters.Password, Mode=OneWayToSource}" VerticalAlignment="Top" Width="249" FontFamily="Segoe UI Light">
+            <TextBox.DataContext>
+                <Controller:LoginController/>
+            </TextBox.DataContext>
+        </TextBox>
         <Label x:Name="lbl_login" Content="Log ind" HorizontalAlignment="Left" Margin="361,158,0,0" VerticalAlignment="Top" FontSize="18" FontFamily="Segoe UI Light"/>
         <Button x:Name="btn_logIn" Content="Log ind" HorizontalAlignment="Left" Margin="276,290,0,0" VerticalAlignment="Top" Width="248" Height="28" FontFamily="Segoe UI Light" Click="btn_logIn_Click"/>
         <Button Content="Opret" HorizontalAlignment="Left" Margin="276,330,0,0" VerticalAlignment="Top" Width="248" Height="28" FontFamily="Segoe UI Light" Click="Button_Click"/>

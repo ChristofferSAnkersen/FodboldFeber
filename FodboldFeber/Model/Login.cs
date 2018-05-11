@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.ComponentModel;
 using System.Data;
+using FodboldFeber.Controller;
 
 namespace FodboldFeber.Model
 {
@@ -13,12 +14,11 @@ namespace FodboldFeber.Model
     {
         Authenticated auth = new Authenticated();
         //private string _email = "Fakeemail";
+        private static string connectionString = "Server=EALSQL1.eal.local; Database=DB2017_A27; User Id= USER_A27; Password=SesamLukOp_27;";
         private string _username = "";
         private string _password = "";
-        private static string connectionString = "Server=EALSQL1.eal.local; Database=DB2017_A27; User Id= USER_A27; Password=SesamLukOp_27;";
-        
 
-        public string Email { get; set; }
+        //public string Email { get; set; }
         public string Username
         {
             get
@@ -27,7 +27,7 @@ namespace FodboldFeber.Model
             }
             set
             {
-                if (value != _username)
+                if (_username.Equals(value) == false)
                 {
                     _username = value;
                     OnPropertyChanged("Username");
@@ -39,11 +39,11 @@ namespace FodboldFeber.Model
         {
             get
             {
-                return _password;
+                    return _password;
             }
             set
             {
-                if (value != _password)
+                if (_password.Equals(value) == false)
                 {
                     _password = value;
                     OnPropertyChanged("Password");
@@ -59,7 +59,7 @@ namespace FodboldFeber.Model
                 try
                 {
                     if (con.State == ConnectionState.Closed)
-                        con.Open();
+                    con.Open();
                     String query = "SELECT COUNT(1) FROM tblUser WHERE Username=@username AND password=@password";
                     SqlCommand sqlCmd = new SqlCommand(query, con);
                     sqlCmd.CommandType = CommandType.Text;
@@ -69,6 +69,7 @@ namespace FodboldFeber.Model
                     if (count == 1)
                     {
                         auth.IsAuthenticated = true;
+                        
                     }
                 }
                 catch (SqlException ee)
@@ -86,7 +87,11 @@ namespace FodboldFeber.Model
 
         private void OnPropertyChanged(string propertyName)
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            PropertyChangedEventHandler handler = PropertyChanged;
+            if (handler != null)
+            {
+                handler(this, new PropertyChangedEventArgs(propertyName));
+            }
         }
 
     }

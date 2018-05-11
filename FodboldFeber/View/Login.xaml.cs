@@ -37,9 +37,7 @@ namespace FodboldFeber.View
 
         private void btn_logIn_Click(object sender, RoutedEventArgs e)
         {
-             lc.Username = txtbox_username.Text;
-             lc.Password = txtbox_password.Text;
-
+            lc.InitializeLoginController();
         }
 
 
