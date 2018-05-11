@@ -11,8 +11,10 @@ namespace FodboldFeber.Model
 {
     public class DataAccess
     {
+        Login login = new Login();
+        Authenticated auth = new Authenticated();
         //Products products = new Products();
-        //private static string connectionString = "Server=EALSQL1.eal.local; Database=DB2017_A27; User Id= USER_A27; Password=SesamLukOp_27;";
+        private static string connectionString = "Server=EALSQL1.eal.local; Database=DB2017_A27; User Id= USER_A27; Password=SesamLukOp_27;";
         public void Access()
         {
             //using (SqlConnection con = new SqlConnection(connectionString))
@@ -34,6 +36,35 @@ namespace FodboldFeber.Model
             //        Console.WriteLine(e + "Det virker ikke :(");
             //    }
             //}
+        }
+        public void InitializeLogin()
+        {
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    if (con.State == ConnectionState.Closed)
+                        con.Open();
+                    String query = "SELECT COUNT(1) FROM tblUser WHERE Username=@username AND password=@password";
+                    SqlCommand sqlCmd = new SqlCommand(query, con);
+                    sqlCmd.CommandType = CommandType.Text;
+                    sqlCmd.Parameters.AddWithValue("@username", login.Username);
+                    sqlCmd.Parameters.AddWithValue("@password", login.Password);
+                    int count = Convert.ToInt32(sqlCmd.ExecuteScalar());
+                    if (count == 1)
+                    {
+                        auth.IsAuthenticated = true;
+                    }
+                }
+                catch (SqlException ee)
+                {
+                    Console.WriteLine(ee + "Det lort virkede sku ikke");
+                }
+                finally
+                {
+                    con.Close();
+                }
+            }
         }
     }
 

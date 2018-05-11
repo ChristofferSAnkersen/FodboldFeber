@@ -11,7 +11,7 @@ namespace FodboldFeber.Controller
 {
     class LoginController
     {
-        Model.Login login = new Model.Login();
+        DataAccess DA = new DataAccess();
         Authenticated auth = new Authenticated();
 
         public LoginController()
@@ -22,7 +22,7 @@ namespace FodboldFeber.Controller
 
         public void InitializeLoginController()
         {
-            login.InitializeLogin();
+            DA.InitializeLogin();
             if (auth.IsAuthenticated == true)
             {
                 Shop shop = new Shop();
