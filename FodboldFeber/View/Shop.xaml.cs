@@ -38,7 +38,10 @@ namespace FodboldFeber.View
 
 
         }
-    
-       
+
+        private void btnNavigation_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

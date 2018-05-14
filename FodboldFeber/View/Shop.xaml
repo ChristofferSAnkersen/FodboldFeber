@@ -122,11 +122,13 @@
         <ListBox x:Name="ShopListBox" ItemsSource="{Binding ListOfProducts}" ScrollViewer.HorizontalScrollBarVisibility="Visible">
             <ListBox.ItemTemplate>
                 <DataTemplate>
+                    <Button x:Name="btnNavigation" Click="btnNavigation_Click">
                     <StackPanel Orientation="Vertical">
                         <Image Source="{Binding Path = ProductImage, Mode=TwoWay}" Stretch="UniformToFill"  Width="150" Height="75" />
                         <TextBox Text="{Binding Path = ProductName, Mode=TwoWay}"/>
                         <TextBox Text="{Binding Path = Price, Mode=TwoWay}"/>
                     </StackPanel>
+                    </Button>
                 </DataTemplate>
             </ListBox.ItemTemplate>
             <ListBox.ItemsPanel>
