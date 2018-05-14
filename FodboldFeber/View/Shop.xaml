@@ -134,6 +134,7 @@
         </ListBox>
        </ScrollViewer>
 
-
+        <Frame x:Name="ShopFrame" Margin="9,38,-9.6,-248.4" NavigationUIVisibility="Hidden"/>
     </Grid>
 </Window>
+    
