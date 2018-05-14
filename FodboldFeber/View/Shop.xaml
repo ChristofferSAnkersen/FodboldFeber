@@ -10,7 +10,7 @@
         Title="Shop" Height="600" Width="800">
     <!-- Comments coming here -->
     <Window.DataContext>
-       
+
         <VM:ShopController x:Name="VMShopController" />
     </Window.DataContext>
     <Grid>
@@ -62,7 +62,7 @@
         </StackPanel>
         <TextBox x:Name="searchBox" Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" Margin="513,0,10.333,228" Width="250" Height="20" VerticalAlignment="Bottom"/>
         <Label x:Name="_shopLabel" Content="Shop" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="356,38,-326,-34" FontSize="48"/>
-        <StackPanel Margin="19,21,0.333,-49">
+     <StackPanel Margin="191,124,83,-268">
             <Popup PlacementTarget="{Binding ElementName=searchBox}" Placement="Bottom" IsOpen="{Binding IsFocused, ElementName=searchBox, Mode=OneWay}">
                 <Popup.Resources>
                     <CollectionViewSource x:Key="GroupedSearchResults" Source="{Binding SearchResults}">
@@ -107,10 +107,16 @@
         <CheckBox Content="Halstørkæder" HorizontalAlignment="Left" Margin="45,204,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Light"/>
         <CheckBox Content="Tilbehør" HorizontalAlignment="Left" Margin="45,225,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Light"/>
         <Label Content="Kategori" HorizontalAlignment="Left" Margin="79,125,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.737,0.211" FontFamily="Segoe UI Light"/>
-        <ListBox x:Name="ShopListBox" ItemsSource="{Binding ListOfProducts}" ScrollViewer.HorizontalScrollBarVisibility="Visible" Margin="219,124,34.667,-248.667" RenderTransformOrigin="0.502,0.003">
+
+        <ScrollViewer VerticalScrollBarVisibility="Auto" Width="500" Height="400" Margin="191,125,83,-268">
+        <ListBox x:Name="ShopListBox" ItemsSource="{Binding ListOfProducts}" RenderTransformOrigin="0.502,0.003" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Height="Auto" Width="500">
+
+
+
+                
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <StackPanel Orientation="Vertical">
+                    <StackPanel>
                         <Image Source="{Binding Path = ProductImage, Mode=TwoWay}" Stretch="UniformToFill"  Width="150" Height="75" />
                         <TextBox Text="{Binding Path = ProductName, Mode=TwoWay}" BorderBrush="{x:Null}" SelectionBrush="{x:Null}"/>
                         <TextBox Text="{Binding Path = Price, Mode=TwoWay}" BorderBrush="{x:Null}" SelectionBrush="{x:Null}"/>
@@ -118,11 +124,16 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
             <ListBox.ItemsPanel>
+               
                 <ItemsPanelTemplate>
-                    <WrapPanel IsItemsHost="True" Orientation="Horizontal" Height="235" Width="496"/>
+  
+                        <WrapPanel IsItemsHost="True" Orientation="Horizontal" Height="Auto" Width="500" ScrollViewer.VerticalScrollBarVisibility="Auto" />
+                    
                 </ItemsPanelTemplate>
             </ListBox.ItemsPanel>
         </ListBox>
+       </ScrollViewer>
+
 
     </Grid>
 </Window>

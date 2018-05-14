@@ -69,8 +69,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Controller\LoginController.cs" />
-    <Compile Include="Controller\ShopController.cs" />
+    <Compile Include="ViewModel\LoginController.cs" />
+    <Compile Include="ViewModel\ShopController.cs" />
     <Compile Include="Model\InstantSearch\ProductsResultItem.cs" />
     <Compile Include="Model\InstantSearch\ErrorResultItem.cs" />
     <Compile Include="Model\InstantSearch\HelpResultItem.cs" />
@@ -177,7 +177,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Controller\CustomerController.cs" />
+    <Compile Include="ViewModel\CustomerController.cs" />
     <Compile Include="Model\DataAccess.cs" />
     <Compile Include="Model\Login.cs" />
     <Compile Include="Model\Users.cs" />
