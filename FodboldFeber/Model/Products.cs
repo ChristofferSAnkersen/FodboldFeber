@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.ComponentModel;
+using System.Data;
 
 
 namespace FodboldFeber.Model
@@ -12,8 +13,7 @@ namespace FodboldFeber.Model
    
     public class Products
     {
-        //List of products, we might need it later.
-        //List<Products> p = new List<Products>();
+        public List<ShopData> ListOfProducts = new List<ShopData>();
 
         //Local variables used in the matching properties just below
         private string _productName = "JegSkalÆndreMigNu!!!";
@@ -169,6 +169,7 @@ namespace FodboldFeber.Model
                 }
             }
         }
+   
         public double DiscountPrice
         {
             get
@@ -203,7 +204,35 @@ namespace FodboldFeber.Model
         string query = "";
         private static string connectionString = "Server=EALSQL1.eal.local; Database=DB2017_A27; User Id= USER_A27; Password=SesamLukOp_27;";
 
-        //Actual logic for Adding a product. Is called by ShopController by a btn click event in "Admin Tools"
+        //Logic to Shop, populates the list used to display items in the frontend
+        public void FillList(List<ShopData> listOfProducts)
+        {
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    con.Open();
+                    SqlCommand sqlCommand = new SqlCommand("SELECT * FROM Products", con);
+                    SqlDataReader myReader = sqlCommand.ExecuteReader();
+                    
+                    while (myReader.Read())
+                    {
+                        ShopData sd = new ShopData();
+                        sd.ProductName = (string)myReader["ProductName"];
+                        sd.Price = (double)myReader["ProductPrice"];
+                        sd.ProductImage = (string)myReader["ProductImage"];
+                        listOfProducts.Add(sd);
+                    }
+                    //con.Close();
+                }
+                catch (SqlException e)
+                {
+                    Console.WriteLine(e + "Kunne ikke udfylde listen");
+                }
+            }
+        }
+
+        //Actual logic for Adding a product. Is called by "ShopController" by a btn click event in "AdminTools"
         public void AddProduct()
         {
             using (SqlConnection con = new SqlConnection(connectionString))
@@ -222,18 +251,19 @@ namespace FodboldFeber.Model
                     while (myReader.Read())
                     {
 
-                        //at the moment the list is not used
+                        //Listen bliver pt aldrig brugt i en sammenhæng hvor der er behov for at den holder
+                        //nedenstående værdier
 
                         //Products p = new Products();
-                        //p.ProductID = myReader["ProductID"];
+                        //p.ProductID = (int)myReader["ProductID"];
                         //p.ProductName = (string)myReader["ProductName"];
                         //p.Category = (string)myReader["Category"];
                         //p.ProductDescription = (string)myReader["ProductDescription"];
-                        //p.ProductPrice = (double)MyReader["ProductPrice"];
-                        //p.AmountInStock = (int)MyReader["AmountInStock"];
-                        //p.ShippingPrice = (double)MyReader["ShippingPrice"];
-                        //p.Size = (string)MyReader["Size"];
-                        //p.DiscountPrice = (double)MyReader["DiscountPrice"];
+                        //p.Price = (double)myReader["ProductPrice"];
+                        //p.AmountInStock = (int)myReader["AmountInStock"];
+                        //p.ShippingPrice = (double)myReader["ShippingPrice"];
+                        //p.Size = (string)myReader["Size"];
+                        //p.DiscountPrice = (double)myReader["DiscountPrice"];
                         //ListOfProducts.Add(p);
                     }
                     con.Close();
@@ -258,6 +288,25 @@ namespace FodboldFeber.Model
                 SqlDataReader myReader;
                 myReader = cmd1.ExecuteReader();
             
+                while(myReader.Read())
+                {
+
+
+                    //Listen bliver pt aldrig brugt i en sammenhæng hvor der er behov for at den sletter
+                    //nedenstående værdier
+
+                    //Products p = new Products();
+                    //p.ProductID = (int)myReader["ProductID"];
+                    //p.ProductName = (string)myReader["ProductName"];
+                    //p.Category = (string)myReader["Category"];
+                    //p.ProductDescription = (string)myReader["ProductDescription"];
+                    //p.Price = (double)myReader["ProductPrice"];
+                    //p.AmountInStock = (int)myReader["AmountInStock"];
+                    //p.ShippingPrice = (double)myReader["ShippingPrice"];
+                    //p.Size = (string)myReader["Size"];
+                    //p.DiscountPrice = (double)myReader["DiscountPrice"];
+                    //ListOfProducts.Remove(p);
+                }
                 con.Close();
 
             }
@@ -282,6 +331,7 @@ namespace FodboldFeber.Model
              
                 while (myReader.Read())
                 {
+                    
                 }
             
                 con.Close();
@@ -292,6 +342,7 @@ namespace FodboldFeber.Model
                 Console.WriteLine(exe + "Varen kunne ikke opdateres");
             }
         }
+
         public event PropertyChangedEventHandler PropertyChanged;
 
         private void OnPropertyChanged(string propertyName)

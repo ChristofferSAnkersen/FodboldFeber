@@ -70,10 +70,13 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Controller\ShopController.cs" />
+    <Compile Include="Controller\ShopViewModel.cs" />
     <Compile Include="InstantSearch\ProductsResultItem.cs" />
     <Compile Include="InstantSearch\ErrorResultItem.cs" />
     <Compile Include="InstantSearch\HelpResultItem.cs" />
     <Compile Include="InstantSearch\ResultItem.cs" />
+    <Compile Include="Model\Datamanager.cs" />
+    <Compile Include="Model\ShopData.cs" />
     <Compile Include="Model\SearchFunction.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -175,7 +178,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Controller\CustomerController.cs" />
-    <Compile Include="Model\DataAccess.cs" />
     <Compile Include="Model\Login.cs" />
     <Compile Include="Model\Users.cs" />
     <Compile Include="Model\Orders.cs" />

@@ -10,14 +10,12 @@ namespace FodboldFeber.Controller
 {
     public class ShopController : Products
     {
-
-       
-
+        Products products = new Products();
         public ShopController()
         {
             //Default values for the properties, with the goal of displaying the needed message 
             //in the textboxes, instructing the user of what they should type in the boxes
-
+            //ListOfProducts = products.ListOfProducts;
             ChooseItem = "Vælg produkt";
 
             ProductName = "Angiv Produktnavn";
@@ -31,8 +29,15 @@ namespace FodboldFeber.Controller
             DiscountPrice = 0;
             ProductImage = "Vælg billede";
 
+        }
+        //Funktionality to Shop
+        public void PopulateList()
+        {
+            products.FillList(ListOfProducts);
             
         }
+       
+        //Funktionality to AdminTools
         public void AddProductControl()
         {
             AddProduct();
@@ -45,6 +50,7 @@ namespace FodboldFeber.Controller
         {
             UpdateProduct();
         }
+   
     }
  
 }
