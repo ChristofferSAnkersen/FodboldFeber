@@ -10,7 +10,7 @@
         Title="Shop" Height="600" Width="800">
     <!-- Comments coming here -->
     <Window.DataContext>
-       
+
         <VM:ShopController x:Name="VMShopController" />
     </Window.DataContext>
     <Grid>
@@ -100,6 +100,7 @@
                     </ListView.GroupStyle>
                 </ListView>
             </Popup>
+
         </StackPanel>
         <Rectangle Fill="WhiteSmoke" HorizontalAlignment="Left" Height="132" Margin="25,124,0,0" Stroke="#FFD6D6D6" VerticalAlignment="Top" Width="161"/>
         <CheckBox Content="Caps" HorizontalAlignment="Left" Margin="45,161,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Light"/>
@@ -111,11 +112,11 @@
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Button x:Name="btnNavigation" Click="btnNavigation_Click">
-                    <StackPanel Orientation="Vertical">
-                        <Image Source="{Binding Path = ProductImage, Mode=TwoWay}" Stretch="UniformToFill"  Width="150" Height="75" />
-                        <TextBox Text="{Binding Path = ProductName, Mode=TwoWay}" BorderBrush="{x:Null}" SelectionBrush="{x:Null}"/>
-                        <TextBox Text="{Binding Path = Price, Mode=TwoWay}" BorderBrush="{x:Null}" SelectionBrush="{x:Null}"/>
-                    </StackPanel>
+                        <StackPanel Orientation="Vertical">
+                            <Image Source="{Binding Path = ProductImage, Mode=TwoWay}" Stretch="UniformToFill"  Width="150" Height="75" />
+                            <TextBox Text="{Binding Path = ProductName, Mode=TwoWay}" BorderBrush="{x:Null}" SelectionBrush="{x:Null}"/>
+                            <TextBox Text="{Binding Path = Price, Mode=TwoWay}" BorderBrush="{x:Null}" SelectionBrush="{x:Null}"/>
+                        </StackPanel>
                     </Button>
                 </DataTemplate>
             </ListBox.ItemTemplate>
@@ -125,6 +126,6 @@
                 </ItemsPanelTemplate>
             </ListBox.ItemsPanel>
         </ListBox>
-
+        <Frame x:Name="ShopFrame" Margin="9,38,-9.6,-248.4" NavigationUIVisibility="Hidden"/>
     </Grid>
 </Window>
