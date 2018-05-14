@@ -218,6 +218,7 @@ namespace FodboldFeber.View
                         string ShippingPrice = reader.GetDouble(6).ToString();
                         string Size = reader.GetString(7);
                         string DiscountPrice = reader.GetDouble(8).ToString();
+                        string ProductImage = reader.GetString(9);
 
                         txb_ProductID.Text = ProductID;
                         txb_ProductName.Text = ProductName;
@@ -228,6 +229,7 @@ namespace FodboldFeber.View
                         txb_ShippingPrice.Text = ShippingPrice;
                         cmb_Size.Text = Size;
                         txb_DiscountPrice.Text = DiscountPrice;
+                        txb_ProductImage.Text = ProductImage;
                     }
                     con.Close();
                 }

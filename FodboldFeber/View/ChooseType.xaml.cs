@@ -24,5 +24,24 @@ namespace FodboldFeber.View
         {
             InitializeComponent();
         }
+
+        private void btn_logIn_Copy1_Click(object sender, RoutedEventArgs e)
+        {         
+            CreatePrivateCustomer page = new CreatePrivateCustomer();
+            NavigationService.Navigate(page);
+        }
+
+        private void btn_logIn_Copy2_Click(object sender, RoutedEventArgs e)
+        {
+            CreateClubCustomer page = new CreateClubCustomer();
+            NavigationService.Navigate(page);
+            
+        }
+
+        private void btn_logIn_Copy3_Click(object sender, RoutedEventArgs e)
+        {
+            CreateCompanyCustomer page = new CreateCompanyCustomer();
+            NavigationService.Navigate(page);
+        }
     }
 }

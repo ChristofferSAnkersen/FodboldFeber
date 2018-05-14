@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FodboldFeber.Controller;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,26 @@ namespace FodboldFeber.View
     /// </summary>
     public partial class CreatePrivateCustomer : Page
     {
+        private CustomerController customerController;
         public CreatePrivateCustomer()
         {
             InitializeComponent();
+            customerController = new CustomerController();
+            this.DataContext = customerController;
+            txtbox_name.Text = "Angiv dit fuldnavn";
+            txtbox_username.Text = "Angiv Brugernavn";
+            txtbox_password.Text = "Angiv Kodeord";
+            txtbox_phoneNumber.Text = "Angiv Telefonnummer";
+            txtbox_email.Text = "Angiv Email";
+            txtbox_address.Text = "Angiv Adresse";
+
+            
+        }
+
+        private void CreateUser_Click(object sender, RoutedEventArgs e)
+        {
+            customerController.AddPrivateUserControl();
+            MessageBox.Show("Du er nu oprettet, Tak for at vise interesse for fodboldfeber :)");
         }
     }
 }
