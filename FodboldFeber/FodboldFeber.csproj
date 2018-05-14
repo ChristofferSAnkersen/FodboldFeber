@@ -86,6 +86,9 @@
       <AutoGen>True</AutoGen>
     </Compile>
     <Compile Include="Model\ShopData.cs" />
+    <Compile Include="View\ProductProfile.xaml.cs">
+      <DependentUpon>ProductProfile.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Shoppingcart.xaml.cs">
       <DependentUpon>Shoppingcart.xaml</DependentUpon>
     </Compile>
@@ -125,6 +128,10 @@
     <Compile Include="View\Shop.xaml.cs">
       <DependentUpon>Shop.xaml</DependentUpon>
     </Compile>
+    <Page Include="View\ProductProfile.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Shoppingcart.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
