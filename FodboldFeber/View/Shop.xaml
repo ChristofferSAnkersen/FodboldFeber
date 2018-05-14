@@ -101,14 +101,6 @@
                 </ListView>
             </Popup>
         </StackPanel>
-        <Label x:Name="lbl_klaphat" Content="Klaphat" HorizontalAlignment="Left" Margin="219,279,0,0" VerticalAlignment="Top" Width="150" FontFamily="Segoe UI Light"/>
-        <Label Content="750,00 kr" HorizontalAlignment="Left" Margin="219,295,0,0" VerticalAlignment="Top"/>
-        <Label Content="Casual Gamer Jersey" HorizontalAlignment="Left" Margin="423,279,0,0" VerticalAlignment="Top" Width="150" FontFamily="Segoe UI Light"/>
-        <Label Content="450,00 kr" HorizontalAlignment="Left" Margin="423,295,0,0" VerticalAlignment="Top"/>
-        <Label Content="Bundle" HorizontalAlignment="Left" Margin="621,279,0,0" VerticalAlignment="Top" Width="150" FontFamily="Segoe UI Light"/>
-        <Label Content="650,00 kr" HorizontalAlignment="Left" Margin="621,295,0,0" VerticalAlignment="Top"/>
-        <Image Source="https://odense-esport.dk/wp-content/uploads/2018/04/bundle-768x951.jpg" HorizontalAlignment="Left" Height="150" Margin="621,124,0,0" VerticalAlignment="Top" Width="150" Stretch="UniformToFill" />
-        <Image Source="https://odense-esport.dk/wp-content/uploads/2017/08/LS1_8265.jpg" HorizontalAlignment="Left" Height="150" Margin="423,124,0,0" VerticalAlignment="Top" Width="150"/>
         <Image x:Name="img_product1" Source="https://odense-esport.dk/wp-content/uploads/2018/04/oes-lang.jpeg" HorizontalAlignment="Left" Height="150" Margin="219,124,0,0" VerticalAlignment="Top" Width="150" Stretch="UniformToFill">
             <Image.OpacityMask>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
