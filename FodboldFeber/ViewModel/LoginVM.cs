@@ -7,14 +7,14 @@ using System.Threading.Tasks;
 using FodboldFeber.Model;
 using FodboldFeber.View;
 
-namespace FodboldFeber.Controller
+namespace FodboldFeber.ViewModel
 {
-    class LoginController
+    class LoginVM
     {
         DataAccess DA = new DataAccess();
         Authenticated auth = new Authenticated();
 
-        public LoginController()
+        public LoginVM()
         {
             LoginParameters = new Model.Login { Username = "", Password = "" };
         }
