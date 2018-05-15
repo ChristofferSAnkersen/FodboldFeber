@@ -118,8 +118,8 @@
                 <DataTemplate>
                     <StackPanel>
                         <Image Source="{Binding Path = ProductImage, Mode=TwoWay}" Stretch="UniformToFill"  Width="150" Height="75" />
-                        <TextBox Text="{Binding Path = ProductName, Mode=TwoWay}" BorderBrush="{x:Null}" SelectionBrush="{x:Null}"/>
-                        <TextBox Text="{Binding Path = Price, Mode=TwoWay}" BorderBrush="{x:Null}" SelectionBrush="{x:Null}"/>
+                        <Label Content="{Binding Path = ProductName, Mode=TwoWay}" BorderBrush="{x:Null}"/>
+                        <Label Content="{Binding Path = Price, Mode=TwoWay}" BorderBrush="{x:Null}"/>
                     </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>
