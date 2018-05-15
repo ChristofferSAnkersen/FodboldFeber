@@ -32,7 +32,7 @@ namespace FodboldFeber.View
             InitializeComponent();
             shopVM = new ShopVM();
 
-            // Sets the itemsource again to make sure it is binded to the list "ListOfProducts" in "Shopcontroller" after it has been populated
+            // Sets the itemsource again to make sure it is binded to the list "ListOfProducts" in "ShopVM" after it has been populated
             shopVM.PopulateList();
             ShopListBox.ItemsSource = shopVM.ListOfProducts;
         }

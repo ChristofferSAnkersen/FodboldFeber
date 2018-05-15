@@ -4,7 +4,7 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:FodboldFeber.View"
-      xmlns:Controller="clr-namespace:FodboldFeber.Controller" x:Class="FodboldFeber.View.Login"
+    xmlns:ViewModel="clr-namespace:FodboldFeber.ViewModel" x:Class="FodboldFeber.View.Login"
       mc:Ignorable="d" 
       Background="White"
       d:DesignHeight="600" d:DesignWidth="800"
@@ -16,12 +16,12 @@
         <Label Content="Fodboldfeber" HorizontalAlignment="Left" Margin="276,58,0,0" VerticalAlignment="Top" FontSize="40" Foreground="Red"/>
         <TextBox x:Name="txtbox_username" HorizontalAlignment="Left" Height="31" Margin="276,203,0,0" TextWrapping="Wrap" Text="{Binding Path=LoginParameters.Username, Mode=OneWayToSource}" VerticalAlignment="Top" Width="249" FontFamily="Segoe UI Light">
             <TextBox.DataContext>
-                <Controller:LoginController/>
+                <ViewModel:LoginVM/>
             </TextBox.DataContext>
         </TextBox>
         <TextBox x:Name="txtbox_password" HorizontalAlignment="Left" Height="29" Margin="276,247,0,0" TextWrapping="Wrap" Text="{Binding Path=LoginParameters.Password, Mode=OneWayToSource}" VerticalAlignment="Top" Width="249" FontFamily="Segoe UI Light">
             <TextBox.DataContext>
-                <Controller:LoginController/>
+                <ViewModel:LoginVM/>
             </TextBox.DataContext>
         </TextBox>
         <Label x:Name="lbl_login" Content="Log ind" HorizontalAlignment="Left" Margin="361,158,0,0" VerticalAlignment="Top" FontSize="18" FontFamily="Segoe UI Light"/>

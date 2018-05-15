@@ -27,7 +27,7 @@ namespace FodboldFeber.View
     /// </summary>
     public partial class Login : Page
     {
-        LoginVM lc = new LoginVM();
+        LoginVM lvm = new LoginVM();
         // CustomerController cController;
         public Login()
         {
@@ -37,7 +37,7 @@ namespace FodboldFeber.View
 
         private void btn_logIn_Click(object sender, RoutedEventArgs e)
         {
-            lc.InitializeLoginController();
+            lvm.InitializeLoginController();
         }
 
 
