@@ -10,8 +10,8 @@
         Title="Shop" Height="600" Width="800">
     <!-- Comments coming here -->
     <Window.DataContext>
-
-        <VM:ShopVM x:Name="ShopVM" />
+        <model:SearchFunction x:Name="searchfuntion"/>
+        <!--<VM:ShopVM x:Name="ShopVM" />-->
     </Window.DataContext>
     <Grid>
         <Grid.RowDefinitions>
@@ -38,12 +38,12 @@
                         <DataTemplate x:Key="GroupingHeader">
                             <TextBlock Text="{Binding Path=Name}" Background="AliceBlue" FontWeight="SemiBold" FontSize="14" />
                         </DataTemplate>
-                        <!--<DataTemplate DataType="{x:Type instantsearch:ProductsResultItem}">
+                        <DataTemplate DataType="{x:Type instantsearch:ProductsResultItem}">
                             <StackPanel>
                                 <TextBlock Text="{Binding ProductName}" FontWeight="SemiBold" />
                                 <TextBlock Text="{Binding ProductDescription}" />
                             </StackPanel>
-                        </DataTemplate>-->
+                        </DataTemplate>
                         <DataTemplate DataType="{x:Type instantsearch:HelpResultItem}">
                             <StackPanel>
                                 <TextBlock Text="{Binding Title}" FontWeight="SemiBold" />
