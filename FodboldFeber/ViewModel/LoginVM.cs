@@ -11,7 +11,7 @@ namespace FodboldFeber.ViewModel
 {
     class LoginVM
     {
-        DataAccess DA = new DataAccess();
+        DataAccess dataAccess = new DataAccess();
         Authenticated auth = new Authenticated();
 
         public LoginVM()
@@ -20,14 +20,11 @@ namespace FodboldFeber.ViewModel
         }
         public Model.Login LoginParameters { get; set; }
 
-        public void InitializeLoginController()
+        public void InitializeLoginController() //Kører login i Login.cs, og åbner shoppen efter login -- Skal implementere IsAuthenticated som krav et sted
         {
-            DA.InitializeLogin();
-            if (auth.IsAuthenticated == true)
-            {
-                Shop shop = new Shop();
-                shop.Show();
-            }
+            dataAccess.InitializeLogin();
+            Shop shop = new Shop();
+            shop.Show();
         }    
     }
 }
