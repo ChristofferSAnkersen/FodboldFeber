@@ -25,7 +25,8 @@ namespace FodboldFeber.View
     {
             
         private ShopController shopController;
-        
+        public object SelectedItem { get; set; }
+       
         public Shop()
         {
            
@@ -35,11 +36,16 @@ namespace FodboldFeber.View
             // Sets the itemsource again to make sure it is binded to the list "ListOfProducts" in "Shopcontroller" after it has been populated
             shopController.PopulateList();
             ShopListBox.ItemsSource = shopController.ListOfProducts;
+           
         }
+
+    
 
         private void btnNavigation_Click(object sender, RoutedEventArgs e)
         {
+           
             ShopFrame.Content = new ProductProfile();
+           
         }
     }
 }

@@ -4,27 +4,30 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:FodboldFeber.View"
+       xmlns:VM="clr-namespace:FodboldFeber.Controller"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="ProductProfile"
       Background="White">
-
+    <Page.DataContext>
+        <VM:ShopController x:Name="VMShopController"/>
+    </Page.DataContext>
 
     <Grid>
         <Rectangle Fill="#FFFBFBFB" HorizontalAlignment="Left" Height="364" Margin="51,56,0,0" Stroke="#FFD6D6D6" VerticalAlignment="Top" Width="692"/>
 
-        <Image Source="https://odense-esport.dk/wp-content/uploads/2018/04/oes-lang.jpeg" HorizontalAlignment="Left" Height="270" Margin="73,78,0,0" VerticalAlignment="Top" Width="270" Stretch="UniformToFill"/>
-        <Label Content="Odense Esport Trøje" HorizontalAlignment="Left" Margin="402,76,0,0" VerticalAlignment="Top" Height="61" Width="341" FontFamily="Segoe UI Light" FontSize="36"/>
-        <Label Content="375,00 kr" HorizontalAlignment="Left" Margin="402,137,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.632,-0.256" FontSize="20" FontFamily="Segoe UI Light"/>
-        <Label Content="Trøje med Odense Esport logo" HorizontalAlignment="Left" Margin="402,179,0,0" VerticalAlignment="Top" Height="86" Width="310" FontFamily="Segoe UI Light"/>
-        <ComboBox Text="Vælg størrelse" HorizontalAlignment="Left" Margin="567,268,0,0" VerticalAlignment="Top" Width="143" Cursor="None" IsEditable="True" FontFamily="Segoe UI Light">
+        <Image Source="{Binding Path=ProductImage, Mode=TwoWay}" HorizontalAlignment="Left" Height="270" Margin="73,78,0,0" VerticalAlignment="Top" Width="270" Stretch="UniformToFill"/>
+        <Label Content="{Binding Path=ProductName, Mode=TwoWay}" HorizontalAlignment="Left" Margin="402,76,0,0" VerticalAlignment="Top" Height="61" Width="341" FontFamily="Segoe UI Light" FontSize="36"/>
+        <Label Content="{Binding Path=Price, Mode=TwoWay}" HorizontalAlignment="Left" Margin="402,137,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.632,-0.256" FontSize="20" FontFamily="Segoe UI Light"/>
+        <Label Content="{Binding Path = ProductDescription, Mode=TwoWay}" HorizontalAlignment="Left" Margin="402,179,0,0" VerticalAlignment="Top" Height="86" Width="310" FontFamily="Segoe UI Light"/>
+        <ComboBox Text="{Binding Path=Size, Mode=TwoWay}" HorizontalAlignment="Left" Margin="567,268,0,0" VerticalAlignment="Top" Width="143" Cursor="None" IsEditable="True" FontFamily="Segoe UI Light">
             <ComboBoxItem Content="S" HorizontalAlignment="Left" Width="118.666666666667"/>
             <ComboBoxItem Content="M" HorizontalAlignment="Left" Width="118.666666666667"/>
             <ComboBoxItem Content="L" HorizontalAlignment="Left" Width="118.666666666667"/>
             <ComboBoxItem Content="XL" HorizontalAlignment="Left" Width="118.666666666667"/>
             <ComboBoxItem Content="XXL" HorizontalAlignment="Left" Width="118.666666666667"/>
         </ComboBox>
-        <Button Content="Tilføj til kurv" HorizontalAlignment="Left" Margin="400,318,0,0" VerticalAlignment="Top" Width="310" Height="28" FontFamily="Segoe UI Light" Background="#FFF7F7F7"/>
+        <Button Content="Tilføj til kurv" HorizontalAlignment="Left" Margin="400,318,0,0" VerticalAlignment="Top" Width="310" Height="28" FontFamily="Segoe UI Light" Background="#FFF7F7F7" Click="Button_Click"/>
         <Label Content="Varenummer: 1" HorizontalAlignment="Left" Margin="402,372,0,0" VerticalAlignment="Top" FontFamily="Sitka Display" Background="{x:Null}" Foreground="#FF6F6F6F" FontStyle="Italic"/>
         <Label Content="Kategori: Trøjer" HorizontalAlignment="Left" Margin="512,372,0,0" VerticalAlignment="Top" FontFamily="Sitka Display" Background="{x:Null}" Foreground="#FF6F6F6F" FontStyle="Italic"/>
         <TextBox x:Name="txtbox_Quantity" HorizontalAlignment="Left" Height="23" Margin="400,267,0,0" TextWrapping="Wrap" Text="Vælg antal" VerticalAlignment="Top" Width="141" FontFamily="Segoe UI Light" />

@@ -28,7 +28,7 @@ namespace FodboldFeber.Controller
             Size = "Angiv størrelse";
             DiscountPrice = 0;
             ProductImage = "Vælg billede";
-
+            
         }
         //Funktionality to Shop
         public void PopulateList()
@@ -51,6 +51,11 @@ namespace FodboldFeber.Controller
             UpdateProduct();
         }
    
+        //Funktionality to ProductProfile
+        public void UpdateProperties()
+        {
+            ProductName = "opdater?";
+        }
     }
  
 }

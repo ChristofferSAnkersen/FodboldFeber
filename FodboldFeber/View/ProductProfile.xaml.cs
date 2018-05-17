@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using FodboldFeber.Controller;
+using System.Data;
 
 namespace FodboldFeber.View
 {
@@ -20,9 +22,18 @@ namespace FodboldFeber.View
     /// </summary>
     public partial class ProductProfile : Page
     {
+        private ShopController shopController;
         public ProductProfile()
         {
             InitializeComponent();
+            shopController = new ShopController();
+            shopController.PopulateList();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Varen er nu tilføjet til kurven");
+            
         }
     }
 }
