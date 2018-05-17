@@ -1,4 +1,4 @@
-﻿using FodboldFeber.Controller;
+﻿using FodboldFeber.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+
 namespace FodboldFeber.View
 {
     /// <summary>
@@ -21,12 +22,12 @@ namespace FodboldFeber.View
     /// </summary>
     public partial class CreatePrivateCustomer : Page
     {
-        private CustomerController customerController;
+        private CustomerVM customerVM;
         public CreatePrivateCustomer()
         {
             InitializeComponent();
-            customerController = new CustomerController();
-            this.DataContext = customerController;
+            customerVM = new CustomerVM();
+            this.DataContext = customerVM;
             txtbox_name.Text = "Angiv dit fuldnavn";
             txtbox_username.Text = "Angiv Brugernavn";
             txtbox_password.Text = "Angiv Kodeord";
@@ -39,7 +40,7 @@ namespace FodboldFeber.View
 
         private void CreateUser_Click(object sender, RoutedEventArgs e)
         {
-            customerController.AddPrivateUserControl();
+            customerVM.AddPrivateUserControl();
             MessageBox.Show("Du er nu oprettet, Tak for at vise interesse for fodboldfeber :)");
         }
     }

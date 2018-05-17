@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using FodboldFeber.Controller;
+using FodboldFeber.ViewModel;
 using System.Data.SqlClient;
 using FodboldFeber.View;
 using System.ComponentModel;
@@ -27,7 +27,7 @@ namespace FodboldFeber.View
     /// </summary>
     public partial class Login : Page
     {
-        LoginController lc = new LoginController();
+        LoginVM lvm = new LoginVM();
         // CustomerController cController;
         public Login()
         {
@@ -37,7 +37,7 @@ namespace FodboldFeber.View
 
         private void btn_logIn_Click(object sender, RoutedEventArgs e)
         {
-            lc.InitializeLoginController();
+            lvm.InitializeLoginController();
         }
 
 

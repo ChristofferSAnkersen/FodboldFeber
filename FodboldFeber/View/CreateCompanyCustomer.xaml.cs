@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using FodboldFeber.Controller;
+using FodboldFeber.ViewModel;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
@@ -21,12 +21,12 @@ namespace FodboldFeber.View
     /// </summary>
     public partial class CreateCompanyCustomer : Page
     {
-        private CustomerController customerController;
+        private CustomerVM customerVM;
         public CreateCompanyCustomer()
         {   
             InitializeComponent();
-            customerController = new CustomerController();
-            this.DataContext = customerController;
+            customerVM = new CustomerVM();
+            this.DataContext = customerVM;
             txtbox_name.Text = "Angiv dit fuldnavn";
             txtbox_username.Text = "Angiv Brugernavn";
             txtbox_password.Text = "Angiv Kodeord";
@@ -48,7 +48,7 @@ namespace FodboldFeber.View
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            customerController.AddCompanyUserControl();
+            customerVM.AddCompanyUserControl();
             MessageBox.Show("Du er nu oprettet, Tak for at vise interesse for fodboldfeber :)");
 
         }

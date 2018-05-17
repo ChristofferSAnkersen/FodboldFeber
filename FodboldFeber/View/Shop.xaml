@@ -5,13 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:model="clr-namespace:FodboldFeber.Model"
         xmlns:instantsearch="clr-namespace:FodboldFeber.InstantSearch"
-        xmlns:VM="clr-namespace:FodboldFeber.Controller"
+        xmlns:VM="clr-namespace:FodboldFeber.ViewModel"
        
         Title="Shop" Height="600" Width="800">
     <!-- Comments coming here -->
     <Window.DataContext>
-
-        <VM:ShopController x:Name="VMShopController" />
+        <model:SearchFunction x:Name="searchfuntion"/>
+        <!--<VM:ShopVM x:Name="ShopVM" />-->
     </Window.DataContext>
     <Grid>
         <Grid.RowDefinitions>

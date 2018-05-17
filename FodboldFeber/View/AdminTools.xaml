@@ -4,12 +4,12 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:FodboldFeber.View"
-         xmlns:VM="clr-namespace:FodboldFeber.Controller"
+      xmlns:VM="clr-namespace:FodboldFeber.ViewModel"
       Background="White"
       mc:Ignorable="d" d:DesignWidth="800"
       Title="AdminTools" Height="600">
     <Page.DataContext>
-        <VM:ShopController x:Name="VMShopController"></VM:ShopController>
+        <VM:ShopVM x:Name="VMShopVM"></VM:ShopVM>
     </Page.DataContext>
     <ScrollViewer Margin="0,0,0,0.2" >
         <Grid Height="610">

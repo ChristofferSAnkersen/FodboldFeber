@@ -5,11 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 using FodboldFeber.Model;
 
-namespace FodboldFeber.Controller
+namespace FodboldFeber.ViewModel
 {
-    class CustomerController : Users
+    class CustomerVM : Users
     {
-        public CustomerController()
+        public CustomerVM()
         {
             UserName = "Angiv dit fuldenavn";
             Name = "Angiv brugernavn";

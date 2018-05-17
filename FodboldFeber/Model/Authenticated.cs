@@ -20,7 +20,7 @@ namespace FodboldFeber.Model
             {
                 if (_isAuthenticated.Equals(value) == false)
                 {
-                    _isAuthenticated = true;
+                    _isAuthenticated = value;
                     OnPropertyChanged("IsAuthenticated");
                 }
             }

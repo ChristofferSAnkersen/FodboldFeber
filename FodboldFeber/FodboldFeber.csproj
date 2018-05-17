@@ -59,6 +59,7 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xaml">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
+      <Private>True</Private>
     </Reference>
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
@@ -69,8 +70,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Controller\LoginController.cs" />
-    <Compile Include="Controller\ShopController.cs" />
+    <Compile Include="ViewModel\LoginVM.cs" />
+    <Compile Include="ViewModel\ShopVM.cs" />
     <Compile Include="Model\InstantSearch\ProductsResultItem.cs" />
     <Compile Include="Model\InstantSearch\ErrorResultItem.cs" />
     <Compile Include="Model\InstantSearch\HelpResultItem.cs" />
@@ -184,7 +185,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Controller\CustomerController.cs" />
+    <Compile Include="ViewModel\CustomerVM.cs" />
     <Compile Include="Model\DataAccess.cs" />
     <Compile Include="Model\Login.cs" />
     <Compile Include="Model\Users.cs" />
