@@ -25,9 +25,9 @@
             </TextBox.DataContext>
         </TextBox>
         <Label x:Name="lbl_login" Content="Log ind" HorizontalAlignment="Left" Margin="361,158,0,0" VerticalAlignment="Top" FontSize="18" FontFamily="Segoe UI Light"/>
-        <Button x:Name="btn_logIn" Content="Log ind" HorizontalAlignment="Left" Margin="276,290,0,0" VerticalAlignment="Top" Width="248" Height="28" FontFamily="Segoe UI Light" Click="btn_logIn_Click"/>
-        <Button Content="Opret" HorizontalAlignment="Left" Margin="276,330,0,0" VerticalAlignment="Top" Width="248" Height="28" FontFamily="Segoe UI Light" Click="Button_Click"/>
-        <Button Content="Glemt kode?" HorizontalAlignment="Left" Margin="276,370,0,0" VerticalAlignment="Top" Width="248" Height="28" FontFamily="Segoe UI Light"/>
+        <Button x:Name="btn_logIn" Content="Log ind" HorizontalAlignment="Left" Margin="276,290,0,0" VerticalAlignment="Top" Width="248" Height="28" FontFamily="Segoe UI Light" Click="btnClicklogIn"/>
+        <Button Content="Opret" HorizontalAlignment="Left" Margin="276,330,0,0" VerticalAlignment="Top" Width="248" Height="28" FontFamily="Segoe UI Light" Click="BtnClickSignIn"/>
+        <Button x:Name="btnClickForgotPassword"  Content="Glemt kode?" HorizontalAlignment="Left" Margin="276,370,0,0" VerticalAlignment="Top" Width="248" Height="28" FontFamily="Segoe UI Light" Click="BtnClickForgotPassword"/>
 
     </Grid>
 </Page>

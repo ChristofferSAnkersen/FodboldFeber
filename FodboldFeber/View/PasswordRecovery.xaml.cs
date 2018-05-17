@@ -24,5 +24,10 @@ namespace FodboldFeber.View
         {
             InitializeComponent();
         }
+
+        private void btnSendEmail_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
