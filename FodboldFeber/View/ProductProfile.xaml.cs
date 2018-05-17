@@ -1,19 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using FodboldFeber.Controller;
-using System.Data;
+using FodboldFeber.ViewModel;
 
 namespace FodboldFeber.View
 {
@@ -22,12 +9,13 @@ namespace FodboldFeber.View
     /// </summary>
     public partial class ProductProfile : Page
     {
-        private ShopController shopController;
+        private ShopVM shopVM;
         public ProductProfile()
         {
             InitializeComponent();
-            shopController = new ShopController();
-            shopController.PopulateList();
+            shopVM = new ShopVM();
+            this.DataContext = shopVM;
+            shopVM.PopulateList();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
