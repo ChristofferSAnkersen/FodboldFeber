@@ -6,6 +6,8 @@ using FodboldFeber.ViewModel;
 using FodboldFeber.View;
 using System.Collections.Generic;
 
+
+
 namespace UnitTests
 {
     [TestClass]
@@ -14,6 +16,8 @@ namespace UnitTests
         Products products = new Products();
         ShopVM shopVM = new ShopVM();
         DataAccess dataAccess = new DataAccess();
+        MainWindow mainWindow = new MainWindow();
+
         public List<ShopData> ListOfProducts = new List<ShopData>();
         //Makes sure that the connection string sued to establish a connection has some value
         [TestMethod]
