@@ -37,7 +37,7 @@ namespace FodboldFeber.View
             ShopListBox.ItemsSource = shopVM.ListOfProducts;
         }
 
-        private void btnNavigation_Click(object sender, RoutedEventArgs e)
+        private void BtnNavigation_Click(object sender, RoutedEventArgs e)
         {
             ShopFrame.Content = new ProductProfile();
         }

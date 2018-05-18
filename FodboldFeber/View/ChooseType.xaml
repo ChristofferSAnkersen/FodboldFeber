@@ -14,9 +14,9 @@
 
         <Label Content="Fodboldfeber" HorizontalAlignment="Left" Margin="276,58,0,0" VerticalAlignment="Top" FontSize="40" Foreground="Red"/>
         <Label x:Name="lbl_question" Content="Hvilken type profil vil du oprette?" HorizontalAlignment="Left" Margin="274,158,0,0" VerticalAlignment="Top" FontSize="18" FontFamily="Segoe UI Light"/>
-        <Button x:Name="btn_logIn_Copy2" Content="Klub" HorizontalAlignment="Left" Margin="276,243,0,0" VerticalAlignment="Top" Width="249" Height="28" FontFamily="Segoe UI Light" Click="btn_logIn_Copy2_Click"/>
-        <Button x:Name="btn_logIn_Copy3" Content="Firma" HorizontalAlignment="Left" Margin="276,285,0,0" VerticalAlignment="Top" Width="249" Height="28" FontFamily="Segoe UI Light" Click="btn_logIn_Copy3_Click"/>
-        <Button x:Name="btn_logIn_Copy1" Content="Privat kunde" HorizontalAlignment="Left" Margin="276,200,0,0" VerticalAlignment="Top" Width="249" Height="28" FontFamily="Segoe UI Light" Click="btn_logIn_Copy1_Click"/>
+        <Button x:Name="btn_logIn_Copy2" Content="Klub" HorizontalAlignment="Left" Margin="276,243,0,0" VerticalAlignment="Top" Width="249" Height="28" FontFamily="Segoe UI Light" Click="BtnLogInClubClick"/>
+        <Button x:Name="btn_logIn_Copy3" Content="Firma" HorizontalAlignment="Left" Margin="276,285,0,0" VerticalAlignment="Top" Width="249" Height="28" FontFamily="Segoe UI Light" Click="BtnLogInCompanyClick"/>
+        <Button x:Name="btn_logIn_Copy1" Content="Privat kunde" HorizontalAlignment="Left" Margin="276,200,0,0" VerticalAlignment="Top" Width="249" Height="28" FontFamily="Segoe UI Light" Click="BtnLogInPrivateClick"/>
 
     </Grid>
 </Page>

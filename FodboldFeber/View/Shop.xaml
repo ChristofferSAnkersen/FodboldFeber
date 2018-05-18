@@ -113,7 +113,7 @@
             <ListBox x:Name="ShopListBox" ItemsSource="{Binding ListOfProducts}" SelectedItem="SelectedItem" RenderTransformOrigin="0.502,0.003" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Height="Auto" Width="500">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                        <Button x:Name="Navigation" Click="btnNavigation_Click">
+                        <Button x:Name="Navigation" Click="BtnNavigation_Click">
                         <StackPanel>
                         <Image x:Name="imgProductImage" Source="{Binding Path = ProductImage, Mode=TwoWay}" Stretch="UniformToFill"  Width="150" Height="75" />
                         <Label x:Name="lblProductName" Content="{Binding Path = ProductName, Mode=TwoWay}" BorderBrush="{x:Null}" />
