@@ -4,14 +4,14 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:FodboldFeber.View"
-      xmlns:VM="clr-namespace:FodboldFeber.Controller"
+      xmlns:VM="clr-namespace:FodboldFeber.ViewModel"
       mc:Ignorable="d" 
       d:DesignHeight="600" d:DesignWidth="800"
       Background="White"
       Title="CustomerProfile">
-    
+
     <Page.DataContext>
-        <VM:ShopController x:Name="VMShopController"></VM:ShopController>
+        <VM:ShopVM x:Name="VMShopVM"></VM:ShopVM>
     </Page.DataContext>
 
     <Grid Background="#FFFAFAFA" Margin="-1,0,1,0">

@@ -89,6 +89,9 @@
       <AutoGen>True</AutoGen>
     </Compile>
     <Compile Include="Model\ShopData.cs" />
+    <Compile Include="View\CustomerProfile.xaml.cs">
+      <DependentUpon>CustomerProfile.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\PasswordRecovery.xaml.cs">
       <DependentUpon>PasswordRecovery.xaml</DependentUpon>
     </Compile>
@@ -134,6 +137,10 @@
     <Compile Include="View\Shop.xaml.cs">
       <DependentUpon>Shop.xaml</DependentUpon>
     </Compile>
+    <Page Include="View\CustomerProfile.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\PasswordRecovery.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
