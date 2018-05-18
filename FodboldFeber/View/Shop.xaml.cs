@@ -21,7 +21,7 @@ namespace FodboldFeber.View
     /// <summary>
     /// Interaction logic for Shop.xaml
     /// </summary>
-    public partial class Shop : Window
+    public partial class Shop : Page
     {
             
         private ShopVM shopVM;
