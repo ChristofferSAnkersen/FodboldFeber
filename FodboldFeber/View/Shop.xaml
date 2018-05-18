@@ -110,10 +110,7 @@
 
         <ScrollViewer VerticalScrollBarVisibility="Auto" Width="500" Height="400" Margin="191,125,83,-268">
         <ListBox x:Name="ShopListBox" ItemsSource="{Binding ListOfProducts}" RenderTransformOrigin="0.502,0.003" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Height="Auto" Width="500">
-
-
-
-                
+            
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>
@@ -123,15 +120,12 @@
                     </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>
-            <ListBox.ItemsPanel>
-               
-                <ItemsPanelTemplate>
-  
+                <ListBox.ItemsPanel>
+                    <ItemsPanelTemplate>
                         <WrapPanel IsItemsHost="True" Orientation="Horizontal" Height="Auto" Width="500" ScrollViewer.VerticalScrollBarVisibility="Auto" />
-                    
-                </ItemsPanelTemplate>
-            </ListBox.ItemsPanel>
-        </ListBox>
+                    </ItemsPanelTemplate>
+                </ListBox.ItemsPanel>
+            </ListBox>
        </ScrollViewer>
 
         <Frame x:Name="ShopFrame" Margin="9,38,-9.6,-248.4" NavigationUIVisibility="Hidden"/>
