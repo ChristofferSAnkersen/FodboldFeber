@@ -51,7 +51,9 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml">
+      <Private>False</Private>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -59,6 +61,7 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xaml">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
+      <Private>True</Private>
     </Reference>
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
@@ -69,8 +72,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Controller\LoginController.cs" />
-    <Compile Include="Controller\ShopController.cs" />
+    <Compile Include="ViewModel\LoginVM.cs" />
+    <Compile Include="ViewModel\ShopVM.cs" />
     <Compile Include="Model\InstantSearch\ProductsResultItem.cs" />
     <Compile Include="Model\InstantSearch\ErrorResultItem.cs" />
     <Compile Include="Model\InstantSearch\HelpResultItem.cs" />
@@ -86,8 +89,8 @@
       <AutoGen>True</AutoGen>
     </Compile>
     <Compile Include="Model\ShopData.cs" />
-    <Compile Include="View\CustomerProfile.xaml.cs">
-      <DependentUpon>CustomerProfile.xaml</DependentUpon>
+    <Compile Include="View\PasswordRecovery.xaml.cs">
+      <DependentUpon>PasswordRecovery.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\ProductProfile.xaml.cs">
       <DependentUpon>ProductProfile.xaml</DependentUpon>
@@ -131,7 +134,7 @@
     <Compile Include="View\Shop.xaml.cs">
       <DependentUpon>Shop.xaml</DependentUpon>
     </Compile>
-    <Page Include="View\CustomerProfile.xaml">
+    <Page Include="View\PasswordRecovery.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -191,7 +194,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Controller\CustomerController.cs" />
+    <Compile Include="ViewModel\CustomerVM.cs" />
     <Compile Include="Model\DataAccess.cs" />
     <Compile Include="Model\Login.cs" />
     <Compile Include="Model\Users.cs" />

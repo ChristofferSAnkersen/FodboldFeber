@@ -6,16 +6,19 @@ using System.Threading.Tasks;
 using FodboldFeber.Model;
 using FodboldFeber.View;
 
-namespace FodboldFeber.Controller
+namespace FodboldFeber.ViewModel
+
 {
-    public class ShopController : Products
+    public class ShopVM : Products
     {
         Products products = new Products();
-        public ShopController()
+        public SearchFunction searchFunction { get; set; }
+        public ShopVM()
         {
             //Default values for the properties, with the goal of displaying the needed message 
             //in the textboxes, instructing the user of what they should type in the boxes
             //ListOfProducts = products.ListOfProducts;
+            
             ChooseItem = "Vælg produkt";
 
             ProductName = "Angiv Produktnavn";
@@ -28,7 +31,7 @@ namespace FodboldFeber.Controller
             Size = "Angiv størrelse";
             DiscountPrice = 0;
             ProductImage = "Vælg billede";
-
+            
         }
         //Funktionality to Shop
         public void PopulateList()
@@ -51,6 +54,11 @@ namespace FodboldFeber.Controller
             UpdateProduct();
         }
    
+        //Funktionality to ProductProfile
+        public void UpdateProperties()
+        {
+            ProductName = "opdater?";
+        }
     }
  
 }

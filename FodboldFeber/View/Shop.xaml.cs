@@ -14,7 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.ComponentModel;
 using System.Data;
-using FodboldFeber.Controller;
+using FodboldFeber.ViewModel;
 
 namespace FodboldFeber.View
 {
@@ -24,17 +24,17 @@ namespace FodboldFeber.View
     public partial class Shop : Window
     {
             
-        private ShopController shopController;
+        private ShopVM shopVM;
         
         public Shop()
         {
            
             InitializeComponent();
-            shopController = new ShopController();
+            shopVM = new ShopVM();
 
-            // Sets the itemsource again to make sure it is binded to the list "ListOfProducts" in "Shopcontroller" after it has been populated
-            shopController.PopulateList();
-            ShopListBox.ItemsSource = shopController.ListOfProducts;
+            // Sets the itemsource again to make sure it is binded to the list "ListOfProducts" in "ShopVM" after it has been populated
+            shopVM.PopulateList();
+            ShopListBox.ItemsSource = shopVM.ListOfProducts;
         }
 
         private void btnNavigation_Click(object sender, RoutedEventArgs e)

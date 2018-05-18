@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using FodboldFeber.Controller;
+using FodboldFeber.ViewModel;
 
 
 namespace FodboldFeber.View
@@ -22,12 +22,12 @@ namespace FodboldFeber.View
     /// </summary>
     public partial class CreateClubCustomer : Page
     {
-        private CustomerController customerController;
+        private CustomerVM customerVM;
         public CreateClubCustomer()
         {
             InitializeComponent();
-            customerController = new CustomerController();
-            this.DataContext = customerController;
+            customerVM = new CustomerVM();
+            this.DataContext = customerVM;
             txtbox_name.Text = "Angiv dit fuldnavn";
             txtbox_username.Text = "Angiv Brugernavn";
             txtbox_password.Text = "Angiv Kodeord";
@@ -45,7 +45,7 @@ namespace FodboldFeber.View
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            customerController.AddClubUserControl();
+            customerVM.AddClubUserControl();
             MessageBox.Show("Du er nu oprettet, Tak for at vise interesse for fodboldfeber :)");
         }
     }

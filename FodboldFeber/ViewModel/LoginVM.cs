@@ -7,27 +7,24 @@ using System.Threading.Tasks;
 using FodboldFeber.Model;
 using FodboldFeber.View;
 
-namespace FodboldFeber.Controller
+namespace FodboldFeber.ViewModel
 {
-    class LoginController
+    class LoginVM
     {
-        DataAccess DA = new DataAccess();
+        DataAccess dataAccess = new DataAccess();
         Authenticated auth = new Authenticated();
 
-        public LoginController()
+        public LoginVM()
         {
             LoginParameters = new Model.Login { Username = "", Password = "" };
         }
         public Model.Login LoginParameters { get; set; }
 
-        public void InitializeLoginController()
+        public void InitializeLoginController() //Kører login i Login.cs, og åbner shoppen efter login -- Skal implementere IsAuthenticated som krav et sted
         {
-            DA.InitializeLogin();
-            if (auth.IsAuthenticated == true)
-            {
-                Shop shop = new Shop();
-                shop.Show();
-            }
+            dataAccess.InitializeLogin();
+            Shop shop = new Shop();
+            shop.Show();
         }    
     }
 }

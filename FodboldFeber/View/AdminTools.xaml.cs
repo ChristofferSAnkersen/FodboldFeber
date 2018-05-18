@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using FodboldFeber.Controller;
+using FodboldFeber.ViewModel;
 using System.Data.SqlClient;
 using System.ComponentModel;
 
@@ -23,12 +23,12 @@ namespace FodboldFeber.View
     /// </summary>
     public partial class AdminTools : Page
     {
-        private ShopController shopController;
+        private ShopVM shopVM;
         public AdminTools()
         {
             InitializeComponent();
-            shopController = new ShopController();
-            this.DataContext = shopController;
+            shopVM = new ShopVM();
+            this.DataContext = shopVM;
             //Default values for the properties, with the goal of displaying the needed message 
             //in the textboxes, instructing the user of what they should type in the boxes
             ProductID.Text = "Angiv ProduktID";
@@ -81,7 +81,7 @@ namespace FodboldFeber.View
         {
             
             //Adds the product to the database through "ShopController" -> "Products"
-            shopController.AddProductControl();
+            shopVM.AddProductControl();
             MessageBox.Show("Varen er nu tilføjet");
 
             //Clears the ChooseItem combobox
@@ -244,7 +244,7 @@ namespace FodboldFeber.View
         private void DeleteButton_Click(object sender, RoutedEventArgs e)
         {
             //The actual logic for deleting an item lies in "Products", which it reaches through "ShopController" -> "Products"
-            shopController.DeleteProductControl();
+            shopVM.DeleteProductControl();
 
             MessageBox.Show("Varen er nu slettet");
             //Clears the ChooseItem combobox 
@@ -257,7 +257,7 @@ namespace FodboldFeber.View
         private void UpdateButton_Click(object sender, RoutedEventArgs e)
         {
             
-            shopController.UpdateProductControl();
+            shopVM.UpdateProductControl();
 
             MessageBox.Show("Varens oplysninger er nu opdateret");
             //Clears the ChooseItem combobox 

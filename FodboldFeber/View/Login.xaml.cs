@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using FodboldFeber.Controller;
+using FodboldFeber.ViewModel;
 using System.Data.SqlClient;
 using FodboldFeber.View;
 using System.ComponentModel;
@@ -27,7 +27,7 @@ namespace FodboldFeber.View
     /// </summary>
     public partial class Login : Page
     {
-        LoginController lc = new LoginController();
+        LoginVM lvm = new LoginVM();
         // CustomerController cController;
         public Login()
         {
@@ -35,18 +35,24 @@ namespace FodboldFeber.View
         }
         //private static string connectionString = "Server=EALSQL1.eal.local; Database=DB2017_A27; User Id= USER_A27; Password=SesamLukOp_27;";
 
-        private void btn_logIn_Click(object sender, RoutedEventArgs e)
+        private void btnClicklogIn(object sender, RoutedEventArgs e)
         {
-            lc.InitializeLoginController();
+            lvm.InitializeLoginController();
         }
 
 
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void BtnClickSignIn(object sender, RoutedEventArgs e)
             {
                 ChooseType page = new ChooseType();
                 NavigationService.Navigate(page);
             }
+
+        private void BtnClickForgotPassword(object sender, RoutedEventArgs e)
+        {
+            PasswordRecovery page = new PasswordRecovery();
+            NavigationService.Navigate(page);
+        }
     }
 }
 
