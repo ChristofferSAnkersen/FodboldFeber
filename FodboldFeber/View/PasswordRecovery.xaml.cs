@@ -42,7 +42,27 @@ namespace FodboldFeber.View
             client.EnableSsl = true;
             client.Send(msg);
             // MessageBox Confirmation 
-            MessageBox.Show("Email Sendt!");
-        }      
+            MessageBox.Show("Email Sendt til dig!");
+        }
+
+        private void BtnForgotUserNameClick(object sender, RoutedEventArgs e)
+        {
+            SmtpClient client;
+            MailMessage msg;
+            // Email message information
+            msg = new MailMessage();
+            msg.From = new MailAddress("fodboldfeberprojekt@gmail.com");
+            msg.To.Add(new MailAddress(txtEmail.Text));
+            msg.Subject = "Dit brugernavn er!";
+            msg.Body = "Dit brugernavn er @UserName";
+            // Smtp information 
+            client = new SmtpClient("smtp.gmail.com");
+            client.Port = 587;
+            client.Credentials = new System.Net.NetworkCredential("fodboldfeberprojekt@gmail.com", "Fodboldfeber123");
+            client.EnableSsl = true;
+            client.Send(msg);
+            // MessageBox Confirmation 
+            MessageBox.Show("Email Sendt til dig!");
+        }
     }
 }
