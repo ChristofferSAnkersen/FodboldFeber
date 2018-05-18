@@ -30,19 +30,20 @@ namespace FodboldFeber.View
         }
 
         private void BtnSendEmailClick(object sender, RoutedEventArgs e)
-        {
-            msg = new MailMessage
-            {
-                From = new MailAddress("fodboldfeberprojekt@gmail.com")
-            };
+        {   
+            // Email message information
+            msg = new MailMessage();
+            msg.From = new MailAddress("fodboldfeberprojekt@gmail.com");            
             msg.To.Add(new MailAddress(txtEmail.Text));
             msg.Subject = "Kodeords Nulstilling";
             msg.Body = "Dit kodeord er blevet nulstillet";
+            // Smtp information 
             client = new SmtpClient("smtp.gmail.com");
             client.Port = 587;
             client.Credentials = new System.Net.NetworkCredential("fodboldfeberprojekt@gmail.com", "Fodboldfeber123");
             client.EnableSsl = true;
             client.Send(msg);
+            // MessageBox Confirmation 
             MessageBox.Show("Email Sendt!");
         }
         
