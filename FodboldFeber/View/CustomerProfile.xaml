@@ -9,7 +9,7 @@
       d:DesignHeight="600" d:DesignWidth="800"
       Background="White"
       Title="CustomerProfile">
-    
+
     <Page.DataContext>
         <VM:ShopController x:Name="VMShopController"></VM:ShopController>
     </Page.DataContext>
