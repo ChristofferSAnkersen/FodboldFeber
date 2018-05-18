@@ -23,7 +23,7 @@ namespace FodboldFeber.View
     /// </summary>
     public partial class Shop : Window
     {
-            
+       
         private ShopVM shopVM;
         
         public Shop()
@@ -36,10 +36,17 @@ namespace FodboldFeber.View
             shopVM.PopulateList();
             ShopListBox.ItemsSource = shopVM.ListOfProducts;
         }
-
-        private void btnNavigation_Click(object sender, RoutedEventArgs e)
+        
+        private void BtnNavigation_Click(object sender, RoutedEventArgs e)
         {
-            ShopFrame.Content = new ProductProfile();
+            var item = ItemsControl.ContainerFromElement(ShopListBox, e.OriginalSource as DependencyObject) as ListBoxItem;
+            if(item!=null)
+            {
+                shopVM.UpdateProperties();
+
+                ShopFrame.Content = new ProductProfile();
+            }
+           
         }
     }
 }
