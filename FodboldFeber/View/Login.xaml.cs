@@ -38,6 +38,9 @@ namespace FodboldFeber.View
         private void btnClicklogIn(object sender, RoutedEventArgs e)
         {
             lvm.InitializeLoginController();
+            Shop page = new Shop();
+            NavigationService.Navigate(page);
+
         }
 
 

@@ -24,7 +24,7 @@ namespace FodboldFeber.ViewModel
         {
             dataAccess.InitializeLogin();
             Shop shop = new Shop();
-            shop.Show();
+            
         }    
     }
 }

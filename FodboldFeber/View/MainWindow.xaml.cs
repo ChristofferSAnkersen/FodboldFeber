@@ -62,9 +62,8 @@ namespace FodboldFeber
         }
         private void Shop_Click(object sender, RoutedEventArgs e)
         {
-            Shop shop = new Shop();
-            shop.Show();
-            this.Close();
+
+            StartPage.Content = new Shop();
         }
 
     }
