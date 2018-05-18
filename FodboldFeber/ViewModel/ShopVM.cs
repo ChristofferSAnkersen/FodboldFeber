@@ -13,6 +13,7 @@ namespace FodboldFeber.ViewModel
     {
         Products products = new Products();
         public SearchFunction searchFunction { get; set; }
+       
         public ShopVM()
         {
             //Default values for the properties, with the goal of displaying the needed message 

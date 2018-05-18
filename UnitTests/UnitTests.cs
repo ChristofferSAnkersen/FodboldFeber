@@ -1,0 +1,33 @@
+﻿using System;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using FodboldFeber;
+using FodboldFeber.Model;
+using FodboldFeber.ViewModel;
+using FodboldFeber.View;
+using System.Collections.Generic;
+
+namespace UnitTests
+{
+    [TestClass]
+    public class UnitTests
+    {
+        Products products = new Products();
+        ShopVM shopVM = new ShopVM();
+        DataAccess dataAccess = new DataAccess();
+        public List<ShopData> ListOfProducts = new List<ShopData>();
+        //Makes sure that the connection string sued to establish a connection has some value
+        [TestMethod]
+        public void ConnectionEstablished()
+        {
+          
+            string Connection = dataAccess.Access();
+            Assert.IsNotNull(Connection);
+        }
+
+        [TestMethod]
+        public void DefaultValuesLoaded()
+        {
+            Assert.AreNotEqual(shopVM.ProductName, null);
+        }
+    }
+}
