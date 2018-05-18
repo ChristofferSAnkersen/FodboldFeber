@@ -19,18 +19,16 @@ using FodboldFeber.ViewModel;
 namespace FodboldFeber.View
 {
     public partial class PasswordRecovery : Page
-    {
-        
-        SmtpClient client;
-        MailMessage msg;
+    {       
         CustomerVM cVM = new CustomerVM();
         public PasswordRecovery()
         {
             InitializeComponent();
         }
-
         private void BtnSendEmailClick(object sender, RoutedEventArgs e)
-        {   
+        {
+            SmtpClient client;
+            MailMessage msg;
             // Email message information
             msg = new MailMessage();
             msg.From = new MailAddress("fodboldfeberprojekt@gmail.com");            
@@ -45,9 +43,6 @@ namespace FodboldFeber.View
             client.Send(msg);
             // MessageBox Confirmation 
             MessageBox.Show("Email Sendt!");
-        }
-        
-
-
+        }      
     }
 }
