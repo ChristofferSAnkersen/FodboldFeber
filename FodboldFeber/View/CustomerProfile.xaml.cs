@@ -1,5 +1,4 @@
-﻿using FodboldFeber.View;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,24 +10,19 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace FodboldFeber
+namespace FodboldFeber.View
 {
     /// <summary>
-    /// Interaction logic for Shoppingcary.xaml
+    /// Interaction logic for CustomerProfile.xaml
     /// </summary>
-    public partial class Shoppingcart : Page
+    public partial class CustomerProfile : Page
     {
-        public Shoppingcart()
+        public CustomerProfile()
         {
             InitializeComponent();
-        }
-
-        public void BackToShoplbl_Click(object sender, RoutedEventArgs e)
-        {
-            Shop page = new Shop();
-            NavigationService.Navigate(page);          
         }
     }
 }

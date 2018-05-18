@@ -1,4 +1,4 @@
-﻿<Window x:Class="FodboldFeber.Shoppingcart"
+﻿<Page x:Class="FodboldFeber.Shoppingcart"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -45,4 +45,4 @@
         <Label x:Name="FinalOrderItem3lbl" Content="Cap&#xD;&#xA;" Grid.Column="1" HorizontalAlignment="Left" Margin="154,140,0,0" VerticalAlignment="Top"/>
         <Label x:Name="FinalOrderItemPrice3lbl" Content="119kr." Grid.Column="1" HorizontalAlignment="Left" Margin="328,140,0,0" VerticalAlignment="Top"/>
     </Grid>
-</Window>
+</Page>

@@ -1,4 +1,4 @@
-﻿<Window x:Class="FodboldFeber.View.Shop"
+﻿<Page x:Class="FodboldFeber.View.Shop"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -9,10 +9,10 @@
        
         Title="Shop" Height="600" Width="800">
     <!-- Comments coming here -->
-    <Window.DataContext>
+    <Page.DataContext>
         <model:SearchFunction x:Name="searchfunction"/>
         <!--<VM:ShopVM x:Name="ShopVM" />-->
-    </Window.DataContext>
+    </Page.DataContext>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition 
@@ -135,5 +135,5 @@
       
         <Frame x:Name="ShopFrame" Margin="9,38,-9.8,-286.4" NavigationUIVisibility="Hidden"/>
     </Grid>
-</Window>
+</Page>
     
