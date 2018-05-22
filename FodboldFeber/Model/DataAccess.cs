@@ -12,12 +12,18 @@ namespace FodboldFeber.Model
     public class DataAccess
     {
         Login login = new Login();
-        Authenticated auth = new Authenticated();
-        private static string connectionString = "Server=EALSQL1.eal.local; Database=DB2017_A27; User Id= USER_A27; Password=SesamLukOp_27;";
+        
+        public DataAccess()
+        {
+            CheckAuthentification = new Authenticated { IsAuthenticated = false };
+        }
+        public Authenticated CheckAuthentification { get; set; }
         public void Access()
         {
            
         }
+        private static string connectionString = "Server=EALSQL1.eal.local; Database=DB2017_A27; User Id= USER_A27; Password=SesamLukOp_27;";
+
         public void InitializeLogin()
         {
             using (SqlConnection con = new SqlConnection(connectionString))
@@ -34,7 +40,11 @@ namespace FodboldFeber.Model
                     int count = Convert.ToInt32(sqlCmd.ExecuteScalar());
                     if (count == 1)
                     {
-                        auth.IsAuthenticated = true;
+                        CheckAuthentification.IsAuthenticated = true;
+                    }
+                    else if (count == 0)
+                    {
+                        CheckAuthentification.IsAuthenticated = false;
                     }
                 }
                 catch (SqlException ee)
