@@ -24,6 +24,7 @@ namespace FodboldFeber.ViewModel
             CompanyAddress = "Angiv virksomhedens adresse";
             CVR= 0;
             CompanyPosition = "Angiv din position i virksomheden ";
+            
 
     }
         public  void AddPrivateUserControl()
@@ -38,7 +39,10 @@ namespace FodboldFeber.ViewModel
         {
             AddCompanyUser();
         }
-
+        public new void CheckIfExist()
+        {
+            CheckIfUserExists();
+        }
 
     }
         

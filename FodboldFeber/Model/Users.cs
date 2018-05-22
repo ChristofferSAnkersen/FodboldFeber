@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.ComponentModel;
-
+using System.Data;
 
 namespace FodboldFeber.Model
 {
@@ -25,7 +25,7 @@ namespace FodboldFeber.Model
         private string _companyAddress = "ChangeMe";
         private int _cvr;
         private string _companyPosition = "ChangeMe";
-      
+        private string _checkUserExist;
 
 
         public string Name
@@ -238,6 +238,22 @@ namespace FodboldFeber.Model
 
             }
         }
+        public string CheckIfExist
+        {
+            get
+            {
+                return this._checkUserExist;
+            }
+            set
+            {
+                if (value != this._checkUserExist)
+                {
+                      _checkUserExist = value;
+                    OnPropertyChanged("CheckIfExist");
+                }
+
+            }
+        }
         string query = "";
         private static string connectionString = "Server=EALSQL1.eal.local; Database=DB2017_A27; User Id= USER_A27; Password=SesamLukOp_27;";
         public void AddPrivateUser()
@@ -307,6 +323,23 @@ namespace FodboldFeber.Model
                 }
             }
         }
+        public void CheckIfUserExists()
+        {
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    if (con.State == ConnectionState.Closed)
+                        con.Open();
+                    String CheckIfExist = "txtUserName EXISTS(SELECT* FROM PRIVATE_USER.COLUMNS WHERE EMAIL = txtEmail)";
+                }
+                finally
+                {
+                    con.Close();
+                }
+            }
+            
+    }
         public void DeleteUser()
         {
 

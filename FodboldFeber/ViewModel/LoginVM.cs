@@ -26,5 +26,7 @@ namespace FodboldFeber.ViewModel
             Shop shop = new Shop();
             
         }    
+        
+        
     }
 }
