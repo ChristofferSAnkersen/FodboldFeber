@@ -331,7 +331,7 @@ namespace FodboldFeber.Model
                 {
                     if (con.State == ConnectionState.Closed)
                         con.Open();
-                    String CheckIfExist = "txtUserName EXISTS(SELECT* FROM PRIVATE_USER.COLUMNS WHERE EMAIL = txtEmail)";
+                    String CheckIfExist = "select from Private_User where Email=txtEmail.Text && UserName=txtEmail.Text";
                 }
                 finally
                 {
