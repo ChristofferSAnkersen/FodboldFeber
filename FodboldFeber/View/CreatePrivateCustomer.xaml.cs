@@ -33,9 +33,7 @@ namespace FodboldFeber.View
             txtbox_password.Text = "Angiv Kodeord";
             txtbox_phoneNumber.Text = "Angiv Telefonnummer";
             txtbox_email.Text = "Angiv Email";
-            txtbox_address.Text = "Angiv Adresse";
-
-            
+            txtbox_address.Text = "Angiv Adresse";       
         }
 
         private void CreateUser_Click(object sender, RoutedEventArgs e)

@@ -18,7 +18,7 @@ namespace FodboldFeber
     /// <summary>
     /// Interaction logic for Shoppingcary.xaml
     /// </summary>
-    public partial class Shoppingcart : Window
+    public partial class Shoppingcart : Page
     {
         public Shoppingcart()
         {
@@ -27,10 +27,8 @@ namespace FodboldFeber
 
         public void BackToShoplbl_Click(object sender, RoutedEventArgs e)
         {
-                Shop shop = new Shop();
-                shop.Show();
-                this.Close();
-            
+            Shop page = new Shop();
+            NavigationService.Navigate(page);          
         }
     }
 }

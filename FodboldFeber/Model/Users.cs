@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.ComponentModel;
+using FodboldFeber.View;
+using FodboldFeber.ViewModel;
 
 
 namespace FodboldFeber.Model
@@ -13,7 +15,7 @@ namespace FodboldFeber.Model
     {
         // public int UserID { get; set; }
         private string _username = "ChangeMe";
-        private string _name = "ChangeMe";
+        private string _name = "Changeme";
         private string _address = "ChangeMe";
         private string _password = "ChangeMe";
         private int _phonenumber;
@@ -311,10 +313,69 @@ namespace FodboldFeber.Model
         {
 
         }
+
         public void UpdateUser()
         {
+            CustomerProfile c = new CustomerProfile();
+            try
+            {
+                query = "Update Private_User set name='" + this.Name + "', phonenumber='" + this.PhoneNumber + "', email='" + this.Email + "', address='" + this.Address + "' where username ='" + c.lblName.Content + "' ";
+                SqlConnection con = new SqlConnection(connectionString);
+                SqlCommand cmd1 = new SqlCommand(query, con);
+                SqlDataReader myReader;
+                con.Open();
+                myReader = cmd1.ExecuteReader();
+
+                while (myReader.Read())
+                {
+
+                }
+
+                con.Close();
+
+            }
+            catch (SqlException exe)
+            {
+                Console.WriteLine(exe + "Brugeren kunne ikke blive opdateret.");
+            }
+        }
+
+        public void GetUserInfo()
+        {
+            CustomerProfile c = new CustomerProfile();
+            CustomerVM cvm = new CustomerVM();
+
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    con.Open();
+                    SqlCommand sqlCommand = new SqlCommand("SELECT name, phonenumber, email, address where username ='" + c.lblName.Content + "' ");
+                    SqlDataReader myReader = sqlCommand.ExecuteReader();
+
+                    while (myReader.Read())
+                    {
+                        string Name1 = (string)myReader["name"];
+                        int Phone1 = (int)myReader["phonenumber"];
+                        string Email1 = (string)myReader["email"];
+                        string Address1 = (string)myReader["address"];
+
+                        cvm.Name = Name1;
+                        cvm.PhoneNumber = Phone1;
+                        cvm.Email = Email1;
+                        cvm.Address = Address1;
+                    }
+
+                    con.Close();
+                }
+                catch (SqlException e)
+                {
+                    Console.WriteLine(e + "Kunne ikke udfylde listen");
+                }
+            }
 
         }
+
         public event PropertyChangedEventHandler PropertyChanged;
 
         private void OnPropertyChanged(string propertyName)

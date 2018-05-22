@@ -21,9 +21,9 @@ namespace FodboldFeber.View
     /// <summary>
     /// Interaction logic for Shop.xaml
     /// </summary>
-    public partial class Shop : Window
+    public partial class Shop : Page
     {
-            
+       
         private ShopVM shopVM;
         
         public Shop()
@@ -36,10 +36,17 @@ namespace FodboldFeber.View
             shopVM.PopulateList();
             ShopListBox.ItemsSource = shopVM.ListOfProducts;
         }
-
-        private void btnNavigation_Click(object sender, RoutedEventArgs e)
+        
+        private void BtnNavigation_Click(object sender, RoutedEventArgs e)
         {
-            ShopFrame.Content = new ProductProfile();
+       
+            var item = ItemsControl.ContainerFromElement(ShopListBox, e.OriginalSource as DependencyObject) as ListBoxItem;
+            if(item!=null)
+            {
+                ShopListBox.ItemsSource = shopVM.ListOfProducts;
+                ShopFrame.Content = new ProductProfile();
+
+            }
         }
     }
 }

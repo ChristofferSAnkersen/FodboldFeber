@@ -31,8 +31,8 @@
         <Label Content="Postnummer" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="388,544,0,0" FontFamily="Segoe UI Light"/>-->
         <TextBox x:Name="txtbox_clubname" HorizontalAlignment="Left" Height="23" Margin="263,464,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="112" Text="{Binding Path= ClubName, Mode=OneWayToSource}"/>
         <Label Content="Klubnavn" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="257,439,0,0" FontFamily="Segoe UI Light"/>
-        <Label Content="Din klubfunktion" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="388,439,0,0" FontFamily="Segoe UI Light"/>
         <GroupBox Header="Information om din klub" HorizontalAlignment="Left" Height="188" Margin="244,419,0,-7" VerticalAlignment="Top" Width="278" FontFamily="Segoe UI Light"/>
+        <Label Content="Din klubfunktion" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="388,439,0,0" FontFamily="Segoe UI Light"/>
 
     </Grid>
 </Page>
