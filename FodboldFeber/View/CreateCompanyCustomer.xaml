@@ -19,7 +19,7 @@
         <TextBox x:Name="txtbox_password" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" HorizontalAlignment="Left" Height="23" Margin="393,272,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="112" Text="{Binding Path= Password, Mode=OneWayToSource}"/>
         <Label Content="Brugernavn" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="257,247,0,0" FontFamily="Segoe UI Light"/>
         <Label Content="Adgangskode" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="388,247,0,0" FontFamily="Segoe UI Light"/>
-        <TextBox x:Name ="txtbox_phonenumber" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" HorizontalAlignment="Left" Height="23" Margin="394,217,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="112" Text="{Binding Path= PhoneNumber, Mode=OneWayToSource}" FontSize="9"/>
+        <TextBox x:Name ="txtbox_phonenumber" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" HorizontalAlignment="Left" Height="23" Margin="394,217,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="112" Text="{Binding Path= PhoneNumber, Mode=OneWayToSource}" FontSize="10"/>
         <Label Content="Telefon" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="388,191,0,0" FontFamily="Segoe UI Light"/>
         <Button Content="Færdig" HorizontalAlignment="Left" Margin="263,619,0,-46" VerticalAlignment="Top" Width="243" Height="27" FontFamily="Segoe UI Light" Click="Button_Click_1"/>
         <Label Content="Opret firmaprofil" HorizontalAlignment="Left" Margin="306,100,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Segoe UI Light"/>

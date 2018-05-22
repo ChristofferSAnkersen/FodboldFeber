@@ -111,7 +111,7 @@ namespace FodboldFeber.View
             {
                 textbox.Text = "Angiv Kodeord";
             }
-            else if (textbox.Name == "txtbox_phoneNumber" && textbox.Text == "")
+            else if (textbox.Name == "txtbox_phonenumber" && textbox.Text == "")
             {
                 textbox.Text = "Angiv Telefonnummer";
             }
