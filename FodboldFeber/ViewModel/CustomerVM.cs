@@ -11,19 +11,20 @@ namespace FodboldFeber.ViewModel
     {
         public CustomerVM()
         {
-            UserName = "Angiv brugernavn";
-            Name = "Angiv dit fulde navn";
+            UserName = "Angiv dit fuldenavn";
+            Name = "Angiv brugernavn";
             Address = "Angiv adresse";
             Password = "Angiv kodeord";
             PhoneNumber = 0;
             Email = "Angiv email";
-            ClubAddress = "Angiv klubadresse";
+            ClubAddress = "Angiv Klubadresse";
             ClubName = "Angiv klubbens navn";
             ClubPosition = "Angiv din position i klubben";
             CompanyName = "Angiv virksomhedens navn";
             CompanyAddress = "Angiv virksomhedens adresse";
             CVR= 0;
             CompanyPosition = "Angiv din position i virksomheden ";
+            
 
     }
         public  void AddPrivateUserControl()
@@ -38,15 +39,9 @@ namespace FodboldFeber.ViewModel
         {
             AddCompanyUser();
         }
-
-        public void UpdateUserControl()
+        public new void CheckIfExist()
         {
-            UpdateUser();
-        }
-
-        public void GetInfoForUserControl()
-        {
-            GetUserInfo();
+            CheckIfUserExists();
         }
 
     }

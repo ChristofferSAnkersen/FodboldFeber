@@ -52,7 +52,7 @@ namespace FodboldFeber.View
 
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
-            customerVM.UpdateUserControl();
+            //customerVM.UpdateUserControl();
 
             btnSave.Visibility = Visibility.Hidden;
             HideEditTxtboxes();
