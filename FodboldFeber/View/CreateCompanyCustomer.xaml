@@ -8,34 +8,36 @@
       d:DesignHeight="700" d:DesignWidth="800"
       Background="White"
       Title="CreateCompanyCustomer">
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <Grid ScrollViewer.CanContentScroll="True">
 
-    <Grid>
-        <Rectangle Fill="#FFF9F9F9" HorizontalAlignment="Left" Height="578" Margin="229,89,0,0" Stroke="Black" VerticalAlignment="Top" Width="308"/>
-        <TextBox x:Name="txtbox_name" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" HorizontalAlignment="Left" Height="23" Margin="263,163,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="241" Text="{Binding Path= Name, Mode=OneWayToSource}"/>
-        <Label Content="Fuldenavn på opretter" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="257,137,0,0" FontFamily="Segoe UI Light"/>
-        <TextBox x:Name="txtbox_email" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" HorizontalAlignment="Left" Height="23" Margin="263,217,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="112" Text="{Binding Path= Email, Mode=OneWayToSource}"/>
-        <TextBox x:Name="txtbox_username" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" HorizontalAlignment="Left" Height="23" Margin="263,272,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="112" Text="{Binding Path= UserName, Mode=OneWayToSource}"/>
-        <Label Content="Email" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="257,191,0,0" FontFamily="Segoe UI Light"/>
-        <TextBox x:Name="txtbox_password" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" HorizontalAlignment="Left" Height="23" Margin="393,272,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="112" Text="{Binding Path= Password, Mode=OneWayToSource}"/>
-        <Label Content="Brugernavn" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="257,247,0,0" FontFamily="Segoe UI Light"/>
-        <Label Content="Adgangskode" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="388,247,0,0" FontFamily="Segoe UI Light"/>
-        <TextBox x:Name ="txtbox_phonenumber" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" HorizontalAlignment="Left" Height="23" Margin="394,217,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="112" Text="{Binding Path= PhoneNumber, Mode=OneWayToSource}" FontSize="9"/>
-        <Label Content="Telefon" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="388,191,0,0" FontFamily="Segoe UI Light"/>
-        <Button Content="Færdig" HorizontalAlignment="Left" Margin="263,619,0,-46" VerticalAlignment="Top" Width="243" Height="27" FontFamily="Segoe UI Light" Click="Button_Click_1"/>
-        <Label Content="Opret firmaprofil" HorizontalAlignment="Left" Margin="306,100,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Segoe UI Light"/>
-        <GroupBox Header="Information om dit firma" HorizontalAlignment="Left" Height="188" Margin="244,419,0,-7" VerticalAlignment="Top" Width="278" FontFamily="Segoe UI Light" FontWeight="Bold"/>
-        <TextBox x:Name="txtbox_companyaddress" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" HorizontalAlignment="Left" Height="23" Margin="263,516,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="112" Text="{Binding Path= CompanyAddress, Mode=OneWayToSource}"/>
-        <Label Content="Klubadresse" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="257,490,0,0" FontFamily="Segoe UI Light" FontStyle="Italic"/>
-        <!--<TextBox x:Name="txtbox_city" HorizontalAlignment="Left" Height="23" Margin="394,516,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="112" Text="{Binding Path= City, Mode=OneWayToSource}"/>-->
-        <TextBox x:Name="txtbox_companyposition" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" HorizontalAlignment="Left" Height="23" Margin="394,464,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="112" Text="{Binding Path= CompanyPosition, Mode=OneWayToSource}"/>
-        <!--<TextBox x:Name="txtbox_postnummer" HorizontalAlignment="Left" Height="23" Margin="263,569,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="75" Text="{Binding Path= PostNummer, Mode=OneWayToSource}"/>
+            <Rectangle Fill="#FFF9F9F9" HorizontalAlignment="Left" Height="578" Margin="229,89,0,0" Stroke="Black" VerticalAlignment="Top" Width="308"/>
+            <TextBox x:Name="txtbox_name" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" HorizontalAlignment="Left" Height="23" Margin="263,163,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="241" Text="{Binding Path= Name, Mode=OneWayToSource}"/>
+            <Label Content="Fuldenavn på opretter" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="257,137,0,0" FontFamily="Segoe UI Light"/>
+            <TextBox x:Name="txtbox_email" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" HorizontalAlignment="Left" Height="23" Margin="263,217,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="112" Text="{Binding Path= Email, Mode=OneWayToSource}"/>
+            <TextBox x:Name="txtbox_username" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" HorizontalAlignment="Left" Height="23" Margin="263,272,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="112" Text="{Binding Path= UserName, Mode=OneWayToSource}"/>
+            <Label Content="Email" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="257,191,0,0" FontFamily="Segoe UI Light"/>
+            <TextBox x:Name="txtbox_password" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" HorizontalAlignment="Left" Height="23" Margin="393,272,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="112" Text="{Binding Path= Password, Mode=OneWayToSource}"/>
+            <Label Content="Brugernavn" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="257,247,0,0" FontFamily="Segoe UI Light"/>
+            <Label Content="Adgangskode" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="388,247,0,0" FontFamily="Segoe UI Light"/>
+            <TextBox x:Name ="txtbox_phonenumber" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" HorizontalAlignment="Left" Height="23" Margin="394,217,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="112" Text="{Binding Path= PhoneNumber, Mode=OneWayToSource}" FontSize="9"/>
+            <Label Content="Telefon" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="388,191,0,0" FontFamily="Segoe UI Light"/>
+            <Button Content="Færdig" HorizontalAlignment="Left" Margin="263,619,0,-46" VerticalAlignment="Top" Width="243" Height="27" FontFamily="Segoe UI Light" Click="Button_Click_1"/>
+            <Label Content="Opret firmaprofil" HorizontalAlignment="Left" Margin="306,100,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Segoe UI Light"/>
+            <GroupBox Header="Information om dit firma" HorizontalAlignment="Left" Height="188" Margin="244,419,0,-7" VerticalAlignment="Top" Width="278" FontFamily="Segoe UI Light" FontWeight="Bold"/>
+            <TextBox x:Name="txtbox_companyaddress" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" HorizontalAlignment="Left" Height="23" Margin="263,516,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="112" Text="{Binding Path= CompanyAddress, Mode=OneWayToSource}"/>
+            <Label Content="Klubadresse" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="257,490,0,0" FontFamily="Segoe UI Light" FontStyle="Italic"/>
+            <!--<TextBox x:Name="txtbox_city" HorizontalAlignment="Left" Height="23" Margin="394,516,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="112" Text="{Binding Path= City, Mode=OneWayToSource}"/>-->
+            <TextBox x:Name="txtbox_companyposition" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" HorizontalAlignment="Left" Height="23" Margin="394,464,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="112" Text="{Binding Path= CompanyPosition, Mode=OneWayToSource}"/>
+            <!--<TextBox x:Name="txtbox_postnummer" HorizontalAlignment="Left" Height="23" Margin="263,569,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="75" Text="{Binding Path= PostNummer, Mode=OneWayToSource}"/>
         <Label Content="By" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="388,490,0,0" FontFamily="Segoe UI Light" FontStyle="Italic"/>
         <Label Content="Postnummer" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="257,544,0,0" FontFamily="Segoe UI Light" FontStyle="Italic"/>-->
-        <TextBox x:Name="txtbox_companyname" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" HorizontalAlignment="Left" Height="23" Margin="263,464,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="112" Text="{Binding Path= CompanyName, Mode=OneWayToSource}"/>
-        <Label Content="Firmanavn" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="257,439,0,0" FontFamily="Segoe UI Light" FontStyle="Italic"/>
-        <Label Content="Din funktion" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="388,439,0,0" FontFamily="Segoe UI Light" FontStyle="Italic"/>
-        <TextBox x:Name="txtbox_cvr" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" HorizontalAlignment="Left" Height="23" Margin="395,516,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="111" Text="{Binding Path= CVR, Mode=OneWayToSource}"/>
-        <Label Content="CVR-nummer" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="390,490,0,0" FontFamily="Segoe UI Light" FontStyle="Italic"/>
+            <TextBox x:Name="txtbox_companyname" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" HorizontalAlignment="Left" Height="23" Margin="263,464,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="112" Text="{Binding Path= CompanyName, Mode=OneWayToSource}"/>
+            <Label Content="Firmanavn" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="257,439,0,0" FontFamily="Segoe UI Light" FontStyle="Italic"/>
+            <Label Content="Din funktion" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="388,439,0,0" FontFamily="Segoe UI Light" FontStyle="Italic"/>
+            <TextBox x:Name="txtbox_cvr" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" HorizontalAlignment="Left" Height="23" Margin="395,516,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="111" Text="{Binding Path= CVR, Mode=OneWayToSource}"/>
+            <Label Content="CVR-nummer" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="390,490,0,0" FontFamily="Segoe UI Light" FontStyle="Italic"/>
 
-    </Grid>
+        </Grid>
+    </ScrollViewer>
 </Page>
