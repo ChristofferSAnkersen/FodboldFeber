@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using FodboldFeber.ViewModel;
 
 namespace FodboldFeber.View
 {
@@ -20,9 +21,80 @@ namespace FodboldFeber.View
     /// </summary>
     public partial class CustomerProfile : Page
     {
+
+        private CustomerVM customerVM;
+
         public CustomerProfile()
         {
             InitializeComponent();
+            customerVM = new CustomerVM();
+            this.DataContext = customerVM;
+
+            txtEditName.Text = "Angiv nyt klubnavn";
+            txtEditAddress.Text = "Angiv ny adresse";
+            txtEditEmail.Text = "Angiv ny email";
+            txtEditPhone.Text = "Angiv nyt telefonnummer";
+
+            lblPrivateName.Content = "Navn";
+            lblAddress.Content = "Adresse";
+            lblEmail.Content = "Email";
+            lblPhone.Content = "Telefon";
+
+            btnSave.Visibility = Visibility.Hidden;
+            HideEditTxtboxes();
+        }
+
+        private void btnEdit_Click(object sender, RoutedEventArgs e)
+        {
+            ShowEditTxtboxes();
+            btnSave.Visibility = Visibility.Visible;
+        }
+
+        private void btnSave_Click(object sender, RoutedEventArgs e)
+        {
+            customerVM.UpdateUserControl();
+
+            btnSave.Visibility = Visibility.Hidden;
+            HideEditTxtboxes();
+            MessageBox.Show("Din profil er nu ændret.");
+        }
+
+        private void HideEditTxtboxes()
+        {
+            //Method that hides the textboxes used for editing the concerned user info
+            txtEditName.Visibility = Visibility.Hidden;
+            txtEditAddress.Visibility = Visibility.Hidden;
+            txtEditEmail.Visibility = Visibility.Hidden;
+            txtEditPhone.Visibility = Visibility.Hidden;
+        }
+
+        private void ShowEditTxtboxes()
+        {
+            //Method that shows the textboxes used for editing the concerned user info
+            txtEditName.Visibility = Visibility.Visible;
+            txtEditAddress.Visibility = Visibility.Visible;
+            txtEditEmail.Visibility = Visibility.Visible;
+            txtEditPhone.Visibility = Visibility.Visible;
+        }
+
+        private void txtEditName_GotFocus(object sender, RoutedEventArgs e)
+        {
+            txtEditName.Text = "";
+        }
+
+        private void txtEditAddress_GotFocus(object sender, RoutedEventArgs e)
+        {
+            txtEditAddress.Text = "";
+        }
+
+        private void txtEditEmail_GotFocus(object sender, RoutedEventArgs e)
+        {
+            txtEditEmail.Text = "";
+        }
+
+        private void txtEditPhone_GotFocus(object sender, RoutedEventArgs e)
+        {
+            txtEditPhone.Text = "";
         }
     }
 }

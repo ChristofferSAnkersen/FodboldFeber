@@ -10,7 +10,7 @@ using FodboldFeber.ViewModel;
 
 namespace FodboldFeber.Model
 {
-    class Login : INotifyPropertyChanged
+    public class Login : INotifyPropertyChanged
     {
         private static string _username = "";
         private static string _password = "";

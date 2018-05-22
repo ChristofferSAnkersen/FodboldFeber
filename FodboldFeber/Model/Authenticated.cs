@@ -7,18 +7,20 @@ using System.Threading.Tasks;
 
 namespace FodboldFeber.Model
 {
-    class Authenticated : INotifyPropertyChanged
+    public class Authenticated : INotifyPropertyChanged
     {
-        private bool _isAuthenticated = false;
+        
+        private static bool _isAuthenticated = false;
         public bool IsAuthenticated
         {
+            
             get
             {
                 return _isAuthenticated;
             }
             set
             {
-                if (_isAuthenticated.Equals(value) == false)
+                if (_isAuthenticated.Equals(value) != value)
                 {
                     _isAuthenticated = value;
                     OnPropertyChanged("IsAuthenticated");
