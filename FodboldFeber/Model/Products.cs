@@ -11,7 +11,7 @@ using System.Data;
 namespace FodboldFeber.Model
 {
    
-    public class Products
+    public class Products : INotifyPropertyChanged
     {
         public List<ShopData> ListOfProducts = new List<ShopData>();
 

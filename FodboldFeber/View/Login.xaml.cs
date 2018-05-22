@@ -35,7 +35,7 @@ namespace FodboldFeber.View
         }
         //private static string connectionString = "Server=EALSQL1.eal.local; Database=DB2017_A27; User Id= USER_A27; Password=SesamLukOp_27;";
 
-        private void btnClicklogIn(object sender, RoutedEventArgs e)
+        private void BtnInitlogInClick(object sender, RoutedEventArgs e)
         {
             lvm.InitializeLoginController();
             Shop page = new Shop();
