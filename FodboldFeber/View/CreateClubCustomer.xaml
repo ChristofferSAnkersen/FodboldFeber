@@ -4,11 +4,13 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:FodboldFeber.View"
-      mc:Ignorable="d" d:DesignWidth="800"
+      mc:Ignorable="d" 
+      d:DesignHeight="700" d:DesignWidth="800" 
       Background="White"
-      Title="CreateClubCustomer" Height="700">
-
-    <Grid Margin="0,0,0,10">
+      Title="CreateClubCustomer">
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <Grid ScrollViewer.CanContentScroll="True">
+            
         <Rectangle Fill="#FFF9F9F9" HorizontalAlignment="Left" Height="571" Margin="229,89,0,-60" Stroke="Black" VerticalAlignment="Top" Width="308"/>
         <TextBox x:Name="txtbox_name" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" HorizontalAlignment="Left" Height="23" Margin="263,163,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="241" Text="{Binding Path= Name, Mode=OneWayToSource}"/>
         <Label Content="Fuldenavn på opretter" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="257,137,0,0" FontFamily="Segoe UI Light"/>
@@ -35,4 +37,5 @@
         <Label Content="Din klubfunktion" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="388,439,0,0" FontFamily="Segoe UI Light"/>
 
     </Grid>
+    </ScrollViewer>
 </Page>

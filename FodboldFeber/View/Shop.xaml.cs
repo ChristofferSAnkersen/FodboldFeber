@@ -39,11 +39,12 @@ namespace FodboldFeber.View
         
         private void BtnNavigation_Click(object sender, RoutedEventArgs e)
         {
-       
+            ShopListBox.SelectedItem = shopVM.SelectedProduct;
             var item = ItemsControl.ContainerFromElement(ShopListBox, e.OriginalSource as DependencyObject) as ListBoxItem;
             if(item!=null)
             {
                 ShopListBox.ItemsSource = shopVM.ListOfProducts;
+              
                 ShopFrame.Content = new ProductProfile();
 
             }
