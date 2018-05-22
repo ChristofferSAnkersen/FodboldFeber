@@ -22,5 +22,7 @@ namespace FodboldFeber.ViewModel
         {
             dataAccess.InitializeLogin();
         }    
+        
+        
     }
 }
