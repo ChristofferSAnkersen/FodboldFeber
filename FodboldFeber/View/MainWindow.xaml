@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:FodboldFeber"
         mc:Ignorable="d"
         Title="MainWindow" Height="600" Width="800">
-    <Grid Margin="0,0,-0.4,-1" Height="421" VerticalAlignment="Top">
+    <Grid Margin="0,0,-0.667,0" Height="526" VerticalAlignment="Top">
         <Button x:Name="Frontpage" Content="Forside" HorizontalAlignment="Left" Margin="45,10,0,0" VerticalAlignment="Top" Width="75" Foreground="Red" Background="White" BorderThickness="0" FontWeight="Bold" Click="Frontpage_Click"/>
         <Button x:Name="News" Content="Nyheder" HorizontalAlignment="Left" Margin="148,10,0,0" VerticalAlignment="Top" Width="75" Foreground="Red" Background="White" BorderThickness="0" FontWeight="Bold" Click="News_Click"/>
         <Button x:Name="Shop" Content="Shop" HorizontalAlignment="Left" Margin="263,10,0,0" VerticalAlignment="Top" Width="75" Foreground="Red" Background="White" BorderThickness="0" FontWeight="Bold" Click="Shop_Click"/>

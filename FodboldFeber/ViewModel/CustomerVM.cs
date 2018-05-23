@@ -43,6 +43,10 @@ namespace FodboldFeber.ViewModel
         {
             CheckIfUserExists();
         }
+        public void UpdateUserControl()
+        {
+            UpdateUser();
+        }
 
     }
         
