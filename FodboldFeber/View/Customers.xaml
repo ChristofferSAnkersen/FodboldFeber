@@ -5,11 +5,12 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:FodboldFeber.View"
       mc:Ignorable="d" 
-      d:DesignHeight="600" d:DesignWidth="800"
+      d:DesignHeight="600" d:DesignWidth="1000"
       Background="Wheat"
       Title="Customers">
 
     <Grid>
-        <Label Content="Kunder" HorizontalAlignment="Left" Margin="276,58,0,0" VerticalAlignment="Top" FontSize="40" Foreground="Black"/>
+        <Image Source="http://www.ianbarnard.co.uk/wp-content/uploads/2013/09/free-blurred-web-backgrounds-06.jpg" HorizontalAlignment="Left" Height="755" VerticalAlignment="Top" Width="1040" Margin="0,0,-40,-155"/>
+        <Label Content="Kunder" FontSize="40" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="445,50,360,0" Width="195"/>
     </Grid>
 </Page>

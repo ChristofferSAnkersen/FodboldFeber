@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.ComponentModel;
 using System.Data;
+using FodboldFeber.View;
+using FodboldFeber.ViewModel;
 
 namespace FodboldFeber.Model
 {
@@ -264,7 +266,7 @@ namespace FodboldFeber.Model
                 {
                     con.Open();
                     //Fills the query variable with the information of the properties
-                    query = "insert into Private_User(username, password, name, phonenumber, email, address) values('" + this.UserName + "','" + this.Password + "','" + this.Name + "','" + this.PhoneNumber + "','" + this.Email + "','" + this.Address + "');";
+                    query = "insert into Users(username, password, name, phonenumber, email, address) values('" + this.UserName + "','" + this.Password + "','" + this.Name + "','" + this.PhoneNumber + "','" + this.Email + "','" + this.Address + "');";
                     //Inserts the data of query into the "Products" table in the database
                     SqlCommand cmd1 = new SqlCommand(query, con);
 
@@ -286,7 +288,7 @@ namespace FodboldFeber.Model
                 {
                     con.Open();
                     //Fills the query variable with the information of the properties
-                    query = "insert into Club_User(name,username, password, clubname, phonenumber, email, clubaddress, clubposition) values('" + this.UserName + "','" + this.Password + "','" + this.ClubName + "','" + this.PhoneNumber + "','" + this.Email + "','" + this.ClubAddress + "','" + this.ClubPosition
+                    query = "insert into Users(name,username, password, clubname, phonenumber, email, address, clubposition) values('" + this.Name + "','" + this.UserName + "','" + this.Password + "','" + this.ClubName + "','" + this.PhoneNumber + "','" + this.Email + "','" + this.Address + "','" + this.ClubPosition
                         + "');";
                     //Inserts the data of query into the "Products" table in the database
                     SqlCommand cmd1 = new SqlCommand(query, con);
@@ -309,7 +311,7 @@ namespace FodboldFeber.Model
                 {
                     con.Open();
                     //Fills the query variable with the information of the properties
-                    query = "insert into Company_User(name, username, password, companyname, phonenumber, email, companyaddress, companyposition, cvr) values('" + this.Name + "','" + this.UserName + "','" + this.Password + "','" + this.CompanyName + "','" + this.PhoneNumber + "','" + this.Email + "','" + this.CompanyAddress + "','" + this.CompanyPosition + "','" + this.CVR + "');";
+                    query = "insert into Users(name, username, password, companyname, phonenumber, email, address, companyposition, cvr) values('" + this.Name + "','" + this.UserName + "','" + this.Password + "','" + this.CompanyName + "','" + this.PhoneNumber + "','" + this.Email + "','" + this.Address + "','" + this.CompanyPosition + "','" + this.CVR + "');";
                     //Inserts the data of query into the "Products" table in the database
                     SqlCommand cmd1 = new SqlCommand(query, con);
 
@@ -331,8 +333,8 @@ namespace FodboldFeber.Model
                 {
                     if (con.State == ConnectionState.Closed)
                         con.Open();
-                    String CheckIfExist = "select from Private_User where Email=txtEmail.Text && UserName=txtEmail.Text";
-                }
+                    String CheckIfExist = "select from Users where Email=txtEmail.Text && UserName=txtEmail.Text";
+              }
                 finally
                 {
                     con.Close();
@@ -346,8 +348,66 @@ namespace FodboldFeber.Model
         }
         public void UpdateUser()
         {
+            CustomerProfile c = new CustomerProfile();
+            try
+            {
+                query = "Update Private_User set name='" + this.Name + "', phonenumber='" + this.PhoneNumber + "', email='" + this.Email + "', address='" + this.Address + "' where username ='" + c.lblName.Content + "' ";
+                SqlConnection con = new SqlConnection(connectionString);
+                SqlCommand cmd1 = new SqlCommand(query, con);
+                SqlDataReader myReader;
+                con.Open();
+                myReader = cmd1.ExecuteReader();
+
+                while (myReader.Read())
+                {
+
+                }
+
+                con.Close();
+
+            }
+            catch (SqlException exe)
+            {
+                Console.WriteLine(exe + "Brugeren kunne ikke blive opdateret.");
+            }
+        }
+
+        public void GetUserInfo()
+        {
+            CustomerProfile c = new CustomerProfile();
+            CustomerVM cvm = new CustomerVM();
+
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    con.Open();
+                    SqlCommand sqlCommand = new SqlCommand("SELECT name, phonenumber, email, address where username ='" + c.lblName.Content + "' ");
+                    SqlDataReader myReader = sqlCommand.ExecuteReader();
+
+                    while (myReader.Read())
+                    {
+                        string Name1 = (string)myReader["name"];
+                        int Phone1 = (int)myReader["phonenumber"];
+                        string Email1 = (string)myReader["email"];
+                        string Address1 = (string)myReader["address"];
+
+                        cvm.Name = Name1;
+                        cvm.PhoneNumber = Phone1;
+                        cvm.Email = Email1;
+                        cvm.Address = Address1;
+                    }
+
+                    con.Close();
+                }
+                catch (SqlException e)
+                {
+                    Console.WriteLine(e + "Kunne ikke udfylde listen");
+                }
+            }
 
         }
+
         public event PropertyChangedEventHandler PropertyChanged;
 
         private void OnPropertyChanged(string propertyName)

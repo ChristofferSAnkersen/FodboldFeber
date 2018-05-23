@@ -34,7 +34,7 @@ namespace FodboldFeber.Model
                 {
                     if (con.State == ConnectionState.Closed)
                         con.Open();
-                    String query = "SELECT COUNT(1) FROM tblUser WHERE Username=@username AND password=@password";
+                    String query = "SELECT COUNT(1) FROM  Users WHERE Username=@username AND password=@password";
                     SqlCommand sqlCmd = new SqlCommand(query, con);
                     sqlCmd.CommandType = CommandType.Text;
                     sqlCmd.Parameters.AddWithValue("@username", login.Username);
