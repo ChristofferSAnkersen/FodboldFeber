@@ -38,7 +38,7 @@ namespace FodboldFeber.View
                 {
                     if (con.State == ConnectionState.Closed)
                         con.Open();
-                        String query = "select count(1) from Private_User where email=@email AND username=@username";
+                        String query = "select count(1) from Users where email=@email AND username=@username";
                         SqlCommand sqlCmd = new SqlCommand(query, con);
                         sqlCmd.CommandType = CommandType.Text;
                         sqlCmd.Parameters.AddWithValue("@username", txtUserName.Text);

@@ -17,11 +17,9 @@ namespace FodboldFeber.ViewModel
             Password = "Angiv kodeord";
             PhoneNumber = 0;
             Email = "Angiv email";
-            ClubAddress = "Angiv Klubadresse";
             ClubName = "Angiv klubbens navn";
             ClubPosition = "Angiv din position i klubben";
             CompanyName = "Angiv virksomhedens navn";
-            CompanyAddress = "Angiv virksomhedens adresse";
             CVR= 0;
             CompanyPosition = "Angiv din position i virksomheden ";
             

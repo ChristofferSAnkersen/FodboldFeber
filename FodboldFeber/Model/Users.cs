@@ -264,7 +264,7 @@ namespace FodboldFeber.Model
                 {
                     con.Open();
                     //Fills the query variable with the information of the properties
-                    query = "insert into Private_User(username, password, name, phonenumber, email, address) values('" + this.UserName + "','" + this.Password + "','" + this.Name + "','" + this.PhoneNumber + "','" + this.Email + "','" + this.Address + "');";
+                    query = "insert into Users(username, password, name, phonenumber, email, address) values('" + this.UserName + "','" + this.Password + "','" + this.Name + "','" + this.PhoneNumber + "','" + this.Email + "','" + this.Address + "');";
                     //Inserts the data of query into the "Products" table in the database
                     SqlCommand cmd1 = new SqlCommand(query, con);
 
@@ -286,7 +286,7 @@ namespace FodboldFeber.Model
                 {
                     con.Open();
                     //Fills the query variable with the information of the properties
-                    query = "insert into Club_User(name,username, password, clubname, phonenumber, email, clubaddress, clubposition) values('" + this.UserName + "','" + this.Password + "','" + this.ClubName + "','" + this.PhoneNumber + "','" + this.Email + "','" + this.ClubAddress + "','" + this.ClubPosition
+                    query = "insert into Users(name,username, password, clubname, phonenumber, email, address, clubposition) values('" + this.Name + "','" + this.UserName + "','" + this.Password + "','" + this.ClubName + "','" + this.PhoneNumber + "','" + this.Email + "','" + this.Address + "','" + this.ClubPosition
                         + "');";
                     //Inserts the data of query into the "Products" table in the database
                     SqlCommand cmd1 = new SqlCommand(query, con);
@@ -309,7 +309,7 @@ namespace FodboldFeber.Model
                 {
                     con.Open();
                     //Fills the query variable with the information of the properties
-                    query = "insert into Company_User(name, username, password, companyname, phonenumber, email, companyaddress, companyposition, cvr) values('" + this.Name + "','" + this.UserName + "','" + this.Password + "','" + this.CompanyName + "','" + this.PhoneNumber + "','" + this.Email + "','" + this.CompanyAddress + "','" + this.CompanyPosition + "','" + this.CVR + "');";
+                    query = "insert into Users(name, username, password, companyname, phonenumber, email, address, companyposition, cvr) values('" + this.Name + "','" + this.UserName + "','" + this.Password + "','" + this.CompanyName + "','" + this.PhoneNumber + "','" + this.Email + "','" + this.Address + "','" + this.CompanyPosition + "','" + this.CVR + "');";
                     //Inserts the data of query into the "Products" table in the database
                     SqlCommand cmd1 = new SqlCommand(query, con);
 
@@ -331,8 +331,8 @@ namespace FodboldFeber.Model
                 {
                     if (con.State == ConnectionState.Closed)
                         con.Open();
-                    String CheckIfExist = "select from Private_User where Email=txtEmail.Text && UserName=txtEmail.Text";
-                }
+                    String CheckIfExist = "select from Users where Email=txtEmail.Text && UserName=txtEmail.Text";
+              }
                 finally
                 {
                     con.Close();

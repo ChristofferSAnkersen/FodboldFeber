@@ -9,7 +9,7 @@
       Background="White"
       Title="CreateClubCustomer">
     <ScrollViewer VerticalScrollBarVisibility="Auto">
-        <Grid ScrollViewer.CanContentScroll="True">
+        <Grid ScrollViewer.CanContentScroll="True" Height="700">
             
         <Rectangle Fill="#FFF9F9F9" HorizontalAlignment="Left" Height="571" Margin="229,89,0,-60" Stroke="Black" VerticalAlignment="Top" Width="308"/>
         <TextBox x:Name="txtbox_name" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" HorizontalAlignment="Left" Height="23" Margin="263,163,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="241" Text="{Binding Path= Name, Mode=OneWayToSource}"/>
