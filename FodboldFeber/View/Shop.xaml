@@ -134,6 +134,11 @@
         </ScrollViewer>
       
         <Frame x:Name="ShopFrame" Margin="9,38,-9.8,-286.4" NavigationUIVisibility="Hidden"/>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding Username}" VerticalAlignment="Top" Margin="642,99,0,0">
+            <TextBlock.DataContext>
+                <model:Login/>
+            </TextBlock.DataContext>
+        </TextBlock>
     </Grid>
 </Page>
     
