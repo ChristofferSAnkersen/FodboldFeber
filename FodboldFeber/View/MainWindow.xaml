@@ -5,15 +5,26 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FodboldFeber"
         mc:Ignorable="d"
-        Title="MainWindow" Height="600" Width="800">
+        Title="MainWindow" Height="600" Width="1000">
     <Grid Margin="0,0,-0.667,0" Height="526" VerticalAlignment="Top">
-        <Button x:Name="Frontpage" Content="Forside" HorizontalAlignment="Left" Margin="45,10,0,0" VerticalAlignment="Top" Width="75" Foreground="Red" Background="White" BorderThickness="0" FontWeight="Bold" Click="Frontpage_Click"/>
-        <Button x:Name="News" Content="Nyheder" HorizontalAlignment="Left" Margin="148,10,0,0" VerticalAlignment="Top" Width="75" Foreground="Red" Background="White" BorderThickness="0" FontWeight="Bold" Click="News_Click"/>
-        <Button x:Name="Shop" Content="Shop" HorizontalAlignment="Left" Margin="263,10,0,0" VerticalAlignment="Top" Width="75" Foreground="Red" Background="White" BorderThickness="0" FontWeight="Bold" Click="Shop_Click"/>
-        <Button x:Name="Contact" Content="Kontakt" HorizontalAlignment="Left" Margin="467,10,0,0" VerticalAlignment="Top" Width="75" Foreground="Red" Background="White" BorderThickness="0" FontWeight="Bold" Click="Contact_Click"/>
-        <Button x:Name="About" Content="Om os" HorizontalAlignment="Left" Margin="547,10,0,0" VerticalAlignment="Top" Width="75" Foreground="Red" Background="White" BorderThickness="0" FontWeight="Bold" Click="About_Click"/>
-        <Button x:Name="Customers" Content="Kunder" HorizontalAlignment="Left" Margin="634,10,0,0" VerticalAlignment="Top" Width="75" Foreground="Red" Background="White" BorderThickness="0" FontWeight="Bold" Click="Customers_Click"/>
-        <Button x:Name="Login" Content="Login" HorizontalAlignment="Left" Margin="709,10,0,0" VerticalAlignment="Top" Width="75" Foreground="Red" Background="White" BorderThickness="0" FontWeight="Bold" Click="Login_Click"/>
-        <Frame x:Name="StartPage" Margin="0,40,0,-147" NavigationUIVisibility="Hidden"/>
+        <Rectangle HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="994">
+            <Rectangle.Effect>
+                <DropShadowEffect ShadowDepth="1" Opacity="0.5"/>
+            </Rectangle.Effect>
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                    <GradientStop Color="#FFFFB900" Offset="0.998"/>
+                    <GradientStop Color="#FFFFE90B"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Button x:Name="Frontpage" Content="Forside" HorizontalAlignment="Left" Margin="45,10,0,0" VerticalAlignment="Top" Width="75" Foreground="White" Background="{x:Null}" BorderThickness="0" FontWeight="Bold" Click="Frontpage_Click" BorderBrush="{x:Null}" FontSize="14"/>
+        <Button x:Name="News" Content="Nyheder" HorizontalAlignment="Left" Margin="154,10,0,0" VerticalAlignment="Top" Width="75" Foreground="White" Background="{x:Null}" BorderThickness="0" FontWeight="Bold" Click="News_Click" BorderBrush="{x:Null}" FontSize="14"/>
+        <Button x:Name="Shop" Content="Shop" HorizontalAlignment="Left" Margin="263,10,0,0" VerticalAlignment="Top" Width="75" Foreground="White" Background="{x:Null}" BorderThickness="0" FontWeight="Bold" Click="Shop_Click" BorderBrush="{x:Null}" FontSize="14"/>
+        <Button x:Name="Contact" Content="Kontakt" HorizontalAlignment="Left" Margin="661,10,0,0" VerticalAlignment="Top" Width="75" Foreground="White" Background="{x:Null}" BorderThickness="0" FontWeight="Bold" Click="Contact_Click" BorderBrush="{x:Null}" FontSize="14"/>
+        <Button x:Name="About" Content="Om os" HorizontalAlignment="Left" Margin="741,10,0,0" VerticalAlignment="Top" Width="75" Foreground="White" Background="{x:Null}" BorderThickness="0" FontWeight="Bold" Click="About_Click" BorderBrush="{x:Null}" FontSize="14"/>
+        <Button x:Name="Customers" Content="Kunder" HorizontalAlignment="Left" Margin="828,10,0,0" VerticalAlignment="Top" Width="75" Foreground="White" Background="{x:Null}" BorderThickness="0" FontWeight="Bold" Click="Customers_Click" BorderBrush="{x:Null}" FontSize="14"/>
+        <Button x:Name="Login" Content="Login" HorizontalAlignment="Left" Margin="903,10,0,0" VerticalAlignment="Top" Width="75" Foreground="White" Background="{x:Null}" BorderThickness="0" FontWeight="Bold" Click="Login_Click" BorderBrush="{x:Null}" FontSize="14"/>
+        <Frame x:Name="StartPage" Margin="0,40,0,-147" NavigationUIVisibility="Hidden" Content=""/>
     </Grid>
 </Window>

@@ -4,14 +4,62 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:FodboldFeber.View"
+      xmlns:VM="clr-namespace:FodboldFeber.ViewModel"
       mc:Ignorable="d" 
       Background="White"
-      d:DesignHeight="600" d:DesignWidth="800"
+      d:DesignHeight="600" d:DesignWidth="1000"
       Title="Frontpage">
+
+    <!-- Comments coming here -->
+    <Page.DataContext>
+        <!--<model:SearchFunction x:Name="searchfunction"/>-->
+        <VM:ShopVM x:Name="ShopVM" />
+    </Page.DataContext>
+
     <Grid>
-        <Label Content="Fodboldfeber" HorizontalAlignment="Left" Margin="276,58,0,0" VerticalAlignment="Top" FontSize="40" Foreground="Red"/>
-        <Frame Content="Placeholder" HorizontalAlignment="Left" Height="100" Margin="123,344,0,-23" VerticalAlignment="Top" Width="100" BorderThickness="5" BorderBrush="Black"/>
-        <Frame Content="Placeholder" HorizontalAlignment="Left" Height="100" Margin="556,344,0,-23" VerticalAlignment="Top" Width="100" BorderBrush="Black" BorderThickness="5"/>
-        <Image HorizontalAlignment="Left" Height="100" Margin="351,169,0,0" VerticalAlignment="Top" Width="100" Source="https://i.imgur.com/qAh5oWj.png" Stretch="Fill"/>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="White" Offset="0"/>
+                <GradientStop Color="#FFF3F3F3" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Image Source="https://i1.wp.com/sports-gaming.dk/wp-content/uploads/2016/12/christian-eriksen.jpg" HorizontalAlignment="Left" Height="335" Margin="-60,0,-35,0" VerticalAlignment="Top" Width="1095" Stretch="UniformToFill">
+            <Image.Effect>
+                <BlurEffect />
+            </Image.Effect>
+        </Image>
+        <Label Content="Fodboldfeber" HorizontalAlignment="Left" Margin="695,130,0,0" VerticalAlignment="Top" Height="75" Width="225" Foreground="White" FontSize="36" FontFamily="Segoe UI Light"/>
+        <Rectangle HorizontalAlignment="Left" Height="180" Margin="55,310,0,0" VerticalAlignment="Top" Width="890">
+            <Rectangle.Effect>
+                <DropShadowEffect ShadowDepth="1" Opacity="0.5"/>
+            </Rectangle.Effect>
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFE3E3E3" Offset="0.002"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+
+        <ListBox x:Name="ShopListBox" ItemsSource="{Binding ListOfProducts}" SelectedItem="{Binding SelectedProduct}" RenderTransformOrigin="0.502,0.003" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Background="{x:Null}" BorderBrush="{x:Null}" Margin="55,310,55,110">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel x:Name="ShopStackpanel" >
+                        <Image x:Name="imgProductImage" Source="{Binding ProductImage, Mode=TwoWay}" Stretch="UniformToFill"  Width="150" Height="75" />
+                        <Label x:Name="lblProductName" Content="{Binding ProductName, Mode=TwoWay}" BorderBrush="{x:Null}"/>
+                        <Label x:Name="lblProductPrice" Content="{Binding Price, Mode=TwoWay}" BorderBrush="{x:Null}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+            <ListBox.ItemsPanel>
+
+                <ItemsPanelTemplate>
+
+                    <WrapPanel  Margin="10,0,0,20" HorizontalAlignment="Center" Orientation="Horizontal" Height="128" Width="809" />
+
+                </ItemsPanelTemplate>
+            </ListBox.ItemsPanel>
+        </ListBox>
+        <Label Content="Nyheder i shoppen" HorizontalAlignment="Left" Margin="83,265,0,0" VerticalAlignment="Top" FontSize="22" Background="{x:Null}" Foreground="White" FontFamily="Segoe UI Light"/>
     </Grid>
 </Page>
