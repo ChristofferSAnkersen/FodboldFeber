@@ -26,6 +26,7 @@ namespace FodboldFeber.Model
         private string _size = "JegSkalÆndreMigNu!!!";
         private double _discountPrice;
         private string _productImage = "JegSkalÆndreMigNu!!!";
+     
 
         private string _chooseItem = "JegSkalÆndreMigNu!!!";
 
@@ -46,6 +47,8 @@ namespace FodboldFeber.Model
             }
         }
 
+
+    
         //Properties for the product
         public string ProductName
         {

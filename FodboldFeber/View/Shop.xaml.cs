@@ -23,14 +23,14 @@ namespace FodboldFeber.View
     /// </summary>
     public partial class Shop : Page
     {
-       
+
         private ShopVM shopVM;
-        
+
         public Shop()
         {
-           
             InitializeComponent();
-            shopVM = new ShopVM();
+            shopVM = ShopVM.Instance;
+            this.DataContext = shopVM;
 
             // Sets the itemsource again to make sure it is binded to the list "ListOfProducts" in "ShopVM" after it has been populated
             shopVM.PopulateList();
@@ -39,9 +39,9 @@ namespace FodboldFeber.View
         
         private void BtnNavigation_Click(object sender, RoutedEventArgs e)
         {
-            ShopListBox.SelectedItem = shopVM.SelectedProduct;
             var item = ItemsControl.ContainerFromElement(ShopListBox, e.OriginalSource as DependencyObject) as ListBoxItem;
-            if(item!=null)
+            ShopListBox.SelectedItem = item;
+            if (item!=null)
             {
                 ShopListBox.ItemsSource = shopVM.ListOfProducts;
               
