@@ -21,11 +21,6 @@ namespace FodboldFeber.ViewModel
         public void InitializeLoginController() //Kører login i DataAccess.cs, og åbner shoppen efter login -- Skal implementere IsAuthenticated som krav et sted
         {
             dataAccess.InitializeLogin();
-            if (IsAuthenticated.Equals(true))
-            {
-                Shop shop = new Shop();
-            }
-            
         }    
         
         

@@ -38,12 +38,12 @@ namespace FodboldFeber.View
         private void BtnInitlogInClick(object sender, RoutedEventArgs e)
         {
             lvm.InitializeLoginController();
-            Shop page = new Shop();
-            NavigationService.Navigate(page);
-
+            if (lvm.IsAuthenticated == true)
+            {
+                Shop page = new Shop();
+                NavigationService.Navigate(page);
+            }
         }
-
-
 
         private void BtnClickSignIn(object sender, RoutedEventArgs e)
             {
