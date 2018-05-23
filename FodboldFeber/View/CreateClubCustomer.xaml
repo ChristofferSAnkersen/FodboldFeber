@@ -5,37 +5,43 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:FodboldFeber.View"
       mc:Ignorable="d" 
-      d:DesignHeight="700" d:DesignWidth="800" 
+      d:DesignHeight="700" d:DesignWidth="1000" 
       Background="White"
       Title="CreateClubCustomer">
     <ScrollViewer VerticalScrollBarVisibility="Auto">
-        <Grid ScrollViewer.CanContentScroll="True" Height="700">
-            
-        <Rectangle Fill="#FFF9F9F9" HorizontalAlignment="Left" Height="571" Margin="229,89,0,-60" Stroke="Black" VerticalAlignment="Top" Width="308"/>
-        <TextBox x:Name="txtbox_name" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" HorizontalAlignment="Left" Height="23" Margin="263,163,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="241" Text="{Binding Path= Name, Mode=OneWayToSource}"/>
-        <Label Content="Fuldenavn på opretter" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="257,137,0,0" FontFamily="Segoe UI Light"/>
-        <TextBox x:Name="txtbox_email" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" HorizontalAlignment="Left" Height="23" Margin="263,217,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="112" Text="{Binding Path= Email, Mode=OneWayToSource}"/>
-        <TextBox x:Name="txtbox_username" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" HorizontalAlignment="Left" Height="23" Margin="263,272,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="112" Text="{Binding Path= UserName, Mode=OneWayToSource}"/>
-        <Label Content="Email" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="257,191,0,0" FontFamily="Segoe UI Light"/>
-        <TextBox x:Name="txtbox_password" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" HorizontalAlignment="Left" Height="23" Margin="393,272,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="112" Text="{Binding Path= Password, Mode=OneWayToSource}"/>
-        <Label Content="Brugernavn" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="257,247,0,0" FontFamily="Segoe UI Light"/>
-        <Label Content="Adgangskode" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="388,247,0,0" FontFamily="Segoe UI Light"/>
-        <TextBox x:Name ="txtbox_phoneNumber" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" HorizontalAlignment="Left" Height="23" Margin="394,217,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="112" Text="{Binding Path= PhoneNumber, Mode=OneWayToSource}" FontSize="9"/>
-        <Label Content="Telefon" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="388,191,0,0" FontFamily="Segoe UI Light"/>
-        <Button Content="Færdig" HorizontalAlignment="Left" Margin="263,619,0,-46" VerticalAlignment="Top" Width="243" Height="27" FontFamily="Segoe UI Light" Click="Button_Click"/>
-        <Label Content="Opret klubprofil&#xA;" HorizontalAlignment="Left" Margin="310,100,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Segoe UI Light" Height="37"/>
-        <TextBox x:Name="txtbox_clubaddress" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" HorizontalAlignment="Left" Height="23" Margin="263,516,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="242" Text="{Binding Path= ClubAddress, Mode=OneWayToSource}"/>
-        <Label Content="Adresse" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="257,490,0,0" FontFamily="Segoe UI Light"/>
-        <!--<TextBox x:Name="txtbox_city" HorizontalAlignment="Left" Height="23" Margin="263,569,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="112" Text="{Binding Path= City, Mode=OneWayToSource}"/>
-        <TextBox x:Name="txtbox_postnummer" HorizontalAlignment="Left" Height="23" Margin="393,569,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="112" Text="{Binding Path= PostNummer, Mode=OneWayToSource}"/>-->
-        <TextBox x:Name="txtbox_clubposition" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" HorizontalAlignment="Left" Height="23" Margin="393,464,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="112" Text="{Binding Path= ClubPosition, Mode=OneWayToSource}"/>
-        <!--<Label Content="By" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="257,543,0,0" FontFamily="Segoe UI Light"/>
-        <Label Content="Postnummer" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="388,544,0,0" FontFamily="Segoe UI Light"/>-->
-        <TextBox x:Name="txtbox_clubname" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" HorizontalAlignment="Left" Height="23" Margin="263,464,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="112" Text="{Binding Path= ClubName, Mode=OneWayToSource}"/>
-        <Label Content="Klubnavn" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="257,439,0,0" FontFamily="Segoe UI Light"/>
-        <GroupBox Header="Information om din klub" HorizontalAlignment="Left" Height="188" Margin="244,419,0,-7" VerticalAlignment="Top" Width="278" FontFamily="Segoe UI Light"/>
-        <Label Content="Din klubfunktion" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="388,439,0,0" FontFamily="Segoe UI Light"/>
+        <Grid ScrollViewer.CanContentScroll="True">
 
-    </Grid>
+            <Image Source="http://www.ianbarnard.co.uk/wp-content/uploads/2013/09/free-blurred-web-backgrounds-06.jpg" HorizontalAlignment="Left" Height="790" VerticalAlignment="Top" Width="1000" Margin="0,0,0,-90"/>
+
+            <Rectangle Fill="#FFF9F9F9" HorizontalAlignment="Left" Height="411" Margin="355,95,0,0" VerticalAlignment="Top" Width="308">
+                <Rectangle.Effect>
+                    <DropShadowEffect ShadowDepth="1" Opacity="0.5"/>
+                </Rectangle.Effect>
+            </Rectangle>
+            <TextBox x:Name="txtbox_name" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" HorizontalAlignment="Left" Height="23" Margin="389,169,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="241" Text="{Binding Name, Mode=OneWayToSource}"/>
+            <Label Content="Fuldenavn på opretter" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="383,143,0,0" FontFamily="Segoe UI Light"/>
+            <TextBox x:Name="txtbox_email" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" HorizontalAlignment="Left" Height="23" Margin="389,223,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="112" Text="{Binding Email, Mode=OneWayToSource}"/>
+            <TextBox x:Name="txtbox_username" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" HorizontalAlignment="Left" Height="23" Margin="389,278,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="112" Text="{Binding UserName, Mode=OneWayToSource}"/>
+            <Label Content="Email" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="383,197,0,0" FontFamily="Segoe UI Light"/>
+            <TextBox x:Name="txtbox_password" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" HorizontalAlignment="Left" Height="23" Margin="519,278,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="112" Text="{Binding Password, Mode=OneWayToSource}"/>
+            <Label Content="Brugernavn" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="383,253,0,0" FontFamily="Segoe UI Light"/>
+            <Label Content="Adgangskode" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="514,253,0,0" FontFamily="Segoe UI Light"/>
+            <TextBox x:Name ="txtbox_phoneNumber" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" HorizontalAlignment="Left" Height="23" Margin="520,223,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="112" Text="{Binding PhoneNumber, Mode=OneWayToSource}" FontSize="9"/>
+            <Label Content="Telefon" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="514,197,0,0" FontFamily="Segoe UI Light"/>
+            <Button Content="Færdig" HorizontalAlignment="Left" Margin="387,463,0,0" VerticalAlignment="Top" Width="243" Height="27" FontFamily="Segoe UI Light" Click="Button_Click"/>
+            <Label Content="Opret klubprofil&#xA;" HorizontalAlignment="Left" Margin="436,106,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Segoe UI Light" Height="37"/>
+            <!--<TextBox x:Name="txtbox_city" HorizontalAlignment="Left" Height="23" Margin="263,569,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="112" Text="{Binding Path= City, Mode=OneWayToSource}"/>
+        <TextBox x:Name="txtbox_postnummer" HorizontalAlignment="Left" Height="23" Margin="393,569,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="112" Text="{Binding Path= PostNummer, Mode=OneWayToSource}"/>-->
+            <!--<Label Content="By" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="257,543,0,0" FontFamily="Segoe UI Light"/>
+        <Label Content="Postnummer" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="388,544,0,0" FontFamily="Segoe UI Light"/>-->
+            <GroupBox Header="Information om din klub" HorizontalAlignment="Left" Height="138" Margin="370,308,0,0" VerticalAlignment="Top" Width="278" FontFamily="Segoe UI Light"/>
+            <TextBox x:Name="txtbox_clubaddress" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" HorizontalAlignment="Left" Height="23" Margin="389,403,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="242" Text="{Binding ClubAddress, Mode=OneWayToSource}"/>
+            <Label Content="Adresse" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="383,377,0,0" FontFamily="Segoe UI Light"/>
+            <TextBox x:Name="txtbox_clubposition" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" HorizontalAlignment="Left" Height="23" Margin="519,351,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="112" Text="{Binding ClubPosition, Mode=OneWayToSource}"/>
+            <TextBox x:Name="txtbox_clubname" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" HorizontalAlignment="Left" Height="23" Margin="389,351,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="112" Text="{Binding ClubName, Mode=OneWayToSource}"/>
+            <Label Content="Klubnavn" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="383,326,0,0" FontFamily="Segoe UI Light"/>
+            <Label Content="Din klubfunktion" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="514,326,0,0" FontFamily="Segoe UI Light"/>
+
+        </Grid>
     </ScrollViewer>
 </Page>

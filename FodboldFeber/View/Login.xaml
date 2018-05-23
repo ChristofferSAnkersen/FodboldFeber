@@ -7,27 +7,33 @@
     xmlns:ViewModel="clr-namespace:FodboldFeber.ViewModel" x:Class="FodboldFeber.View.Login"
       mc:Ignorable="d" 
       Background="White"
-      d:DesignHeight="600" d:DesignWidth="800"
+      d:DesignHeight="600" d:DesignWidth="1000"
       Title="Login">
 
     <Grid>
-        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="267" Margin="250,148,0,0" Stroke="Black" VerticalAlignment="Top" Width="304"/>
+        <Image Source="http://www.ianbarnard.co.uk/wp-content/uploads/2013/09/free-blurred-web-backgrounds-06.jpg" HorizontalAlignment="Left" Height="895" VerticalAlignment="Top" Width="1000" Margin="0,0,0,-295"/>
 
-        <Label Content="Fodboldfeber" HorizontalAlignment="Left" Margin="276,58,0,0" VerticalAlignment="Top" FontSize="40" Foreground="Red"/>
-        <TextBox x:Name="txtbox_username" HorizontalAlignment="Left" Height="31" Margin="276,203,0,0" TextWrapping="Wrap" Text="{Binding Path=LoginParameters.Username, Mode=OneWayToSource}" VerticalAlignment="Top" Width="249" FontFamily="Segoe UI Light">
+        <Rectangle HorizontalAlignment="Left" Height="287" Margin="344,148,0,0" VerticalAlignment="Top" Width="304" Opacity="0.2" OpacityMask="White" Fill="White">
+            <Rectangle.Effect>
+                <DropShadowEffect ShadowDepth="1" Opacity="0.5"/>
+            </Rectangle.Effect>
+        </Rectangle>
+
+
+        <TextBox x:Name="txtbox_username" HorizontalAlignment="Left" Height="31" Margin="372,203,0,0" TextWrapping="Wrap" Text="{Binding LoginParameters.Username, Mode=OneWayToSource}" VerticalAlignment="Top" Width="249" FontFamily="Segoe UI Light" Foreground="Black" BorderBrush="#FF313131">
             <TextBox.DataContext>
                 <ViewModel:LoginVM/>
             </TextBox.DataContext>
         </TextBox>
-        <TextBox x:Name="txtbox_password" HorizontalAlignment="Left" Height="29" Margin="276,247,0,0" TextWrapping="Wrap" Text="{Binding Path=LoginParameters.Password, Mode=OneWayToSource}" VerticalAlignment="Top" Width="249" FontFamily="Segoe UI Light">
+        <TextBox x:Name="txtbox_password" HorizontalAlignment="Left" Height="29" Margin="372,247,0,0" TextWrapping="Wrap" Text="{Binding LoginParameters.Password, Mode=OneWayToSource}" VerticalAlignment="Top" Width="249" FontFamily="Segoe UI Light" BorderBrush="#FF242424">
             <TextBox.DataContext>
                 <ViewModel:LoginVM/>
             </TextBox.DataContext>
         </TextBox>
-        <Label x:Name="lbl_login" Content="Log ind" HorizontalAlignment="Left" Margin="361,158,0,0" VerticalAlignment="Top" FontSize="18" FontFamily="Segoe UI Light"/>
-        <Button x:Name="btn_logIn" Content="Log ind" HorizontalAlignment="Left" Margin="276,290,0,0" VerticalAlignment="Top" Width="248" Height="28" FontFamily="Segoe UI Light" Click="BtnInitlogInClick"/>
-        <Button Content="Opret" HorizontalAlignment="Left" Margin="276,330,0,0" VerticalAlignment="Top" Width="248" Height="28" FontFamily="Segoe UI Light" Click="BtnClickSignIn"/>
-        <Button x:Name="btnClickForgotPassword"  Content="Glemt kode?" HorizontalAlignment="Left" Margin="276,370,0,0" VerticalAlignment="Top" Width="248" Height="28" FontFamily="Segoe UI Light" Click="BtnClickForgotPassword"/>
+        <Label x:Name="lbl_login" Content="Log ind" HorizontalAlignment="Left" Margin="457,158,0,0" VerticalAlignment="Top" FontSize="18" FontFamily="Segoe UI Light" Background="{x:Null}" Foreground="White"/>
+        <Button x:Name="btn_logIn" Content="Log ind" HorizontalAlignment="Left" Margin="372,290,0,0" VerticalAlignment="Top" Width="248" Height="28" FontFamily="Segoe UI Light" Click="BtnInitlogInClick" BorderBrush="Black" Background="White"/>
+        <Button Content="Opret bruger" HorizontalAlignment="Left" Margin="372,331,0,0" VerticalAlignment="Top" Width="248" Height="29" FontFamily="Segoe UI Light" Click="BtnClickSignIn" BorderBrush="Black" Foreground="Black" Background="White"/>
+        <Button x:Name="btnClickForgotPassword"  Content="Glemt kode?" HorizontalAlignment="Left" Margin="372,374,0,0" VerticalAlignment="Top" Width="248" Height="30" FontFamily="Segoe UI Light" Click="BtnClickForgotPassword" Background="White" BorderBrush="Black"/>
 
     </Grid>
 </Page>

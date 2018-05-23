@@ -7,7 +7,7 @@
         xmlns:instantsearch="clr-namespace:FodboldFeber.InstantSearch"
         xmlns:VM="clr-namespace:FodboldFeber.ViewModel"
        
-        Title="Shop" Height="600" Width="800">
+        Title="Shop" Height="600" Width="1000">
     <!-- Comments coming here -->
     <Page.DataContext>
         <!--<model:SearchFunction x:Name="searchfunction"/>-->
@@ -61,7 +61,6 @@
             </Popup>
         </StackPanel>
         <TextBox x:Name="searchBox" Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" Margin="513,0,10.333,228" Width="250" Height="20" VerticalAlignment="Bottom"/>
-        <Label x:Name="_shopLabel" Content="Shop" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="356,38,-326,-34" FontSize="48"/>
      <StackPanel Margin="191,124,83,-268">
             <Popup PlacementTarget="{Binding ElementName=searchBox}" Placement="Bottom" IsOpen="{Binding IsFocused, ElementName=searchBox, Mode=OneWay}">
                 <Popup.Resources>
@@ -109,8 +108,8 @@
         <Label Content="Kategori" HorizontalAlignment="Left" Margin="79,125,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.737,0.211" FontFamily="Segoe UI Light"/>
 
      
-        <ScrollViewer VerticalScrollBarVisibility="Auto" Width="500" Height="400" Margin="191,125,83,-268">
-            <ListBox x:Name="ShopListBox" ItemsSource="{Binding ListOfProducts}" SelectedItem="{Binding Path= SelectedProduct}" RenderTransformOrigin="0.502,0.003" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Height="Auto" Width="500">
+        <ScrollViewer VerticalScrollBarVisibility="Auto" Width="750" Height="400" Margin="191,125,83,-268">
+            <ListBox x:Name="ShopListBox" ItemsSource="{Binding ListOfProducts}" SelectedItem="{Binding Path= SelectedProduct}" RenderTransformOrigin="0.502,0.003" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Height="Auto" Width="750">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                         <Button x:Name="Navigation" Click="BtnNavigation_Click">
@@ -126,19 +125,15 @@
                
                 <ItemsPanelTemplate>
   
-                        <WrapPanel IsItemsHost="True" Orientation="Horizontal" Height="Auto" Width="500" ScrollViewer.VerticalScrollBarVisibility="Auto" />
+                        <WrapPanel HorizontalAlignment="Center" IsItemsHost="True" Orientation="Horizontal" Height="Auto" Width="700" ScrollViewer.VerticalScrollBarVisibility="Auto" />
                     
                 </ItemsPanelTemplate>
             </ListBox.ItemsPanel>
         </ListBox>
         </ScrollViewer>
       
-        <Frame x:Name="ShopFrame" Margin="9,38,-9.8,-286.4" NavigationUIVisibility="Hidden"/>
-        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding Username}" VerticalAlignment="Top" Margin="642,99,0,0">
-            <TextBlock.DataContext>
-                <model:Login/>
-            </TextBlock.DataContext>
-        </TextBlock>
+        <Frame x:Name="ShopFrame" Margin="9,38,34,-286.333" NavigationUIVisibility="Hidden"/>
+        <Label Content="Shop" FontSize="40" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="443,31,386,0" Width="195"/>
     </Grid>
 </Page>
     

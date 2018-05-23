@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -30,15 +31,12 @@ namespace FodboldFeber.View
             customerVM = new CustomerVM();
             this.DataContext = customerVM;
 
+            GetUserInfo123();
+
             txtEditName.Text = "Angiv nyt klubnavn";
             txtEditAddress.Text = "Angiv ny adresse";
             txtEditEmail.Text = "Angiv ny email";
             txtEditPhone.Text = "Angiv nyt telefonnummer";
-
-            lblPrivateName.Content = "Navn";
-            lblAddress.Content = "Adresse";
-            lblEmail.Content = "Email";
-            lblPhone.Content = "Telefon";
 
             btnSave.Visibility = Visibility.Hidden;
             HideEditTxtboxes();
@@ -96,5 +94,41 @@ namespace FodboldFeber.View
         {
             txtEditPhone.Text = "";
         }
+
+        private void GetUserInfo123()
+        {
+            {
+                try
+                {
+                    SqlConnection con = new SqlConnection("Server=EALSQL1.eal.local; Database=DB2017_A27; User Id= USER_A27; Password=SesamLukOp_27;");
+                    con.Open();
+                    string query = "SELECT * from Private_User where username='" + lblName.Content + "' ";
+                    SqlCommand listCommands = new SqlCommand(query, con);
+                    SqlDataReader reader = listCommands.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        //Must assign all column data from the database to variables, so that we can assign the variables to the textboxes, 
+                        //so that the textboxes can display the information of the chosen product
+                        string ShowName = reader.GetString(2).ToString();
+                        string ShowPhoneNumber = reader.GetInt32(3).ToString();
+                        string ShowEmail = reader.GetString(4).ToString();
+                        string ShowAddress = reader.GetString(5).ToString();
+
+                        lblPrivateName.Content = ShowName;
+                        lblPhone.Content = ShowPhoneNumber;
+                        lblEmail.Content = ShowEmail;
+                        lblAddress.Content = ShowAddress;
+
+                    }
+                    con.Close();
+                }
+                catch (SqlException ex)
+                {
+                    Console.WriteLine(ex + "fail haha");
+                }
+            }
+        }
+
     }
 }
