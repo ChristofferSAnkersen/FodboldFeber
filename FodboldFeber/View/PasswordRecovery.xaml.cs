@@ -55,7 +55,7 @@ namespace FodboldFeber.View
                         char[] newPassword = "qwertyuiopasdfghjklzxcvbnm1234567890".ToCharArray();
                         Random r = new Random();
                         String randomString = "";
-                        for (int i = 0; i < 15; i++)
+                        for (int i = 0; i < 20; i++)
                         {
                             randomString += newPassword[r.Next(0, 35)].ToString();
                         }                      
