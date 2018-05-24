@@ -7,73 +7,81 @@
       xmlns:VM="clr-namespace:FodboldFeber.ViewModel"
       Background="White"
       mc:Ignorable="d" d:DesignWidth="1000"
-      Title="AdminTools" Height="1200">
+      Title="AdminTools" d:DesignHeight="600">
     <!--<Page.DataContext>
         <VM:ShopVM x:Name="VMShopVM"></VM:ShopVM>
     </Page.DataContext>-->
-    <ScrollViewer Margin="0,0,0,0" >
-        <Grid Height="610">
-            <Grid.ColumnDefinitions>
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <Grid ScrollViewer.CanContentScroll="True" Width="1000" Height="841">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="747*"/>
+                <RowDefinition Height="53*"/>
+            </Grid.RowDefinitions>
 
-            </Grid.ColumnDefinitions>
 
-            <Rectangle Fill="#FFF9F9F9" HorizontalAlignment="Left" Height="425" Margin="182,200,0,-15" VerticalAlignment="Top" Width="638">
+            <Rectangle Fill="#FFF9F9F9" HorizontalAlignment="Left" Height="424" Margin="11,408,0,-32" VerticalAlignment="Top" Width="638" Grid.RowSpan="2">
                 <Rectangle.Effect>
                     <DropShadowEffect ShadowDepth="1" Opacity="0.5"/>
                 </Rectangle.Effect>
             </Rectangle>
 
-            <Rectangle Fill="#FFF9F9F9" HorizontalAlignment="Left" Height="385" Margin="182,-235,0,0" VerticalAlignment="Top" Width="638">
+            <Rectangle Fill="#FFF9F9F9" HorizontalAlignment="Left" Height="386" Margin="11,12,0,0" VerticalAlignment="Top" Width="638">
                 <Rectangle.Effect>
                     <DropShadowEffect ShadowDepth="1" Opacity="0.5"/>
                 </Rectangle.Effect>
             </Rectangle>
 
-            <ComboBox x:Name="Size" Text="{Binding Size, Mode=OneWayToSource}" HorizontalAlignment="Left" Margin="352,-151,0,0" VerticalAlignment="Top" Width="120">
+            <ComboBox x:Name="Size" Text="{Binding Size, Mode=OneWayToSource}" HorizontalAlignment="Left" Margin="181,96,0,0" VerticalAlignment="Top" Width="120" BorderBrush="White">
+                <ComboBox.Background>
+                    <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                        <GradientStop Color="#FFF0F0F0" Offset="0"/>
+                        <GradientStop Color="White" Offset="1"/>
+                    </LinearGradientBrush>
+                </ComboBox.Background>
                 <ComboBoxItem Content="Small"/>
                 <ComboBoxItem Content="Medium"/>
                 <ComboBoxItem Content="Large"/>
                 <ComboBoxItem Content="X-Large"/>
             </ComboBox>
-            <TextBox x:Name="ProductID" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" HorizontalAlignment="Left" Height="23" Margin="352,-180,0,0" TextWrapping="Wrap" Text="{Binding ProductID, Mode=OneWayToSource}" VerticalAlignment="Top" Width="120"/>
-            <TextBox x:Name="ProductName" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" HorizontalAlignment="Left" Height="23" Margin="210,-180,0,0" TextWrapping="Wrap" Text="{Binding ProductName, Mode=OneWayToSource}" VerticalAlignment="Top" Width="120" Background="#FFF4F3F3"/>
-            <TextBox x:Name="ProductDescription" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" HorizontalAlignment="Left" Height="128" Margin="210,-41,0,0" TextWrapping="Wrap" Text="{Binding ProductDescription, Mode=OneWayToSource}" VerticalAlignment="Top" Width="262" RenderTransformOrigin="0.406,0.396"/>
-            <TextBox x:Name ="ProductImage" Text="{Binding ProductImage, Mode=OneWayToSource}" HorizontalAlignment="Left" Height="22" Margin="210,-68,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="262" LostFocus="ProductImage_LostFocus"/>
-            <TextBox x:Name="ProductPrice" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" HorizontalAlignment="Left" Height="23" Margin="210,-152,0,0" TextWrapping="Wrap" Text="{Binding Price, Mode=OneWayToSource}" VerticalAlignment="Top" Width="120"/>
-            <TextBox x:Name="AmountInStock" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" HorizontalAlignment="Left" Height="23" Margin="210,-97,0,0" TextWrapping="Wrap" Text="{Binding AmountInStock, Mode=OneWayToSource}" VerticalAlignment="Top" Width="120"/>
-            <TextBox x:Name="ShippingPrice" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" HorizontalAlignment="Left" Height="23" Margin="352,-124,0,0" TextWrapping="Wrap" Text="{Binding ShippingPice, Mode=OneWayToSource}" VerticalAlignment="Top" Width="120"/>
-            <TextBox x:Name="DiscountPrice" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" HorizontalAlignment="Left" Height="23" Margin="352,-96,0,0" TextWrapping="Wrap" Text="{Binding DiscountPrice, Mode=OneWayToSource}" VerticalAlignment="Top" Width="120"/>
-            <ComboBox x:Name="Category" Text="{Binding Category, Mode=OneWayToSource}" HorizontalAlignment="Left" Margin="210,-124,0,0" VerticalAlignment="Top" Width="120">
+            <TextBox x:Name="ProductID" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" HorizontalAlignment="Left" Height="23" Margin="181,67,0,0" TextWrapping="Wrap" Text="{Binding ProductID, Mode=OneWayToSource}" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="ProductName" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" HorizontalAlignment="Left" Height="23" Margin="39,67,0,0" TextWrapping="Wrap" Text="{Binding ProductName, Mode=OneWayToSource}" VerticalAlignment="Top" Width="120" Background="#FFF4F3F3"/>
+            <TextBox x:Name="ProductDescription" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" HorizontalAlignment="Left" Height="128" Margin="39,206,0,0" TextWrapping="Wrap" Text="{Binding ProductDescription, Mode=OneWayToSource}" VerticalAlignment="Top" Width="262" RenderTransformOrigin="0.406,0.396"/>
+            <TextBox x:Name ="ProductImage" Text="{Binding ProductImage, Mode=OneWayToSource}" HorizontalAlignment="Left" Height="22" Margin="39,179,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="262" LostFocus="ProductImage_LostFocus"/>
+            <TextBox x:Name="ProductPrice" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" HorizontalAlignment="Left" Height="23" Margin="39,95,0,0" TextWrapping="Wrap" Text="{Binding Price, Mode=OneWayToSource}" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="AmountInStock" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" HorizontalAlignment="Left" Height="23" Margin="39,150,0,0" TextWrapping="Wrap" Text="{Binding AmountInStock, Mode=OneWayToSource}" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="ShippingPrice" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" HorizontalAlignment="Left" Height="23" Margin="181,123,0,0" TextWrapping="Wrap" Text="{Binding ShippingPice, Mode=OneWayToSource}" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="DiscountPrice" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" HorizontalAlignment="Left" Height="23" Margin="181,151,0,0" TextWrapping="Wrap" Text="{Binding DiscountPrice, Mode=OneWayToSource}" VerticalAlignment="Top" Width="120"/>
+            <ComboBox x:Name="Category" Text="{Binding Category, Mode=OneWayToSource}" HorizontalAlignment="Left" Margin="39,123,0,0" VerticalAlignment="Top" Width="120">
                 <ComboBoxItem Content="Merchandise"/>
                 <ComboBoxItem Content="Trøjer"/>
             </ComboBox>
-            <Label Content="Opret ny vare" HorizontalAlignment="Left" Margin="210,-220,0,0" VerticalAlignment="Top" FontSize="15" FontFamily="Segoe UI Light"/>
-            <Button x:Name="CreateProduct" Content="Gem" Command="{Binding AddProductControl}" HorizontalAlignment="Left" Margin="210,100,0,0" VerticalAlignment="Top" Width="262" Click="CreateProduct_Click" Height="28" BorderBrush="#FFBBBBBB" Background="White"/>
-            <Button x:Name="DeleteButton" Content="Slet" Command="{Binding DeleteProductControl}" HorizontalAlignment="Left" Margin="352,579,0,0" VerticalAlignment="Top" Width="120" Click="DeleteButton_Click" Height="31" Background="White" BorderBrush="#FFCDCDCD"/>
-            <Label Content="Slet/opdater vare" HorizontalAlignment="Left" Margin="210,210,0,0" VerticalAlignment="Top" FontSize="15" Background="Transparent" FontFamily="Segoe UI Light"/>
-            <ComboBox x:Name="ChooseItem" Text="{Binding ChooseItem, Mode=TwoWay}" HorizontalAlignment="Left" Margin="352,213,0,0" VerticalAlignment="Top" Width="120" DropDownClosed="ChooseItem_DropDownClosed"/>
-            <TextBox x:Name="txb_ProductName" Text="{Binding ProductName, Mode=TwoWay}" GotFocus="TextBox_GotFocus" LostFocus="TextBox2_LostFocus" HorizontalAlignment="Left" Height="23" Margin="210,261,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-            <TextBox x:Name="txb_ProductID" Text="{Binding ProductID, Mode=TwoWay}" GotFocus="TextBox_GotFocus" LostFocus="TextBox2_LostFocus" HorizontalAlignment="Left" Height="23" Margin="352,261,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.566,-0.674"/>
-            <TextBox x:Name="txb_AmountInStock" Text="{Binding AmountInStock, Mode=TwoWay}" GotFocus="TextBox_GotFocus" LostFocus="TextBox2_LostFocus" HorizontalAlignment="Left" Height="23" Margin="210,317,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.566,-0.674"/>
-            <TextBox x:Name="txb_DiscountPrice" Text="{Binding DiscountPrice, Mode=TwoWay}" GotFocus="TextBox_GotFocus" LostFocus="TextBox2_LostFocus" HorizontalAlignment="Left" Height="23" Margin="352,345,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.566,-0.674"/>
-            <TextBox x:Name="txb_Price" Text="{Binding Price, Mode=TwoWay}" GotFocus="TextBox_GotFocus" LostFocus="TextBox2_LostFocus" HorizontalAlignment="Left" Height="23" Margin="210,289,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.566,-0.674"/>
-            <TextBox x:Name="txb_ShippingPrice" Text="{Binding ShippingPrice, Mode=TwoWay}" GotFocus="TextBox_GotFocus" LostFocus="TextBox2_LostFocus" HorizontalAlignment="Left" Height="23" Margin="352,317,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.566,-0.674"/>
-            <TextBox x:Name="txb_ProductImage" Text="{Binding ProductImage, Mode=TwoWay}" GotFocus="TextBox_GotFocus" LostFocus="TextBox2_LostFocus" HorizontalAlignment="Left" Height="23" Margin="210,373,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="262" RenderTransformOrigin="0.566,-0.674"/>
-            <TextBox x:Name="txb_ProductDescription" Text="{Binding ProductDescription, Mode=TwoWay}" GotFocus="TextBox_GotFocus" LostFocus="TextBox2_LostFocus" HorizontalAlignment="Left" Height="164" Margin="210,401,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="262" RenderTransformOrigin="0.566,-0.674"/>
-            <Button x:Name="UpdateButton" Content="Opdater" HorizontalAlignment="Left" Margin="210,579,0,0" VerticalAlignment="Top" Width="124" Click="UpdateButton_Click" Height="31" Background="White" BorderBrush="#FFCDCDCD"/>
-            <ComboBox x:Name="cmb_Size" Text="{Binding Size, Mode=TwoWay}" HorizontalAlignment="Left" Margin="352,290,0,0" VerticalAlignment="Top" Width="120">
+            <Label Content="Opret ny vare" HorizontalAlignment="Left" Margin="39,27,0,0" VerticalAlignment="Top" FontSize="15" FontFamily="Segoe UI Light"/>
+            <Button x:Name="CreateProduct" Content="Gem" Command="{Binding AddProductControl}" HorizontalAlignment="Left" Margin="39,348,0,0" VerticalAlignment="Top" Width="262" Click="CreateProduct_Click" Height="28" BorderBrush="#FFBBBBBB" Background="White"/>
+            <Button x:Name="DeleteButton" Content="Slet" Command="{Binding DeleteProductControl}" HorizontalAlignment="Left" Margin="181,0,0,15" VerticalAlignment="Bottom" Width="120" Click="DeleteButton_Click" Height="32" Background="White" BorderBrush="#FFCDCDCD" Grid.Row="1"/>
+            <Label Content="Slet/opdater vare" HorizontalAlignment="Left" Margin="39,418,0,0" VerticalAlignment="Top" FontSize="15" Background="Transparent" FontFamily="Segoe UI Light"/>
+            <ComboBox x:Name="ChooseItem" Text="{Binding ChooseItem, Mode=TwoWay}" HorizontalAlignment="Left" Margin="181,420,0,0" VerticalAlignment="Top" Width="120" DropDownClosed="ChooseItem_DropDownClosed"/>
+            <TextBox x:Name="txb_ProductName" Text="{Binding ProductName, Mode=TwoWay}" GotFocus="TextBox_GotFocus" LostFocus="TextBox2_LostFocus" HorizontalAlignment="Left" Height="24" Margin="39,468,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="txb_ProductID" Text="{Binding ProductID, Mode=TwoWay}" GotFocus="TextBox_GotFocus" LostFocus="TextBox2_LostFocus" HorizontalAlignment="Left" Height="24" Margin="181,468,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.566,-0.674"/>
+            <TextBox x:Name="txb_AmountInStock" Text="{Binding AmountInStock, Mode=TwoWay}" GotFocus="TextBox_GotFocus" LostFocus="TextBox2_LostFocus" HorizontalAlignment="Left" Height="24" Margin="39,524,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.566,-0.674"/>
+            <TextBox x:Name="txb_DiscountPrice" Text="{Binding DiscountPrice, Mode=TwoWay}" GotFocus="TextBox_GotFocus" LostFocus="TextBox2_LostFocus" HorizontalAlignment="Left" Height="24" Margin="181,552,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.566,-0.674"/>
+            <TextBox x:Name="txb_Price" Text="{Binding Price, Mode=TwoWay}" GotFocus="TextBox_GotFocus" LostFocus="TextBox2_LostFocus" HorizontalAlignment="Left" Height="24" Margin="39,496,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.566,-0.674"/>
+            <TextBox x:Name="txb_ShippingPrice" Text="{Binding ShippingPrice, Mode=TwoWay}" GotFocus="TextBox_GotFocus" LostFocus="TextBox2_LostFocus" HorizontalAlignment="Left" Height="24" Margin="181,524,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.566,-0.674"/>
+            <TextBox x:Name="txb_ProductImage" Text="{Binding ProductImage, Mode=TwoWay}" GotFocus="TextBox_GotFocus" LostFocus="TextBox2_LostFocus" HorizontalAlignment="Left" Height="24" Margin="39,580,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="262" RenderTransformOrigin="0.566,-0.674"/>
+            <TextBox x:Name="txb_ProductDescription" Text="{Binding ProductDescription, Mode=TwoWay}" GotFocus="TextBox_GotFocus" LostFocus="TextBox2_LostFocus" HorizontalAlignment="Left" Height="181" Margin="39,608,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="262" RenderTransformOrigin="0.566,-0.674" Grid.RowSpan="2"/>
+            <Button x:Name="UpdateButton" Content="Opdater" HorizontalAlignment="Left" Margin="39,0,0,15" Width="124" Click="UpdateButton_Click" Background="White" BorderBrush="#FFCDCDCD" Grid.Row="1" RenderTransformOrigin="0.46,-2.031" Height="32" VerticalAlignment="Bottom"/>
+            <ComboBox x:Name="cmb_Size" Text="{Binding Size, Mode=TwoWay}" HorizontalAlignment="Left" Margin="181,498,0,0" VerticalAlignment="Top" Width="120">
                 <ComboBoxItem Content="S"/>
                 <ComboBoxItem Content="M"/>
                 <ComboBoxItem Content="L"/>
                 <ComboBoxItem Content="XL"/>
                 <ComboBoxItem Content="XXL"/>
             </ComboBox>
-            <ComboBox x:Name="cmb_Category" Text="{Binding Category, Mode=TwoWay}" HorizontalAlignment="Left" Margin="210,346,0,0" VerticalAlignment="Top" Width="120">
+            <ComboBox x:Name="cmb_Category" Text="{Binding Category, Mode=TwoWay}" HorizontalAlignment="Left" Margin="39,554,0,0" VerticalAlignment="Top" Width="120">
                 <ComboBoxItem Content="Merchandise"/>
                 <ComboBoxItem Content="Trøjer"/>
             </ComboBox>
-            <Image Source="https://churchtraconline.com/articles/apple/uploads/2017/09/Antu_insert-image.svg_-846x846.png" x:Name="img_product" HorizontalAlignment="Left" Height="200" Margin="536,-152,0,0" VerticalAlignment="Top" Width="200"/>
-            <Image Source="https://churchtraconline.com/articles/apple/uploads/2017/09/Antu_insert-image.svg_-846x846.png" x:Name="img_product2" HorizontalAlignment="Left" Height="200" Margin="536,290,0,0" VerticalAlignment="Top" Width="200"/>
+            <Image Source="https://churchtraconline.com/articles/apple/uploads/2017/09/Antu_insert-image.svg_-846x846.png" x:Name="img_product" HorizontalAlignment="Left" Height="201" Margin="365,95,0,0" VerticalAlignment="Top" Width="200"/>
+            <Image Source="https://churchtraconline.com/articles/apple/uploads/2017/09/Antu_insert-image.svg_-846x846.png" x:Name="img_product2" HorizontalAlignment="Left" Height="200" Margin="365,498,0,0" VerticalAlignment="Top" Width="200"/>
         </Grid>
     </ScrollViewer>
 </Page>
