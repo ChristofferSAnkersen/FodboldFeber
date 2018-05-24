@@ -11,7 +11,7 @@ using FodboldFeber.ViewModel;
 
 namespace FodboldFeber.Model
 {
-    class Users
+    class Customers
     {
         // public int UserID { get; set; }
         private string _username = "ChangeMe";

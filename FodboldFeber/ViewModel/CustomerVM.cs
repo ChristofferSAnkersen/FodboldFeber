@@ -7,7 +7,7 @@ using FodboldFeber.Model;
 
 namespace FodboldFeber.ViewModel
 {
-    class CustomerVM : Users
+    class CustomerVM : Customers
     {
         public bool UserIsLoggedIn = false;
         private static CustomerVM instance;
