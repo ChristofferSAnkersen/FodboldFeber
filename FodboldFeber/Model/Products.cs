@@ -224,6 +224,7 @@ namespace FodboldFeber.Model
                         sd.ProductName = (string)myReader["ProductName"];
                         sd.Price = (double)myReader["ProductPrice"];
                         sd.ProductImage = (string)myReader["ProductImage"];
+                        sd.ProductDescription = (string)myReader["ProductDescription"];
                         listOfProducts.Add(sd);
                     }
                     //con.Close();

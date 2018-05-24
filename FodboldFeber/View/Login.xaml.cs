@@ -47,6 +47,7 @@ namespace FodboldFeber.View
             lvm.InitializeLoginController();
             if (lvm.IsAuthenticated == true)
             {
+                customerVM.UpdateButtonContent();
                 Shop page = new Shop();
                 NavigationService.Navigate(page);
             }

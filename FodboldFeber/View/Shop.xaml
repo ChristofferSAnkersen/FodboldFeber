@@ -117,7 +117,8 @@
                         <Image x:Name="imgProductImage" Source="{Binding Path = ProductImage, Mode=TwoWay}" Stretch="UniformToFill"  Width="150" Height="75" />
                         <Label x:Name="lblProductName" Content="{Binding Path = ProductName, Mode=TwoWay}" BorderBrush="{x:Null}" />
                         <Label x:Name="lblProductPrice" Content="{Binding Path = Price, Mode=TwoWay}" BorderBrush="{x:Null}"/>
-                    </StackPanel>
+                        <Label x:Name="lblProductDescription" Content="{Binding Path= ProductDescription, Mode=TwoWay}" Visibility="Hidden" />
+                        </StackPanel>
         <!--</Button>-->
         </DataTemplate>
             </ListBox.ItemTemplate>
