@@ -97,5 +97,10 @@ namespace FodboldFeber
 
             StartPage.Content = new Shop();
         }
+        private void btnDiscord_Click_1(object sender, RoutedEventArgs e)
+        {
+            //Discord server link
+            System.Diagnostics.Process.Start("https://discord.gg/JmFcHY");
+        }
     }
 }
