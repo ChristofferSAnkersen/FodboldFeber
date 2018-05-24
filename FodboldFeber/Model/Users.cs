@@ -325,23 +325,7 @@ namespace FodboldFeber.Model
                 }
             }
         }
-        public void CheckIfUserExists()
-        {
-            using (SqlConnection con = new SqlConnection(connectionString))
-            {
-                try
-                {
-                    if (con.State == ConnectionState.Closed)
-                        con.Open();
-                    String CheckIfExist = "select from Users where Email=txtEmail.Text && UserName=txtEmail.Text";
-              }
-                finally
-                {
-                    con.Close();
-                }
-            }
-            
-    }
+        
         public void DeleteUser()
         {
 

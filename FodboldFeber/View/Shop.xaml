@@ -60,7 +60,7 @@
                 </ListView>
             </Popup>
         </StackPanel>
-        <TextBox x:Name="searchBox" Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" Margin="513,0,10.333,228" Width="250" Height="20" VerticalAlignment="Bottom"/>
+        <TextBox x:Name="searchBox" FontSize="14" Text="gg{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" Margin="513,0,10.333,228" Width="250" Height="20" VerticalAlignment="Bottom"/>
      <StackPanel Margin="191,124,83,-268">
             <Popup PlacementTarget="{Binding ElementName=searchBox}" Placement="Bottom" IsOpen="{Binding IsFocused, ElementName=searchBox, Mode=OneWay}">
                 <Popup.Resources>

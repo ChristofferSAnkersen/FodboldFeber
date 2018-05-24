@@ -24,7 +24,12 @@
         <Button x:Name="Contact" Content="Kontakt" HorizontalAlignment="Left" Margin="661,10,0,0" VerticalAlignment="Top" Width="75" Foreground="White" Background="{x:Null}" BorderThickness="0" FontWeight="Bold" Click="Contact_Click" BorderBrush="{x:Null}" FontSize="14"/>
         <Button x:Name="About" Content="Om os" HorizontalAlignment="Left" Margin="741,10,0,0" VerticalAlignment="Top" Width="75" Foreground="White" Background="{x:Null}" BorderThickness="0" FontWeight="Bold" Click="About_Click" BorderBrush="{x:Null}" FontSize="14"/>
         <Button x:Name="Customers" Content="Kunder" HorizontalAlignment="Left" Margin="828,10,0,0" VerticalAlignment="Top" Width="75" Foreground="White" Background="{x:Null}" BorderThickness="0" FontWeight="Bold" Click="Customers_Click" BorderBrush="{x:Null}" FontSize="14"/>
+
         <Button x:Name="Login" Content="Login" HorizontalAlignment="Left" Margin="903,10,0,0" VerticalAlignment="Top" Width="75" Foreground="White" Background="{x:Null}" BorderThickness="0" FontWeight="Bold" Click="Login_Click" BorderBrush="{x:Null}" FontSize="14"/>
         <Frame x:Name="StartPage" Margin="0,40,0,-147" NavigationUIVisibility="Hidden" Content=""/>
+        <Button x:Name="btnDiscord" HorizontalAlignment="Left"  Margin="605,1,0,0" Background="{x:Null}" BorderBrush="{x:Null}" VerticalAlignment="Top" Width="40" Height="36" Click="btnDiscord_Click_1" Foreground="{x:Null}">
+            <Image Source="https://i.mcpro.games/Discord/discord_canary.png"></Image>
+        </Button>
     </Grid>
 </Window>
+ 
