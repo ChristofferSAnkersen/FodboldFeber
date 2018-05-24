@@ -26,7 +26,7 @@ namespace FodboldFeber.View
         public CreateClubCustomer()
         {
             InitializeComponent();
-            customerVM = new CustomerVM();
+            customerVM = CustomerVM.Instance;
             this.DataContext = customerVM;
             txtbox_name.Text = "Angiv dit fulde navn";
             txtbox_username.Text = "Angiv Brugernavn";

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,13 +24,26 @@ namespace FodboldFeber
     /// </summary>
     public partial class MainWindow : Window
     {
-     
 
-        //private news news;
+        private static MainWindow instance;
+        public static MainWindow Instance
+        {
+            get
+            {
+                if (instance == null)
+                {
+                    instance = new MainWindow();
+                }
+                return instance;
+            }
+        }
+        private LoginVM loginVM;
+      
         public MainWindow()
         {
             InitializeComponent();
-            
+            loginVM = LoginVM.Instance;
+           
             StartPage.Content = new Frontpage();
         }
 
@@ -55,11 +69,15 @@ namespace FodboldFeber
 
         private void Login_Click(object sender, RoutedEventArgs e)
         {
-
-            if (Login.Content.ToString() == "Profil")
+            if (loginVM.IsAuthenticated == true)
             {
                 StartPage.Content = new CustomerProfile();
             }
+
+            //if (Login.Content.ToString() == "Profil")
+            //{
+            //    StartPage.Content = new CustomerProfile();
+            //}
       
             else if (Login.Content.ToString() == "Login")
             {
@@ -79,12 +97,5 @@ namespace FodboldFeber
 
             StartPage.Content = new Shop();
         }
-        private void IfUserIsLoggedIn()
-        {
-          
-
-
-        }
-
     }
 }

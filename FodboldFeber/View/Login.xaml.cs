@@ -27,28 +27,29 @@ namespace FodboldFeber.View
     /// </summary>
     public partial class Login : Page
     {
-        LoginVM lvm = new LoginVM();
+        
         private CustomerVM customerVM;
+        private LoginVM loginVM;
+        private MainWindow mainWindow;
         // CustomerController cController;
         public Login()
         {
             InitializeComponent();
             customerVM = CustomerVM.Instance;
+            loginVM = LoginVM.Instance;
         }
         //private static string connectionString = "Server=EALSQL1.eal.local; Database=DB2017_A27; User Id= USER_A27; Password=SesamLukOp_27;";
 
-        public void LoggedIn()
-        {
-            customerVM.UserIsLoggedIn = true;
-        }
+    
         private void BtnInitlogInClick(object sender, RoutedEventArgs e)
         {
-            LoggedIn();
-            lvm.InitializeLoginController();
-            if (lvm.IsAuthenticated == true)
+            loginVM.InitializeLoginController();
+            if (loginVM.IsAuthenticated == true)
             {
-                customerVM.UpdateButtonContent();
-                Shop page = new Shop();
+                loginVM.UpdateButtonContent();
+                mainWindow = MainWindow.Instance;
+                mainWindow.Login.Content = "Profil";
+                Frontpage page = new Frontpage();
                 NavigationService.Navigate(page);
             }
         }

@@ -22,10 +22,10 @@ namespace FodboldFeber.View
 {
     public partial class PasswordRecovery : Page
     {
-
+        private CustomerVM customerVM;
         SmtpClient client;
         MailMessage msg;
-        CustomerVM cVM = new CustomerVM();
+        
         private static string connectionString = "Server=EALSQL1.eal.local; Database=DB2017_A27; User Id= USER_A27; Password=SesamLukOp_27;";
 
 
