@@ -86,5 +86,9 @@ namespace FodboldFeber
 
         }
 
+        private void btnDiscord_Click(object sender, RoutedEventArgs e)
+        {       //Discord server link            
+                System.Diagnostics.Process.Start("https://discord.gg/JmFcHY");       
+        }
     }
 }
