@@ -31,16 +31,16 @@ namespace FodboldFeber.View
             this.DataContext = shopVM;
             //Default values for the properties, with the goal of displaying the needed message 
             //in the textboxes, instructing the user of what they should type in the boxes
-            ProductID.Text = "Angiv ProduktID";
-            ProductName.Text = "Angiv Produkt Navn";
-            Category.Text = "Angiv Kategori";
+            ProductID.Text = "Angiv produktID";
+            ProductName.Text = "Angiv Produktnavn";
+            Category.Text = "Angiv kategori";
             ProductDescription.Text = "Angiv beskrivelse";
 
-            ProductPrice.Text = "Angiv Pris";
-            AmountInStock.Text = "Angiv Antal På Lager";
-            ShippingPrice.Text = "Angiv Fragtpris";
-            this.Size.Text = "Angiv Størrelse";
-            DiscountPrice.Text = "Angiv Tilbudspris";
+            ProductPrice.Text = "Angiv pris";
+            AmountInStock.Text = "Angiv Antal på lager";
+            ShippingPrice.Text = "Angiv fragtpris";
+            this.Size.Text = "Angiv størrelse";
+            DiscountPrice.Text = "Angiv tilbudspris";
 
             
             ListInCombobox();
@@ -98,7 +98,7 @@ namespace FodboldFeber.View
             {
                 textbox.Text = string.Empty;
             }
-            if (textbox.Name == "ProductName" && textbox.Text == "" || textbox.Text == "Produktnavn" || textbox.Text == "Angiv Produktnavn")
+            if (textbox.Name == "ProductName" && textbox.Text == "" || textbox.Text == "Produktnavn" || textbox.Text == "Angiv Produkt Navn")
             {
                 textbox.Text = string.Empty;
             }
@@ -230,6 +230,10 @@ namespace FodboldFeber.View
                         cmb_Size.Text = Size;
                         txb_DiscountPrice.Text = DiscountPrice;
                         txb_ProductImage.Text = ProductImage;
+
+                        ImageSourceConverter converter = new ImageSourceConverter();
+                        this.img_product2.Source = (ImageSource)converter.ConvertFromString(ProductImage);
+
                     }
                     con.Close();
                 }
@@ -266,6 +270,21 @@ namespace FodboldFeber.View
             ListInCombobox();
         }
 
-   
+        private void ProductImage_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(ProductImage.Text))
+            {
+                ImageSourceConverter converter = new ImageSourceConverter();
+                this.img_product.Source = (ImageSource)converter.ConvertFromString("https://churchtraconline.com/articles/apple/uploads/2017/09/Antu_insert-image.svg_-846x846.png");
+            }
+
+            else
+            {
+                ImageSourceConverter converter = new ImageSourceConverter();
+                this.img_product.Source = (ImageSource)converter.ConvertFromString(ProductImage.Text);
+            }
+
+        }
+
     }
 }

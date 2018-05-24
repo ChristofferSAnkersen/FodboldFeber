@@ -27,8 +27,8 @@ namespace FodboldFeber.ViewModel
         Products products = new Products();
         public SearchFunction searchFunction { get; set; }
 
-        private Products _selectedProduct;
-        public Products SelectedProduct
+        private object _selectedProduct;
+        public object SelectedProduct
         {
             get
             {

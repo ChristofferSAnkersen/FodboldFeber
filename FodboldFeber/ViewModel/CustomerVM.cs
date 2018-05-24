@@ -9,6 +9,19 @@ namespace FodboldFeber.ViewModel
 {
     class CustomerVM : Customers
     {
+        public bool UserIsLoggedIn = false;
+        private static CustomerVM instance;
+        public static CustomerVM Instance
+        {
+            get
+            {
+                if (instance == null)
+                {
+                    instance = new CustomerVM();
+                }
+                return instance;
+            }
+        }
         public CustomerVM()
         {
             UserName = "Angiv dit fuldenavn";
@@ -44,6 +57,15 @@ namespace FodboldFeber.ViewModel
         public void UpdateUserControl()
         {
             UpdateUser();
+        }
+        public void UpdateButtonContent()
+        {
+            MainWindow mainWindow = new MainWindow();
+            if (UserIsLoggedIn == true)
+            {
+                mainWindow.Login.Content = "Profil";
+
+            }
         }
 
     }
