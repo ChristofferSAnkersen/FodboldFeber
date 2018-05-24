@@ -33,7 +33,7 @@ namespace FodboldFeber.View
         public PasswordRecovery()
         {
             InitializeComponent();
-            txtUserName.Text = "Angiv dit Brugernavn(kun hvis du har glemt password)";
+            txtUserName.Text = "Angiv dit Brugernavn";
             txtEmail.Text = "Angiv Email";
         }
         private void BtnSendEmailClick(object sender, RoutedEventArgs e)
