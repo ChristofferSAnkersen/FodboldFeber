@@ -22,6 +22,7 @@ namespace FodboldFeber.View
     /// </summary>
     public partial class CreatePrivateCustomer : Page
     {
+        
         private CustomerVM customerVM;
         public CreatePrivateCustomer()
         {
@@ -36,10 +37,12 @@ namespace FodboldFeber.View
             txtbox_address.Text = "Angiv Adresse";
         }
 
+   
         private void CreateUser_Click(object sender, RoutedEventArgs e)
         {
             customerVM.AddPrivateUserControl();
             MessageBox.Show("Du er nu oprettet, Tak for at vise interesse for fodboldfeber :)");
+           //Navigation back to the frontpage
             PrivateCustomerFrame.Content = new Frontpage();
         }
         private void TextBox_GotFocus(object sender, RoutedEventArgs e)
@@ -101,5 +104,6 @@ namespace FodboldFeber.View
 
             textbox.GotFocus += TextBox_GotFocus;
         }
+     
     }
 }

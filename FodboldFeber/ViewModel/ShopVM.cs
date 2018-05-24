@@ -27,8 +27,8 @@ namespace FodboldFeber.ViewModel
         Products products = new Products();
         public SearchFunction searchFunction { get; set; }
 
-        private Products _selectedProduct;
-        public Products SelectedProduct
+        private object _selectedProduct;
+        public object SelectedProduct
         {
             get
             {
@@ -91,11 +91,11 @@ namespace FodboldFeber.ViewModel
         {
             ProductName = "opdater?";
         }
-        public event PropertyChangedEventHandler PropertyChanged;
+        public event PropertyChangedEventHandler VMPropertyChanged;
 
         private void OnPropertyChanged(string propertyName)
         {
-            PropertyChangedEventHandler handler = PropertyChanged;
+            PropertyChangedEventHandler handler = VMPropertyChanged;
             if (handler != null)
             {
                 handler(this, new PropertyChangedEventArgs(propertyName));

@@ -33,7 +33,10 @@ namespace FodboldFeber.View
         public PasswordRecovery()
         {
             InitializeComponent();
+            //txtUserName.Text = "Angiv dit Brugernavn";
+            //txtEmail.Text = "Angiv Email";
         }
+
         private void BtnSendEmailClick(object sender, RoutedEventArgs e)
         {
 
@@ -162,6 +165,32 @@ namespace FodboldFeber.View
                 }
 
             }
+        }
+         private void TextBox_GotFocus(object sender, RoutedEventArgs e)
+        {
+            TextBox textbox = (TextBox)sender;
+            if (textbox.Name == "txtUserName" && textbox.Text == "" || textbox.Text == "Angiv dit Brugernavn")
+            {
+                textbox.Text = string.Empty;
+            }
+            if (textbox.Name == "txtEmail" && textbox.Text == "" || textbox.Text == "Angiv Email")
+            {
+                textbox.Text = string.Empty;
+            }
+            textbox.GotFocus -= TextBox_GotFocus;
+        }
+        private void TextBox_LostFocus(object sender, RoutedEventArgs e)
+        {
+            TextBox textbox = (TextBox)sender;
+            if (textbox.Name == "txtUserName" && textbox.Text == "")
+            {
+                textbox.Text = "Angiv dit Brugernavn";
+            }
+            else if (textbox.Name == "txtEmail" && textbox.Text == "")
+            {
+                textbox.Text = "Angiv Email";
+            }         
+            textbox.GotFocus += TextBox_GotFocus;
         }
     }
 }

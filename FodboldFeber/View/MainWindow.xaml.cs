@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using FodboldFeber;
 using FodboldFeber.View;
+using FodboldFeber.ViewModel;
 
 namespace FodboldFeber
 {
@@ -22,10 +23,13 @@ namespace FodboldFeber
     /// </summary>
     public partial class MainWindow : Window
     {
+     
+
         //private news news;
         public MainWindow()
         {
             InitializeComponent();
+            
             StartPage.Content = new Frontpage();
         }
 
@@ -51,8 +55,18 @@ namespace FodboldFeber
 
         private void Login_Click(object sender, RoutedEventArgs e)
         {
-            StartPage.Content = new Login();
-          
+
+            if (Login.Content.ToString() == "Profil")
+            {
+                StartPage.Content = new CustomerProfile();
+            }
+      
+            else if (Login.Content.ToString() == "Login")
+            {
+                StartPage.Content = new Login();
+            }
+
+
         }
 
         private void News_Click(object sender, RoutedEventArgs e)
@@ -64,6 +78,12 @@ namespace FodboldFeber
         {
 
             StartPage.Content = new Shop();
+        }
+        private void IfUserIsLoggedIn()
+        {
+          
+
+
         }
 
     }

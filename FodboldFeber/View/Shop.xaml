@@ -109,16 +109,16 @@
 
      
         <ScrollViewer VerticalScrollBarVisibility="Auto" Width="750" Height="400" Margin="191,125,83,-268">
-            <ListBox x:Name="ShopListBox" ItemsSource="{Binding ListOfProducts}" SelectedItem="{Binding Path= SelectedProduct}" RenderTransformOrigin="0.502,0.003" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Height="Auto" Width="750">
+            <ListBox x:Name="ShopListBox" ItemsSource="{Binding ListOfProducts}" SelectedItem="{Binding Path= SelectedProduct}" RenderTransformOrigin="0.502,0.003" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Height="Auto" Width="750" SelectionChanged="ShopListBox_SelectionChanged" >
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                        <Button x:Name="Navigation" Click="BtnNavigation_Click">
+                        <!--<Button x:Name="Navigation" Click="BtnNavigation_Click">-->
                         <StackPanel x:Name="ShopStackpanel" >
                         <Image x:Name="imgProductImage" Source="{Binding Path = ProductImage, Mode=TwoWay}" Stretch="UniformToFill"  Width="150" Height="75" />
                         <Label x:Name="lblProductName" Content="{Binding Path = ProductName, Mode=TwoWay}" BorderBrush="{x:Null}" />
                         <Label x:Name="lblProductPrice" Content="{Binding Path = Price, Mode=TwoWay}" BorderBrush="{x:Null}"/>
                     </StackPanel>
-        </Button>
+        <!--</Button>-->
         </DataTemplate>
             </ListBox.ItemTemplate>
             <ListBox.ItemsPanel>
