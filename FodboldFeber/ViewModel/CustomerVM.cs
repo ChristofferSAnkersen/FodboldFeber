@@ -50,10 +50,7 @@ namespace FodboldFeber.ViewModel
         {
             AddCompanyUser();
         }
-        public new void CheckIfExist()
-        {
-            CheckIfUserExists();
-        }
+        
         public void UpdateUserControl()
         {
             UpdateUser();

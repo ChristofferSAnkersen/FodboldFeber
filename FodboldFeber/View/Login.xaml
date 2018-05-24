@@ -20,12 +20,12 @@
         </Rectangle>
 
 
-        <TextBox x:Name="txtbox_username" HorizontalAlignment="Left" Height="31" Margin="372,203,0,0" TextWrapping="Wrap" Text="{Binding LoginParameters.Username, Mode=OneWayToSource}" VerticalAlignment="Top" Width="249" FontFamily="Segoe UI Light" Foreground="Black" BorderBrush="#FF313131">
+        <TextBox x:Name="txtbox_username" HorizontalAlignment="Left"  FontSize="21" Height="30" Margin="372,203,0,0" TextWrapping="Wrap" Text="{Binding LoginParameters.Username, Mode=OneWayToSource}" VerticalAlignment="Top" Width="249" FontFamily="Segoe UI Light" Foreground="Black" BorderBrush="#FF313131">
             <TextBox.DataContext>
                 <ViewModel:LoginVM/>
             </TextBox.DataContext>
         </TextBox>
-        <TextBox x:Name="txtbox_password" HorizontalAlignment="Left" Height="29" Margin="372,247,0,0" TextWrapping="Wrap" Text="{Binding LoginParameters.Password, Mode=OneWayToSource}" VerticalAlignment="Top" Width="249" FontFamily="Segoe UI Light" BorderBrush="#FF242424">
+        <TextBox x:Name="txtbox_password"  FontSize="21"  HorizontalAlignment="Left" Height="30" Margin="372,247,0,0" TextWrapping="Wrap" Text="{Binding LoginParameters.Password, Mode=OneWayToSource}" VerticalAlignment="Top" Width="249" FontFamily="Segoe UI Light" BorderBrush="#FF242424">
             <TextBox.DataContext>
                 <ViewModel:LoginVM/>
             </TextBox.DataContext>
