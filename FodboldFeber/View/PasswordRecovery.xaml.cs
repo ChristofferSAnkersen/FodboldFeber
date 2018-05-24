@@ -22,12 +22,12 @@ namespace FodboldFeber.View
 {
     public partial class PasswordRecovery : Page
     {
-    
+
         SmtpClient client;
         MailMessage msg;
         CustomerVM cVM = new CustomerVM();
         private static string connectionString = "Server=EALSQL1.eal.local; Database=DB2017_A27; User Id= USER_A27; Password=SesamLukOp_27;";
-       
+
 
 
         public PasswordRecovery()
@@ -55,28 +55,27 @@ namespace FodboldFeber.View
                         char[] newPassword = "qwertyuiopasdfghjklzxcvbnm1234567890".ToCharArray();
                         Random r = new Random();
                         String randomString = "";
-                        for (int i = 0; i < 15; i++)
+                        for (int i = 0; i < 20; i++)
                         {
                             randomString += newPassword[r.Next(0, 35)].ToString();
-                        }                      
+                        }
                         if (con.State == ConnectionState.Closed)
-                        con.Open();
+                            con.Open();
                         String query2 = "Update Users set password ='" + randomString + "' where email = '" + txtEmail.Text + "' AND username= '" + txtUserName.Text + "' ";
                         SqlCommand sqlCmd2 = new SqlCommand(query2, con);
                         sqlCmd2.CommandType = CommandType.Text;
-                        SqlDataReader myReader;                        
+                        SqlDataReader myReader;
                         myReader = sqlCmd2.ExecuteReader();
                         while (myReader.Read())
                         {
 
                         }
                         con.Close();
-
                         //Email message information
                         msg = new MailMessage();
                         msg.From = new MailAddress("fodboldfeberprojekt@gmail.com");
                         msg.To.Add(new MailAddress(txtEmail.Text));
-                        msg.Subject = "Nulstilling af kodeord";
+                        msg.Subject = "Kodeords Nulstilling";
                         msg.Body = "Dit kodeord er midlertidigt lavet om til " + randomString;
                         //Smtp information
                         client = new SmtpClient("smtp.gmail.com");
@@ -85,11 +84,11 @@ namespace FodboldFeber.View
                         client.EnableSsl = true;
                         client.Send(msg);
                         //MessageBox Confirmation
-                        MessageBox.Show("Email sendt til dig!");
+                        MessageBox.Show("Email Sendt til dig!");
                     }
                     else
                     {
-                        MessageBox.Show("Brugernavn og email stemmer ikke overens");
+                        MessageBox.Show("Brugernavn og Email stemmer ikke overens");
                     }
                 }
 
@@ -103,24 +102,67 @@ namespace FodboldFeber.View
 
         private void BtnForgotUserNameClick(object sender, RoutedEventArgs e)
         {
-            SmtpClient client;
-            MailMessage msg;
-            // Email message information
-            msg = new MailMessage();
-            msg.From = new MailAddress("fodboldfeberprojekt@gmail.com");
-            msg.To.Add(new MailAddress(txtEmail.Text));
-            msg.Subject = "Dit brugernavn er nulstillet!";
-            msg.Body = "Dit brugernavn er @UserName";
-            // Smtp information 
-            client = new SmtpClient("smtp.gmail.com");
-            client.Port = 587;
-            client.Credentials = new System.Net.NetworkCredential("fodboldfeberprojekt@gmail.com", "Fodboldfeber123");
-            client.EnableSsl = true;
-            client.Send(msg);
-            // MessageBox Confirmation 
-            MessageBox.Show("Email sendt til dig!");
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    if (con.State == ConnectionState.Closed)
+                        con.Open();
+                    String query = "select count(1) from Users where email=@email";
+                    SqlCommand sqlCmd = new SqlCommand(query, con);
+                    sqlCmd.CommandType = CommandType.Text;
+                    sqlCmd.Parameters.AddWithValue("@email", txtEmail.Text);
+                    int count = Convert.ToInt32(sqlCmd.ExecuteScalar());
+                    if (count == 1)
+                    {
+                        //Generates random password since we cant send a reset link because we are doing a wpf app.
+                        char[] newUsername = "qwertyuiopasdfghjklzxcvbnm1234567890".ToCharArray();
+                        Random r = new Random();
+                        String randomString = "";
+                        for (int i = 0; i < 20; i++)
+                        {
+                            randomString += newUsername[r.Next(0, 35)].ToString();
+                        }
+                        if (con.State == ConnectionState.Closed)
+                            con.Open();
+                        String query2 = "Update Users set username ='" + randomString + "' where email = '" + txtEmail.Text + "' ";
+                        SqlCommand sqlCmd2 = new SqlCommand(query2, con);
+                        sqlCmd2.CommandType = CommandType.Text;
+                        SqlDataReader myReader;
+                        myReader = sqlCmd2.ExecuteReader();
+                        while (myReader.Read())
+                        {
+
+                        }
+                        con.Close();
+                        //Email message information
+                        msg = new MailMessage();
+                        msg.From = new MailAddress("fodboldfeberprojekt@gmail.com");
+                        msg.To.Add(new MailAddress(txtEmail.Text));
+                        msg.Subject = "Brugernavns Nulstilling";
+                        msg.Body = "Dit brugernavn er midlertidigt lavet om til " + randomString;
+                        //Smtp information
+                        client = new SmtpClient("smtp.gmail.com");
+                        client.Port = 587;
+                        client.Credentials = new System.Net.NetworkCredential("fodboldfeberprojekt@gmail.com", "Fodboldfeber123");
+                        client.EnableSsl = true;
+                        client.Send(msg);
+                        //MessageBox Confirmation
+                        MessageBox.Show("Email Sendt til dig!");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Den indtastede email eksistere ikke i vores system :(");
+                    }
+
+                }
+                finally
+                {
+                    con.Close();
+                }
+
+            }
         }
-        
     }
 }
 

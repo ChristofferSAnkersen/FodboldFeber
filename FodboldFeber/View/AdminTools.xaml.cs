@@ -27,7 +27,7 @@ namespace FodboldFeber.View
         public AdminTools()
         {
             InitializeComponent();
-            shopVM = new ShopVM();
+            shopVM = ShopVM.Instance;
             this.DataContext = shopVM;
             //Default values for the properties, with the goal of displaying the needed message 
             //in the textboxes, instructing the user of what they should type in the boxes

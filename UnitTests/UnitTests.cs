@@ -14,7 +14,7 @@ namespace UnitTests
     public class UnitTests
     {
         Products products = new Products();
-        ShopVM shopVM = new ShopVM();
+        ShopVM shopVM = ShopVM.Instance;
         DataAccess dataAccess = new DataAccess();
         MainWindow mainWindow = new MainWindow();
 

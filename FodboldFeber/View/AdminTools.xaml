@@ -8,9 +8,9 @@
       Background="White"
       mc:Ignorable="d" d:DesignWidth="800"
       Title="AdminTools" Height="600">
-    <Page.DataContext>
+    <!--<Page.DataContext>
         <VM:ShopVM x:Name="VMShopVM"></VM:ShopVM>
-    </Page.DataContext>
+    </Page.DataContext>-->
     <ScrollViewer Margin="0,0,0,0.2" >
         <Grid Height="610">
             <Image Source="http://www.ianbarnard.co.uk/wp-content/uploads/2013/09/free-blurred-web-backgrounds-06.jpg" HorizontalAlignment="Left" Height="600" VerticalAlignment="Top" Width="800" Margin="0,0,-17.333,0"/>
