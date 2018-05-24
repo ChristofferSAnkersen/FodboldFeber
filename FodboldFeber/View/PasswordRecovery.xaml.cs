@@ -71,12 +71,13 @@ namespace FodboldFeber.View
 
                         }
                         con.Close();
+
                         //Email message information
                         msg = new MailMessage();
                         msg.From = new MailAddress("fodboldfeberprojekt@gmail.com");
                         msg.To.Add(new MailAddress(txtEmail.Text));
-                        msg.Subject = "Kodeords Nulstilling";
-                        msg.Body = "Dit kodeord er midlertigdigt lavet om til " + randomString;
+                        msg.Subject = "Nulstilling af kodeord";
+                        msg.Body = "Dit kodeord er midlertidigt lavet om til " + randomString;
                         //Smtp information
                         client = new SmtpClient("smtp.gmail.com");
                         client.Port = 587;
@@ -84,11 +85,11 @@ namespace FodboldFeber.View
                         client.EnableSsl = true;
                         client.Send(msg);
                         //MessageBox Confirmation
-                        MessageBox.Show("Email Sendt til dig!");
+                        MessageBox.Show("Email sendt til dig!");
                     }
                     else
                     {
-                        MessageBox.Show("Brugernavn og Email stemmer ikke overens");
+                        MessageBox.Show("Brugernavn og email stemmer ikke overens");
                     }
                 }
 
@@ -108,7 +109,7 @@ namespace FodboldFeber.View
             msg = new MailMessage();
             msg.From = new MailAddress("fodboldfeberprojekt@gmail.com");
             msg.To.Add(new MailAddress(txtEmail.Text));
-            msg.Subject = "Dit brugernavn er!";
+            msg.Subject = "Dit brugernavn er nulstillet!";
             msg.Body = "Dit brugernavn er @UserName";
             // Smtp information 
             client = new SmtpClient("smtp.gmail.com");
@@ -117,7 +118,7 @@ namespace FodboldFeber.View
             client.EnableSsl = true;
             client.Send(msg);
             // MessageBox Confirmation 
-            MessageBox.Show("Email Sendt til dig!");
+            MessageBox.Show("Email sendt til dig!");
         }
         
     }
