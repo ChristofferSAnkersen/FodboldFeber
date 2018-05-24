@@ -23,11 +23,11 @@ namespace FodboldFeber.View
     {
 
         private ShopVM shopVM;
-
         public Frontpage()
         {
             InitializeComponent();
-            shopVM = new ShopVM();
+            shopVM = ShopVM.Instance;
+            this.DataContext = shopVM;
 
             // Sets the itemsource again to make sure it is binded to the list "ListOfProducts" in "ShopVM" after it has been populated
             shopVM.PopulateList();

@@ -63,7 +63,7 @@ namespace FodboldFeber.ViewModel
             DiscountPrice = 0;
             ProductImage = "Vælg billede";
 
-            SelectedProduct = new Model.Products { ProductName = "", ProductID = 0, Category = "", ProductDescription = "", Price = 0, Size = "", ProductImage = "" };
+            //SelectedProduct = new Model.Products { ProductName = "", ProductID = 0, Category = "", ProductDescription = "", Price = 0, Size = "", ProductImage = "" };
 
         }
         //Funktionality to Shop

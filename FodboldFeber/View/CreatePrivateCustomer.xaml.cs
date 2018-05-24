@@ -40,6 +40,7 @@ namespace FodboldFeber.View
         {
             customerVM.AddPrivateUserControl();
             MessageBox.Show("Du er nu oprettet, Tak for at vise interesse for fodboldfeber :)");
+            PrivateCustomerFrame.Content = new Frontpage();
         }
         private void TextBox_GotFocus(object sender, RoutedEventArgs e)
         {

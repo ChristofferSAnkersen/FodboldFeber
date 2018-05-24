@@ -9,10 +9,10 @@
        
         Title="Shop" Height="600" Width="1000">
     <!-- Comments coming here -->
-    <Page.DataContext>
+    <!--<Page.DataContext>-->
         <!--<model:SearchFunction x:Name="searchfunction"/>-->
-        <VM:ShopVM x:Name="ShopVM" />
-    </Page.DataContext>
+        <!--<VM:ShopVM x:Name="ShopVM" />-->
+    <!--</Page.DataContext>-->
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition 
@@ -136,4 +136,4 @@
         <Label Content="Shop" FontSize="40" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="443,31,386,0" Width="195"/>
     </Grid>
 </Page>
-    
+   

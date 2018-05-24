@@ -43,6 +43,7 @@
             <Label Content="Din funktion" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="517,325,0,0" FontFamily="Segoe UI Light" FontStyle="Italic"/>
             <TextBox x:Name="txtbox_cvr" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" HorizontalAlignment="Left" Height="23" Margin="524,405,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="111" Text="{Binding CVR, Mode=OneWayToSource}"/>
             <Label Content="CVR-nummer" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="519,379,0,0" FontFamily="Segoe UI Light" FontStyle="Italic"/>
+            <Frame x:Name="CompanyCustomerFrame" HorizontalAlignment="Left" Height="474" Margin="50,77,0,0" VerticalAlignment="Top" Width="902" NavigationUIVisibility="Hidden"/>
 
         </Grid>
     </ScrollViewer>
