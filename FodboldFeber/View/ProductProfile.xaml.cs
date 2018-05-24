@@ -13,9 +13,9 @@ namespace FodboldFeber.View
         public ProductProfile()
         {
             InitializeComponent();
-            shopVM = new ShopVM();
+            shopVM = ShopVM.Instance;
             this.DataContext = shopVM;
-            shopVM.PopulateList();
+           
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

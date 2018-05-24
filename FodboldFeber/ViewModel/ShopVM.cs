@@ -12,11 +12,22 @@ namespace FodboldFeber.ViewModel
 {
     public class ShopVM : Products
     {
-
-        private Products _selectedProduct;
+        private static ShopVM instance;
+        public static ShopVM Instance
+        {
+            get
+            {
+                if(instance==null)
+                {
+                    instance = new ShopVM();
+                }
+                return instance;
+            }
+        }
         Products products = new Products();
         public SearchFunction searchFunction { get; set; }
 
+        private Products _selectedProduct;
         public Products SelectedProduct
         {
             get
@@ -33,7 +44,7 @@ namespace FodboldFeber.ViewModel
             }
         }
 
-        public ShopVM()
+        private ShopVM()
         {
             //Default values for the properties, with the goal of displaying the needed message 
             //in the textboxes, instructing the user of what they should type in the boxes
@@ -53,6 +64,7 @@ namespace FodboldFeber.ViewModel
             ProductImage = "Vælg billede";
 
             SelectedProduct = new Model.Products { ProductName = "", ProductID = 0, Category = "", ProductDescription = "", Price = 0, Size = "", ProductImage = "" };
+
         }
         //Funktionality to Shop
         public void PopulateList()
@@ -89,6 +101,8 @@ namespace FodboldFeber.ViewModel
                 handler(this, new PropertyChangedEventArgs(propertyName));
             }
         }
+
+
 
     }
  
