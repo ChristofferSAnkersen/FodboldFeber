@@ -14,7 +14,7 @@ namespace FodboldFeber.View
         {
             InitializeComponent();
             shopVM = ShopVM.Instance;
-            this.DataContext = shopVM;
+            this.DataContext = shopVM.SelectedProduct;
            
         }
 

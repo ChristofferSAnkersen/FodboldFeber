@@ -47,6 +47,7 @@ namespace FodboldFeber.View
         {
             customerVM.AddCompanyUserControl();
             MessageBox.Show("Du er nu oprettet, Tak for at vise interesse for fodboldfeber :)");
+            //Navigation back to the frontpage
             CompanyCustomerFrame.Content = new Frontpage();
 
         }

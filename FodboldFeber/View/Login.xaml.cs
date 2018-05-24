@@ -28,15 +28,22 @@ namespace FodboldFeber.View
     public partial class Login : Page
     {
         LoginVM lvm = new LoginVM();
+        private CustomerVM customerVM;
         // CustomerController cController;
         public Login()
         {
             InitializeComponent();
+            customerVM = CustomerVM.Instance;
         }
         //private static string connectionString = "Server=EALSQL1.eal.local; Database=DB2017_A27; User Id= USER_A27; Password=SesamLukOp_27;";
 
+        public void LoggedIn()
+        {
+            customerVM.UserIsLoggedIn = true;
+        }
         private void BtnInitlogInClick(object sender, RoutedEventArgs e)
         {
+            LoggedIn();
             lvm.InitializeLoginController();
             if (lvm.IsAuthenticated == true)
             {
@@ -44,6 +51,7 @@ namespace FodboldFeber.View
                 NavigationService.Navigate(page);
             }
         }
+       
 
         private void BtnClickSignIn(object sender, RoutedEventArgs e)
             {
@@ -56,6 +64,7 @@ namespace FodboldFeber.View
             PasswordRecovery page = new PasswordRecovery();
             NavigationService.Navigate(page);
         }
+     
     }
 }
 

@@ -25,6 +25,7 @@ namespace FodboldFeber.View
     {
 
         private ShopVM shopVM;
+        private CustomerVM customerVM;
 
         public Shop()
         {
@@ -32,6 +33,10 @@ namespace FodboldFeber.View
             shopVM = ShopVM.Instance;
             this.DataContext = shopVM;
 
+           
+            customerVM = CustomerVM.Instance;
+       
+            
             // Sets the itemsource again to make sure it is binded to the list "ListOfProducts" in "ShopVM" after it has been populated
             shopVM.PopulateList();
             ShopListBox.ItemsSource = shopVM.ListOfProducts;
@@ -41,10 +46,23 @@ namespace FodboldFeber.View
         {
             var item = ItemsControl.ContainerFromElement(ShopListBox, e.OriginalSource as DependencyObject) as ListBoxItem;
             ShopListBox.SelectedItem = item;
-            if (item!=null)
+            if (item != null)
             {
                 ShopListBox.ItemsSource = shopVM.ListOfProducts;
-              
+
+                ShopFrame.Content = new ProductProfile();
+
+            }
+        }
+
+        private void ShopListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            //var item = ItemsControl.ContainerFromElement(ShopListBox, e.OriginalSource as DependencyObject) as ListBoxItem;
+            //ShopListBox.SelectedItem = item;
+            if (ShopListBox.SelectedItem != null)
+            {
+                //ShopListBox.ItemsSource = shopVM.ListOfProducts;
+                //shopVM.SelectedProduct = ShopListBox.SelectedItem;
                 ShopFrame.Content = new ProductProfile();
 
             }
