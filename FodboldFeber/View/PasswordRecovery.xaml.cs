@@ -36,6 +36,7 @@ namespace FodboldFeber.View
             txtUserName.Text = "Angiv dit Brugernavn";
             txtEmail.Text = "Angiv Email";
         }
+
         private void BtnSendEmailClick(object sender, RoutedEventArgs e)
         {
 
@@ -168,7 +169,7 @@ namespace FodboldFeber.View
          private void TextBox_GotFocus(object sender, RoutedEventArgs e)
         {
             TextBox textbox = (TextBox)sender;
-            if (textbox.Name == "txtUserName" && textbox.Text == "" || textbox.Text == "Angiv dit Brugernavn(kun hvis du har glemt password")
+            if (textbox.Name == "txtUserName" && textbox.Text == "" || textbox.Text == "Angiv dit Brugernavn(kun hvis du har glemt password)")
             {
                 textbox.Text = string.Empty;
             }
@@ -181,9 +182,9 @@ namespace FodboldFeber.View
         private void TextBox_LostFocus(object sender, RoutedEventArgs e)
         {
             TextBox textbox = (TextBox)sender;
-            if (textbox.Name == "txtUsername" && textbox.Text == "")
+            if (textbox.Name == "txtUserName" && textbox.Text == "")
             {
-                textbox.Text = "Angiv dit fulde navn";
+                textbox.Text = "Angiv dit Brugernavn(kun hvis du har glemt password)";
             }
             else if (textbox.Name == "txtEmail" && textbox.Text == "")
             {
