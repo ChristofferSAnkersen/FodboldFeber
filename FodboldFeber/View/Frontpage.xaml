@@ -24,9 +24,7 @@
             </LinearGradientBrush>
         </Grid.Background>
         <Image Source="https://i1.wp.com/sports-gaming.dk/wp-content/uploads/2016/12/christian-eriksen.jpg" HorizontalAlignment="Left" Height="335" Margin="-60,0,-35,0" VerticalAlignment="Top" Width="1095" Stretch="UniformToFill">
-            <Image.Effect>
-                <BlurEffect />
-            </Image.Effect>
+
         </Image>
         <Label Content="Fodboldfeber" HorizontalAlignment="Left" Margin="695,130,0,0" VerticalAlignment="Top" Height="75" Width="225" Foreground="White" FontSize="36" FontFamily="Segoe UI Light"/>
         <Rectangle HorizontalAlignment="Left" Height="180" Margin="55,310,0,0" VerticalAlignment="Top" Width="890">
