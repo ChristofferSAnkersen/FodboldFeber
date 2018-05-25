@@ -33,16 +33,14 @@ namespace FodboldFeber.View
 
             GetUserInfo();
 
-            
+            HideEditTxtboxes();
             txtEditName.Text = "Angiv nyt klubnavn";
             txtEditAddress.Text = "Angiv ny adresse";
             txtEditEmail.Text = "Angiv ny email";
             txtEditPhone.Text = "Angiv nyt telefonnummer";
 
-
-            HideEditTxtboxes();
             //btnSave.Visibility = Visibility.Hidden;
-
+            
         }
 
         private void btnEdit_Click(object sender, RoutedEventArgs e)
