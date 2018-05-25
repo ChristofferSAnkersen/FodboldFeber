@@ -34,10 +34,14 @@ namespace FodboldFeber.View
 
            
             customerVM = CustomerVM.Instance;
-       
-            
+
+            //Makes sure the "ShopListBox" only populates once when navigating to the "Shop" page.
+            if(shopVM.ListOfProducts.Count == 0)
+            {
+                shopVM.PopulateList();
+            }
             // Sets the itemsource again to make sure it is binded to the list "ListOfProducts" in "ShopVM" after it has been populated
-            shopVM.PopulateList();
+
             ShopListBox.ItemsSource = shopVM.ListOfProducts;
         }
         
