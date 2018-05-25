@@ -39,13 +39,14 @@
             </Rectangle.Fill>
         </Rectangle>
 
-        <ListBox x:Name="ShopListBox" ItemsSource="{Binding ListOfProducts}" SelectedItem="{Binding SelectedProduct}" RenderTransformOrigin="0.502,0.003" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Background="{x:Null}" BorderBrush="{x:Null}" Margin="55,310,55,110">
+        <ListBox x:Name="ShopListBox" ItemsSource="{Binding ListOfProducts}" SelectedItem="{Binding Path= SelectedProduct}" RenderTransformOrigin="0.502,0.003" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Background="{x:Null}" BorderBrush="{x:Null}" Margin="55,310,55,110" SelectionChanged="ShopListBox_SelectionChanged">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel x:Name="ShopStackpanel" >
-                        <Image x:Name="imgProductImage" Source="{Binding ProductImage, Mode=TwoWay}" Stretch="UniformToFill"  Width="150" Height="75" />
-                        <Label x:Name="lblProductName" Content="{Binding ProductName, Mode=TwoWay}" BorderBrush="{x:Null}"/>
-                        <Label x:Name="lblProductPrice" Content="{Binding Price, Mode=TwoWay}" BorderBrush="{x:Null}"/>
+                        <Image x:Name="imgProductImage" Source="{Binding Path= ProductImage, Mode=TwoWay}" Stretch="UniformToFill"  Width="150" Height="75" />
+                        <Label x:Name="lblProductName" Content="{Binding Path= ProductName, Mode=TwoWay}" BorderBrush="{x:Null}"/>
+                        <Label x:Name="lblProductPrice" Content="{Binding Path= Price, Mode=TwoWay}" BorderBrush="{x:Null}"/>
+                        <Label x:Name="lblProductDescription" Content="{Binding Path= ProductDescription, Mode=TwoWay}" Visibility="Hidden" />
                     </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>
@@ -58,6 +59,7 @@
                 </ItemsPanelTemplate>
             </ListBox.ItemsPanel>
         </ListBox>
+        <Frame x:Name="FrontpageShopFrame" Margin="9,38,34,-286.333" NavigationUIVisibility="Hidden"/>
         <Label Content="Nyheder i shoppen" HorizontalAlignment="Left" Margin="83,265,0,0" VerticalAlignment="Top" FontSize="22" Background="{x:Null}" Foreground="White" FontFamily="Segoe UI Light"/>
     </Grid>
 </Page>
