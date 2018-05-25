@@ -21,7 +21,7 @@ namespace FodboldFeber.View
     /// </summary>
     public partial class Frontpage : Page
     {
-
+        Shop shop = new Shop();
         private ShopVM shopVM;
         public Frontpage()
         {
@@ -32,6 +32,33 @@ namespace FodboldFeber.View
             // Sets the itemsource again to make sure it is binded to the list "ListOfProducts" in "ShopVM" after it has been populated
             shopVM.PopulateList();
             ShopListBox.ItemsSource = shopVM.ListOfProducts;
+        }
+
+        private void BtnNavigation_Click(object sender, RoutedEventArgs e)
+        {
+            var item = ItemsControl.ContainerFromElement(ShopListBox, e.OriginalSource as DependencyObject) as ListBoxItem;
+            ShopListBox.SelectedItem = item;
+            if (item != null)
+            {
+                ShopListBox.ItemsSource = shopVM.ListOfProducts;
+
+                shop.ShopFrame.Content = new ProductProfile();
+
+            }
+        }
+
+        private void ShopListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+            //var item = ItemsControl.ContainerFromElement(ShopListBox, e.OriginalSource as DependencyObject) as ListBoxItem;
+            //ShopListBox.SelectedItem = item;
+            if (ShopListBox.SelectedItem != null)
+            {
+                //ShopListBox.ItemsSource = shopVM.ListOfProducts;
+                //shopVM.SelectedProduct = ShopListBox.SelectedItem;
+                FrontpageShopFrame.Content = new ProductProfile();
+
+            }
         }
     }
 }

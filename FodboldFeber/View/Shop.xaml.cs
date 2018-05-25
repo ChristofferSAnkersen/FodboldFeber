@@ -23,7 +23,6 @@ namespace FodboldFeber.View
     /// </summary>
     public partial class Shop : Page
     {
-
         private ShopVM shopVM;
         private CustomerVM customerVM;
 
