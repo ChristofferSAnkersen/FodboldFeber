@@ -24,7 +24,7 @@ namespace FodboldFeber.ViewModel
         }
         public CustomerVM()
         {
-            UserName = "Angiv dit fuldenavn";
+            UserName = "Angiv dit fulde navn";
             Name = "Angiv brugernavn";
             Address = "Angiv adresse";
             Password = "Angiv kodeord";
