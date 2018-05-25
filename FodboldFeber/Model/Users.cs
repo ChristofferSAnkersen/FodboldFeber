@@ -276,7 +276,7 @@ namespace FodboldFeber.Model
                 }
                 catch (SqlException e)
                 {
-                    Console.WriteLine(e + "Could not add User");
+                    Console.WriteLine(e + "Kunne ikke tilføje bruger!");
                 }
             }
         }
@@ -299,7 +299,7 @@ namespace FodboldFeber.Model
                 }
                 catch (SqlException e)
                 {
-                    Console.WriteLine(e + "Could not add User");
+                    Console.WriteLine(e + "Kunne ikke tilføje bruger!");
                 }
             }
         }
@@ -321,7 +321,7 @@ namespace FodboldFeber.Model
                 }
                 catch (SqlException e)
                 {
-                    Console.WriteLine(e + "Could not add User");
+                    Console.WriteLine(e + "Kunne ikke tilføje bruger");
                 }
             }
         }

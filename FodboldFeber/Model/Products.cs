@@ -273,7 +273,7 @@ namespace FodboldFeber.Model
                 }
                 catch (SqlException e)
                 {
-                    Console.WriteLine(e + "Could not add items to the list");
+                    Console.WriteLine(e + "Kunne ikke tilføje produkter til listen!!");
                 }
             }
         }
