@@ -9,10 +9,10 @@
        
         Title="Shop" Height="600" Width="1000">
     <!-- Comments coming here -->
-    <!--<Page.DataContext>-->
-        <!--<model:SearchFunction x:Name="searchfunction"/>-->
+    <Page.DataContext>
+        <model:SearchFunction x:Name="searchfunction"/>
         <!--<VM:ShopVM x:Name="ShopVM" />-->
-    <!--</Page.DataContext>-->
+    </Page.DataContext>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition 
@@ -60,7 +60,7 @@
                 </ListView>
             </Popup>
         </StackPanel>
-        <TextBox x:Name="searchBox" FontSize="14" Text="gg{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" Margin="513,0,10.333,228" Width="250" Height="20" VerticalAlignment="Bottom"/>
+        <TextBox x:Name="searchBox" FontSize="14" Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" Margin="513,0,10.333,228" Width="250" Height="20" VerticalAlignment="Bottom"/>
      <StackPanel Margin="191,124,83,-268">
             <Popup PlacementTarget="{Binding ElementName=searchBox}" Placement="Bottom" IsOpen="{Binding IsFocused, ElementName=searchBox, Mode=OneWay}">
                 <Popup.Resources>

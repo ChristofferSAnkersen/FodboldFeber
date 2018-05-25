@@ -22,7 +22,6 @@ namespace FodboldFeber.View
 {
     public partial class PasswordRecovery : Page
     {
-        private CustomerVM customerVM;
         SmtpClient client;
         MailMessage msg;
         
