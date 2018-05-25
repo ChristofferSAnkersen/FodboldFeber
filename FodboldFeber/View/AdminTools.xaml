@@ -8,9 +8,7 @@
       Background="White"
       mc:Ignorable="d" d:DesignWidth="1000"
       Title="AdminTools" d:DesignHeight="1000">
-    <!--<Page.DataContext>
-        <VM:ShopVM x:Name="VMShopVM"></VM:ShopVM>
-    </Page.DataContext>-->
+ 
     <ScrollViewer VerticalScrollBarVisibility="Auto">
         <Grid ScrollViewer.CanContentScroll="True" Width="1000" Height="841">
             <Grid.RowDefinitions>

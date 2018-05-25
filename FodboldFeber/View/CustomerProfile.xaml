@@ -10,11 +10,6 @@
       Background="White"
       Title="CustomerProfile">
     
-
-    <Page.DataContext>
-        <userinfo:CustomerVM x:Name="CustomerVM"/>
-    </Page.DataContext>
-
     <Grid Background="#FFFAFAFA" Margin="-1,0,1,0">
         <Rectangle HorizontalAlignment="Left" Height="40" Margin="0,560,0,0" VerticalAlignment="Top" Width="800">
             <Rectangle.Fill>
@@ -120,10 +115,10 @@
         <Button x:Name ="btnSave" Content="Gem ændringer" HorizontalAlignment="Left" Margin="467,501,0,0" VerticalAlignment="Top" Width="120" Click="btnSave_Click" Background="#FFF2F2F2"/>
         <Label  Content="Materialeforvalter" HorizontalAlignment="Center" Margin="348,207,350,0" VerticalAlignment="Top" FontFamily="Segoe UI Light" Width="102"/>
         <Label x:Name="lblInfo" Content="Information om dig" HorizontalAlignment="Left" Margin="40,244,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Semibold"/>
-        <Label x:Name="lblPrivateName" Content="{Binding Path = Name, Mode=TwoWay}" HorizontalAlignment="Left" Margin="190,292,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Light"/>
-        <Label x:Name="lblAddress" Content="{Binding Path = Address, Mode=TwoWay}" HorizontalAlignment="Left" Margin="190,328,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Light"/>
-        <Label x:Name="lblEmail" Content="{Binding Path = Email , Mode=TwoWay}" HorizontalAlignment="Left" Margin="190,364,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Light"/>
-        <Label x:Name="lblPhone" Content="{Binding Path = PhoneNumber, Mode=TwoWay}" HorizontalAlignment="Left" Margin="190,400,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Light" RenderTransformOrigin="0.445,0.526"/>
+        <Label x:Name="lblPrivateName" Content="{Binding Path = Name, Mode=TwoWay}" HorizontalAlignment="Left" Margin="190,292,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Light" Height="23" Width="150"/>
+        <Label x:Name="lblAddress" Content="{Binding Path = Address, Mode=TwoWay}" HorizontalAlignment="Left" Margin="190,328,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Light" Height="24" Width="150"/>
+        <Label x:Name="lblEmail" Content="{Binding Path = Email , Mode=TwoWay}" HorizontalAlignment="Left" Margin="190,364,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Light" Height="1" Width="150"/>
+        <Label x:Name="lblPhone" Content="{Binding Path = PhoneNumber, Mode=TwoWay}" HorizontalAlignment="Left" Margin="190,400,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Light" RenderTransformOrigin="0.445,0.526" Height="1" Width="150"/>
         <Label Content="Navn" HorizontalAlignment="Left" Margin="50,291,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Semibold"/>
         <Label Content="Adresse" HorizontalAlignment="Left" Margin="50,327,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Semibold"/>
         <Label Content="Email" HorizontalAlignment="Left" Margin="50,363,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Semibold"/>
@@ -165,6 +160,6 @@
         <TextBox x:Name="txtEditPhone" Text="{Binding Path= PhoneNumber, Mode=OneWayToSource}" HorizontalAlignment="Left" Height="23" Margin="190,401,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" GotFocus="txtEditPhone_GotFocus"/>
         <Label Content="Velkommen" HorizontalAlignment="Left" Margin="612,175,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Light"/>
         <Button x:Name="btnAdminTools" Content="Admin Tools" HorizontalAlignment="Left" Margin="219,501,0,0" VerticalAlignment="Top" Width="75" Click="btnAdminTools_Click" RenderTransformOrigin="0.531,-0.076" Background="#FFF2F2F2"/>
-        <Frame x:Name="CustomerProfileFrame" Margin="9,38,34,-286.333" NavigationUIVisibility="Hidden"/>
+        <Frame x:Name="CustomerProfileFrame" Margin="9,38,34,25" NavigationUIVisibility="Hidden"/>
     </Grid>
 </Page>

@@ -31,15 +31,16 @@ namespace FodboldFeber.View
             customerVM = CustomerVM.Instance;
             this.DataContext = customerVM;
 
-            //GetUserInfo();
+            GetUserInfo();
 
+            HideEditTxtboxes();
             txtEditName.Text = "Angiv nyt klubnavn";
             txtEditAddress.Text = "Angiv ny adresse";
             txtEditEmail.Text = "Angiv ny email";
             txtEditPhone.Text = "Angiv nyt telefonnummer";
 
             //btnSave.Visibility = Visibility.Hidden;
-            HideEditTxtboxes();
+            
         }
 
         private void btnEdit_Click(object sender, RoutedEventArgs e)
@@ -102,12 +103,11 @@ namespace FodboldFeber.View
 
         private void GetUserInfo()
         {
-            {
                 try
                 {
                     SqlConnection con = new SqlConnection("Server=EALSQL1.eal.local; Database=DB2017_A27; User Id= USER_A27; Password=SesamLukOp_27;");
                     con.Open();
-                    string query = "SELECT * from Private_User where username='" + lblName.Content + "' ";
+                    string query = "SELECT * from Private_User where username='" + lblName.Content.ToString() + "' ";
                     SqlCommand listCommands = new SqlCommand(query, con);
                     SqlDataReader reader = listCommands.ExecuteReader();
 
@@ -116,7 +116,7 @@ namespace FodboldFeber.View
                         //Must assign all column data from the database to variables, so that we can assign the variables to the textboxes, 
                         //so that the textboxes can display the information of the chosen product
                         string ShowName = reader.GetString(2).ToString();
-                        string ShowPhoneNumber = reader.GetInt32(3).ToString();
+                        string ShowPhoneNumber = reader.GetString(3).ToString();
                         string ShowEmail = reader.GetString(4).ToString();
                         string ShowAddress = reader.GetString(5).ToString();
 
@@ -130,9 +130,8 @@ namespace FodboldFeber.View
                 }
                 catch (SqlException ex)
                 {
-                    Console.WriteLine(ex + "fail haha");
+                    Console.WriteLine(ex + "Kunne ikke finde bruger oplysningerne");
                 }
-            }
         }
 
     }
