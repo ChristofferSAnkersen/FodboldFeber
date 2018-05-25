@@ -27,7 +27,7 @@ namespace UnitTests
             string Connection = dataAccess.Access();
             Assert.IsNotNull(Connection);
         }
-
+        //Checks if the default value for ProductName is loaded upon startup.
         [TestMethod]
         public void DefaultValuesLoaded()
         {

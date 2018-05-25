@@ -47,7 +47,6 @@ namespace FodboldFeber.Model
             }
         }
 
-
     
         //Properties for the product
         public string ProductName
@@ -172,7 +171,6 @@ namespace FodboldFeber.Model
                 }
             }
         }
-   
         public double DiscountPrice
         {
             get
@@ -205,6 +203,7 @@ namespace FodboldFeber.Model
         }
 
         string query = "";
+        //Connection string used in the varius logic methods below.
         private static string connectionString = "Server=EALSQL1.eal.local; Database=DB2017_A27; User Id= USER_A27; Password=SesamLukOp_27;";
 
         //Logic to Shop, populates the list used to display items in the frontend

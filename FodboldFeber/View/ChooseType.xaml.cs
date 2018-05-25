@@ -20,6 +20,7 @@ namespace FodboldFeber.View
     /// </summary>
     public partial class ChooseType : Page
     {
+        //Handles the navigation between the different customer types.
         public ChooseType()
         {
             InitializeComponent();
