@@ -14,7 +14,7 @@ namespace FodboldFeber.Model
     {
         private static string _username = "";
         private static string _password = "";
-
+        //Checks if the user input in the "Login" page in view matches values from the database
         public string Username
         {
             get

@@ -158,18 +158,9 @@ namespace FodboldFeber.Model
         }
         public string Size
         {
-            get
-            {
-                return _size;
-            }
-            set
-            {
-                if (value != _size)
-                {
-                    _size = value;
-                    OnPropertyChanged("Size");
-                }
-            }
+            get { return _size; }
+            set { if (value != _size) {_size = value; OnPropertyChanged("Size"); } }
+
         }
         public double DiscountPrice
         {

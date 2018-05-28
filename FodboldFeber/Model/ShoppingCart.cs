@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace FodboldFeber.Model
 {
+    //Currently not in use, but we will leave it here for further expansion of the application
     class ShoppingCart
     {
         public int ProductID { get; set; }
         public int AmountOfProductsOrdered { get; set; }
         public double ProductPrice { get; set; }
         public int AmountInStock { get; set; }
-
         public void EmptyCart()
         {
 

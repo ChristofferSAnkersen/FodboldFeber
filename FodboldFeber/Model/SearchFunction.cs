@@ -45,7 +45,8 @@ namespace FodboldFeber.Model
         }
         public ObservableCollection<ResultItem> SearchResults { get; set; } //The products that match the input is added here
 
-        ResultItem _selectedResult;
+        private ResultItem _selectedResult;
+        // Handle selection here - What to do when item is selected
         public ResultItem SelectedResult
         {
             get
@@ -55,7 +56,7 @@ namespace FodboldFeber.Model
             set
             {
                 _selectedResult = value;
-                // Handle selection here - What to do when item is selected
+                
             }
         }
         public SearchFunction() //SQL connection which adds all products to _allProductsResultItems. Take 2 parameters of products.
