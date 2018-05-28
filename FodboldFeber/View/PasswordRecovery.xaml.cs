@@ -154,7 +154,7 @@ namespace FodboldFeber.View
                     }
                     else
                     {
-                        MessageBox.Show("Den indtastede email eksistere ikke i vores system :(");
+                        MessageBox.Show("Den indtastede email eksisterer ikke i vores system :(");
                     }
 
                 }
