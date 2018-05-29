@@ -46,7 +46,7 @@ namespace FodboldFeber.View
             ListInCombobox();
         }
         //Connection to the sql database
-        string connectionString = "Server=EALSQL1.eal.local; Database=DB2017_A27; User Id= USER_A27; Password=SesamLukOp_27;";
+        private string _connectionString = "Server=EALSQL1.eal.local; Database=DB2017_A27; User Id= USER_A27; Password=SesamLukOp_27;";
 
         //String query, used to add/delete/update the desired values in the database in the methods below
         public string Query = "";
@@ -55,7 +55,7 @@ namespace FodboldFeber.View
         {
             try
             {
-                SqlConnection con = new SqlConnection(connectionString);
+                SqlConnection con = new SqlConnection(_connectionString);
                 con.Open();
                 string Query = "SELECT * from Products";
                 SqlCommand listCommands = new SqlCommand(Query, con);
@@ -199,7 +199,7 @@ namespace FodboldFeber.View
             {
                 try
                 {
-                    SqlConnection con = new SqlConnection(connectionString);
+                    SqlConnection con = new SqlConnection(_connectionString);
                     con.Open();
                     string query = "SELECT * from Products where ProductName='" + ChooseItem.Text + "' ";
                     SqlCommand listCommands = new SqlCommand(query, con);

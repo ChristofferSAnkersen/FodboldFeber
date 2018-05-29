@@ -195,12 +195,12 @@ namespace FodboldFeber.Model
 
         string query = "";
         //Connection string used in the varius logic methods below.
-        private static string connectionString = "Server=EALSQL1.eal.local; Database=DB2017_A27; User Id= USER_A27; Password=SesamLukOp_27;";
+        private static string _connectionString = "Server=EALSQL1.eal.local; Database=DB2017_A27; User Id= USER_A27; Password=SesamLukOp_27;";
 
         //Logic to Shop, populates the list used to display items in the frontend
         public void FillList(List<ShopData> listOfProducts)
         {
-            using (SqlConnection con = new SqlConnection(connectionString))
+            using (SqlConnection con = new SqlConnection(_connectionString))
             {
                 try
                 {
@@ -229,7 +229,7 @@ namespace FodboldFeber.Model
         //Actual logic for Adding a product. Is called by "ShopController" by a btn click event in "AdminTools"
         public void AddProduct()
         {
-            using (SqlConnection con = new SqlConnection(connectionString))
+            using (SqlConnection con = new SqlConnection(_connectionString))
             {
                 try
                 {
@@ -272,7 +272,7 @@ namespace FodboldFeber.Model
         //Actual logic for deleting a product. Is called by ShopController by a btn click event in "AdminTools"
         public void DeleteProduct()
         {
-            SqlConnection con = new SqlConnection(connectionString);
+            SqlConnection con = new SqlConnection(_connectionString);
 
             try
             {
@@ -316,7 +316,7 @@ namespace FodboldFeber.Model
             {
                 //Assigns the updated textbox values for the item choosen by the user in the "ChooseItem" combobox, and adds them to the "Query" variable.
                 query = "Update Products set ProductID='" + this.ProductID+ "', ProductName='" + this.ProductName+ "', Category='" + this.Category+ "', ProductDescription='" + this.ProductDescription+ "', ProductPrice='" + this.Price+ "', AmountInStock='" + this.AmountInStock+ "', ShippingPrice='" + this.ShippingPrice+ "', Size='" + this.Size+ "', DiscountPrice='" + this.DiscountPrice+ "' where ProductName='" + this.ChooseItem+ "' ";
-                SqlConnection con = new SqlConnection(connectionString);
+                SqlConnection con = new SqlConnection(_connectionString);
                 // The newly updated information about the item is updated in the database too
                 SqlCommand cmd1 = new SqlCommand(query, con);
                 SqlDataReader myReader;

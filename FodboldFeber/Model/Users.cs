@@ -257,10 +257,10 @@ namespace FodboldFeber.Model
             }
         }
         string query = "";
-        private static string connectionString = "Server=EALSQL1.eal.local; Database=DB2017_A27; User Id= USER_A27; Password=SesamLukOp_27;";
+        private static string _connectionString = "Server=EALSQL1.eal.local; Database=DB2017_A27; User Id= USER_A27; Password=SesamLukOp_27;";
         public void AddPrivateUser()
         {
-            using (SqlConnection con = new SqlConnection(connectionString))
+            using (SqlConnection con = new SqlConnection(_connectionString))
             {
                 try
                 {
@@ -283,7 +283,7 @@ namespace FodboldFeber.Model
         //Logic for adding a user of the "Club" type to the database
         public void AddClubUser()
         {
-            using (SqlConnection con = new SqlConnection(connectionString))
+            using (SqlConnection con = new SqlConnection(_connectionString))
             {
                 try
                 {
@@ -307,7 +307,7 @@ namespace FodboldFeber.Model
         //Logic for adding a user of the "Company" type to the datebase
         public void AddCompanyUser()
         {
-            using (SqlConnection con = new SqlConnection(connectionString))
+            using (SqlConnection con = new SqlConnection(_connectionString))
             {
                 try
                 {
@@ -339,7 +339,7 @@ namespace FodboldFeber.Model
             try
             {
                 query = "Update Private_User set name='" + this.Name + "', phonenumber='" + this.PhoneNumber + "', email='" + this.Email + "', address='" + this.Address + "' where username ='" + c.lblName.Content + "' ";
-                SqlConnection con = new SqlConnection(connectionString);
+                SqlConnection con = new SqlConnection(_connectionString);
                 SqlCommand cmd1 = new SqlCommand(query, con);
                 SqlDataReader myReader;
                 con.Open();
@@ -364,7 +364,7 @@ namespace FodboldFeber.Model
             CustomerProfile c = new CustomerProfile();
             CustomerVM cvm = new CustomerVM();
 
-            using (SqlConnection con = new SqlConnection(connectionString))
+            using (SqlConnection con = new SqlConnection(_connectionString))
             {
                 try
                 {
