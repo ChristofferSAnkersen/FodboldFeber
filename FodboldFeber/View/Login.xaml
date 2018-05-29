@@ -7,11 +7,11 @@
     xmlns:ViewModel="clr-namespace:FodboldFeber.ViewModel" x:Class="FodboldFeber.View.Login"
       mc:Ignorable="d" 
       Background="White"
-      d:DesignHeight="600" d:DesignWidth="1000"
+      d:DesignHeight="600" d:DesignWidth="1300"
       Title="Login">
 
     <Grid>
-        <Image Source="http://www.ianbarnard.co.uk/wp-content/uploads/2013/09/free-blurred-web-backgrounds-06.jpg" HorizontalAlignment="Left" Height="895" VerticalAlignment="Top" Width="1000" Margin="0,0,0,-295"/>
+        <Image Source="http://www.ianbarnard.co.uk/wp-content/uploads/2013/09/free-blurred-web-backgrounds-06.jpg" HorizontalAlignment="Left" Height="1045" VerticalAlignment="Top" Width="1400" Margin="0,0,-100,-445"/>
 
         <Rectangle HorizontalAlignment="Left" Height="287" Margin="344,148,0,0" VerticalAlignment="Top" Width="304" Opacity="0.2" OpacityMask="White" Fill="White">
             <Rectangle.Effect>

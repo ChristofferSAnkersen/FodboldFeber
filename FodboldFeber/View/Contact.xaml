@@ -6,11 +6,11 @@
       xmlns:local="clr-namespace:FodboldFeber.View"
       Background="Wheat"
       mc:Ignorable="d" 
-      d:DesignHeight="600" d:DesignWidth="1000"
+      d:DesignHeight="600" d:DesignWidth="1300"
       Title="Contact">
 
     <Grid>
-        <Image Source="http://www.ianbarnard.co.uk/wp-content/uploads/2013/09/free-blurred-web-backgrounds-06.jpg" HorizontalAlignment="Left" Height="770" VerticalAlignment="Top" Width="1080" Margin="0,0,-80,-170"/>
+        <Image Source="http://www.ianbarnard.co.uk/wp-content/uploads/2013/09/free-blurred-web-backgrounds-06.jpg" HorizontalAlignment="Left" Height="990" VerticalAlignment="Top" Width="1785" Margin="0,0,-485,-390"/>
         <Label Content="Kontakt" FontSize="40" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="445,50,360,0" Width="195"/>
     </Grid>
 </Page>

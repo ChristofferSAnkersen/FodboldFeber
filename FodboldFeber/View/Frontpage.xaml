@@ -23,10 +23,8 @@
                 <GradientStop Color="#FFF3F3F3" Offset="1"/>
             </LinearGradientBrush>
         </Grid.Background>
-        <Image Source="https://i1.wp.com/sports-gaming.dk/wp-content/uploads/2016/12/christian-eriksen.jpg" HorizontalAlignment="Left" Height="335" Margin="-60,0,0,0" VerticalAlignment="Top" Width="1360" Stretch="UniformToFill">
-
-        </Image>
-        <Label Content="Fodboldfeber" HorizontalAlignment="Left" Margin="850,130,0,0" VerticalAlignment="Top" Height="75" Width="225" Foreground="White" FontSize="36" FontFamily="Segoe UI Light"/>
+        <Image Source="https://i1.wp.com/sports-gaming.dk/wp-content/uploads/2016/12/christian-eriksen.jpg" Height="335" Margin="-60,0,0,0" VerticalAlignment="Top" Stretch="UniformToFill" HorizontalAlignment="Right" Width="1360"/>
+        <Label Content="Fodboldfeber" Margin="0,130,225,0" VerticalAlignment="Top" Height="75" Foreground="White" FontSize="36" FontFamily="Segoe UI Light" HorizontalAlignment="Right" Width="225"/>
         <Rectangle HorizontalAlignment="Left" Height="180" Margin="55,310,0,0" VerticalAlignment="Top" Width="1190">
             <Rectangle.Effect>
                 <DropShadowEffect ShadowDepth="1" Opacity="0.5"/>
@@ -60,6 +58,6 @@
             </ListBox.ItemsPanel>
         </ListBox>
         <Frame x:Name="FrontpageShopFrame" Margin="9,38,34,-286.333" NavigationUIVisibility="Hidden"/>
-        <Label Content="Nyheder i shoppen" HorizontalAlignment="Left" Margin="83,265,0,0" VerticalAlignment="Top" FontSize="22" Background="{x:Null}" Foreground="White" FontFamily="Segoe UI Light"/>
+        <Label Content="Nyheder i shoppen" Margin="83,265,0,0" VerticalAlignment="Top" FontSize="22" Background="{x:Null}" Foreground="White" FontFamily="Segoe UI Light" HorizontalAlignment="Left" Width="187"/>
     </Grid>
 </Page>

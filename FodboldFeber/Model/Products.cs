@@ -16,7 +16,7 @@ namespace FodboldFeber.Model
         public List<ShopData> ListOfProducts = new List<ShopData>();
 
         //Local variables used in the matching properties just below
-        private string _productName = "JegSkalÆndreMigNu!!!";
+        private string _productName = string.Empty;
         private int _productID;
         private string _category = "JegSkalÆndreMigNu!!!";
         private string _productDescription = "JegSkalÆndreMigNu!!!";
@@ -156,21 +156,15 @@ namespace FodboldFeber.Model
                 }
             }
         }
+
+
         public string Size
         {
-            get
-            {
-                return _size;
-            }
-            set
-            {
-                if (value != _size)
-                {
-                    _size = value;
-                    OnPropertyChanged("Size");
-                }
-            }
+            get { return _size; }
+            set { if (value != _size) { _size = value; OnPropertyChanged("Size"); } }
         }
+
+
         public double DiscountPrice
         {
             get
