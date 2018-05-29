@@ -51,7 +51,7 @@ namespace FodboldFeber.Model
                 }
                 catch (SqlException ee)
                 {
-                    Console.WriteLine(ee + "Fejl i SQL connection");
+                    Console.WriteLine(ee + "Kunne ikke logge ind");
                 }
                 finally
                 {

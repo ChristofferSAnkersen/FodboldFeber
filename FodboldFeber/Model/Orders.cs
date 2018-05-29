@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace FodboldFeber.Model
 {
+    //Currently not in use, but we will leave it here for further expansion of the application
     class Orders
     {
         public int OrderID { get; set; }

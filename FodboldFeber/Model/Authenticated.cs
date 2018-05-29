@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace FodboldFeber.Model
 {
+    //Determines if the user is logged in 
     public class Authenticated : INotifyPropertyChanged
     {
         
