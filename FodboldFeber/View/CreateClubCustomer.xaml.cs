@@ -38,7 +38,7 @@ namespace FodboldFeber.View
             txtbox_clubposition.Text = "Angiv din position i klubben";
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void btnAddUser(object sender, RoutedEventArgs e)
         {
             customerVM.AddClubUserControl();
             MessageBox.Show("Du er nu oprettet, Tak for at vise interesse for fodboldfeber :)");

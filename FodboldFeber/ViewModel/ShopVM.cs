@@ -99,8 +99,6 @@ namespace FodboldFeber.ViewModel
             }
         }
 
-
-
     }
  
 }

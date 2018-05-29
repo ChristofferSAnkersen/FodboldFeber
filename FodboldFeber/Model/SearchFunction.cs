@@ -15,8 +15,9 @@ namespace FodboldFeber.Model
         //The lists where items are added. The most important is _allProductResultItems. Help results only show a certain string
         List<ProductsResultItem> _allProductResultItems;
         List<HelpResultItem> _allHelpResultItems;
+        private string _connectionString = "Server=EALSQL1.eal.local; Database=DB2017_A27; User Id= USER_A27; Password=SesamLukOp_27;";
 
-        string _searchText; //The input in the textbox. loops through products added to _allProductResultItems
+        private string _searchText; //The input in the textbox. loops through products added to _allProductResultItems
         public string SearchText
         {
             get
@@ -63,8 +64,7 @@ namespace FodboldFeber.Model
         {
             SearchResults = new ObservableCollection<ResultItem>();
 
-            string connectionString = "Server=EALSQL1.eal.local; Database=DB2017_A27; User Id= USER_A27; Password=SesamLukOp_27;";
-            SqlConnection con = new SqlConnection(connectionString);
+            SqlConnection con = new SqlConnection(_connectionString);
             con.Open();
             SqlCommand sqlCommand = new SqlCommand("SELECT * FROM Products", con);
             SqlDataReader reader = sqlCommand.ExecuteReader();

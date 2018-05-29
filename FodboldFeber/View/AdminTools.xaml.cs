@@ -46,7 +46,7 @@ namespace FodboldFeber.View
             ListInCombobox();
         }
         //Connection to the sql database
-        string connectionString = "Server=EALSQL1.eal.local; Database=DB2017_A27; User Id= USER_A27; Password=SesamLukOp_27;";
+        private string _connectionString = "Server=EALSQL1.eal.local; Database=DB2017_A27; User Id= USER_A27; Password=SesamLukOp_27;";
 
         //String query, used to add/delete/update the desired values in the database in the methods below
         public string Query = "";
@@ -55,7 +55,7 @@ namespace FodboldFeber.View
         {
             try
             {
-                SqlConnection con = new SqlConnection(connectionString);
+                SqlConnection con = new SqlConnection(_connectionString);
                 con.Open();
                 string Query = "SELECT * from Products";
                 SqlCommand listCommands = new SqlCommand(Query, con);
@@ -76,10 +76,10 @@ namespace FodboldFeber.View
         }
 
 
-        //Event that adds a product to the database with the information given by the user, 
-        //the actual logic lies in "Products" 
-        private void CreateProduct_Click(object sender, RoutedEventArgs e)
-        {          
+        //Event that adds a product to the database with the information given by the user, the actual logic lies in "Products" 
+        private void btnCreateProduct(object sender, RoutedEventArgs e)
+        {
+            
             //Adds the product to the database through "ShopController" -> "Products"
             shopVM.AddProductControl();
             MessageBox.Show("Varen er nu tilføjet");
@@ -88,6 +88,7 @@ namespace FodboldFeber.View
                 ChooseItem.Items.Clear();
             //Populates the ChooseItem combobox again, including the just added item
                 ListInCombobox();
+
         }
 
         private void TextBox_GotFocus(object sender, RoutedEventArgs e)
@@ -198,7 +199,7 @@ namespace FodboldFeber.View
             {
                 try
                 {
-                    SqlConnection con = new SqlConnection(connectionString);
+                    SqlConnection con = new SqlConnection(_connectionString);
                     con.Open();
                     string query = "SELECT * from Products where ProductName='" + ChooseItem.Text + "' ";
                     SqlCommand listCommands = new SqlCommand(query, con);
@@ -244,7 +245,7 @@ namespace FodboldFeber.View
         }
 
         //Deletes the values for the a item, determined by the named chosen in the "ChooseItem" combobox
-        private void DeleteButton_Click(object sender, RoutedEventArgs e)
+        private void btnDeleteButton(object sender, RoutedEventArgs e)
         {
             //The actual logic for deleting an item lies in "Products", which it reaches through "ShopController" -> "Products"
             shopVM.DeleteProductControl();
@@ -257,7 +258,7 @@ namespace FodboldFeber.View
         }
 
         //Updates the values for the chosen item in "ChooseItem", to the values the user has specified
-        private void UpdateButton_Click(object sender, RoutedEventArgs e)
+        private void btnUpdateProduct(object sender, RoutedEventArgs e)
         {
             
             shopVM.UpdateProductControl();
