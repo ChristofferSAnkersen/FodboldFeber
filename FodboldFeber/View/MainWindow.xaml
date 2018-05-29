@@ -6,13 +6,11 @@
         xmlns:local="clr-namespace:FodboldFeber"
         mc:Ignorable="d"
         Title="MainWindow" 
-        Height="{Binding SystemParameters.WorkArea.Height}" 
-        Width="1300" 
         WindowState="Maximized"
         WindowStyle="ToolWindow">
 
     <Grid Margin="0,0,-0.667,0" Height="526" VerticalAlignment="Top">
-        <Rectangle HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="1294">
+        <Rectangle Height="40" VerticalAlignment="Top" HorizontalAlignment="Left" Width="2000">
             <Rectangle.Effect>
                 <DropShadowEffect ShadowDepth="1" Opacity="0.5"/>
             </Rectangle.Effect>
@@ -23,15 +21,25 @@
                 </LinearGradientBrush>
             </Rectangle.Fill>
         </Rectangle>
-        <Button x:Name="Frontpage" Content="Forside" HorizontalAlignment="Left" Margin="45,10,0,0" VerticalAlignment="Top" Width="75" Foreground="White" Background="{x:Null}" BorderThickness="0" FontWeight="Bold" Click="btnFrontpage_Click" BorderBrush="{x:Null}" FontSize="14"/>
-        <Button x:Name="News" Content="Nyheder" HorizontalAlignment="Left" Margin="154,10,0,0" VerticalAlignment="Top" Width="75" Foreground="White" Background="{x:Null}" BorderThickness="0" FontWeight="Bold" Click="btnNews_Click" BorderBrush="{x:Null}" FontSize="14"/>
-        <Button x:Name="Shop" Content="Shop" HorizontalAlignment="Left" Margin="263,10,0,0" VerticalAlignment="Top" Width="75" Foreground="White" Background="{x:Null}" BorderThickness="0" FontWeight="Bold" Click="btnShop_Click" BorderBrush="{x:Null}" FontSize="14"/>
-        <Button x:Name="Contact" Content="Kontakt" HorizontalAlignment="Left" Margin="915,10,0,0" VerticalAlignment="Top" Width="75" Foreground="White" Background="{x:Null}" BorderThickness="0" FontWeight="Bold" Click="btnContact_Click" BorderBrush="{x:Null}" FontSize="14"/>
-        <Button x:Name="About" Content="Om os" HorizontalAlignment="Left" Margin="995,10,0,0" VerticalAlignment="Top" Width="75" Foreground="White" Background="{x:Null}" BorderThickness="0" FontWeight="Bold" Click="btnAbout_Click" BorderBrush="{x:Null}" FontSize="14"/>
-        <Button x:Name="Customers" Content="Kunder" HorizontalAlignment="Left" Margin="1082,10,0,0" VerticalAlignment="Top" Width="75" Foreground="White" Background="{x:Null}" BorderThickness="0" FontWeight="Bold" Click="btnCustomers_Click" BorderBrush="{x:Null}" FontSize="14"/>
-        <Button x:Name="Login" Content="Login" HorizontalAlignment="Left" Margin="1157,10,0,0" VerticalAlignment="Top" Width="75" Foreground="White" Background="{x:Null}" BorderThickness="0" FontWeight="Bold" Click="btnLogin_Click" BorderBrush="{x:Null}" FontSize="14"/>
-        <Frame x:Name="StartPage" Margin="0,40,0,-147" NavigationUIVisibility="Hidden" Content=""/>
-        <Button x:Name="btnDiscord" HorizontalAlignment="Left"  Margin="855,0,0,0" Background="{x:Null}" BorderBrush="{x:Null}" VerticalAlignment="Top" Width="40" Height="36" Click="btnDiscord_Click" Foreground="{x:Null}">
+        <Button x:Name="Frontpage" Content="Forside" HorizontalAlignment="Left" Margin="45,10,0,0" VerticalAlignment="Top" Width="75" Foreground="White" Background="{x:Null}" BorderThickness="0" FontWeight="Bold" Click="Frontpage_Click" BorderBrush="{x:Null}" FontSize="14"/>
+        <Button x:Name="News" Content="Nyheder" HorizontalAlignment="Left" Margin="154,10,0,0" VerticalAlignment="Top" Width="75" Foreground="White" Background="{x:Null}" BorderThickness="0" FontWeight="Bold" Click="News_Click" BorderBrush="{x:Null}" FontSize="14"/>
+        <Button x:Name="Shop" Content="Shop" HorizontalAlignment="Left" Margin="263,10,0,0" VerticalAlignment="Top" Width="75" Foreground="White" Background="{x:Null}" BorderThickness="0" FontWeight="Bold" Click="Shop_Click" BorderBrush="{x:Null}" FontSize="14"/>
+        <Button x:Name="Contact" Content="Kontakt" Margin="0,10,304,0" VerticalAlignment="Top" Foreground="White" Background="{x:Null}" BorderThickness="0" FontWeight="Bold" Click="Contact_Click" BorderBrush="{x:Null}" FontSize="14" HorizontalAlignment="Right" Width="75"/>
+        <Button x:Name="About" Content="Om os" Margin="0,10,224,0" VerticalAlignment="Top" Foreground="White" Background="{x:Null}" BorderThickness="0" FontWeight="Bold" Click="About_Click" BorderBrush="{x:Null}" FontSize="14" HorizontalAlignment="Right" Width="75"/>
+        <Button x:Name="Customers" Content="Kunder" Margin="0,10,137,0" VerticalAlignment="Top" Foreground="White" Background="{x:Null}" BorderThickness="0" FontWeight="Bold" Click="Customers_Click" BorderBrush="{x:Null}" FontSize="14" HorizontalAlignment="Right" Width="75"/>
+
+        <Button x:Name="Login" Content="Login" Margin="0,10,62,0" VerticalAlignment="Top" Foreground="White" Background="{x:Null}" BorderThickness="0" FontWeight="Bold" Click="Login_Click" BorderBrush="{x:Null}" FontSize="14" HorizontalAlignment="Right" Width="75"/>
+        <Frame x:Name="StartPage" Margin="0,40,0,-147" NavigationUIVisibility="Hidden" Content="" RenderTransformOrigin="0.5,0.5">
+            <Frame.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="0.241"/>
+                    <RotateTransform/>
+                    <TranslateTransform X="1.329"/>
+                </TransformGroup>
+            </Frame.RenderTransform>
+        </Frame>
+        <Button x:Name="btnDiscord"  Margin="0,0,399,0" Background="{x:Null}" BorderBrush="{x:Null}" VerticalAlignment="Top" Height="36" Click="btnDiscord_Click_1" Foreground="{x:Null}" HorizontalAlignment="Right" Width="40">
             <Image Source="https://i.mcpro.games/Discord/discord_canary.png"></Image>
         </Button>
     </Grid>

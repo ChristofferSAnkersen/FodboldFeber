@@ -6,33 +6,32 @@
       xmlns:local="clr-namespace:FodboldFeber.View"
       xmlns:VM="clr-namespace:FodboldFeber.ViewModel"
       mc:Ignorable="d" 
-      d:DesignHeight="600" d:DesignWidth="1000"
       Background="White"
       Title="CreatePrivateCustomer">
 
     <Grid>
-        <Image Source="http://www.ianbarnard.co.uk/wp-content/uploads/2013/09/free-blurred-web-backgrounds-06.jpg" HorizontalAlignment="Left" Height="800" VerticalAlignment="Top" Width="1000" Margin="0,0,0,-200"/>
+        <Image Source="http://www.ianbarnard.co.uk/wp-content/uploads/2013/09/free-blurred-web-backgrounds-06.jpg" HorizontalAlignment="Left" Height="600" VerticalAlignment="Top" Width="1300" Stretch="Fill" />
 
-        <Rectangle Fill="#FFF9F9F9" HorizontalAlignment="Left" Height="331" Margin="349,89,0,0" VerticalAlignment="Top" Width="308">
+        <Rectangle Fill="#FFF9F9F9" HorizontalAlignment="Left" Height="331" Margin="511,95,0,0" VerticalAlignment="Top" Width="308">
             <Rectangle.Effect>
                 <DropShadowEffect ShadowDepth="1" Opacity="0.5"/>
             </Rectangle.Effect>
         </Rectangle>
-        <TextBox x:Name="txtbox_password" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" HorizontalAlignment="Left" FontSize="16" Height="23" Margin="513,272,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="112" Text="{Binding Password, Mode=OneWayToSource}" />
-        <TextBox x:Name="txtbox_name" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" HorizontalAlignment="Left" FontSize="16" Height="23" Margin="383,163,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="242" Text="{Binding Name, Mode=OneWayToSource}" />
-        <TextBox x:Name="txtbox_email" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" HorizontalAlignment="Left" FontSize="16" Height="23" Margin="383,217,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="112" Text="{Binding Email, Mode=OneWayToSource}" />
-        <TextBox x:Name="txtbox_username" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" HorizontalAlignment="Left" FontSize="16" Height="23" Margin="383,272,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="112" Text="{Binding UserName, Mode=OneWayToSource}"/>
-        <TextBox x:Name ="txtbox_address" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" HorizontalAlignment="Left" FontSize="16" Height="23" Margin="381,327,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="242" Text="{Binding Address, Mode=OneWayToSource}" />
-        <TextBox x:Name ="txtbox_phoneNumber" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" HorizontalAlignment="Left" FontSize="16" Height="23" Margin="514,217,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="112" Text="{Binding PhoneNumber, Mode=OneWayToSource}"/>
-        <Label Content="Email" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="377,191,0,0" FontFamily="Segoe UI Light"/>
-        <Label Content="Brugernavn" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="377,247,0,0" FontFamily="Segoe UI Light"/>
-        <Label Content="Adgangskode" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="508,247,0,0" FontFamily="Segoe UI Light"/>
-        <Label Content="Fulde navn" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="377,137,0,0" FontFamily="Segoe UI Light"/>
-        <Label Content="Adresse" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="377,300,0,0" FontFamily="Segoe UI Light"/>
-        <Label Content="Telefon" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="508,191,0,0" FontFamily="Segoe UI Light"/>
-        <Button Content="Færdig" HorizontalAlignment="Left" Margin="383,369,0,0" VerticalAlignment="Top" Width="243" Height="27" FontFamily="Segoe UI Light" Click="btnAddUser"/>
-        <Label Content="Opret profil" HorizontalAlignment="Left" Margin="448,100,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Segoe UI Light"/>
-        <Frame x:Name="PrivateCustomerFrame" HorizontalAlignment="Left" Height="474" Margin="50,77,0,0" VerticalAlignment="Top" Width="902" NavigationUIVisibility="Hidden"/>
+        <TextBox x:Name="txtbox_password" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" HorizontalAlignment="Left" FontSize="16" Height="23" Margin="675,278,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="112" Text="{Binding Password, Mode=OneWayToSource}" />
+        <TextBox x:Name="txtbox_name" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" HorizontalAlignment="Left" FontSize="16" Height="23" Margin="545,169,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="242" Text="{Binding Name, Mode=OneWayToSource}" />
+        <TextBox x:Name="txtbox_email" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" HorizontalAlignment="Left" FontSize="16" Height="23" Margin="545,223,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="112" Text="{Binding Email, Mode=OneWayToSource}" />
+        <TextBox x:Name="txtbox_username" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" HorizontalAlignment="Left" FontSize="16" Height="23" Margin="545,278,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="112" Text="{Binding UserName, Mode=OneWayToSource}"/>
+        <TextBox x:Name ="txtbox_address" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" HorizontalAlignment="Left" FontSize="16" Height="23" Margin="543,333,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="242" Text="{Binding Address, Mode=OneWayToSource}" />
+        <TextBox x:Name ="txtbox_phoneNumber" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" HorizontalAlignment="Left" FontSize="16" Height="23" Margin="676,223,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="112" Text="{Binding PhoneNumber, Mode=OneWayToSource}"/>
+        <Label Content="Email" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="539,197,0,0" FontFamily="Segoe UI Light"/>
+        <Label Content="Brugernavn" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="539,253,0,0" FontFamily="Segoe UI Light"/>
+        <Label Content="Adgangskode" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="670,253,0,0" FontFamily="Segoe UI Light"/>
+        <Label Content="Fulde navn" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="539,143,0,0" FontFamily="Segoe UI Light"/>
+        <Label Content="Adresse" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="539,306,0,0" FontFamily="Segoe UI Light"/>
+        <Label Content="Telefon" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="670,197,0,0" FontFamily="Segoe UI Light"/>
+        <Button Content="Færdig" HorizontalAlignment="Left" Margin="545,375,0,0" VerticalAlignment="Top" Width="243" Height="27" FontFamily="Segoe UI Light" Click="CreateUser_Click"/>
+        <Label Content="Opret profil" HorizontalAlignment="Left" Margin="610,106,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Segoe UI Light"/>
+        <Frame x:Name="PrivateCustomerFrame" HorizontalAlignment="Left" Height="600" VerticalAlignment="Top" Width="1300" NavigationUIVisibility="Hidden"/>
 
     </Grid>
 </Page>

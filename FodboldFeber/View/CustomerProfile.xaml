@@ -6,12 +6,11 @@
       xmlns:local="clr-namespace:FodboldFeber.View"
       xmlns:userinfo="clr-namespace:FodboldFeber.ViewModel"
       mc:Ignorable="d" 
-      d:DesignHeight="600" d:DesignWidth="800"
       Background="White"
       Title="CustomerProfile">
-    
+
     <Grid Background="#FFFAFAFA" Margin="-1,0,1,0">
-        <Rectangle HorizontalAlignment="Left" Height="40" Margin="0,560,0,0" VerticalAlignment="Top" Width="800">
+        <Rectangle Height="40" Margin="0,560,0,0" VerticalAlignment="Top">
             <Rectangle.Fill>
 
                 <LinearGradientBrush
@@ -25,7 +24,7 @@
         </Rectangle>
 
 
-        <Rectangle HorizontalAlignment="Left" Height="37" Margin="45,286,0,0" VerticalAlignment="Top" Width="305">
+        <Rectangle HorizontalAlignment="Left" Height="37" Margin="350,287,0,0" VerticalAlignment="Top" Width="305">
             <Rectangle.Effect>
                 <DropShadowEffect ShadowDepth="1" Opacity="0.5"/>
             </Rectangle.Effect>
@@ -40,7 +39,7 @@
                 </LinearGradientBrush>
             </Rectangle.Fill>
         </Rectangle>
-        <Rectangle HorizontalAlignment="Left" Height="36" Margin="45,323,0,0" VerticalAlignment="Top" Width="305">
+        <Rectangle HorizontalAlignment="Left" Height="36" Margin="350,324,0,0" VerticalAlignment="Top" Width="305">
             <Rectangle.Effect>
                 <DropShadowEffect ShadowDepth="1" Opacity="0.5"/>
             </Rectangle.Effect>
@@ -55,7 +54,7 @@
                 </LinearGradientBrush>
             </Rectangle.Fill>
         </Rectangle>
-        <Rectangle HorizontalAlignment="Left" Height="36" Margin="45,359,0,0" VerticalAlignment="Top" Width="305">
+        <Rectangle HorizontalAlignment="Left" Height="36" Margin="350,360,0,0" VerticalAlignment="Top" Width="305">
             <Rectangle.Effect>
                 <DropShadowEffect ShadowDepth="1" Opacity="0.5"/>
             </Rectangle.Effect>
@@ -70,7 +69,7 @@
                 </LinearGradientBrush>
             </Rectangle.Fill>
         </Rectangle>
-        <Rectangle HorizontalAlignment="Left" Height="35" Margin="45,395,0,0" VerticalAlignment="Top" Width="305">
+        <Rectangle HorizontalAlignment="Left" Height="35" Margin="350,396,0,0" VerticalAlignment="Top" Width="305">
             <Rectangle.Effect>
                 <DropShadowEffect ShadowDepth="1" Opacity="0.5"/>
             </Rectangle.Effect>
@@ -87,7 +86,7 @@
         </Rectangle>
 
 
-        <Rectangle HorizontalAlignment="Left" Height="110" Margin="0,45,0,0" VerticalAlignment="Top" Width="800">
+        <Rectangle Height="110" Margin="0,45,0,0" VerticalAlignment="Top">
             <Rectangle.Fill>
                 <LinearGradientBrush
         StartPoint="0,0" MappingMode="RelativeToBoundingBox" EndPoint="1,1">
@@ -100,7 +99,7 @@
         </Rectangle>
 
 
-        <Ellipse Stroke="White" StrokeThickness="3" Height="100" Width="100" Margin="345,75,355,425">
+        <Ellipse Stroke="White" StrokeThickness="3" HorizontalAlignment="Center" Margin="0,52,0,425" Width="110" Height="110">
             <Ellipse.Effect>
                 <DropShadowEffect ShadowDepth="2" Opacity="0.5"/>
             </Ellipse.Effect>
@@ -110,21 +109,21 @@
         </Ellipse>
 
 
-        <Label Content="Thomas Johansson" HorizontalAlignment="Center" Margin="318,175,329,0" VerticalAlignment="Top" FontSize="18" FontFamily="Segoe UI Light" FontWeight="Bold"/>
-        <Button x:Name="btnEdit" Content="Redigér profil" HorizontalAlignment="Left" Margin="650,501,0,0" VerticalAlignment="Top" Width="111" Click="btnEdit_Click" Background="#FFF2F2F2"/>
-        <Button x:Name ="btnSave" Content="Gem ændringer" HorizontalAlignment="Left" Margin="467,501,0,0" VerticalAlignment="Top" Width="120" Click="btnSave_Click" Background="#FFF2F2F2"/>
-        <Label  Content="Materialeforvalter" HorizontalAlignment="Center" Margin="348,207,350,0" VerticalAlignment="Top" FontFamily="Segoe UI Light" Width="102"/>
-        <Label x:Name="lblInfo" Content="Information om dig" HorizontalAlignment="Left" Margin="40,244,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Semibold"/>
-        <Label x:Name="lblPrivateName" Content="{Binding Path = Name, Mode=TwoWay}" HorizontalAlignment="Left" Margin="190,292,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Light" Height="23" Width="150"/>
-        <Label x:Name="lblAddress" Content="{Binding Path = Address, Mode=TwoWay}" HorizontalAlignment="Left" Margin="190,328,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Light" Height="24" Width="150"/>
-        <Label x:Name="lblEmail" Content="{Binding Path = Email , Mode=TwoWay}" HorizontalAlignment="Left" Margin="190,364,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Light" Height="1" Width="150"/>
-        <Label x:Name="lblPhone" Content="{Binding Path = PhoneNumber, Mode=TwoWay}" HorizontalAlignment="Left" Margin="190,400,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Light" RenderTransformOrigin="0.445,0.526" Height="1" Width="150"/>
-        <Label Content="Navn" HorizontalAlignment="Left" Margin="50,291,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Semibold"/>
-        <Label Content="Adresse" HorizontalAlignment="Left" Margin="50,327,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Semibold"/>
-        <Label Content="Email" HorizontalAlignment="Left" Margin="50,363,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Semibold"/>
-        <Label Content="Telefon" HorizontalAlignment="Left" Margin="50,399,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Semibold" RenderTransformOrigin="0.445,0.526"/>
-        <Rectangle HorizontalAlignment="Left" Height="316" Margin="395,244,0,0" VerticalAlignment="Top" Width="1" Fill="#FFDFDFDF"/>
-        <Rectangle HorizontalAlignment="Left" Height="70" Margin="434,286,0,0" VerticalAlignment="Top" Width="305">
+        <Label Content="Thomas Johansson" HorizontalAlignment="Center" Margin="0,180,0,0" VerticalAlignment="Top" FontSize="18" FontFamily="Segoe UI Light" FontWeight="Bold"/>
+        <Button x:Name="btnEdit" Content="Redigér profil" HorizontalAlignment="Left" Margin="926,520,0,0" VerticalAlignment="Top" Width="111" Click="btnEdit_Click" Background="#FFF2F2F2"/>
+        <Button x:Name ="btnSave" Content="Gem ændringer" HorizontalAlignment="Left" Margin="743,520,0,0" VerticalAlignment="Top" Width="120" Click="btnSave_Click" Background="#FFF2F2F2"/>
+        <Label  Content="Materialeforvalter" HorizontalAlignment="Center" Margin="645,212,653,0" VerticalAlignment="Top" FontFamily="Segoe UI Light" Width="102"/>
+        <Label x:Name="lblInfo" Content="Information om dig" HorizontalAlignment="Left" Margin="350,256,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Semibold"/>
+        <Label x:Name="lblPrivateName" Content="{Binding Path = Name, Mode=TwoWay}" HorizontalAlignment="Left" Margin="495,294,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Light" Height="23" Width="150"/>
+        <Label x:Name="lblAddress" Content="{Binding Path = Address, Mode=TwoWay}" HorizontalAlignment="Left" Margin="495,330,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Light" Height="24" Width="150"/>
+        <Label x:Name="lblEmail" Content="{Binding Path = Email , Mode=TwoWay}" HorizontalAlignment="Left" Margin="495,366,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Light" Height="25" Width="150"/>
+        <Label x:Name="lblPhone" Content="{Binding Path = PhoneNumber, Mode=TwoWay}" HorizontalAlignment="Left" Margin="495,402,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Light" RenderTransformOrigin="0.445,0.526" Height="25" Width="150"/>
+        <Label Content="Navn" HorizontalAlignment="Left" Margin="355,292,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Semibold"/>
+        <Label Content="Adresse" HorizontalAlignment="Left" Margin="355,328,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Semibold"/>
+        <Label Content="Email" HorizontalAlignment="Left" Margin="355,364,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Semibold"/>
+        <Label Content="Telefon" HorizontalAlignment="Left" Margin="355,400,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Semibold" RenderTransformOrigin="0.445,0.526"/>
+        <Rectangle HorizontalAlignment="Left" Height="316" Margin="700,244,0,0" VerticalAlignment="Top" Width="1" Fill="#FFDFDFDF"/>
+        <Rectangle HorizontalAlignment="Left" Height="70" Margin="739,286,0,0" VerticalAlignment="Top" Width="305">
             <Rectangle.Effect>
                 <DropShadowEffect ShadowDepth="1" Opacity="0.5"/>
             </Rectangle.Effect>
@@ -140,10 +139,10 @@
             </Rectangle.Fill>
         </Rectangle>
         <Label x:Name="lblInfo_Copy" Content="" HorizontalAlignment="Left" Margin="433,242,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Semibold"/>
-        <Label x:Name="lblClubName_Copy1" Content="17/05/2018" HorizontalAlignment="Left" Margin="587,305,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Light"/>
-        <Label x:Name="lblClubName_Copy2" Content="4 Items" HorizontalAlignment="Left" Margin="515,305,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Semibold" Width="59"/>
-        <Label x:Name="lblInfo_Copy1" Content="Ordrehistorik" HorizontalAlignment="Left" Margin="434,244,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Semibold"/>
-        <Ellipse Stroke="White" StrokeThickness="1" Margin="455,300,307,262">
+        <Label x:Name="lblClubName_Copy1" Content="17/05/2018" HorizontalAlignment="Left" Margin="892,305,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Light"/>
+        <Label x:Name="lblClubName_Copy2" Content="4 Items" HorizontalAlignment="Left" Margin="820,305,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Semibold" Width="59"/>
+        <Label x:Name="lblInfo_Copy1" Content="Ordrehistorik" HorizontalAlignment="Left" Margin="739,244,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Semibold"/>
+        <Ellipse Stroke="White" StrokeThickness="1" HorizontalAlignment="Center" Width="50" Height="50" Margin="170,40,0,0">
             <Ellipse.Effect>
                 <DropShadowEffect ShadowDepth="2" Opacity="0.5"/>
             </Ellipse.Effect>
@@ -151,15 +150,15 @@
                 <ImageBrush ImageSource="http://www.mmsport.dk/media/catalog/product/cache/2/image/9df78eab33525d08d6e5fb8d27136e95/f/4/f48642-chelsea-home-jersey-long-sleeve-14-15.jpg" Stretch="UniformToFill"/>
             </Ellipse.Fill>
         </Ellipse>
-        <Label Content="Total" HorizontalAlignment="Left" Margin="679,296,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Light"/>
-        <Label Content="DKK 285,00" HorizontalAlignment="Left" Margin="665,315,0,0" VerticalAlignment="Top" FontFamily="Microsoft JhengHei Light" FontSize="10"/>
-        <Label x:Name="lblName" Content="Frederik1" HorizontalAlignment="Left" Margin="679,175,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Light" Width="105"/>
-        <TextBox x:Name="txtEditName" Text="{Binding Path= Name, Mode=OneWayToSource}" HorizontalAlignment="Left" Height="23" Margin="190,292,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" GotFocus="txtEditName_GotFocus"/>
-        <TextBox x:Name="txtEditAddress" Text="{Binding Path= Address, Mode=OneWayToSource}" HorizontalAlignment="Left" Height="23" Margin="190,329,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" GotFocus="txtEditAddress_GotFocus"/>
-        <TextBox x:Name="txtEditEmail" Text="{Binding Path= Email, Mode=OneWayToSource}" HorizontalAlignment="Left" Height="23" Margin="190,365,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" GotFocus="txtEditEmail_GotFocus"/>
-        <TextBox x:Name="txtEditPhone" Text="{Binding Path= PhoneNumber, Mode=OneWayToSource}" HorizontalAlignment="Left" Height="23" Margin="190,401,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" GotFocus="txtEditPhone_GotFocus"/>
-        <Label Content="Velkommen" HorizontalAlignment="Left" Margin="612,175,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Light"/>
-        <Button x:Name="btnAdminTools" Content="Admin Tools" HorizontalAlignment="Left" Margin="219,501,0,0" VerticalAlignment="Top" Width="75" Click="btnAdminTools_Click" RenderTransformOrigin="0.531,-0.076" Background="#FFF2F2F2"/>
-        <Frame x:Name="CustomerProfileFrame" Margin="9,38,34,25" NavigationUIVisibility="Hidden"/>
+        <Label Content="Total" HorizontalAlignment="Center" Margin="600,296,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Light"/>
+        <Label Content="DKK 285,00" HorizontalAlignment="Left" Margin="970,315,0,0" VerticalAlignment="Top" FontFamily="Microsoft JhengHei Light" FontSize="10"/>
+        <Label x:Name="lblName" Content="Frederik1" HorizontalAlignment="Left" Margin="1200,175,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Light" Width="105"/>
+        <TextBox x:Name="txtEditName" Text="{Binding Path= Name, Mode=OneWayToSource}" HorizontalAlignment="Left" Height="23" Margin="495,293,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" GotFocus="txtEditName_GotFocus"/>
+        <TextBox x:Name="txtEditAddress" Text="{Binding Path= Address, Mode=OneWayToSource}" HorizontalAlignment="Left" Height="23" Margin="495,330,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" GotFocus="txtEditAddress_GotFocus"/>
+        <TextBox x:Name="txtEditEmail" Text="{Binding Path= Email, Mode=OneWayToSource}" HorizontalAlignment="Left" Height="23" Margin="495,366,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" GotFocus="txtEditEmail_GotFocus"/>
+        <TextBox x:Name="txtEditPhone" Text="{Binding Path= PhoneNumber, Mode=OneWayToSource}" HorizontalAlignment="Left" Height="23" Margin="495,402,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" GotFocus="txtEditPhone_GotFocus"/>
+        <Label Content="Velkommen" HorizontalAlignment="Left" Margin="1130,175,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Light"/>
+        <Button x:Name="btnAdminTools" Content="Admin Tools" HorizontalAlignment="Left" Margin="580,520,0,0" VerticalAlignment="Top" Width="75" Click="btnAdminTools_Click" RenderTransformOrigin="0.531,-0.076" Background="#FFF2F2F2"/>
+        <Frame x:Name="CustomerProfileFrame" NavigationUIVisibility="Hidden"/>
     </Grid>
 </Page>
