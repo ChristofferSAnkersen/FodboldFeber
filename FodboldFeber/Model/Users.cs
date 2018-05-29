@@ -280,6 +280,7 @@ namespace FodboldFeber.Model
                 }
             }
         }
+        //Logic for adding a user of the "Club" type to the database
         public void AddClubUser()
         {
             using (SqlConnection con = new SqlConnection(connectionString))
@@ -303,6 +304,7 @@ namespace FodboldFeber.Model
                 }
             }
         }
+        //Logic for adding a user of the "Company" type to the datebase
         public void AddCompanyUser()
         {
             using (SqlConnection con = new SqlConnection(connectionString))
@@ -330,6 +332,7 @@ namespace FodboldFeber.Model
         {
 
         }
+        //Logic for updating information about a user
         public void UpdateUser()
         {
             CustomerProfile c = new CustomerProfile();

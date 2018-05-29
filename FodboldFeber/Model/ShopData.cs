@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace FodboldFeber.Model
 {
-    //This class' purpose is to provide the needed data for the "ListOfProducts" list in the "Products" class.
+    //This class' purpose is to provide the needed data for the "ListOfProducts" list in the "Products" class, for it to 
+    //be able to populate the "ShopListBox" in the "Shop" page.
     public class ShopData
     {
         public string ProductName { get; set; }

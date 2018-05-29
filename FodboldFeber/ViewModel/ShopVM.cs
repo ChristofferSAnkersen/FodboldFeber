@@ -86,11 +86,6 @@ namespace FodboldFeber.ViewModel
             UpdateProduct();
         }
    
-        //Funktionality to ProductProfile
-        public void UpdateProperties()
-        {
-            ProductName = "opdater?";
-        }
         public event PropertyChangedEventHandler VMPropertyChanged;
 
         private void OnPropertyChanged(string propertyName)

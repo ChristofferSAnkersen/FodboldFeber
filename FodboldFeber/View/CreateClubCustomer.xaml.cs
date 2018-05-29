@@ -36,11 +36,6 @@ namespace FodboldFeber.View
             txtbox_clubaddress.Text = "Angiv Adresse";
             txtbox_clubname.Text = "Angiv Klubnavn";
             txtbox_clubposition.Text = "Angiv din position i klubben";
-        //  txtbox_city.Text = "Angiv By";
-       //   txtbox_postnummer.Text = "Angiv postnummer";
-
-
-
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
