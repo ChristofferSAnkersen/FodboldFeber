@@ -76,10 +76,10 @@ namespace FodboldFeber.View
         }
 
 
-        //Event that adds a product to the database with the information given by the user, the actual logic lies in "Products" 
+        //Event that adds a product to the database with the information given by the user, 
+        //the actual logic lies in "Products" 
         private void CreateProduct_Click(object sender, RoutedEventArgs e)
-        {
-            
+        {          
             //Adds the product to the database through "ShopController" -> "Products"
             shopVM.AddProductControl();
             MessageBox.Show("Varen er nu tilføjet");
@@ -88,7 +88,6 @@ namespace FodboldFeber.View
                 ChooseItem.Items.Clear();
             //Populates the ChooseItem combobox again, including the just added item
                 ListInCombobox();
-
         }
 
         private void TextBox_GotFocus(object sender, RoutedEventArgs e)
