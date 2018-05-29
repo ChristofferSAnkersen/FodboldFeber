@@ -18,7 +18,7 @@ namespace FodboldFeber.View
            
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void btnAddToCart_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("Varen er nu tilføjet til kurven");
             

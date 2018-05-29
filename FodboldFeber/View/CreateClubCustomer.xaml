@@ -28,7 +28,7 @@
             <Label Content="Adgangskode" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="514,253,0,0" FontFamily="Segoe UI Light"/>
             <TextBox x:Name ="txtbox_phoneNumber" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" HorizontalAlignment="Left" FontSize="16" Height="23" Margin="520,223,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="112" Text="{Binding PhoneNumber, Mode=OneWayToSource}" />
             <Label Content="Telefon" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="514,197,0,0" FontFamily="Segoe UI Light"/>
-            <Button Content="Færdig" HorizontalAlignment="Left" Margin="387,463,0,0" VerticalAlignment="Top" Width="243" Height="27" FontFamily="Segoe UI Light" Click="Button_Click"/>
+            <Button Content="Færdig" HorizontalAlignment="Left" Margin="387,463,0,0" VerticalAlignment="Top" Width="243" Height="27" FontFamily="Segoe UI Light" Click="btnAddUser"/>
             <Label Content="Opret klubprofil&#xA;" HorizontalAlignment="Left" Margin="436,106,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Segoe UI Light" Height="37"/>
             <!--<TextBox x:Name="txtbox_city" HorizontalAlignment="Left" Height="23" Margin="263,569,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="112" Text="{Binding Path= City, Mode=OneWayToSource}"/>
         <TextBox x:Name="txtbox_postnummer" HorizontalAlignment="Left" Height="23" Margin="393,569,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="112" Text="{Binding Path= PostNummer, Mode=OneWayToSource}"/>-->

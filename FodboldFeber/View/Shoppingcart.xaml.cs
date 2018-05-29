@@ -25,7 +25,7 @@ namespace FodboldFeber
             InitializeComponent();
         }
 
-        public void BackToShoplbl_Click(object sender, RoutedEventArgs e)
+        public void btnBackToShop_Click(object sender, RoutedEventArgs e)
         {
             Shop page = new Shop();
             NavigationService.Navigate(page);          

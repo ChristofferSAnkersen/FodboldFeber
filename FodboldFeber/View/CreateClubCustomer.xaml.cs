@@ -43,7 +43,7 @@ namespace FodboldFeber.View
 
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void btnAddUser(object sender, RoutedEventArgs e)
         {
             customerVM.AddClubUserControl();
             MessageBox.Show("Du er nu oprettet, Tak for at vise interesse for fodboldfeber :)");

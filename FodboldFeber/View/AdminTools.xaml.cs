@@ -77,7 +77,7 @@ namespace FodboldFeber.View
 
 
         //Event that adds a product to the database with the information given by the user, the actual logic lies in "Products" 
-        private void CreateProduct_Click(object sender, RoutedEventArgs e)
+        private void btnCreateProduct(object sender, RoutedEventArgs e)
         {
             
             //Adds the product to the database through "ShopController" -> "Products"
@@ -245,7 +245,7 @@ namespace FodboldFeber.View
         }
 
         //Deletes the values for the a item, determined by the named chosen in the "ChooseItem" combobox
-        private void DeleteButton_Click(object sender, RoutedEventArgs e)
+        private void btnDeleteButton(object sender, RoutedEventArgs e)
         {
             //The actual logic for deleting an item lies in "Products", which it reaches through "ShopController" -> "Products"
             shopVM.DeleteProductControl();
@@ -258,7 +258,7 @@ namespace FodboldFeber.View
         }
 
         //Updates the values for the chosen item in "ChooseItem", to the values the user has specified
-        private void UpdateButton_Click(object sender, RoutedEventArgs e)
+        private void btnUpdateProduct(object sender, RoutedEventArgs e)
         {
             
             shopVM.UpdateProductControl();
