@@ -43,16 +43,17 @@ namespace FodboldFeber.View
             
         }
 
+
+        //Button that shows the desired textboxes used for editing user info on the profil page
         private void btnEdit_Click(object sender, RoutedEventArgs e)
         {
             ShowEditTxtboxes();
             btnSave.Visibility = Visibility.Visible;
         }
 
+        //Button that hides txtboxes and the button itself after the info has been saved
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
-            //customerVM.UpdateUserControl();
-
             btnSave.Visibility = Visibility.Hidden;
             HideEditTxtboxes();
             MessageBox.Show("Din profil er nu ændret.");
@@ -76,6 +77,7 @@ namespace FodboldFeber.View
             txtEditPhone.Visibility = Visibility.Visible;
         }
 
+        //Methods that clear textboxes when a click is performed inside
         private void txtEditName_GotFocus(object sender, RoutedEventArgs e)
         {
             txtEditName.Text = "";
@@ -96,11 +98,15 @@ namespace FodboldFeber.View
             txtEditPhone.Text = "";
         }
 
+        //Method that sets content of the current frame to AdminTools
+
         private void btnAdminTools_Click(object sender, RoutedEventArgs e)
         {
             CustomerProfileFrame.Content = new AdminTools();
         }
 
+
+        //Sql Query that gets info from Db -> Where username is the content of the label on the profile (which is the username the logged in user)
         private void GetUserInfo()
         {
                 try

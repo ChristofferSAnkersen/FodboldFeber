@@ -42,7 +42,6 @@ namespace FodboldFeber.View
         
         private void BtnInitlogInClick(object sender, RoutedEventArgs e)
         {
-            //checks if 
             loginVM.InitializeLoginController();
             if (loginVM.IsAuthenticated == true)
             {
