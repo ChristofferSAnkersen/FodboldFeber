@@ -12,23 +12,24 @@ namespace FodboldFeber.Model
     public class DataAccess
     {
         Login login = new Login();
-        
+
+        private static string _connectionString = "Server=EALSQL1.eal.local; Database=DB2017_A27; User Id= USER_A27; Password=SesamLukOp_27;";
+
         public DataAccess()
         {
             CheckAuthentification = new Model.Authenticated { IsAuthenticated = false };
         }
         public Model.Authenticated CheckAuthentification { get; set; }
 
-        public static string connectionString = "Server=EALSQL1.eal.local; Database=DB2017_A27; User Id= USER_A27; Password=SesamLukOp_27;";
 
 
         public string Access()
         {
-            return connectionString;
+            return _connectionString;
         }
         public void InitializeLogin()
         {
-            using (SqlConnection con = new SqlConnection(connectionString))
+            using (SqlConnection con = new SqlConnection(_connectionString))
             {
                 try
                 {

@@ -256,19 +256,20 @@ namespace FodboldFeber.Model
 
             }
         }
-        string query = "";
-        private static string connectionString = "Server=EALSQL1.eal.local; Database=DB2017_A27; User Id= USER_A27; Password=SesamLukOp_27;";
+        private string _query = "";
+
+        private static string _connectionString = "Server=EALSQL1.eal.local; Database=DB2017_A27; User Id= USER_A27; Password=SesamLukOp_27;";
         public void AddPrivateUser()
         {
-            using (SqlConnection con = new SqlConnection(connectionString))
+            using (SqlConnection con = new SqlConnection(_connectionString))
             {
                 try
                 {
                     con.Open();
-                    //Fills the query variable with the information of the properties
-                    query = "insert into Users(username, password, name, phonenumber, email, address) values('" + this.UserName + "','" + this.Password + "','" + this.Name + "','" + this.PhoneNumber + "','" + this.Email + "','" + this.Address + "');";
-                    //Inserts the data of query into the "Products" table in the database
-                    SqlCommand cmd1 = new SqlCommand(query, con);
+                    //Fills the _query variable with the information of the properties
+                    _query = "insert into Users(username, password, name, phonenumber, email, address) values('" + this.UserName + "','" + this.Password + "','" + this.Name + "','" + this.PhoneNumber + "','" + this.Email + "','" + this.Address + "');";
+                    //Inserts the data of _query into the "Products" table in the database
+                    SqlCommand cmd1 = new SqlCommand(_query, con);
 
                     SqlDataReader myReader = cmd1.ExecuteReader();
 
@@ -283,16 +284,16 @@ namespace FodboldFeber.Model
         //Logic for adding a user of the "Club" type to the database
         public void AddClubUser()
         {
-            using (SqlConnection con = new SqlConnection(connectionString))
+            using (SqlConnection con = new SqlConnection(_connectionString))
             {
                 try
                 {
                     con.Open();
-                    //Fills the query variable with the information of the properties
-                    query = "insert into Users(name,username, password, clubname, phonenumber, email, address, clubposition) values('" + this.Name + "','" + this.UserName + "','" + this.Password + "','" + this.ClubName + "','" + this.PhoneNumber + "','" + this.Email + "','" + this.Address + "','" + this.ClubPosition
+                    //Fills the _query variable with the information of the properties
+                    _query = "insert into Users(name,username, password, clubname, phonenumber, email, address, clubposition) values('" + this.Name + "','" + this.UserName + "','" + this.Password + "','" + this.ClubName + "','" + this.PhoneNumber + "','" + this.Email + "','" + this.Address + "','" + this.ClubPosition
                         + "');";
-                    //Inserts the data of query into the "Products" table in the database
-                    SqlCommand cmd1 = new SqlCommand(query, con);
+                    //Inserts the data of _query into the "Products" table in the database
+                    SqlCommand cmd1 = new SqlCommand(_query, con);
 
                     SqlDataReader myReader = cmd1.ExecuteReader();
 
@@ -307,15 +308,15 @@ namespace FodboldFeber.Model
         //Logic for adding a user of the "Company" type to the datebase
         public void AddCompanyUser()
         {
-            using (SqlConnection con = new SqlConnection(connectionString))
+            using (SqlConnection con = new SqlConnection(_connectionString))
             {
                 try
                 {
                     con.Open();
-                    //Fills the query variable with the information of the properties
-                    query = "insert into Users(name, username, password, companyname, phonenumber, email, address, companyposition, cvr) values('" + this.Name + "','" + this.UserName + "','" + this.Password + "','" + this.CompanyName + "','" + this.PhoneNumber + "','" + this.Email + "','" + this.Address + "','" + this.CompanyPosition + "','" + this.CVR + "');";
-                    //Inserts the data of query into the "Products" table in the database
-                    SqlCommand cmd1 = new SqlCommand(query, con);
+                    //Fills the _query variable with the information of the properties
+                    _query = "insert into Users(name, username, password, companyname, phonenumber, email, address, companyposition, cvr) values('" + this.Name + "','" + this.UserName + "','" + this.Password + "','" + this.CompanyName + "','" + this.PhoneNumber + "','" + this.Email + "','" + this.Address + "','" + this.CompanyPosition + "','" + this.CVR + "');";
+                    //Inserts the data of _query into the "Products" table in the database
+                    SqlCommand cmd1 = new SqlCommand(_query, con);
 
                     SqlDataReader myReader = cmd1.ExecuteReader();
 
@@ -338,9 +339,9 @@ namespace FodboldFeber.Model
             CustomerProfile c = new CustomerProfile();
             try
             {
-                query = "Update Private_User set name='" + this.Name + "', phonenumber='" + this.PhoneNumber + "', email='" + this.Email + "', address='" + this.Address + "' where username ='" + c.lblName.Content + "' ";
-                SqlConnection con = new SqlConnection(connectionString);
-                SqlCommand cmd1 = new SqlCommand(query, con);
+                _query = "Update Private_User set name='" + this.Name + "', phonenumber='" + this.PhoneNumber + "', email='" + this.Email + "', address='" + this.Address + "' where username ='" + c.lblName.Content + "' ";
+                SqlConnection con = new SqlConnection(_connectionString);
+                SqlCommand cmd1 = new SqlCommand(_query, con);
                 SqlDataReader myReader;
                 con.Open();
                 myReader = cmd1.ExecuteReader();
@@ -364,7 +365,7 @@ namespace FodboldFeber.Model
             CustomerProfile c = new CustomerProfile();
             CustomerVM cvm = new CustomerVM();
 
-            using (SqlConnection con = new SqlConnection(connectionString))
+            using (SqlConnection con = new SqlConnection(_connectionString))
             {
                 try
                 {

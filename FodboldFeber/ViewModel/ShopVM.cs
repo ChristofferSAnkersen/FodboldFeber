@@ -72,11 +72,13 @@ namespace FodboldFeber.ViewModel
             products.FillList(ListOfProducts);
         }
        
-        //Funktionality to AdminTools
+        //Functionality to AdminTools
         public void AddProductControl()
         {
             AddProduct();
         }
+
+
         public void DeleteProductControl()
         {
             DeleteProduct();
@@ -96,8 +98,6 @@ namespace FodboldFeber.ViewModel
                 handler(this, new PropertyChangedEventArgs(propertyName));
             }
         }
-
-
 
     }
  

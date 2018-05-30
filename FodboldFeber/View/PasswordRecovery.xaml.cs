@@ -25,7 +25,7 @@ namespace FodboldFeber.View
         SmtpClient client;
         MailMessage msg;
         
-        private static string connectionString = "Server=EALSQL1.eal.local; Database=DB2017_A27; User Id= USER_A27; Password=SesamLukOp_27;";
+        private static string _connectionString = "Server=EALSQL1.eal.local; Database=DB2017_A27; User Id= USER_A27; Password=SesamLukOp_27;";
 
 
 
@@ -39,7 +39,7 @@ namespace FodboldFeber.View
         private void BtnSendEmailClick(object sender, RoutedEventArgs e)
         {
 
-            using (SqlConnection con = new SqlConnection(connectionString))
+            using (SqlConnection con = new SqlConnection(_connectionString))
             {
                 try
                 {
@@ -63,8 +63,8 @@ namespace FodboldFeber.View
                         }
                         if (con.State == ConnectionState.Closed)
                             con.Open();
-                        String query2 = "Update Users set password ='" + randomString + "' where email = '" + txtEmail.Text + "' AND username= '" + txtUserName.Text + "' ";
-                        SqlCommand sqlCmd2 = new SqlCommand(query2, con);
+                        String _query2 = "Update Users set password ='" + randomString + "' where email = '" + txtEmail.Text + "' AND username= '" + txtUserName.Text + "' ";
+                        SqlCommand sqlCmd2 = new SqlCommand(_query2, con);
                         sqlCmd2.CommandType = CommandType.Text;
                         SqlDataReader myReader;
                         myReader = sqlCmd2.ExecuteReader();
@@ -104,14 +104,14 @@ namespace FodboldFeber.View
 
         private void BtnForgotUserNameClick(object sender, RoutedEventArgs e)
         {
-            using (SqlConnection con = new SqlConnection(connectionString))
+            using (SqlConnection con = new SqlConnection(_connectionString))
             {
                 try
                 {
                     if (con.State == ConnectionState.Closed)
                         con.Open();
-                    String query = "select count(1) from Users where email=@email";
-                    SqlCommand sqlCmd = new SqlCommand(query, con);
+                    String _query = "select count(1) from Users where email=@email";
+                    SqlCommand sqlCmd = new SqlCommand(_query, con);
                     sqlCmd.CommandType = CommandType.Text;
                     sqlCmd.Parameters.AddWithValue("@email", txtEmail.Text);
                     int count = Convert.ToInt32(sqlCmd.ExecuteScalar());
@@ -127,8 +127,8 @@ namespace FodboldFeber.View
                         }
                         if (con.State == ConnectionState.Closed)
                             con.Open();
-                        String query2 = "Update Users set username ='" + randomString + "' where email = '" + txtEmail.Text + "' ";
-                        SqlCommand sqlCmd2 = new SqlCommand(query2, con);
+                        String _query2 = "Update Users set username ='" + randomString + "' where email = '" + txtEmail.Text + "' ";
+                        SqlCommand sqlCmd2 = new SqlCommand(_query2, con);
                         sqlCmd2.CommandType = CommandType.Text;
                         SqlDataReader myReader;
                         myReader = sqlCmd2.ExecuteReader();
