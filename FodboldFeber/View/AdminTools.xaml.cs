@@ -49,30 +49,15 @@ namespace FodboldFeber.View
         private string _connectionString = "Server=EALSQL1.eal.local; Database=DB2017_A27; User Id= USER_A27; Password=SesamLukOp_27;";
 
         //String query, used to add/delete/update the desired values in the database in the methods below
-        private string _query = "";
+        //private string _query = "";
         //Function that makes it possible for the combobox to be filled with already existing items in the database for the user to choose from when deciding what item(s) to delete or update
         public void ListInCombobox()
         {
-            try
+            foreach (var item in shopVM.ListOfProducts)
             {
-                SqlConnection con = new SqlConnection(_connectionString);
-                con.Open();
-                _query = "SELECT * from Products";
-                SqlCommand listCommands = new SqlCommand(_query, con);
-                SqlDataReader reader = listCommands.ExecuteReader();
-              
-                while(reader.Read())
-                {
-                    //Chooses the row that should be the determing factor(displayed in the combobox) it is GetString(1) because 1st collumn in the table is 0, 2nd is 1...
-                    string ProductNames = reader.GetString(1);
-                    ChooseItem.Items.Add(ProductNames);
-                }
-                con.Close();
+                ChooseItem.Items.Add(item.ProductName);
             }
-            catch(SqlException e)
-            {
-                Console.WriteLine(e + "Listen kunne ikke blive udfyldt");
-            }
+            
         }
 
 
