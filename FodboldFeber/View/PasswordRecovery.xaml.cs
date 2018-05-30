@@ -32,8 +32,6 @@ namespace FodboldFeber.View
         public PasswordRecovery()
         {
             InitializeComponent();
-            //txtUserName.Text = "Angiv dit Brugernavn";
-            //txtEmail.Text = "Angiv Email";
         }
 
         private void BtnSendEmailClick(object sender, RoutedEventArgs e)

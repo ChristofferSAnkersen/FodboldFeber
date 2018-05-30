@@ -39,9 +39,10 @@ namespace FodboldFeber.View
             loginVM = LoginVM.Instance;
         }
 
-    
+        
         private void BtnInitlogInClick(object sender, RoutedEventArgs e)
         {
+            //checks if 
             loginVM.InitializeLoginController();
             if (loginVM.IsAuthenticated == true)
             {
@@ -53,7 +54,7 @@ namespace FodboldFeber.View
             }
         }
        
-
+        //page navigation
         private void BtnClickSignIn(object sender, RoutedEventArgs e)
             {
                 ChooseType page = new ChooseType();

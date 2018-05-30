@@ -26,6 +26,7 @@ namespace FodboldFeber.View
             InitializeComponent();
         }
 
+        // navigtaiton to the different pages
         private void BtnLogInPrivateClick(object sender, RoutedEventArgs e)
         {         
             CreatePrivateCustomer page = new CreatePrivateCustomer();

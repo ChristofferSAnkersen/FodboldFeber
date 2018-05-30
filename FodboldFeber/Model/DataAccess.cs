@@ -35,16 +35,19 @@ namespace FodboldFeber.Model
                 {
                     if (con.State == ConnectionState.Closed)
                         con.Open();
+                    // Checks if the the tabel "users" has any rows where the txtboxes' text match eachother 
                     String query = "SELECT COUNT(1) FROM  Users WHERE Username=@username AND password=@password";
                     SqlCommand sqlCmd = new SqlCommand(query, con);
                     sqlCmd.CommandType = CommandType.Text;
                     sqlCmd.Parameters.AddWithValue("@username", login.Username);
                     sqlCmd.Parameters.AddWithValue("@password", login.Password);
                     int count = Convert.ToInt32(sqlCmd.ExecuteScalar());
+                    // makes sure there is only one match in the database, for secruity reasons. 
                     if (count == 1)
                     {
                         CheckAuthentification.IsAuthenticated = true;
                     }
+                    // Does not allow you to log in if a match is not found
                     else if (count == 0)
                     {
                         CheckAuthentification.IsAuthenticated = false;
