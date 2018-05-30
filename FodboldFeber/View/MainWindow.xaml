@@ -6,13 +6,13 @@
         xmlns:local="clr-namespace:FodboldFeber"
         mc:Ignorable="d"
         Title="MainWindow" 
-        Height="{Binding SystemParameters.WorkArea.Height}" 
-        Width="1300" 
+        Height="{Binding SystemParameters.PrimaryScreenHeight}" 
+        Width="{Binding SystemParameters.PrimaryScreenWidth}"
         WindowState="Maximized"
-        WindowStyle="ToolWindow">
+        WindowStyle="None">
 
     <Grid Margin="0,0,-0.667,0" Height="526" VerticalAlignment="Top">
-        <Rectangle HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="1294">
+        <Rectangle Height="40" VerticalAlignment="Top" HorizontalAlignment="Left" Width="1294">
             <Rectangle.Effect>
                 <DropShadowEffect ShadowDepth="1" Opacity="0.5"/>
             </Rectangle.Effect>
