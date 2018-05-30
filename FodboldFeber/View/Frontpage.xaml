@@ -22,7 +22,7 @@
                 <GradientStop Color="#FFF3F3F3" Offset="1"/>
             </LinearGradientBrush>
         </Grid.Background>
-        <Image Source="https://i1.wp.com/sports-gaming.dk/wp-content/uploads/2016/12/christian-eriksen.jpg" Height="335" VerticalAlignment="Top" Stretch="UniformToFill" HorizontalAlignment="Center" Width="1300"/>
+        <Image Source="https://i1.wp.com/sports-gaming.dk/wp-content/uploads/2016/12/christian-eriksen.jpg" Height="335" VerticalAlignment="Top" Stretch="UniformToFill" HorizontalAlignment="Center" Width="Auto"/>
         <Label Content="Fodboldfeber" Margin="0,130,225,0" VerticalAlignment="Top" Height="75" Foreground="White" FontSize="36" FontFamily="Segoe UI Light" HorizontalAlignment="Right" Width="225"/>
         <Rectangle Height="180" Margin="55,310,55,0" VerticalAlignment="Top">
             <Rectangle.Effect>
