@@ -10,7 +10,7 @@
         WindowStyle="ToolWindow">
 
     <Grid Margin="0,0,-0.667,0" Height="526" VerticalAlignment="Top">
-        <Rectangle Height="40" VerticalAlignment="Top" HorizontalAlignment="Left" Width="2000">
+        <Rectangle Margin="0,0,-1238,486" Width="auto">
             <Rectangle.Effect>
                 <DropShadowEffect ShadowDepth="1" Opacity="0.5"/>
             </Rectangle.Effect>

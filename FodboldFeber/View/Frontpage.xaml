@@ -22,9 +22,9 @@
                 <GradientStop Color="#FFF3F3F3" Offset="1"/>
             </LinearGradientBrush>
         </Grid.Background>
-        <Image Source="https://i1.wp.com/sports-gaming.dk/wp-content/uploads/2016/12/christian-eriksen.jpg" Height="335" VerticalAlignment="Top" Stretch="UniformToFill" HorizontalAlignment="Right" Width="1300"/>
+        <Image Source="https://i1.wp.com/sports-gaming.dk/wp-content/uploads/2016/12/christian-eriksen.jpg" Height="335" VerticalAlignment="Top" Stretch="UniformToFill" HorizontalAlignment="Center" Width="1300"/>
         <Label Content="Fodboldfeber" Margin="0,130,225,0" VerticalAlignment="Top" Height="75" Foreground="White" FontSize="36" FontFamily="Segoe UI Light" HorizontalAlignment="Right" Width="225"/>
-        <Rectangle HorizontalAlignment="Left" Height="180" Margin="55,310,0,0" VerticalAlignment="Top" Width="1190">
+        <Rectangle Height="180" Margin="55,310,55,0" VerticalAlignment="Top">
             <Rectangle.Effect>
                 <DropShadowEffect ShadowDepth="1" Opacity="0.5"/>
             </Rectangle.Effect>
@@ -36,10 +36,10 @@
             </Rectangle.Fill>
         </Rectangle>
 
-        <ListBox x:Name="ShopListBox" ItemsSource="{Binding ListOfProducts}" SelectedItem="{Binding Path= SelectedProduct}" RenderTransformOrigin="0.502,0.003" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Background="{x:Null}" BorderBrush="{x:Null}" Margin="55,310,55,110" SelectionChanged="ShopListBox_SelectionChanged">
+        <ListBox x:Name="ShopListBox" Height="170" ItemsSource="{Binding ListOfProducts}" SelectedItem="{Binding Path= SelectedProduct}" RenderTransformOrigin="0.502,0.003" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Background="{x:Null}" BorderBrush="{x:Null}" Margin="65,310,65,110" SelectionChanged="ShopListBox_SelectionChanged">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <StackPanel x:Name="ShopStackpanel" >
+                    <StackPanel x:Name="ShopStackpanel">
                         <Image x:Name="imgProductImage" Source="{Binding Path= ProductImage, Mode=TwoWay}" Stretch="UniformToFill"  Width="150" Height="75" />
                         <Label x:Name="lblProductName" Content="{Binding Path= ProductName, Mode=TwoWay}" BorderBrush="{x:Null}"/>
                         <Label x:Name="lblProductPrice" Content="{Binding Path= Price, Mode=TwoWay}" BorderBrush="{x:Null}"/>
@@ -51,12 +51,12 @@
 
                 <ItemsPanelTemplate>
 
-                    <WrapPanel  Margin="10,0,0,20" HorizontalAlignment="Center" Orientation="Horizontal" Height="128" Width="809" />
+                    <WrapPanel  Margin="0,0,0,20" HorizontalAlignment="Center" Orientation="Horizontal" Height="128" Width="1152" />
 
                 </ItemsPanelTemplate>
             </ListBox.ItemsPanel>
         </ListBox>
         <Frame x:Name="FrontpageShopFrame" NavigationUIVisibility="Hidden"/>
-        <Label Content="Nyheder i shoppen" Margin="83,265,0,0" VerticalAlignment="Top" FontSize="22" Background="{x:Null}" Foreground="White" FontFamily="Segoe UI Light" HorizontalAlignment="Left" Width="187"/>
+        <Label Content="Nyheder i shoppen" Margin="82,265,0,0" VerticalAlignment="Top" FontSize="22" Background="{x:Null}" Foreground="White" FontFamily="Segoe UI Light" HorizontalAlignment="Left" Width="186"/>
     </Grid>
 </Page>
