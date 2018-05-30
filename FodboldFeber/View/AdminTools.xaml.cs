@@ -53,6 +53,8 @@ namespace FodboldFeber.View
         //Function that makes it possible for the combobox to be filled with already existing items in the database for the user to choose from when deciding what item(s) to delete or update
         public void ListInCombobox()
         {
+            shopVM.ListOfProducts.Clear();
+            shopVM.PopulateList();
             foreach (var item in shopVM.ListOfProducts)
             {
                 ChooseItem.Items.Add(item.ProductName);

@@ -198,7 +198,7 @@ namespace FodboldFeber.Model
         private static string _connectionString = "Server=EALSQL1.eal.local; Database=DB2017_A27; User Id= USER_A27; Password=SesamLukOp_27;";
 
         //Logic to Shop, populates the list used to display items in the frontend
-        public void FillList(List<ShopData> listOfProducts)
+        public void FillList(List<ShopData> ListOfProducts)
         {
             using (SqlConnection con = new SqlConnection(_connectionString))
             {
@@ -215,9 +215,9 @@ namespace FodboldFeber.Model
                         sd.Price = (double)myReader["ProductPrice"];
                         sd.ProductImage = (string)myReader["ProductImage"];
                         sd.ProductDescription = (string)myReader["ProductDescription"];
-                        listOfProducts.Add(sd);
+                        ListOfProducts.Add(sd);
                     }
-                    //con.Close();
+                    con.Close();
                 }
                 catch (SqlException e)
                 {
