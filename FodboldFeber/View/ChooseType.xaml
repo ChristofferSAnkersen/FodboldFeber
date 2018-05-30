@@ -9,19 +9,19 @@
       Title="ChooseType">
 
     <Grid>
-        <Image Source="http://www.ianbarnard.co.uk/wp-content/uploads/2013/09/free-blurred-web-backgrounds-06.jpg" HorizontalAlignment="Left" Height="600" VerticalAlignment="Top" Width="1300" Stretch="Fill" />
+        <Image Source="http://www.ianbarnard.co.uk/wp-content/uploads/2013/09/free-blurred-web-backgrounds-06.jpg" Stretch="Fill" Margin="0,0,0,-0.333" />
 
-        <Rectangle HorizontalAlignment="Left" Height="189" Margin="509,193,0,0" VerticalAlignment="Top" Width="304" Fill="White" Opacity="0.2">
+        <Rectangle HorizontalAlignment="Center" Height="189" Margin="0,193,0,0" VerticalAlignment="Top" Width="304" Fill="White" Opacity="0.2">
             <Rectangle.Effect>
                 <DropShadowEffect ShadowDepth="1" Opacity="0.5"/>
             </Rectangle.Effect>
         </Rectangle>
 
-        <Label Content="Fodboldfeber" HorizontalAlignment="Left" Margin="535,103,0,0" VerticalAlignment="Top" FontSize="40" Foreground="Red"/>
-        <Label x:Name="lbl_question" Content="Hvilken type profil vil du oprette?" HorizontalAlignment="Left" Margin="533,203,0,0" VerticalAlignment="Top" FontSize="18" FontFamily="Segoe UI Light"/>
-        <Button x:Name="btn_logIn_Copy2" Content="Klub" HorizontalAlignment="Left" Margin="535,288,0,0" VerticalAlignment="Top" Width="249" Height="28" FontFamily="Segoe UI Light" Click="BtnLogInClubClick"/>
-        <Button x:Name="btn_logIn_Copy3" Content="Firma" HorizontalAlignment="Left" Margin="535,330,0,0" VerticalAlignment="Top" Width="249" Height="28" FontFamily="Segoe UI Light" Click="BtnLogInCompanyClick"/>
-        <Button x:Name="btn_logIn_Copy1" Content="Privat kunde" HorizontalAlignment="Left" Margin="535,245,0,0" VerticalAlignment="Top" Width="249" Height="28" FontFamily="Segoe UI Light" Click="BtnLogInPrivateClick"/>
+        <Label Content="Fodboldfeber" HorizontalAlignment="Center" Margin="0,103,0,0" VerticalAlignment="Top" FontSize="40" Foreground="Red"/>
+        <Label x:Name="lbl_question" Content="Hvilken type profil vil du oprette?" HorizontalAlignment="Center" Margin="0,203,0,0" VerticalAlignment="Top" FontSize="18" FontFamily="Segoe UI Light"/>
+        <Button x:Name="btn_logIn_Copy2" Content="Klub" HorizontalAlignment="Center" Margin="0,288,0,0" VerticalAlignment="Top" Width="249" Height="28" FontFamily="Segoe UI Light" Click="BtnLogInClubClick"/>
+        <Button x:Name="btn_logIn_Copy3" Content="Firma" HorizontalAlignment="Center" Margin="0,330,0,0" VerticalAlignment="Top" Width="249" Height="28" FontFamily="Segoe UI Light" Click="BtnLogInCompanyClick"/>
+        <Button x:Name="btn_logIn_Copy1" Content="Privat kunde" HorizontalAlignment="Center" Margin="0,245,0,0" VerticalAlignment="Top" Width="249" Height="28" FontFamily="Segoe UI Light" Click="BtnLogInPrivateClick"/>
 
     </Grid>
 </Page>

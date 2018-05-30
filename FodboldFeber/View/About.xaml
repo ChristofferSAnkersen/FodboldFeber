@@ -9,7 +9,7 @@
       Title="About">
 
     <Grid>
-        <Image Source="http://www.ianbarnard.co.uk/wp-content/uploads/2013/09/free-blurred-web-backgrounds-06.jpg" HorizontalAlignment="Left" Height="600" VerticalAlignment="Top" Width="1300" Stretch="Fill"/>
-        <Label Content="Om os" FontSize="40" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="595,50,575,0" Width="130"/>
+        <Image Source="http://www.ianbarnard.co.uk/wp-content/uploads/2013/09/free-blurred-web-backgrounds-06.jpg" Stretch="Fill" Margin="0,0,0,0.333"/>
+        <Label Content="Om os" FontSize="40" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,50,0,0"/>
     </Grid>
 </Page>

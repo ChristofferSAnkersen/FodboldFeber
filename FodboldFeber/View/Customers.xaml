@@ -9,7 +9,7 @@
       Title="Customers">
 
     <Grid>
-        <Image Source="http://www.ianbarnard.co.uk/wp-content/uploads/2013/09/free-blurred-web-backgrounds-06.jpg" HorizontalAlignment="Left" Height="600" VerticalAlignment="Top" Width="1300" Stretch="Fill" />
-        <Label Content="Kunder" FontSize="40" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,52,0,0" Width="138"/>
+        <Image Source="http://www.ianbarnard.co.uk/wp-content/uploads/2013/09/free-blurred-web-backgrounds-06.jpg" Stretch="Fill" Margin="0,0,0,0.333" />
+        <Label Content="Kunder" FontSize="40" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,50,0,0"/>
     </Grid>
 </Page>

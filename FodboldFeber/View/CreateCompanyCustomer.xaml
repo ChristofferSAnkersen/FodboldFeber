@@ -10,7 +10,7 @@
     <ScrollViewer VerticalScrollBarVisibility="Auto">
         <Grid ScrollViewer.CanContentScroll="True">
 
-            <Image Source="http://www.ianbarnard.co.uk/wp-content/uploads/2013/09/free-blurred-web-backgrounds-06.jpg" HorizontalAlignment="Left" Height="630" VerticalAlignment="Top" Width="1300" Stretch="Fill" />
+            <Image Source="http://www.ianbarnard.co.uk/wp-content/uploads/2013/09/free-blurred-web-backgrounds-06.jpg" Stretch="Fill" Margin="0,0,0,-0.333" />
 
             <Rectangle Fill="#FFF9F9F9" HorizontalAlignment="Left" Height="421" Margin="485,94,0,0" VerticalAlignment="Top" Width="308">
                 <Rectangle.Effect>
@@ -27,7 +27,7 @@
             <Label Content="Adgangskode" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="644,252,0,0" FontFamily="Segoe UI Light"/>
             <TextBox x:Name ="txtbox_phonenumber" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" HorizontalAlignment="Left" FontSize="16" Height="23" Margin="650,222,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="112" Text="{Binding PhoneNumber, Mode=OneWayToSource}"/>
             <Label Content="Telefon" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="644,196,0,0" FontFamily="Segoe UI Light"/>
-            <Button Content="Færdig" HorizontalAlignment="Left" Margin="517,468,0,0" VerticalAlignment="Top" Width="243" Height="27" FontFamily="Segoe UI Light" Click="Button_Click_1"/>
+            <Button Content="Færdig" HorizontalAlignment="Left" Margin="517,468,0,0" VerticalAlignment="Top" Width="243" Height="27" FontFamily="Segoe UI Light" Click="BtnAddUser"/>
             <Label Content="Opret firmaprofil" HorizontalAlignment="Left" Margin="562,105,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Segoe UI Light"/>
             <GroupBox Header="Information om dit firma" HorizontalAlignment="Left" Height="140" Margin="500,310,0,0" VerticalAlignment="Top" Width="278" FontFamily="Segoe UI Light" FontWeight="Bold"/>
             <TextBox x:Name="txtbox_companyaddress" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" HorizontalAlignment="Left" FontSize="16" Height="23" Margin="519,410,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="112" Text="{Binding CompanyAddress, Mode=OneWayToSource}"/>
@@ -42,7 +42,7 @@
             <Label Content="Din funktion" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="644,330,0,0" FontFamily="Segoe UI Light" FontStyle="Italic"/>
             <TextBox x:Name="txtbox_cvr" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" HorizontalAlignment="Left" FontSize="16" Height="23" Margin="651,410,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="111" Text="{Binding CVR, Mode=OneWayToSource}"/>
             <Label Content="CVR-nummer" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="646,384,0,0" FontFamily="Segoe UI Light" FontStyle="Italic"/>
-            <Frame x:Name="CompanyCustomerFrame" HorizontalAlignment="Left" Height="467" VerticalAlignment="Top" Width="195" NavigationUIVisibility="Hidden" Margin="0,163,0,0"/>
+            <Frame x:Name="CompanyCustomerFrame" NavigationUIVisibility="Hidden" Margin="0,0,-466.667,0"/>
 
         </Grid>
     </ScrollViewer>

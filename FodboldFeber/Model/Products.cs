@@ -193,7 +193,7 @@ namespace FodboldFeber.Model
             }
         }
 
-        string query = "";
+        private string _query = "";
         //Connection string used in the varius logic methods below.
         private static string _connectionString = "Server=EALSQL1.eal.local; Database=DB2017_A27; User Id= USER_A27; Password=SesamLukOp_27;";
 
@@ -207,7 +207,7 @@ namespace FodboldFeber.Model
                     con.Open();
                     SqlCommand sqlCommand = new SqlCommand("SELECT * FROM Products", con);
                     SqlDataReader myReader = sqlCommand.ExecuteReader();
-                    
+
                     while (myReader.Read())
                     {
                         ShopData sd = new ShopData();
@@ -217,7 +217,7 @@ namespace FodboldFeber.Model
                         sd.ProductDescription = (string)myReader["ProductDescription"];
                         listOfProducts.Add(sd);
                     }
-                    //con.Close();
+                    con.Close();
                 }
                 catch (SqlException e)
                 {
@@ -234,27 +234,21 @@ namespace FodboldFeber.Model
                 try
                 {
                     con.Open();
-                    //Fills the query variable with the information of the properties
-                    query = "insert into Products(ProductID, ProductName, Category, ProductDescription, " +
+                    //Fills the _query variable with the information of the properties
+                    _query = "insert into Products(ProductID, ProductName, Category, ProductDescription, " +
                         "ProductPrice, AmountInStock, ShippingPrice, Size, DiscountPrice, ProductImage) " +
-                        "values('" + this.ProductID + "','" + this.ProductName + "','" + this.Category + "','" + 
-                        this.ProductDescription + "','" + this.Price + "','" + this.AmountInStock + "','" + 
-                        this.ShippingPrice + "','" + this.Size + "','" + this.DiscountPrice + "','" + this.ProductImage + "');";
-                    //Inserts the data of query into the "Products" table in the database
-                    SqlCommand cmd1 = new SqlCommand(query, con);
-                  
-                    SqlDataReader myReader = cmd1.ExecuteReader();
-                    
+                        "values('" + ProductID + "','" + ProductName + "','" + Category + "','" + 
+                        ProductDescription + "','" + Price + "','" + AmountInStock + "','" + 
+                        ShippingPrice + "','" + Size + "','" + DiscountPrice + "','" + ProductImage + "');";
 
-                    while (myReader.Read())
-                    {
+                    //Inserts the data of _query into the "Products" table in the database
+                    SqlCommand cmd1 = new SqlCommand(_query, con);
 
-                    }
                     con.Close();
                 }
                 catch (SqlException e)
                 {
-                    Console.WriteLine(e + "Kunne ikke tilføje produkter til listen!!");
+                    Console.WriteLine(e + "Kunne ikke tilføje produktet til listen!!");
                 }
             }
         }
@@ -305,10 +299,10 @@ namespace FodboldFeber.Model
             try
             {
                 //Assigns the updated textbox values for the item choosen by the user in the "ChooseItem" combobox, and adds them to the "Query" variable.
-                query = "Update Products set ProductID='" + this.ProductID+ "', ProductName='" + this.ProductName+ "', Category='" + this.Category+ "', ProductDescription='" + this.ProductDescription+ "', ProductPrice='" + this.Price+ "', AmountInStock='" + this.AmountInStock+ "', ShippingPrice='" + this.ShippingPrice+ "', Size='" + this.Size+ "', DiscountPrice='" + this.DiscountPrice+ "' where ProductName='" + this.ChooseItem+ "' ";
+                _query = "Update Products set ProductID='" + this.ProductID+ "', ProductName='" + this.ProductName+ "', Category='" + this.Category+ "', ProductDescription='" + this.ProductDescription+ "', ProductPrice='" + this.Price+ "', AmountInStock='" + this.AmountInStock+ "', ShippingPrice='" + this.ShippingPrice+ "', Size='" + this.Size+ "', DiscountPrice='" + this.DiscountPrice+ "' where ProductName='" + this.ChooseItem+ "' ";
                 SqlConnection con = new SqlConnection(_connectionString);
                 // The newly updated information about the item is updated in the database too
-                SqlCommand cmd1 = new SqlCommand(query, con);
+                SqlCommand cmd1 = new SqlCommand(_query, con);
                 SqlDataReader myReader;
                 con.Open();
                 myReader = cmd1.ExecuteReader();
