@@ -235,31 +235,11 @@ namespace FodboldFeber.Model
                 {
                     con.Open();
                     //Fills the _query variable with the information of the properties
-                    _query = "insert into Products(ProductID, ProductName, Category, ProductDescription, ProductPrice, AmountInStock, ShippingPrice, Size, DiscountPrice, ProductImage) values('" + this.ProductID + "','" + this.ProductName + "','" + this.Category + "','" + this.ProductDescription + "','" + this.Price + "','" + this.AmountInStock + "','" + this.ShippingPrice + "','" + this.Size + "','" + this.DiscountPrice + "','" + this.ProductImage + "');";
+                    _query = "insert into Products(ProductID, ProductName, Category, ProductDescription, ProductPrice, AmountInStock, ShippingPrice, Size, DiscountPrice, ProductImage) values('" + ProductID + "','" + ProductName + "','" + Category + "','" + ProductDescription + "','" + Price + "','" + AmountInStock + "','" + ShippingPrice + "','" + Size + "','" + DiscountPrice + "','" + ProductImage + "');";
                     //Inserts the data of _query into the "Products" table in the database
                     SqlCommand cmd1 = new SqlCommand(_query, con);
                   
-                    SqlDataReader myReader = cmd1.ExecuteReader();
-                    
 
-                    while (myReader.Read())
-                    {
-
-                        //Listen bliver pt aldrig brugt i en sammenhæng hvor der er behov for at den holder
-                        //nedenstående værdier
-
-                        //Products p = new Products();
-                        //p.ProductID = (int)myReader["ProductID"];
-                        //p.ProductName = (string)myReader["ProductName"];
-                        //p.Category = (string)myReader["Category"];
-                        //p.ProductDescription = (string)myReader["ProductDescription"];
-                        //p.Price = (double)myReader["ProductPrice"];
-                        //p.AmountInStock = (int)myReader["AmountInStock"];
-                        //p.ShippingPrice = (double)myReader["ShippingPrice"];
-                        //p.Size = (string)myReader["Size"];
-                        //p.DiscountPrice = (double)myReader["DiscountPrice"];
-                        //ListOfProducts.Add(p);
-                    }
                     con.Close();
                 }
                 catch (SqlException e)

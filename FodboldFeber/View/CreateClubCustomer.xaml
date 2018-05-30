@@ -27,12 +27,8 @@
             <Label Content="Adgangskode" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="647,255,0,0" FontFamily="Segoe UI Light"/>
             <TextBox x:Name ="txtbox_phoneNumber" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" HorizontalAlignment="Left" FontSize="16" Height="23" Margin="653,225,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="112" Text="{Binding PhoneNumber, Mode=OneWayToSource}" />
             <Label Content="Telefon" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="647,199,0,0" FontFamily="Segoe UI Light"/>
-            <Button Content="Færdig" HorizontalAlignment="Left" Margin="520,465,0,0" VerticalAlignment="Top" Width="243" Height="27" FontFamily="Segoe UI Light" Click="Button_Click"/>
+            <Button Content="Færdig" HorizontalAlignment="Left" Margin="520,465,0,0" VerticalAlignment="Top" Width="243" Height="27" FontFamily="Segoe UI Light" Click="btnAddUser"/>
             <Label Content="Opret klubprofil&#xA;" HorizontalAlignment="Left" Margin="569,108,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Segoe UI Light" Height="37"/>
-            <!--<TextBox x:Name="txtbox_city" HorizontalAlignment="Left" Height="23" Margin="263,569,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="112" Text="{Binding Path= City, Mode=OneWayToSource}"/>
-        <TextBox x:Name="txtbox_postnummer" HorizontalAlignment="Left" Height="23" Margin="393,569,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="112" Text="{Binding Path= PostNummer, Mode=OneWayToSource}"/>-->
-            <!--<Label Content="By" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="257,543,0,0" FontFamily="Segoe UI Light"/>
-        <Label Content="Postnummer" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="388,544,0,0" FontFamily="Segoe UI Light"/>-->
             <GroupBox Header="Information om din klub" HorizontalAlignment="Left" Height="138" Margin="503,310,0,0" VerticalAlignment="Top" Width="278" FontFamily="Segoe UI Light"/>
             <TextBox x:Name="txtbox_clubaddress" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" HorizontalAlignment="Left" Height="23" Margin="522,405,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="242" Text="{Binding ClubAddress, Mode=OneWayToSource}"/>
             <Label Content="Adresse" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="516,379,0,0" FontFamily="Segoe UI Light"/>

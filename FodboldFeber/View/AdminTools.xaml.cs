@@ -57,7 +57,7 @@ namespace FodboldFeber.View
             {
                 SqlConnection con = new SqlConnection(_connectionString);
                 con.Open();
-                string _query = "SELECT * from Products";
+                _query = "SELECT * from Products";
                 SqlCommand listCommands = new SqlCommand(_query, con);
                 SqlDataReader reader = listCommands.ExecuteReader();
               
