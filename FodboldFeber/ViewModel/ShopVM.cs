@@ -66,7 +66,7 @@ namespace FodboldFeber.ViewModel
             //SelectedProduct = new Model.Products { ProductName = "", ProductID = 0, Category = "", ProductDescription = "", Price = 0, Size = "", ProductImage = "" };
 
         }
-        //Funktionality to Shop
+        //Functionality to Shop
         public void PopulateList()
         {
             products.FillList(ListOfProducts);
