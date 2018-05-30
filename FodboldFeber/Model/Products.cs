@@ -207,7 +207,7 @@ namespace FodboldFeber.Model
                     con.Open();
                     SqlCommand sqlCommand = new SqlCommand("SELECT * FROM Products", con);
                     SqlDataReader myReader = sqlCommand.ExecuteReader();
-
+                    
                     while (myReader.Read())
                     {
                         ShopData sd = new ShopData();
@@ -217,7 +217,7 @@ namespace FodboldFeber.Model
                         sd.ProductDescription = (string)myReader["ProductDescription"];
                         listOfProducts.Add(sd);
                     }
-                    con.Close();
+                    //con.Close();
                 }
                 catch (SqlException e)
                 {
@@ -235,20 +235,16 @@ namespace FodboldFeber.Model
                 {
                     con.Open();
                     //Fills the _query variable with the information of the properties
-                    _query = "insert into Products(ProductID, ProductName, Category, ProductDescription, " +
-                        "ProductPrice, AmountInStock, ShippingPrice, Size, DiscountPrice, ProductImage) " +
-                        "values('" + ProductID + "','" + ProductName + "','" + Category + "','" + 
-                        ProductDescription + "','" + Price + "','" + AmountInStock + "','" + 
-                        ShippingPrice + "','" + Size + "','" + DiscountPrice + "','" + ProductImage + "');";
-
+                    _query = "insert into Products(ProductID, ProductName, Category, ProductDescription, ProductPrice, AmountInStock, ShippingPrice, Size, DiscountPrice, ProductImage) values('" + ProductID + "','" + ProductName + "','" + Category + "','" + ProductDescription + "','" + Price + "','" + AmountInStock + "','" + ShippingPrice + "','" + Size + "','" + DiscountPrice + "','" + ProductImage + "');";
                     //Inserts the data of _query into the "Products" table in the database
                     SqlCommand cmd1 = new SqlCommand(_query, con);
+                  
 
                     con.Close();
                 }
                 catch (SqlException e)
                 {
-                    Console.WriteLine(e + "Kunne ikke tilføje produktet til listen!!");
+                    Console.WriteLine(e + "Kunne ikke tilføje produkter til listen!!");
                 }
             }
         }
@@ -261,8 +257,8 @@ namespace FodboldFeber.Model
             try
             {
                 con.Open();
-                string Query = "delete from Products where ProductName = '" + this.ChooseItem+ "'";
-                SqlCommand cmd1 = new SqlCommand(Query, con);
+                string _query = "delete from Products where ProductName = '" + this.ChooseItem+ "'";
+                SqlCommand cmd1 = new SqlCommand(_query, con);
                 SqlDataReader myReader;
                 myReader = cmd1.ExecuteReader();
             
@@ -298,7 +294,7 @@ namespace FodboldFeber.Model
         {
             try
             {
-                //Assigns the updated textbox values for the item choosen by the user in the "ChooseItem" combobox, and adds them to the "Query" variable.
+                //Assigns the updated textbox values for the item choosen by the user in the "ChooseItem" combobox, and adds them to the "_query" variable.
                 _query = "Update Products set ProductID='" + this.ProductID+ "', ProductName='" + this.ProductName+ "', Category='" + this.Category+ "', ProductDescription='" + this.ProductDescription+ "', ProductPrice='" + this.Price+ "', AmountInStock='" + this.AmountInStock+ "', ShippingPrice='" + this.ShippingPrice+ "', Size='" + this.Size+ "', DiscountPrice='" + this.DiscountPrice+ "' where ProductName='" + this.ChooseItem+ "' ";
                 SqlConnection con = new SqlConnection(_connectionString);
                 // The newly updated information about the item is updated in the database too
