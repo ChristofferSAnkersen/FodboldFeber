@@ -140,8 +140,8 @@
         </Rectangle>
         <Label x:Name="lblDate" Content="17/05/2018" HorizontalAlignment="Center" Margin="450,305,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Light"/>
         <Label x:Name="lblItems" Content="4 Items" HorizontalAlignment="Center" Margin="310,305,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Semibold"/>
-        <Label x:Name="lblOrders" Content="Ordrehistorik" HorizontalAlignment="Center" Margin="743,255,575,0" VerticalAlignment="Top" FontFamily="Segoe UI Semibold"/>
-        <Ellipse Stroke="White" StrokeThickness="1" HorizontalAlignment="Center" Width="50" Height="50" Margin="180,30,0,0">
+        <Label x:Name="lblOrders" Content="Ordrehistorik" HorizontalAlignment="Center" Margin="180,255,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Semibold"/>
+        <Ellipse Stroke="White" StrokeThickness="1" HorizontalAlignment="Center" Width="40" Height="40" Margin="165,10,0,0">
             <Ellipse.Effect>
                 <DropShadowEffect ShadowDepth="2" Opacity="0.5"/>
             </Ellipse.Effect>
