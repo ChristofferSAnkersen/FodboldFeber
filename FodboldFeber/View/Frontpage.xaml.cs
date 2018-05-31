@@ -29,8 +29,11 @@ namespace FodboldFeber.View
             shopVM = ShopVM.Instance;
             this.DataContext = shopVM;
 
-            // Sets the itemsource again to make sure it is binded to the list "ListOfProducts" in "ShopVM" after it has been populated
-            shopVM.PopulateList();
+            if (shopVM.ListOfProducts == null)// Sets the itemsource again to make sure it is binded to the list "ListOfProducts" in "ShopVM" after it has been populated
+            {
+                shopVM.PopulateList();
+            }
+            
             ShopListBox.ItemsSource = shopVM.ListOfProducts;
         }
 

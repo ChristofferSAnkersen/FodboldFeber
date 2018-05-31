@@ -28,20 +28,28 @@ namespace FodboldFeber.View
         {
             InitializeComponent();
             shopVM = ShopVM.Instance;
-            this.DataContext = shopVM;
+            DataContext = shopVM;
             //Default values for the properties, with the goal of displaying the needed message 
             //in the textboxes, instructing the user of what they should type in the boxes
-            ProductID.Text = "Angiv produktID";
+            ProductID.Text = "Angiv ProduktID";
             ProductName.Text = "Angiv Produktnavn";
-            Category.Text = "Angiv kategori";
-            ProductDescription.Text = "Angiv beskrivelse";
-            ProductImage.Text = "Indsæt link til billede";
-            ProductPrice.Text = "Angiv pris";
-            AmountInStock.Text = "Angiv Antal på lager";
-            ShippingPrice.Text = "Angiv fragtpris";
-            this.Size.Text = "Angiv størrelse";
-            DiscountPrice.Text = "Angiv tilbudspris";
+            Category.Text = "Angiv Kategori";
+            ProductDescription.Text = "Angiv Beskrivelse";
+            ProductImage.Text = "Indsæt Link Til Billede";
+            ProductPrice.Text = "Angiv Pris";
+            AmountInStock.Text = "Angiv Antal På Lager";
+            ShippingPrice.Text = "Angiv Fragtpris";
+            Size.Text = "Angiv Størrelse";
+            DiscountPrice.Text = "Angiv Tilbudspris";
 
+            txb_ProductName.Text = "Angiv Produktnavn";
+            txb_ProductID.Text = "Angiv ProduktID";
+            txb_ProductDescription.Text = "Angiv Beskrivelse";
+            txb_AmountInStock.Text = "Angiv Antal På Lager";
+            txb_ProductImage.Text = "Indsæt Link Til Billede";
+            txb_Price.Text = "Angiv Pris";
+            txb_DiscountPrice.Text = "Angiv Tilbudspris";
+            txb_ShippingPrice.Text = "Angiv Fragtpris";
             
             ListInCombobox();
         }
@@ -85,7 +93,7 @@ namespace FodboldFeber.View
             {
                 textbox.Text = string.Empty;
             }
-            if (textbox.Name == "ProductName" && textbox.Text == "" || textbox.Text == "Produktnavn" || textbox.Text == "Angiv Produkt Navn")
+            if (textbox.Name == "ProductName" && textbox.Text == "" || textbox.Text == "Produktnavn" || textbox.Text == "Angiv Produktnavn")
             {
                 textbox.Text = string.Empty;
             }
@@ -106,6 +114,10 @@ namespace FodboldFeber.View
                 textbox.Text = string.Empty;
             }
             if (textbox.Name == "DiscountPrice" && textbox.Text == "" || textbox.Text == "Tilbudspris" || textbox.Text == "Angiv Tilbudspris")
+            {
+                textbox.Text = string.Empty;
+            }
+            if (textbox.Name == "ProductImage" && textbox.Text == "" || textbox.Text == "Indsæt Link Til Billede" || textbox.Text == "Indsæt Link Til Billede")
             {
                 textbox.Text = string.Empty;
             }
@@ -144,10 +156,53 @@ namespace FodboldFeber.View
             {
                 textbox.Text = "Angiv Tilbudspris";
             }
+            else if (textbox.Name == "ProductImage" && textbox.Text == "")
+            {
+                textbox.Text = "Indsæt Link Til Billede";
+            }
             textbox.GotFocus += TextBox_GotFocus;
         } //Determines what happens when textboxes loses focus
-        private void TextBox2_LostFocus(object sender, RoutedEventArgs e)
+
+        private void TextBox2_GotFocus(object sender, RoutedEventArgs e)
         {
+            TextBox textbox = (TextBox)sender;
+            if (textbox.Name == "ProductID" && textbox.Text == "" || textbox.Text == "ProduktID" || textbox.Text == "Angiv ProduktID")
+            {
+                textbox.Text = string.Empty;
+            }
+            if (textbox.Name == "ProductName" && textbox.Text == "" || textbox.Text == "Produktnavn" || textbox.Text == "Angiv Produktnavn")
+            {
+                textbox.Text = string.Empty;
+            }
+            if (textbox.Name == "ProductDescription" && textbox.Text == "" || textbox.Text == "Produkt Beskrivelse" || textbox.Text == "Angiv Beskrivelse")
+            {
+                textbox.Text = string.Empty;
+            }
+            if (textbox.Name == "ProductPrice" && textbox.Text == "" || textbox.Text == "Pris" || textbox.Text == "Angiv Pris")
+            {
+                textbox.Text = string.Empty;
+            }
+            if (textbox.Name == "AmountInStock" && textbox.Text == "" || textbox.Text == "Antal På Lager" || textbox.Text == "Angiv Antal På Lager")
+            {
+                textbox.Text = string.Empty;
+            }
+            if (textbox.Name == "ShippingPrice" && textbox.Text == "" || textbox.Text == "Fragtpris" || textbox.Text == "Angiv Fragtpris")
+            {
+                textbox.Text = string.Empty;
+            }
+            if (textbox.Name == "DiscountPrice" && textbox.Text == "" || textbox.Text == "Tilbudspris" || textbox.Text == "Angiv Tilbudspris")
+            {
+                textbox.Text = string.Empty;
+            }
+            if (textbox.Name == "ProductImage" && textbox.Text == "" || textbox.Text == "Indsæt Link Til Billede" || textbox.Text == "Indsæt Link Til Billede")
+            {
+                textbox.Text = string.Empty;
+            }
+            textbox.GotFocus -= TextBox2_GotFocus;
+        }
+
+            private void TextBox2_LostFocus(object sender, RoutedEventArgs e)
+            {
             TextBox textbox = (TextBox)sender;
             if (textbox.Name == "txb_ProductID" && textbox.Text == "")
             {
@@ -265,7 +320,7 @@ namespace FodboldFeber.View
                 this.img_product.Source = (ImageSource)converter.ConvertFromString("https://churchtraconline.com/articles/apple/uploads/2017/09/Antu_insert-image.svg_-846x846.png");
             }
 
-            else if(ProductImage.Text != "Indsæt link til billede")
+            else if(ProductImage.Text != "Indsæt Link Til Billede")
             {
                 
                 ImageSourceConverter converter = new ImageSourceConverter();
