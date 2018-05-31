@@ -31,6 +31,7 @@
         <Label Content="Varenummer: 1" HorizontalAlignment="Left" Margin="402,372,0,0" VerticalAlignment="Top" FontFamily="Sitka Display" Background="{x:Null}" Foreground="#FF6F6F6F" FontStyle="Italic"/>
         <Label Content="{Binding Path=SelectedProduct.Category, Mode=TwoWay}" HorizontalAlignment="Left" Margin="512,372,0,0" VerticalAlignment="Top" FontFamily="Sitka Display" Background="{x:Null}" Foreground="#FF6F6F6F" FontStyle="Italic"/>
         <TextBox x:Name="txtbox_Quantity"  FontSize="16" HorizontalAlignment="Left" Height="23" Margin="400,267,0,0" TextWrapping="Wrap" Text="Vælg antal" VerticalAlignment="Top" Width="141" FontFamily="Segoe UI Light" />
+        <Label x:Name="Valuta" Content="kr" HorizontalAlignment="Center" Margin="-55,140,0,0" VerticalAlignment="Top" FontSize="18"/>
 
     </Grid>
 </Page>

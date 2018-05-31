@@ -303,10 +303,7 @@ namespace FodboldFeber.Model
                 con.Open();
                 myReader = cmd1.ExecuteReader();
              
-                while (myReader.Read())
-                {
-                    
-                }
+                
             
                 con.Close();
 
