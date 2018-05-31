@@ -238,7 +238,9 @@ namespace FodboldFeber.Model
                     _query = "insert into Products(ProductID, ProductName, Category, ProductDescription, ProductPrice, AmountInStock, ShippingPrice, Size, DiscountPrice, ProductImage) values('" + ProductID + "','" + ProductName + "','" + Category + "','" + ProductDescription + "','" + Price + "','" + AmountInStock + "','" + ShippingPrice + "','" + Size + "','" + DiscountPrice + "','" + ProductImage + "');";
                     //Inserts the data of _query into the "Products" table in the database
                     SqlCommand cmd1 = new SqlCommand(_query, con);
-                    
+                    SqlDataReader myReader;
+                    myReader = cmd1.ExecuteReader();
+
 
                     con.Close();
                 }
