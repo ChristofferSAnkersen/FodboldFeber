@@ -16,7 +16,7 @@ namespace FodboldFeber.Model
         public int DelivertTime { get; set; }
         public DateTime DateOfOrder { get; set; }
         public int TotalOrderPrice { get; set; }
-        public object PaymentMethod { get; set; } //Best datatype here?
+        public object PaymentMethod { get; set; } //What is the best datatype here?
         public int TotalShippingPrice { get; set; }
 
     }

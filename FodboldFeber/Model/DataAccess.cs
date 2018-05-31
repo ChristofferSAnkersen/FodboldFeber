@@ -22,7 +22,6 @@ namespace FodboldFeber.Model
         public Model.Authenticated CheckAuthentification { get; set; }
 
 
-
         public string Access()
         {
             return _connectionString;

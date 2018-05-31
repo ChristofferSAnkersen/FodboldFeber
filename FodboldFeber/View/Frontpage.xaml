@@ -10,10 +10,7 @@
       Title="Frontpage">
 
     <!-- Comments coming here -->
-    <!--<Page.DataContext>-->
-    <!--<model:SearchFunction x:Name="searchfunction"/>-->
-    <!--<VM:ShopVM x:Name="ShopVM" />-->
-    <!--</Page.DataContext>-->
+
 
     <Grid>
         <Grid.Background>

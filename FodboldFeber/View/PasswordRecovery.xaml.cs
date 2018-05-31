@@ -97,7 +97,6 @@ namespace FodboldFeber.View
                     con.Close();
                 }
             }
-
         }
 
         private void BtnForgotUserNameClick(object sender, RoutedEventArgs e)

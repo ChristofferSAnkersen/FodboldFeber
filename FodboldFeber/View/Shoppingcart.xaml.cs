@@ -18,6 +18,8 @@ namespace FodboldFeber
     /// <summary>
     /// Interaction logic for Shoppingcary.xaml
     /// </summary>
+
+    //Currently not being used, but we keeps it for future development
     public partial class Shoppingcart : Page
     {
         public Shoppingcart()

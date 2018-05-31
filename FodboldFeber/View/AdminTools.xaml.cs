@@ -24,6 +24,8 @@ namespace FodboldFeber.View
     public partial class AdminTools : Page
     {
         private ShopVM shopVM;
+        //Connection to the sql database
+        private string _connectionString = "Server=EALSQL1.eal.local; Database=DB2017_A27; User Id= USER_A27; Password=SesamLukOp_27;";
         public AdminTools()
         {
             InitializeComponent();
@@ -45,11 +47,7 @@ namespace FodboldFeber.View
             
             ListInCombobox();
         }
-        //Connection to the sql database
-        private string _connectionString = "Server=EALSQL1.eal.local; Database=DB2017_A27; User Id= USER_A27; Password=SesamLukOp_27;";
-
-        //String query, used to add/delete/update the desired values in the database in the methods below
-        //private string _query = "";
+       
         //Function that makes it possible for the combobox to be filled with already existing items in the database for the user to choose from when deciding what item(s) to delete or update
         public void ListInCombobox()
         {
@@ -78,6 +76,7 @@ namespace FodboldFeber.View
 
         }
 
+        //Determines what happens when textboxes are focused
         private void TextBox_GotFocus(object sender, RoutedEventArgs e)
         {
             TextBox textbox = (TextBox)sender;
@@ -112,7 +111,8 @@ namespace FodboldFeber.View
             textbox.GotFocus -= TextBox_GotFocus;
 
 
-        } //Determines what happens when textboxes are focused
+        }
+        //Determines what happens when textboxes loses focus
         private void TextBox_LostFocus(object sender, RoutedEventArgs e)
         {
             TextBox textbox = (TextBox)sender;
@@ -145,7 +145,8 @@ namespace FodboldFeber.View
                 textbox.Text = "Angiv Tilbudspris";
             }
             textbox.GotFocus += TextBox_GotFocus;
-        } //Determines what happens when textboxes loses focus
+        }
+        //Determines what happens when textboxes loses focus
         private void TextBox2_LostFocus(object sender, RoutedEventArgs e)
         {
             TextBox textbox = (TextBox)sender;
@@ -178,7 +179,7 @@ namespace FodboldFeber.View
                 textbox.Text = "Tilbudspris";
             }
             textbox.GotFocus += TextBox_GotFocus;
-        } //Determines what happens when textboxes loses focus
+        } 
 
         //Event that determines the content of the textboxes in the update/delete area of "AdminTools"
         private void ChooseItem_DropDownClosed(object sender, EventArgs e)
@@ -256,7 +257,7 @@ namespace FodboldFeber.View
             //Populates the ChooseItem combobox again, including the just updated itemlist
             ListInCombobox();
         }
-
+        //Determines what happens when "ProductImage" loses focus
         private void ProductImage_LostFocus(object sender, RoutedEventArgs e)
         {
             if (string.IsNullOrWhiteSpace(ProductImage.Text))

@@ -264,25 +264,6 @@ namespace FodboldFeber.Model
                 SqlDataReader myReader;
                 myReader = cmd1.ExecuteReader();
             
-                while(myReader.Read())
-                {
-
-
-                    //Listen bliver pt aldrig brugt i en sammenhæng hvor der er behov for at den sletter
-                    //nedenstående værdier
-
-                    //Products p = new Products();
-                    //p.ProductID = (int)myReader["ProductID"];
-                    //p.ProductName = (string)myReader["ProductName"];
-                    //p.Category = (string)myReader["Category"];
-                    //p.ProductDescription = (string)myReader["ProductDescription"];
-                    //p.Price = (double)myReader["ProductPrice"];
-                    //p.AmountInStock = (int)myReader["AmountInStock"];
-                    //p.ShippingPrice = (double)myReader["ShippingPrice"];
-                    //p.Size = (string)myReader["Size"];
-                    //p.DiscountPrice = (double)myReader["DiscountPrice"];
-                    //ListOfProducts.Remove(p);
-                }
                 con.Close();
 
             }
@@ -305,8 +286,6 @@ namespace FodboldFeber.Model
                 con.Open();
                 myReader = cmd1.ExecuteReader();
              
-                
-            
                 con.Close();
 
             }

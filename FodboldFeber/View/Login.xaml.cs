@@ -31,7 +31,7 @@ namespace FodboldFeber.View
         private CustomerVM customerVM;
         private LoginVM loginVM;
         private MainWindow mainWindow;
-        // CustomerController cController;
+   
         public Login()
         {
             InitializeComponent();
@@ -53,7 +53,7 @@ namespace FodboldFeber.View
             }
         }
        
-        //page navigation
+        //Page navigation
         private void BtnClickSignIn(object sender, RoutedEventArgs e)
             {
                 ChooseType page = new ChooseType();
