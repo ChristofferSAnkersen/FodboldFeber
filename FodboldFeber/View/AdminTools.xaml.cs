@@ -35,7 +35,7 @@ namespace FodboldFeber.View
             ProductName.Text = "Angiv Produktnavn";
             Category.Text = "Angiv kategori";
             ProductDescription.Text = "Angiv beskrivelse";
-
+            ProductImage.Text = "Indsæt link til billede";
             ProductPrice.Text = "Angiv pris";
             AmountInStock.Text = "Angiv Antal på lager";
             ShippingPrice.Text = "Angiv fragtpris";
@@ -265,12 +265,18 @@ namespace FodboldFeber.View
                 this.img_product.Source = (ImageSource)converter.ConvertFromString("https://churchtraconline.com/articles/apple/uploads/2017/09/Antu_insert-image.svg_-846x846.png");
             }
 
-            else
+            else if(ProductImage.Text != "Indsæt link til billede")
             {
+                
                 ImageSourceConverter converter = new ImageSourceConverter();
                 this.img_product.Source = (ImageSource)converter.ConvertFromString(ProductImage.Text);
+                
             }
-
+            else
+            {
+                MessageBox.Show("Ugyldigt input");
+            }
+          
         }
 
     }
