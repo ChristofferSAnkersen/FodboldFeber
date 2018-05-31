@@ -74,11 +74,6 @@ namespace FodboldFeber
                 StartPage.Content = new CustomerProfile();
             }
 
-            //if (Login.Content.ToString() == "Profil")
-            //{
-            //    StartPage.Content = new CustomerProfile();
-            //}
-      
             else if (Login.Content.ToString() == "Login")
             {
                 StartPage.Content = new Login();

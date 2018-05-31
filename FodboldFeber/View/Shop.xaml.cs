@@ -30,7 +30,7 @@ namespace FodboldFeber.View
         {
             InitializeComponent();
             shopVM = ShopVM.Instance;
-            //this.DataContext = shopVM;
+           
 
            
             customerVM = CustomerVM.Instance;
@@ -61,13 +61,10 @@ namespace FodboldFeber.View
         private void ShopListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
-            //var item = ItemsControl.ContainerFromElement(ShopListBox, e.OriginalSource as DependencyObject) as ListBoxItem;
-            //ShopListBox.SelectedItem = item;
             this.DataContext = shopVM;
             if (ShopListBox.SelectedItem != null)
             {
-                //ShopListBox.ItemsSource = shopVM.ListOfProducts;
-                //shopVM.SelectedProduct = ShopListBox.SelectedItem;
+                
                 ShopFrame.Content = new ProductProfile();
 
             }

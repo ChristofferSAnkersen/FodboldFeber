@@ -9,9 +9,7 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="ProductProfile"
       Background="White">
-    <!--<Page.DataContext>
-        <VM:ShopVM x:Name="ShopVM" />
-    </Page.DataContext>-->
+
 
     <Grid>
         <Rectangle Fill="#FFFBFBFB" HorizontalAlignment="Center" Height="364" Margin="0,56,0,0" Stroke="#FFD6D6D6" VerticalAlignment="Top" Width="692"/>

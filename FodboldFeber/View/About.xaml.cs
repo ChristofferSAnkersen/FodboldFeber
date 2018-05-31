@@ -18,6 +18,8 @@ namespace FodboldFeber.View
     /// <summary>
     /// Interaction logic for About1.xaml
     /// </summary>
+
+    //Currently not being used, but we keeps it for future development
     public partial class About : Page
     {
         public About()

@@ -32,14 +32,10 @@ namespace FodboldFeber.View
             txtbox_password.Text = "Angiv Kodeord";
             txtbox_phonenumber.Text = "Angiv Telefonnummer";
             txtbox_email.Text = "Angiv Email";
-            txtbox_companyaddress.Text = "Angiv Adresse";
-            txtbox_companyname.Text = "Angiv Klubnavn";
-            txtbox_companyposition.Text = "Angiv din position i klubben";
-            //txtbox_city.Text = "Angiv By";
-            //txtbox_postnummer.Text = "Angiv postnummer";
+            txtbox_companyaddress.Text = "Angiv firmaets adresse";
+            txtbox_companyname.Text = "Angiv firma navn";
+            txtbox_companyposition.Text = "Angiv din position i firmaet";
             txtbox_cvr.Text = "Angiv CVR";
-
-
 
         }
 

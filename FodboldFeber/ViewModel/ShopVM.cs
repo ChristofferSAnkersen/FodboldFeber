@@ -48,7 +48,6 @@ namespace FodboldFeber.ViewModel
         {
             //Default values for the properties, with the goal of displaying the needed message 
             //in the textboxes, instructing the user of what they should type in the boxes
-            //ListOfProducts = products.ListOfProducts;
             
             ChooseItem = "Vælg produkt";
 
@@ -63,8 +62,6 @@ namespace FodboldFeber.ViewModel
             DiscountPrice = 0;
             ProductImage = "Vælg billede";
 
-            //SelectedProduct = new Model.Products { ProductName = "", ProductID = 0, Category = "", ProductDescription = "", Price = 0, Size = "", ProductImage = "" };
-
         }
         //Functionality to Shop
         public void PopulateList()
@@ -77,7 +74,6 @@ namespace FodboldFeber.ViewModel
         {
             AddProduct();
         }
-
 
         public void DeleteProductControl()
         {

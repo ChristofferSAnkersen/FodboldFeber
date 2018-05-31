@@ -53,12 +53,10 @@ namespace FodboldFeber.View
         private void ShopListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
-            //var item = ItemsControl.ContainerFromElement(ShopListBox, e.OriginalSource as DependencyObject) as ListBoxItem;
-            //ShopListBox.SelectedItem = item;
+            
             if (ShopListBox.SelectedItem != null)
             {
-                //ShopListBox.ItemsSource = shopVM.ListOfProducts;
-                //shopVM.SelectedProduct = ShopListBox.SelectedItem;
+                
                 FrontpageShopFrame.Content = new ProductProfile();
 
             }

@@ -18,6 +18,8 @@ namespace FodboldFeber.View
     /// <summary>
     /// Interaction logic for Customers.xaml
     /// </summary>
+    
+    //Currently not being used, but we keeps it for future development
     public partial class Customers : Page
     {
         public Customers()

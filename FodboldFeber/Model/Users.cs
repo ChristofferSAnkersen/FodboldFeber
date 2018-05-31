@@ -259,6 +259,7 @@ namespace FodboldFeber.Model
         private string _query = "";
 
         private static string _connectionString = "Server=EALSQL1.eal.local; Database=DB2017_A27; User Id= USER_A27; Password=SesamLukOp_27;";
+        //Logic for adding a user of the "PrivateUser" type to the database
         public void AddPrivateUser()
         {
             using (SqlConnection con = new SqlConnection(_connectionString))
@@ -270,7 +271,6 @@ namespace FodboldFeber.Model
                     _query = "insert into Users(username, password, name, phonenumber, email, address) values('" + this.UserName + "','" + this.Password + "','" + this.Name + "','" + this.PhoneNumber + "','" + this.Email + "','" + this.Address + "');";
                     //Inserts the data of _query into the "Products" table in the database
                     SqlCommand cmd1 = new SqlCommand(_query, con);
-
                     SqlDataReader myReader = cmd1.ExecuteReader();
 
                     con.Close();
@@ -290,11 +290,9 @@ namespace FodboldFeber.Model
                 {
                     con.Open();
                     //Fills the _query variable with the information of the properties
-                    _query = "insert into Users(name,username, password, clubname, phonenumber, email, address, clubposition) values('" + this.Name + "','" + this.UserName + "','" + this.Password + "','" + this.ClubName + "','" + this.PhoneNumber + "','" + this.Email + "','" + this.Address + "','" + this.ClubPosition
-                        + "');";
+                    _query = "insert into Users(name,username, password, clubname, phonenumber, email, address, clubposition) values('" + this.Name + "','" + this.UserName + "','" + this.Password + "','" + this.ClubName + "','" + this.PhoneNumber + "','" + this.Email + "','" + this.Address + "','" + this.ClubPosition + "');";
                     //Inserts the data of _query into the "Products" table in the database
                     SqlCommand cmd1 = new SqlCommand(_query, con);
-
                     SqlDataReader myReader = cmd1.ExecuteReader();
 
                     con.Close();
@@ -317,7 +315,6 @@ namespace FodboldFeber.Model
                     _query = "insert into Users(name, username, password, companyname, phonenumber, email, address, companyposition, cvr) values('" + this.Name + "','" + this.UserName + "','" + this.Password + "','" + this.CompanyName + "','" + this.PhoneNumber + "','" + this.Email + "','" + this.Address + "','" + this.CompanyPosition + "','" + this.CVR + "');";
                     //Inserts the data of _query into the "Products" table in the database
                     SqlCommand cmd1 = new SqlCommand(_query, con);
-
                     SqlDataReader myReader = cmd1.ExecuteReader();
 
                     con.Close();
@@ -328,7 +325,7 @@ namespace FodboldFeber.Model
                 }
             }
         }
-        
+        //Have not made the functionality to delete a user from the database
         public void DeleteUser()
         {
 
@@ -345,11 +342,6 @@ namespace FodboldFeber.Model
                 SqlDataReader myReader;
                 con.Open();
                 myReader = cmd1.ExecuteReader();
-
-                while (myReader.Read())
-                {
-
-                }
 
                 con.Close();
 

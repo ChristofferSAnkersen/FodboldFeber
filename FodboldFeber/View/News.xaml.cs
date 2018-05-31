@@ -18,6 +18,9 @@ namespace FodboldFeber.View
     /// <summary>
     /// Interaction logic for News.xaml
     /// </summary>
+    /// 
+
+    //Currently not being used, but we keeps it for future development
     public partial class News : Page
     {
         public News()

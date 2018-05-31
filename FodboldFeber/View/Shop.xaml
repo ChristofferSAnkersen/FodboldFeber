@@ -11,7 +11,7 @@
     <!-- Comments coming here -->
     <Page.DataContext>
         <model:SearchFunction x:Name="searchfunction"/>
-        <!--<VM:ShopVM x:Name="ShopVM" />-->
+      
     </Page.DataContext>
     <Grid>
         <Grid.RowDefinitions>
@@ -112,14 +112,14 @@
             <ListBox x:Name="ShopListBox" ItemsSource="{Binding ListOfProducts}" SelectedItem="{Binding Path= SelectedProduct}" RenderTransformOrigin="0.502,0.003" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Height="Auto" Width="750" SelectionChanged="ShopListBox_SelectionChanged" >
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                        <!--<Button x:Name="Navigation" Click="BtnNavigation_Click">-->
+                        
                         <StackPanel x:Name="ShopStackpanel" >
                         <Image x:Name="imgProductImage" Source="{Binding Path = ProductImage, Mode=TwoWay}" Stretch="UniformToFill"  Width="150" Height="75" />
                         <Label x:Name="lblProductName" Content="{Binding Path = ProductName, Mode=TwoWay}" BorderBrush="{x:Null}" />
                         <Label x:Name="lblProductPrice" Content="{Binding Path = Price, Mode=TwoWay}" BorderBrush="{x:Null}"/>
                         <Label x:Name="lblProductDescription" Content="{Binding Path= ProductDescription, Mode=TwoWay}" Visibility="Hidden" />
                         </StackPanel>
-        <!--</Button>-->
+     
         </DataTemplate>
             </ListBox.ItemTemplate>
             <ListBox.ItemsPanel>
