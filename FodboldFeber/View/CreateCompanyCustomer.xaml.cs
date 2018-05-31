@@ -32,8 +32,8 @@ namespace FodboldFeber.View
             txtbox_password.Text = "Angiv Kodeord";
             txtbox_phonenumber.Text = "Angiv Telefonnummer";
             txtbox_email.Text = "Angiv Email";
-            txtbox_companyaddress.Text = "Angiv firmaets adresse";
-            txtbox_companyname.Text = "Angiv firma navn";
+            txtbox_companyaddress.Text = "Angiv Firma Adresse";
+            txtbox_companyname.Text = "Angiv Firmanavn";
             txtbox_companyposition.Text = "Angiv din position i firmaet";
             txtbox_cvr.Text = "Angiv CVR";
 
@@ -70,15 +70,15 @@ namespace FodboldFeber.View
             {
                 textbox.Text = string.Empty;
             }
-            if (textbox.Name == "txtbox_companyname" && textbox.Text == "" || textbox.Text == "Angiv Klubnavn")
+            if (textbox.Name == "txtbox_companyname" && textbox.Text == "" || textbox.Text == "Angiv Firmanavn")
             {
                 textbox.Text = string.Empty;
             }
-            if (textbox.Name == "txtbox_companyposition" && textbox.Text == "" || textbox.Text == "Angiv din position i klubben")
+            if (textbox.Name == "txtbox_companyposition" && textbox.Text == "" || textbox.Text == "Angiv din position i firmaet")
             {
                 textbox.Text = string.Empty;
             }
-            if (textbox.Name == "txtbox_companyaddress" && textbox.Text == "" || textbox.Text == "Angiv Adresse")
+            if (textbox.Name == "txtbox_companyaddress" && textbox.Text == "" || textbox.Text == "Angiv Firma Adresse")
             {
                 textbox.Text = string.Empty;
             }
@@ -115,15 +115,15 @@ namespace FodboldFeber.View
             }
             else if (textbox.Name == "txtbox_companyname" && textbox.Text == "")
             {
-                textbox.Text = "Angiv Klubnavn";
+                textbox.Text = "Angiv Firmanavn";
             }
             else if (textbox.Name == "txtbox_companyposition" && textbox.Text == "")
             {
-                textbox.Text = "Angiv din position i klubben";
+                textbox.Text = "Angiv din position i firmaet";
             }
-            else if (textbox.Name == "txtbox_address" && textbox.Text == "")
+            else if (textbox.Name == "txtbox_companyaddress" && textbox.Text == "")
             {
-                textbox.Text = "Angiv Adresse";
+                textbox.Text = "Angiv Firma Adresse";
             }
             else if (textbox.Name == "txtbox_cvr" && textbox.Text == "")
             {
