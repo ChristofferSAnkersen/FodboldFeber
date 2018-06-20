@@ -34,10 +34,10 @@ namespace FodboldFeber.View
             GetUserInfo();
 
             HideEditTxtboxes();
-            txtEditName.Text = "Angiv nyt klubnavn";
-            txtEditAddress.Text = "Angiv ny adresse";
-            txtEditEmail.Text = "Angiv ny email";
-            txtEditPhone.Text = "Angiv nyt telefonnummer";
+            txtEditName.Text = "Christoffer Ankersen";
+            txtEditAddress.Text = "Skt. Hans Gade";
+            txtEditEmail.Text = "christofferankersen@gmail.com";
+            txtEditPhone.Text = "60857799";
 
             //btnSave.Visibility = Visibility.Hidden;
             

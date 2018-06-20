@@ -109,10 +109,10 @@
         </Ellipse>
 
 
-        <Label Content="Thomas Johansson" HorizontalAlignment="Center" Margin="0,185,0,0" VerticalAlignment="Top" FontSize="18" FontFamily="Segoe UI Light" FontWeight="Bold"/>
+        <Label Content="Christoffer Ankersen" HorizontalAlignment="Center" Margin="0,185,0,0" VerticalAlignment="Top" FontSize="18" FontFamily="Segoe UI Light" FontWeight="Bold"/>
         <Button x:Name="btnEdit" Content="Redigér profil" HorizontalAlignment="Center" Margin="500,520,0,0" VerticalAlignment="Top" Width="111" Click="btnEdit_Click" Background="#FFF2F2F2"/>
         <Button x:Name ="btnSave" Content="Gem ændringer" HorizontalAlignment="Center" Margin="200,520,0,0" VerticalAlignment="Top" Width="120" Click="btnSave_Click" Background="#FFF2F2F2"/>
-        <Label  Content="Materialeforvalter" HorizontalAlignment="Center" Margin="0,215,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Light"/>
+        <Label  Content="Datamatikerstuderende" HorizontalAlignment="Center" Margin="0,215,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Light"/>
         <Label x:Name="lblInfo" Content="Information om dig" HorizontalAlignment="Center" Margin="-580,256,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Semibold"/>
         <Label x:Name="lblPrivateName" Content="{Binding Path = Name, Mode=TwoWay}" HorizontalAlignment="Center" Margin="-260,294,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Light" Height="23" Width="150"/>
         <Label x:Name="lblAddress" Content="{Binding Path = Address, Mode=TwoWay}" HorizontalAlignment="Center" Margin="-260,330,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Light" Height="24" Width="150"/>
@@ -151,7 +151,7 @@
         </Ellipse>
         <Label Content="Total" HorizontalAlignment="Center" Margin="600,296,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Light"/>
         <Label Content="DKK 285,00" HorizontalAlignment="Center" Margin="600,315,0,0" VerticalAlignment="Top" FontFamily="Microsoft JhengHei Light" FontSize="10"/>
-        <Label x:Name="lblName" Content="Frederik1" HorizontalAlignment="Center" Margin="980,175,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Light" Width="105"/>
+        <Label x:Name="lblName" Content="Christoffer" HorizontalAlignment="Center" Margin="980,175,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Light" Width="105"/>
         <TextBox x:Name="txtEditName" Text="{Binding Path= Name, Mode=OneWayToSource}" HorizontalAlignment="Center" Height="23" Margin="-260,293,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" GotFocus="txtEditName_GotFocus"/>
         <TextBox x:Name="txtEditAddress" Text="{Binding Path= Address, Mode=OneWayToSource}" Height="23" Margin="-260,330,0,0" TextWrapping="Wrap" VerticalAlignment="Top" GotFocus="txtEditAddress_GotFocus" HorizontalAlignment="Center" Width="150"/>
         <TextBox x:Name="txtEditEmail" Text="{Binding Path= Email, Mode=OneWayToSource}" HorizontalAlignment="Center" Height="23" Margin="-260,366,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" GotFocus="txtEditEmail_GotFocus"/>
